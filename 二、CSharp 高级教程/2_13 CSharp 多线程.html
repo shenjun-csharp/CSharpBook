@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="2_14 CSharp LINQ.html" />
+    
     
     <link rel="prev" href="2_12 CSharp 不安全代码.html" />
     
@@ -192,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -614,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="2_14 CSharp LINQ.html">
+            
+                <a href="2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -664,7 +679,357 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x591A;&#x7EBF;&#x7A0B;">C# &#x591A;&#x7EBF;&#x7A0B;</h2>
+<p><strong>&#x7EBF;&#x7A0B;</strong> &#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x8DEF;&#x5F84;&#x3002;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x90FD;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x72EC;&#x7279;&#x7684;&#x63A7;&#x5236;&#x6D41;&#x3002;&#x5982;&#x679C;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6D89;&#x53CA;&#x5230;&#x590D;&#x6742;&#x7684;&#x548C;&#x8017;&#x65F6;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x90A3;&#x4E48;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x8DEF;&#x5F84;&#x5F80;&#x5F80;&#x662F;&#x6709;&#x76CA;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x7279;&#x5B9A;&#x7684;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>&#x7EBF;&#x7A0B;&#x662F;<strong>&#x8F7B;&#x91CF;&#x7EA7;&#x8FDB;&#x7A0B;</strong>&#x3002;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x7EBF;&#x7A0B;&#x7684;&#x5E38;&#x89C1;&#x5B9E;&#x4F8B;&#x662F;&#x73B0;&#x4EE3;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x5E76;&#x884C;&#x7F16;&#x7A0B;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x4F7F;&#x7528;&#x7EBF;&#x7A0B;&#x8282;&#x7701;&#x4E86; CPU &#x5468;&#x671F;&#x7684;&#x6D6A;&#x8D39;&#xFF0C;&#x540C;&#x65F6;&#x63D0;&#x9AD8;&#x4E86;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6548;&#x7387;&#x3002;</p>
+<p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x7684;&#x7A0B;&#x5E8F;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x7EBF;&#x7A0B;&#x4F5C;&#x4E3A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x8FD0;&#x884C;&#x5B9E;&#x4F8B;&#x7684;&#x5355;&#x4E00;&#x7684;&#x8FC7;&#x7A0B;&#x8FD0;&#x884C;&#x7684;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x6837;&#x5B50;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x540C;&#x65F6;&#x53EA;&#x80FD;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x3002;&#x4E3A;&#x4E86;&#x540C;&#x65F6;&#x6267;&#x884C;&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x88AB;&#x5212;&#x5206;&#x4E3A;&#x66F4;&#x5C0F;&#x7684;&#x7EBF;&#x7A0B;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;&#x7EBF;&#x7A0B;&#x751F;&#x547D;&#x5468;&#x671F;">&#x4E00;&#x3001;&#x7EBF;&#x7A0B;&#x751F;&#x547D;&#x5468;&#x671F;</h3>
+<p>&#x7EBF;&#x7A0B;&#x751F;&#x547D;&#x5468;&#x671F;&#x5F00;&#x59CB;&#x4E8E; System.Threading.Thread &#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x88AB;&#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x7ED3;&#x675F;&#x4E8E;&#x7EBF;&#x7A0B;&#x88AB;&#x7EC8;&#x6B62;&#x6216;&#x5B8C;&#x6210;&#x6267;&#x884C;&#x65F6;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x5217;&#x51FA;&#x4E86;&#x7EBF;&#x7A0B;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E2D;&#x7684;&#x5404;&#x79CD;&#x72B6;&#x6001;&#xFF1A;</p>
+<ol>
+<li><p>&#x672A;&#x542F;&#x52A8;&#x72B6;&#x6001;&#xFF1A;&#x5F53;&#x7EBF;&#x7A0B;&#x5B9E;&#x4F8B;&#x88AB;&#x521B;&#x5EFA;&#x4F46; Start &#x65B9;&#x6CD5;&#x672A;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#x7684;&#x72B6;&#x51B5;&#x3002;</p>
+</li>
+<li><p>&#x5C31;&#x7EEA;&#x72B6;&#x6001;&#xFF1A;&#x5F53;&#x7EBF;&#x7A0B;&#x51C6;&#x5907;&#x597D;&#x8FD0;&#x884C;&#x5E76;&#x7B49;&#x5F85; CPU &#x5468;&#x671F;&#x65F6;&#x7684;&#x72B6;&#x51B5;&#x3002;</p>
+</li>
+<li><p>&#x4E0D;&#x53EF;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF1A;&#x4E0B;&#x9762;&#x7684;&#x51E0;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x7EBF;&#x7A0B;&#x662F;&#x4E0D;&#x53EF;&#x8FD0;&#x884C;&#x7684;&#xFF1A;</p>
+<pre><code> &#x2022; &#x5DF2;&#x7ECF;&#x8C03;&#x7528; Sleep &#x65B9;&#x6CD5;
+ &#x2022; &#x5DF2;&#x7ECF;&#x8C03;&#x7528; Wait &#x65B9;&#x6CD5;
+ &#x2022; &#x901A;&#x8FC7; I/O &#x64CD;&#x4F5C;&#x963B;&#x585E;
+</code></pre></li>
+<li><p>&#x6B7B;&#x4EA1;&#x72B6;&#x6001;&#xFF1A;&#x5F53;&#x7EBF;&#x7A0B;&#x5DF2;&#x5B8C;&#x6210;&#x6267;&#x884C;&#x6216;&#x5DF2;&#x4E2D;&#x6B62;&#x65F6;&#x7684;&#x72B6;&#x51B5;&#x3002;</p>
+</li>
+</ol>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;&#x4E3B;&#x7EBF;&#x7A0B;">&#x4E8C;&#x3001;&#x4E3B;&#x7EBF;&#x7A0B;</h3>
+<p>&#x5728; C# &#x4E2D;&#xFF0C;<strong>System.Threading.Thread</strong> &#x7C7B;&#x7528;&#x4E8E;&#x7EBF;&#x7A0B;&#x7684;&#x5DE5;&#x4F5C;&#x3002;&#x5B83;&#x5141;&#x8BB8;&#x521B;&#x5EFA;&#x5E76;&#x8BBF;&#x95EE;&#x591A;&#x7EBF;&#x7A0B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x5355;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;&#x8FDB;&#x7A0B;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x88AB;&#x6267;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x79F0;&#x4E3A;<strong>&#x4E3B;&#x7EBF;&#x7A0B;</strong>&#x3002;</p>
+<p>&#x5F53; C# &#x7A0B;&#x5E8F;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x3002;&#x4F7F;&#x7528; <strong>Thread</strong> &#x7C7B;&#x521B;&#x5EFA;&#x7684;&#x7EBF;&#x7A0B;&#x88AB;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x5B50;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Thread &#x7C7B;&#x7684; <strong>CurrentThread</strong> &#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x7EBF;&#x7A0B;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x6F14;&#x793A;&#x4E86;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x6267;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">using</span> System.Threading;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">MultithreadingApplication</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">MainThreadProgram</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                Thread th = Thread.CurrentThread;
+                th.Name = <span class="hljs-string">&quot;MainThread&quot;</span>;
+                Console.WriteLine(<span class="hljs-string">&quot;This is {0}&quot;</span>, th.Name);
+                Console.ReadKey();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    This <span class="hljs-keyword">is</span> MainThread
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E09;&#x3001;thread-&#x7C7B;&#x5E38;&#x7528;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;">&#x4E09;&#x3001;Thread &#x7C7B;&#x5E38;&#x7528;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;</h3>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; <strong>Thread</strong> &#x7C7B;&#x7684;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684; <strong>&#x5C5E;&#x6027;</strong>&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5C5E;&#x6027;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CurrentContext</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x7EBF;&#x7A0B;&#x6B63;&#x5728;&#x5176;&#x4E2D;&#x6267;&#x884C;&#x7684;&#x5F53;&#x524D;&#x4E0A;&#x4E0B;&#x6587;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">CurrentCulture</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x6216;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;&#x533A;&#x57DF;&#x6027;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">CurrentPrinciple</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x6216;&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x7684;&#x5F53;&#x524D;&#x8D1F;&#x8D23;&#x4EBA;&#xFF08;&#x5BF9;&#x57FA;&#x4E8E;&#x89D2;&#x8272;&#x7684;&#x5B89;&#x5168;&#x6027;&#x800C;&#x8A00;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">CurrentThread</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">CurrentUICulture</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x6216;&#x8BBE;&#x7F6E;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#x4F7F;&#x7528;&#x7684;&#x5F53;&#x524D;&#x533A;&#x57DF;&#x6027;&#x4EE5;&#x4FBF;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x67E5;&#x627E;&#x533A;&#x57DF;&#x6027;&#x7279;&#x5B9A;&#x7684;&#x8D44;&#x6E90;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ExecutionContext</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x4E00;&#x4E2A; ExecutionContext &#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x5305;&#x542B;&#x6709;&#x5173;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;&#x5404;&#x79CD;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x4FE1;&#x606F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">IsAlive</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x8BE5;&#x503C;&#x6307;&#x793A;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x72B6;&#x6001;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">IsBackground</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x6216;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x8BE5;&#x503C;&#x6307;&#x793A;&#x67D0;&#x4E2A;&#x7EBF;&#x7A0B;&#x662F;&#x5426;&#x4E3A;&#x540E;&#x53F0;&#x7EBF;&#x7A0B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">IsThreadPoolThread</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x8BE5;&#x503C;&#x6307;&#x793A;&#x7EBF;&#x7A0B;&#x662F;&#x5426;&#x5C5E;&#x4E8E;&#x6258;&#x7BA1;&#x7EBF;&#x7A0B;&#x6C60;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ManagedThreadId</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6258;&#x7BA1;&#x7EBF;&#x7A0B;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7B26;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Name</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x6216;&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x7684;&#x540D;&#x79F0;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Priority</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x6216;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x8BE5;&#x503C;&#x6307;&#x793A;&#x7EBF;&#x7A0B;&#x7684;&#x8C03;&#x5EA6;&#x4F18;&#x5148;&#x7EA7;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">ThreadState</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x8BE5;&#x503C;&#x5305;&#x542B;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; <strong>Thread</strong> &#x7C7B;&#x7684;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684; <strong>&#x65B9;&#x6CD5;</strong>&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5E8F;&#x53F7;</th>
+<th style="text-align:left">&#x65B9;&#x6CD5;&#x540D; &amp; &#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">public void Abort()<br>&#x5728;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x7684;&#x7EBF;&#x7A0B;&#x4E0A;&#x5F15;&#x53D1; ThreadAbortException&#xFF0C;&#x4EE5;&#x5F00;&#x59CB;&#x7EC8;&#x6B62;&#x6B64;&#x7EBF;&#x7A0B;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x901A;&#x5E38;&#x4F1A;&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">public static LocalDataStoreSlot AllocateDataSlot()<br>&#x5728;&#x6240;&#x6709;&#x7684;&#x7EBF;&#x7A0B;&#x4E0A;&#x5206;&#x914D;&#x672A;&#x547D;&#x540D;&#x7684;&#x6570;&#x636E;&#x69FD;&#x3002;&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x8BF7;&#x6539;&#x7528;&#x4EE5; ThreadStaticAttribute &#x5C5E;&#x6027;&#x6807;&#x8BB0;&#x7684;&#x5B57;&#x6BB5;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">public static LocalDataStoreSlot AllocateNamedDataSlot( string name) <br>&#x5728;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x4E0A;&#x5206;&#x914D;&#x5DF2;&#x547D;&#x540D;&#x7684;&#x6570;&#x636E;&#x69FD;&#x3002;&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x8BF7;&#x6539;&#x7528;&#x4EE5; ThreadStaticAttribute &#x5C5E;&#x6027;&#x6807;&#x8BB0;&#x7684;&#x5B57;&#x6BB5;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">public static void BeginCriticalRegion()<br>&#x901A;&#x77E5;&#x4E3B;&#x673A;&#x6267;&#x884C;&#x5C06;&#x8981;&#x8FDB;&#x5165;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x533A;&#x57DF;&#xFF0C;&#x5728;&#x8BE5;&#x4EE3;&#x7801;&#x533A;&#x57DF;&#x5185;&#x7EBF;&#x7A0B;&#x4E2D;&#x6B62;&#x6216;&#x672A;&#x7ECF;&#x5904;&#x7406;&#x7684;&#x5F02;&#x5E38;&#x7684;&#x5F71;&#x54CD;&#x53EF;&#x80FD;&#x4F1A;&#x5371;&#x5BB3;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x57DF;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x4EFB;&#x52A1;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">public static void BeginThreadAffinity()<br>&#x901A;&#x77E5;&#x4E3B;&#x673A;&#x6258;&#x7BA1;&#x4EE3;&#x7801;&#x5C06;&#x8981;&#x6267;&#x884C;&#x4F9D;&#x8D56;&#x4E8E;&#x5F53;&#x524D;&#x7269;&#x7406;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7EBF;&#x7A0B;&#x7684;&#x6807;&#x8BC6;&#x7684;&#x6307;&#x4EE4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">public static void EndCriticalRegion()<br>&#x901A;&#x77E5;&#x4E3B;&#x673A;&#x6267;&#x884C;&#x5C06;&#x8981;&#x8FDB;&#x5165;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x533A;&#x57DF;&#xFF0C;&#x5728;&#x8BE5;&#x4EE3;&#x7801;&#x533A;&#x57DF;&#x5185;&#x7EBF;&#x7A0B;&#x4E2D;&#x6B62;&#x6216;&#x672A;&#x7ECF;&#x5904;&#x7406;&#x7684;&#x5F02;&#x5E38;&#x4EC5;&#x5F71;&#x54CD;&#x5F53;&#x524D;&#x4EFB;&#x52A1;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">public static void EndThreadAffinity()<br>&#x901A;&#x77E5;&#x4E3B;&#x673A;&#x6258;&#x7BA1;&#x4EE3;&#x7801;&#x5DF2;&#x6267;&#x884C;&#x5B8C;&#x4F9D;&#x8D56;&#x4E8E;&#x5F53;&#x524D;&#x7269;&#x7406;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7EBF;&#x7A0B;&#x7684;&#x6807;&#x8BC6;&#x7684;&#x6307;&#x4EE4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">public static void FreeNamedDataSlot(string name)<br>&#x4E3A;&#x8FDB;&#x7A0B;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x6D88;&#x9664;&#x540D;&#x79F0;&#x4E0E;&#x69FD;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x8054;&#x3002;&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x8BF7;&#x6539;&#x7528;&#x4EE5; ThreadStaticAttribute &#x5C5E;&#x6027;&#x6807;&#x8BB0;&#x7684;&#x5B57;&#x6BB5;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">public static Object GetData( LocalDataStoreSlot slot ) <br>&#x5728;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;&#x5F53;&#x524D;&#x57DF;&#x4E2D;&#x4ECE;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x4E0A;&#x6307;&#x5B9A;&#x7684;&#x69FD;&#x4E2D;&#x68C0;&#x7D22;&#x503C;&#x3002;&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x8BF7;&#x6539;&#x7528;&#x4EE5; ThreadStaticAttribute &#x5C5E;&#x6027;&#x6807;&#x8BB0;&#x7684;&#x5B57;&#x6BB5;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:left">public static AppDomain GetDomain()<br>&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6B63;&#x5728;&#x5176;&#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x5F53;&#x524D;&#x57DF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">11</td>
+<td style="text-align:left">public static AppDomain GetDomainID()<br>&#x8FD4;&#x56DE;&#x552F;&#x4E00;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x57DF;&#x6807;&#x8BC6;&#x7B26;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">12</td>
+<td style="text-align:left">public static LocalDataStoreSlot GetNamedDataSlot( string name ) <br>&#x67E5;&#x627E;&#x5DF2;&#x547D;&#x540D;&#x7684;&#x6570;&#x636E;&#x69FD;&#x3002;&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x8BF7;&#x6539;&#x7528;&#x4EE5; ThreadStaticAttribute &#x5C5E;&#x6027;&#x6807;&#x8BB0;&#x7684;&#x5B57;&#x6BB5;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">13</td>
+<td style="text-align:left">public void Interrupt()<br>&#x4E2D;&#x65AD;&#x5904;&#x4E8E; WaitSleepJoin &#x7EBF;&#x7A0B;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">14</td>
+<td style="text-align:left">public void Join()<br>&#x5728;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x6807;&#x51C6;&#x7684; COM &#x548C; SendMessage &#x6D88;&#x606F;&#x6CF5;&#x5904;&#x7406;&#x671F;&#x95F4;&#xFF0C;&#x963B;&#x585E;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#xFF0C;&#x76F4;&#x5230;&#x67D0;&#x4E2A;&#x7EBF;&#x7A0B;&#x7EC8;&#x6B62;&#x4E3A;&#x6B62;&#x3002;&#x6B64;&#x65B9;&#x6CD5;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x91CD;&#x8F7D;&#x5F62;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">15</td>
+<td style="text-align:left">public static void MemoryBarrier()<br>&#x6309;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x540C;&#x6B65;&#x5185;&#x5B58;&#x5B58;&#x53D6;&#xFF1A;&#x6267;&#x884C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;&#x5904;&#x7406;&#x5668;&#x5728;&#x5BF9;&#x6307;&#x4EE4;&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x65F6;&#xFF0C;&#x4E0D;&#x80FD;&#x91C7;&#x7528;&#x5148;&#x6267;&#x884C; MemoryBarrier &#x8C03;&#x7528;&#x4E4B;&#x540E;&#x7684;&#x5185;&#x5B58;&#x5B58;&#x53D6;&#xFF0C;&#x518D;&#x6267;&#x884C; MemoryBarrier &#x8C03;&#x7528;&#x4E4B;&#x524D;&#x7684;&#x5185;&#x5B58;&#x5B58;&#x53D6;&#x7684;&#x65B9;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">16</td>
+<td style="text-align:left">public static void ResetAbort()<br>&#x53D6;&#x6D88;&#x4E3A;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x8BF7;&#x6C42;&#x7684; Abort&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">17</td>
+<td style="text-align:left">public static void SetData( LocalDataStoreSlot slot, Object data ) <br>&#x5728;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x4E0A;&#x4E3A;&#x6B64;&#x7EBF;&#x7A0B;&#x7684;&#x5F53;&#x524D;&#x57DF;&#x5728;&#x6307;&#x5B9A;&#x69FD;&#x4E2D;&#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x3002;&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x8BF7;&#x6539;&#x7528;&#x4EE5; ThreadStaticAttribute &#x5C5E;&#x6027;&#x6807;&#x8BB0;&#x7684;&#x5B57;&#x6BB5;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">18</td>
+<td style="text-align:left">public void Start()<br>&#x5F00;&#x59CB;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">19</td>
+<td style="text-align:left">public static void Sleep( int millisecondsTimeout ) <br>&#x8BA9;&#x7EBF;&#x7A0B;&#x6682;&#x505C;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">20</td>
+<td style="text-align:left">public static void SpinWait( int iterations ) <br>&#x5BFC;&#x81F4;&#x7EBF;&#x7A0B;&#x7B49;&#x5F85;&#x7531; iterations &#x53C2;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x65F6;&#x95F4;&#x91CF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">21</td>
+<td style="text-align:left">public static byte VolatileRead( ref byte address )<br>public static double VolatileRead( ref double address )<br>public static int VolatileRead( ref int address )<br>public static Object VolatileRead( ref Object address ) <br>&#x8BFB;&#x53D6;&#x5B57;&#x6BB5;&#x503C;&#x3002;&#x65E0;&#x8BBA;&#x5904;&#x7406;&#x5668;&#x7684;&#x6570;&#x76EE;&#x6216;&#x5904;&#x7406;&#x5668;&#x7F13;&#x5B58;&#x7684;&#x72B6;&#x6001;&#x5982;&#x4F55;&#xFF0C;&#x8BE5;&#x503C;&#x90FD;&#x662F;&#x7531;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x4EFB;&#x4F55;&#x5904;&#x7406;&#x5668;&#x5199;&#x5165;&#x7684;&#x6700;&#x65B0;&#x503C;&#x3002;&#x6B64;&#x65B9;&#x6CD5;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x91CD;&#x8F7D;&#x5F62;&#x5F0F;&#x3002;&#x8FD9;&#x91CC;&#x53EA;&#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x4E9B;&#x5F62;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">22</td>
+<td style="text-align:left">public static void VolatileWrite( ref byte address, byte value )<br>public static void VolatileWrite( ref double address, double value )<br>public static void VolatileWrite( ref int address, int value )<br>public static void VolatileWrite( ref Object address, Object value ) <br>&#x7ACB;&#x5373;&#x5411;&#x5B57;&#x6BB5;&#x5199;&#x5165;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x4EE5;&#x4F7F;&#x8BE5;&#x503C;&#x5BF9;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5904;&#x7406;&#x5668;&#x90FD;&#x53EF;&#x89C1;&#x3002;&#x6B64;&#x65B9;&#x6CD5;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x91CD;&#x8F7D;&#x5F62;&#x5F0F;&#x3002;&#x8FD9;&#x91CC;&#x53EA;&#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x4E9B;&#x5F62;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">23</td>
+<td style="text-align:left">public static bool Yield()<br>&#x5BFC;&#x81F4;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x51C6;&#x5907;&#x597D;&#x5728;&#x5F53;&#x524D;&#x5904;&#x7406;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x9009;&#x62E9;&#x8981;&#x6267;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h3 id="&#x56DB;&#x3001;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;">&#x56DB;&#x3001;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;</h3>
+<p>&#x7EBF;&#x7A0B;&#x662F;&#x901A;&#x8FC7;&#x6269;&#x5C55; Thread &#x7C7B;&#x521B;&#x5EFA;&#x7684;&#x3002;&#x6269;&#x5C55;&#x7684; Thread &#x7C7B;&#x8C03;&#x7528; <strong>Start()</strong> &#x65B9;&#x6CD5;&#x6765;&#x5F00;&#x59CB;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x6F14;&#x793A;&#x4E86;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">using</span> System.Threading;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">MultithreadingApplication</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">ThreadCreationProgram</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">CallToChildThread</span>(<span class="hljs-params"></span>)
+            </span>{
+                Console.WriteLine(<span class="hljs-string">&quot;Child thread starts&quot;</span>);
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                ThreadStart childref = <span class="hljs-keyword">new</span> ThreadStart(CallToChildThread);
+                Console.WriteLine(<span class="hljs-string">&quot;In Main: Creating the Child thread&quot;</span>);
+                Thread childThread = <span class="hljs-keyword">new</span> Thread(childref);
+                childThread.Start();
+                Console.ReadKey();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    In Main: Creating the Child thread
+    Child thread starts
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E94;&#x3001;&#x7BA1;&#x7406;&#x7EBF;&#x7A0B;">&#x4E94;&#x3001;&#x7BA1;&#x7406;&#x7EBF;&#x7A0B;</h3>
+<p>Thread &#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x5404;&#x79CD;&#x7BA1;&#x7406;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86; <strong>sleep()</strong> &#x65B9;&#x6CD5;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x6682;&#x505C;&#x7EBF;&#x7A0B;&#x3002;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">using</span> System.Threading;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">MultithreadingApplication</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">ThreadCreationProgram</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">CallToChildThread</span>(<span class="hljs-params"></span>)
+            </span>{
+                Console.WriteLine(<span class="hljs-string">&quot;Child thread starts&quot;</span>);
+                <span class="hljs-comment">// &#x7EBF;&#x7A0B;&#x6682;&#x505C; 5000 &#x6BEB;&#x79D2;</span>
+                <span class="hljs-keyword">int</span> sleepfor = <span class="hljs-number">5000</span>; 
+                Console.WriteLine(<span class="hljs-string">&quot;Child Thread Paused for {0} seconds&quot;</span>, 
+                                  sleepfor / <span class="hljs-number">1000</span>);
+                Thread.Sleep(sleepfor);
+                Console.WriteLine(<span class="hljs-string">&quot;Child thread resumes&quot;</span>);
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                ThreadStart childref = <span class="hljs-keyword">new</span> ThreadStart(CallToChildThread);
+                Console.WriteLine(<span class="hljs-string">&quot;In Main: Creating the Child thread&quot;</span>);
+                Thread childThread = <span class="hljs-keyword">new</span> Thread(childref);
+                childThread.Start();
+                Console.ReadKey();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    In Main: Creating the Child thread
+    Child thread starts
+    Child Thread Paused <span class="hljs-keyword">for</span> <span class="hljs-number">5</span> seconds
+    Child thread resumes
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x516D;&#x3001;&#x9500;&#x6BC1;&#x7EBF;&#x7A0B;">&#x516D;&#x3001;&#x9500;&#x6BC1;&#x7EBF;&#x7A0B;</h3>
+<p><strong>Abort()</strong> &#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x9500;&#x6BC1;&#x7EBF;&#x7A0B;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x629B;&#x51FA; <strong>threadabortexception</strong> &#x5728;&#x8FD0;&#x884C;&#x65F6;&#x4E2D;&#x6B62;&#x7EBF;&#x7A0B;&#x3002;&#x8FD9;&#x4E2A;&#x5F02;&#x5E38;&#x4E0D;&#x80FD;&#x88AB;&#x6355;&#x83B7;&#xFF0C;&#x5982;&#x679C;&#x6709; finally &#x5757;&#xFF0C;&#x63A7;&#x5236;&#x4F1A;&#x88AB;&#x9001;&#x81F3; finally &#x5757;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x8BF4;&#x660E;&#x4E86;&#x8FD9;&#x70B9;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">using</span> System.Threading;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">MultithreadingApplication</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">ThreadCreationProgram</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">CallToChildThread</span>(<span class="hljs-params"></span>)
+            </span>{
+                <span class="hljs-keyword">try</span>
+                {
+
+                    Console.WriteLine(<span class="hljs-string">&quot;Child thread starts&quot;</span>);
+                    <span class="hljs-comment">// &#x8BA1;&#x6570;&#x5230; 10</span>
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> counter = <span class="hljs-number">0</span>; counter &lt;= <span class="hljs-number">10</span>; counter++)
+                    {
+                        Thread.Sleep(<span class="hljs-number">500</span>);
+                        Console.WriteLine(counter);
+                    }
+                    Console.WriteLine(<span class="hljs-string">&quot;Child Thread Completed&quot;</span>);
+
+                }
+                <span class="hljs-keyword">catch</span> (ThreadAbortException e)
+                {
+                    Console.WriteLine(<span class="hljs-string">&quot;Thread Abort Exception&quot;</span>);
+                }
+                <span class="hljs-keyword">finally</span>
+                {
+                    Console.WriteLine(<span class="hljs-string">&quot;Couldn&apos;t catch the Thread Exception&quot;</span>);
+                }
+
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                ThreadStart childref = <span class="hljs-keyword">new</span> ThreadStart(CallToChildThread);
+                Console.WriteLine(<span class="hljs-string">&quot;In Main: Creating the Child thread&quot;</span>);
+                Thread childThread = <span class="hljs-keyword">new</span> Thread(childref);
+                childThread.Start();
+                <span class="hljs-comment">// &#x505C;&#x6B62;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;</span>
+                Thread.Sleep(<span class="hljs-number">2000</span>);
+                <span class="hljs-comment">// &#x73B0;&#x5728;&#x4E2D;&#x6B62;&#x5B50;&#x7EBF;&#x7A0B;</span>
+                Console.WriteLine(<span class="hljs-string">&quot;In Main: Aborting the Child thread&quot;</span>);
+                childThread.Abort();
+                Console.ReadKey();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    In Main: Creating the Child thread
+    Child thread starts
+    0
+    1
+    2
+    In Main: Aborting the Child thread
+    Thread Abort Exception
+    Couldn&apos;t catch the Thread Exception
+</code></pre>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -691,10 +1056,14 @@
 
             
                 
-                <a href="2_12 CSharp 不安全代码.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.12 C# 不安全代码">
+                <a href="2_12 CSharp 不安全代码.html" class="navigation navigation-prev " aria-label="Previous page: 2.12 C# 不安全代码">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="2_14 CSharp LINQ.html" class="navigation navigation-next " aria-label="Next page: 2.14 C# LINQ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -703,7 +1072,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.13 C# 多线程","level":"1.3.13","depth":2,"previous":{"title":"2.12 C# 不安全代码","level":"1.3.12","depth":2,"path":"二、CSharp 高级教程/2_12 CSharp 不安全代码.md","ref":"二、CSharp 高级教程/2_12 CSharp 不安全代码.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_13 CSharp 多线程.md","mtime":"2017-11-04T16:56:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.13 C# 多线程","level":"1.3.13","depth":2,"next":{"title":"2.14 C# LINQ","level":"1.3.14","depth":2,"path":"二、CSharp 高级教程/2_14 CSharp LINQ.md","ref":"二、CSharp 高级教程/2_14 CSharp LINQ.md","articles":[]},"previous":{"title":"2.12 C# 不安全代码","level":"1.3.12","depth":2,"path":"二、CSharp 高级教程/2_12 CSharp 不安全代码.md","ref":"二、CSharp 高级教程/2_12 CSharp 不安全代码.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_13 CSharp 多线程.md","mtime":"2017-11-05T14:40:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1_7 CSharp 访问修饰符.md" />
+    <link rel="next" href="1_7 CSharp 访问修饰符.html" />
     
     
     <link rel="prev" href="1_5 CSharp 分支语句.html" />
@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                <a href="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,462 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x5FAA;&#x73AF;&#x8BED;&#x53E5;">C# &#x5FAA;&#x73AF;&#x8BED;&#x53E5;</h2>
+<p>&#x6709;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x591A;&#x6B21;&#x6267;&#x884C;&#x540C;&#x4E00;&#x5757;&#x4EE3;&#x7801;&#x3002;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BED;&#x53E5;&#x662F;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x7684;&#xFF1A;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x5148;&#x6267;&#x884C;&#xFF0C;&#x63A5;&#x7740;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x8BED;&#x53E5;&#xFF0C;&#x4F9D;&#x6B64;&#x7C7B;&#x63A8;&#x3002;</p>
+<p>&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x63D0;&#x4F9B;&#x4E86;&#x5141;&#x8BB8;&#x66F4;&#x4E3A;&#x590D;&#x6742;&#x7684;&#x6267;&#x884C;&#x8DEF;&#x5F84;&#x7684;&#x591A;&#x79CD;&#x63A7;&#x5236;&#x7ED3;&#x6784;&#x3002;</p>
+<p>&#x5FAA;&#x73AF;&#x8BED;&#x53E5;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x591A;&#x6B21;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x6216;&#x8BED;&#x53E5;&#x7EC4;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x5927;&#x591A;&#x6570;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E2D;&#x5FAA;&#x73AF;&#x8BED;&#x53E5;&#x7684;&#x4E00;&#x822C;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<p><img src="../assets/&#x5C4F;&#x5E55;&#x5FEB;&#x7167; 2017-11-05 &#x4E0B;&#x5348;3.02.24.png" alt=""></p>
+<p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;while-&#x5FAA;&#x73AF;">&#x4E00;&#x3001;while &#x5FAA;&#x73AF;</h3>
+<p>&#x53EA;&#x8981;&#x7ED9;&#x5B9A;&#x7684;&#x6761;&#x4EF6;&#x4E3A;&#x771F;&#xFF0C;C# &#x4E2D;&#x7684; <code>while</code> &#x5FAA;&#x73AF;&#x8BED;&#x53E5;&#x4F1A;&#x91CD;&#x590D;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x8BED;&#x53E5;&#x3002;</p>
+<p><strong>C# &#x4E2D; while &#x5FAA;&#x73AF;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">while</span>(condition)
+   {
+      statement(s);
+   }
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;<code>statement(s)</code> &#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x8BED;&#x53E5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x51E0;&#x4E2A;&#x8BED;&#x53E5;&#x7EC4;&#x6210;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x3002;<code>condition</code> &#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5F53;&#x4E3A;&#x4EFB;&#x610F;&#x975E;&#x96F6;&#x503C;&#x65F6;&#x90FD;&#x4E3A;&#x771F;&#x3002;&#x5F53;&#x6761;&#x4EF6;&#x4E3A;&#x771F;&#x65F6;&#x6267;&#x884C;&#x5FAA;&#x73AF;&#x3002;</p>
+<p>&#x5F53;&#x6761;&#x4EF6;&#x4E3A;&#x5047;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x6D41;&#x5C06;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x7D27;&#x63A5;&#x7740;&#x5FAA;&#x73AF;&#x7684;&#x4E0B;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;<code>while</code> &#x5FAA;&#x73AF;&#x7684;&#x5173;&#x952E;&#x70B9;&#x662F;&#x5FAA;&#x73AF;&#x53EF;&#x80FD;&#x4E00;&#x6B21;&#x90FD;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x3002;&#x5F53;&#x6761;&#x4EF6;&#x88AB;&#x6D4B;&#x8BD5;&#x4E14;&#x7ED3;&#x679C;&#x4E3A;&#x5047;&#x65F6;&#xFF0C;&#x4F1A;&#x8DF3;&#x8FC7;&#x5FAA;&#x73AF;&#x4E3B;&#x4F53;&#xFF0C;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x7D27;&#x63A5;&#x7740; <code>while</code> &#x5FAA;&#x73AF;&#x7684;&#x4E0B;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#x3002;</p>
+<p>&#x2003;</p>
+<p><strong>&#x5B9E;&#x4F8B;</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">Loops</span>
+    {
+
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9A;&#x4E49; */</span>
+                <span class="hljs-keyword">int</span> a = <span class="hljs-number">10</span>;
+
+                <span class="hljs-comment">/* while &#x5FAA;&#x73AF;&#x6267;&#x884C; */</span>
+                <span class="hljs-keyword">while</span> (a &lt; <span class="hljs-number">20</span>)
+                {
+                    Console.WriteLine(<span class="hljs-string">&quot;a &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, a);
+                    a++;
+                }
+                Console.ReadLine();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">10</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">11</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">12</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">13</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">14</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">15</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">16</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">17</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">18</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">19</span>
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;forforeach-&#x5FAA;&#x73AF;">&#x4E8C;&#x3001;for/foreach &#x5FAA;&#x73AF;</h3>
+<p>&#x4E00;&#x4E2A; <code>for</code> &#x5FAA;&#x73AF;&#x662F;&#x4E00;&#x4E2A;&#x5141;&#x8BB8;&#x60A8;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x7279;&#x5B9A;&#x6B21;&#x6570;&#x7684;&#x5FAA;&#x73AF;&#x7684;&#x91CD;&#x590D;&#x63A7;&#x5236;&#x7ED3;&#x6784;&#x3002;</p>
+<p>&#x2003;</p>
+<p><strong>C# &#x4E2D; for &#x5FAA;&#x73AF;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">for</span> ( init; condition; increment )
+{
+   statement(s);
+}
+</code></pre>
+<p><strong>&#x4E0B;&#x9762;&#x662F; for &#x5FAA;&#x73AF;&#x7684;&#x63A7;&#x5236;&#x6D41;&#xFF1A;</strong></p>
+<ol>
+<li><p>init &#x4F1A;&#x9996;&#x5148;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x4E14;&#x53EA;&#x4F1A;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;&#x8FD9;&#x4E00;&#x6B65;&#x5141;&#x8BB8;&#x60A8;&#x58F0;&#x660E;&#x5E76;&#x521D;&#x59CB;&#x5316;&#x4EFB;&#x4F55;&#x5FAA;&#x73AF;&#x63A7;&#x5236;&#x53D8;&#x91CF;&#x3002;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x5728;&#x8FD9;&#x91CC;&#x5199;&#x4EFB;&#x4F55;&#x8BED;&#x53E5;&#xFF0C;&#x53EA;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x5206;&#x53F7;&#x51FA;&#x73B0;&#x5373;&#x53EF;&#x3002;</p>
+</li>
+<li><p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x4F1A;&#x5224;&#x65AD; condition&#x3002;&#x5982;&#x679C;&#x4E3A;&#x771F;&#xFF0C;&#x5219;&#x6267;&#x884C;&#x5FAA;&#x73AF;&#x4E3B;&#x4F53;&#x3002;&#x5982;&#x679C;&#x4E3A;&#x5047;&#xFF0C;&#x5219;&#x4E0D;&#x6267;&#x884C;&#x5FAA;&#x73AF;&#x4E3B;&#x4F53;&#xFF0C;&#x4E14;&#x63A7;&#x5236;&#x6D41;&#x4F1A;&#x8DF3;&#x8F6C;&#x5230;&#x7D27;&#x63A5;&#x7740; for &#x5FAA;&#x73AF;&#x7684;&#x4E0B;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x6267;&#x884C;&#x5B8C; for &#x5FAA;&#x73AF;&#x4E3B;&#x4F53;&#x540E;&#xFF0C;&#x63A7;&#x5236;&#x6D41;&#x4F1A;&#x8DF3;&#x56DE;&#x4E0A;&#x9762;&#x7684; increment &#x8BED;&#x53E5;&#x3002;&#x8BE5;&#x8BED;&#x53E5;&#x5141;&#x8BB8;&#x60A8;&#x66F4;&#x65B0;&#x5FAA;&#x73AF;&#x63A7;&#x5236;&#x53D8;&#x91CF;&#x3002;&#x8BE5;&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x7559;&#x7A7A;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x6761;&#x4EF6;&#x540E;&#x6709;&#x4E00;&#x4E2A;&#x5206;&#x53F7;&#x51FA;&#x73B0;&#x5373;&#x53EF;&#x3002;</p>
+</li>
+<li><p>&#x6761;&#x4EF6;&#x518D;&#x6B21;&#x88AB;&#x5224;&#x65AD;&#x3002;&#x5982;&#x679C;&#x4E3A;&#x771F;&#xFF0C;&#x5219;&#x6267;&#x884C;&#x5FAA;&#x73AF;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4F1A;&#x4E0D;&#x65AD;&#x91CD;&#x590D;&#xFF08;&#x5FAA;&#x73AF;&#x4E3B;&#x4F53;&#xFF0C;&#x7136;&#x540E;&#x589E;&#x52A0;&#x6B65;&#x503C;&#xFF0C;&#x518D;&#x7136;&#x540E;&#x91CD;&#x65B0;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#xFF09;&#x3002;&#x5728;&#x6761;&#x4EF6;&#x53D8;&#x4E3A;&#x5047;&#x65F6;&#xFF0C;for &#x5FAA;&#x73AF;&#x7EC8;&#x6B62;&#x3002;</p>
+</li>
+</ol>
+<p><img src="../assets/&#x5C4F;&#x5E55;&#x5FEB;&#x7167; 2017-11-05 &#x4E0B;&#x5348;3.21.15.png" alt=""></p>
+<p>&#x2003;</p>
+<p><strong>&#x5B9E;&#x4F8B;</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">Loops</span>
+    {
+
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                <span class="hljs-comment">/* for &#x5FAA;&#x73AF;&#x6267;&#x884C; */</span>
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> a = <span class="hljs-number">10</span>; a &lt; <span class="hljs-number">20</span>; a = a + <span class="hljs-number">1</span>)
+                {
+                    Console.WriteLine(<span class="hljs-string">&quot;a &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, a);
+                }
+                Console.ReadLine();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">10</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">11</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">12</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">13</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">14</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">15</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">16</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">17</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">18</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">19</span>
+</code></pre>
+<p>&#x2003;</p>
+<h4 id="foreach">foreach</h4>
+<p>C# &#x4E5F;&#x652F;&#x6301; <code>foreach</code> &#x5FAA;&#x73AF;&#xFF0C;&#x4F7F;&#x7528;<code>foreach</code>&#x53EF;&#x4EE5;&#x8FED;&#x4EE3;&#x6570;&#x7EC4;&#x6216;&#x8005;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x5BF9;&#x8C61;&#x3002;</p>
+<p><strong>&#x4EE5;&#x4E0B;&#x5B9E;&#x4F8B;&#x6709;&#x4E09;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;</strong></p>
+<ol>
+<li><p>&#x901A;&#x8FC7; <code>foreach</code> &#x5FAA;&#x73AF;&#x8F93;&#x51FA;&#x6574;&#x578B;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+</li>
+<li><p>&#x901A;&#x8FC7; <code>for</code> &#x5FAA;&#x73AF;&#x8F93;&#x51FA;&#x6574;&#x578B;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+</li>
+<li><p><code>foreach</code> &#x5FAA;&#x73AF;&#x8BBE;&#x7F6E;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x7684;&#x8BA1;&#x7B97;&#x5668;&#x3002;</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">class</span> <span class="hljs-title">ForEachTest</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+        </span>{
+            <span class="hljs-keyword">int</span>[] fibarray = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] { <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">13</span> };
+            <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">int</span> element <span class="hljs-keyword">in</span> fibarray)
+            {
+                System.Console.WriteLine(element);
+            }
+            System.Console.WriteLine();
+
+
+            <span class="hljs-comment">// &#x7C7B;&#x4F3C; foreach &#x5FAA;&#x73AF;</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; fibarray.Length; i++)
+            {
+                System.Console.WriteLine(fibarray[i]);
+            }
+            System.Console.WriteLine();
+
+
+            <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x96C6;&#x5408;&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x8BA1;&#x7B97;&#x5668;</span>
+            <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">int</span> element <span class="hljs-keyword">in</span> fibarray)
+            {
+                count += <span class="hljs-number">1</span>;
+                System.Console.WriteLine(<span class="hljs-string">&quot;Element #{0}: {1}&quot;</span>, count, element);
+            }
+            System.Console.WriteLine(<span class="hljs-string">&quot;Number of elements in the array: {0}&quot;</span>, count);
+        }
+    }
+</code></pre>
+<p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-number">0</span>
+    <span class="hljs-number">1</span>
+    <span class="hljs-number">1</span>
+    <span class="hljs-number">2</span>
+    <span class="hljs-number">3</span>
+    <span class="hljs-number">5</span>
+    <span class="hljs-number">8</span>
+    <span class="hljs-number">13</span>
+
+    <span class="hljs-number">0</span>
+    <span class="hljs-number">1</span>
+    <span class="hljs-number">1</span>
+    <span class="hljs-number">2</span>
+    <span class="hljs-number">3</span>
+    <span class="hljs-number">5</span>
+    <span class="hljs-number">8</span>
+    <span class="hljs-number">13</span>
+
+    Element <span class="hljs-meta">#1: 0</span>
+    Element <span class="hljs-meta">#2: 1</span>
+    Element <span class="hljs-meta">#3: 1</span>
+    Element <span class="hljs-meta">#4: 2</span>
+    Element <span class="hljs-meta">#5: 3</span>
+    Element <span class="hljs-meta">#6: 5</span>
+    Element <span class="hljs-meta">#7: 8</span>
+    Element <span class="hljs-meta">#8: 13</span>
+    Number of elements <span class="hljs-keyword">in</span> the array: <span class="hljs-number">8</span>
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E09;&#x3001;dowhile-&#x5FAA;&#x73AF;">&#x4E09;&#x3001;do...while &#x5FAA;&#x73AF;</h3>
+<p>&#x4E0D;&#x50CF; <code>for</code> &#x548C; <code>while</code> &#x5FAA;&#x73AF;&#xFF0C;&#x5B83;&#x4EEC;&#x662F;&#x5728;&#x5FAA;&#x73AF;&#x5934;&#x90E8;&#x6D4B;&#x8BD5;&#x5FAA;&#x73AF;&#x6761;&#x4EF6;&#x3002;<code>do...while</code> &#x5FAA;&#x73AF;&#x662F;&#x5728;&#x5FAA;&#x73AF;&#x7684;&#x5C3E;&#x90E8;&#x68C0;&#x67E5;&#x5B83;&#x7684;&#x6761;&#x4EF6;&#x3002;</p>
+<p><code>do...whil</code>e &#x5FAA;&#x73AF;&#x4E0E; <code>while</code> &#x5FAA;&#x73AF;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x662F; <code>do...while</code> &#x5FAA;&#x73AF;&#x4F1A;&#x786E;&#x4FDD;&#x81F3;&#x5C11;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x5FAA;&#x73AF;&#x3002;</p>
+<p>&#x2003;</p>
+<p><strong>C# &#x4E2D; do...while &#x5FAA;&#x73AF;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">do</span>
+    {
+       statement(s);
+
+    }<span class="hljs-keyword">while</span>( condition );
+</code></pre>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;&#x51FA;&#x73B0;&#x5728;&#x5FAA;&#x73AF;&#x7684;&#x5C3E;&#x90E8;&#xFF0C;&#x6240;&#x4EE5;&#x5FAA;&#x73AF;&#x4E2D;&#x7684; <code>statement(s)</code> &#x4F1A;&#x5728;&#x6761;&#x4EF6;&#x88AB;&#x6D4B;&#x8BD5;&#x4E4B;&#x524D;&#x81F3;&#x5C11;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6761;&#x4EF6;&#x4E3A;&#x771F;&#xFF0C;&#x63A7;&#x5236;&#x6D41;&#x4F1A;&#x8DF3;&#x8F6C;&#x56DE;&#x4E0A;&#x9762;&#x7684; <code>do</code>&#xFF0C;&#x7136;&#x540E;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x5FAA;&#x73AF;&#x4E2D;&#x7684; <code>statement(s)</code>&#x3002;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4F1A;&#x4E0D;&#x65AD;&#x91CD;&#x590D;&#xFF0C;&#x76F4;&#x5230;&#x7ED9;&#x5B9A;&#x6761;&#x4EF6;&#x53D8;&#x4E3A;&#x5047;&#x4E3A;&#x6B62;&#x3002;</p>
+<p>&#x2003;</p>
+<p><strong>&#x5B9E;&#x4F8B;</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">Loops</span>
+    {
+
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9A;&#x4E49; */</span>
+                <span class="hljs-keyword">int</span> a = <span class="hljs-number">10</span>;
+
+                <span class="hljs-comment">/* do &#x5FAA;&#x73AF;&#x6267;&#x884C; */</span>
+                <span class="hljs-keyword">do</span>
+                {
+                   Console.WriteLine(<span class="hljs-string">&quot;a &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, a);
+                    a = a + <span class="hljs-number">1</span>;
+                } <span class="hljs-keyword">while</span> (a &lt; <span class="hljs-number">20</span>);
+
+                Console.ReadLine();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">10</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">11</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">12</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">13</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">14</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">15</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">16</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">17</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">18</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">19</span>
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x56DB;&#x3001;&#x5D4C;&#x5957;&#x5FAA;&#x73AF;">&#x56DB;&#x3001;&#x5D4C;&#x5957;&#x5FAA;&#x73AF;</h3>
+<p>C# &#x5141;&#x8BB8;&#x5728;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x5185;&#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#xFF0C;&#x4E0B;&#x9762;&#x6F14;&#x793A;&#x51E0;&#x4E2A;&#x5B9E;&#x4F8B;&#x6765;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x3002;</p>
+<p>&#x2003;</p>
+<p><strong>C# &#x4E2D; &#x5D4C;&#x5957; for &#x5FAA;&#x73AF; &#x8BED;&#x53E5;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">for</span> ( init; condition; increment )
+    {
+       <span class="hljs-keyword">for</span> ( init; condition; increment )
+       {
+          statement(s);
+       }
+       statement(s);
+    }
+</code></pre>
+<p>&#x2003;</p>
+<p><strong>C# &#x4E2D; &#x5D4C;&#x5957; while &#x5FAA;&#x73AF; &#x8BED;&#x53E5;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">while</span>(condition)
+    {
+       <span class="hljs-keyword">while</span>(condition)
+       {
+          statement(s);
+       }
+       statement(s);
+    }
+</code></pre>
+<p>&#x2003;</p>
+<p><strong>C# &#x4E2D; &#x5D4C;&#x5957; do...while &#x5FAA;&#x73AF; &#x8BED;&#x53E5;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">do</span>
+    {
+       statement(s);
+       <span class="hljs-keyword">do</span>
+       {
+          statement(s);
+       }<span class="hljs-keyword">while</span>( condition );
+
+    }<span class="hljs-keyword">while</span>( condition );
+</code></pre>
+<p>&#x5173;&#x4E8E;&#x5D4C;&#x5957;&#x5FAA;&#x73AF;&#x6709;&#x4E00;&#x70B9;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x5FAA;&#x73AF;&#x5185;&#x5D4C;&#x5957;&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x5FAA;&#x73AF;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x4E00;&#x4E2A; <code>for</code> &#x5FAA;&#x73AF;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#x5728;&#x4E00;&#x4E2A; <code>while</code> &#x5FAA;&#x73AF;&#x5185;&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;</p>
+<p>&#x2003;</p>
+<p><strong>&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x5D4C;&#x5957;&#x7684; for &#x5FAA;&#x73AF;&#x6765;&#x67E5;&#x627E; 2 &#x5230; 100 &#x4E2D;&#x7684;&#x8D28;&#x6570;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">Loops</span>
+    {
+
+       <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+       {
+          <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+          </span>{
+             <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9A;&#x4E49; */</span>
+             <span class="hljs-keyword">int</span> i, j;
+
+             <span class="hljs-keyword">for</span> (i = <span class="hljs-number">2</span>; i &lt; <span class="hljs-number">100</span>; i++)
+             {
+                <span class="hljs-keyword">for</span> (j = <span class="hljs-number">2</span>; j &lt;= (i / j); j++)
+                   <span class="hljs-keyword">if</span> ((i % j) == <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>; <span class="hljs-comment">// &#x5982;&#x679C;&#x627E;&#x5230;&#xFF0C;&#x5219;&#x4E0D;&#x662F;&#x8D28;&#x6570;</span>
+                <span class="hljs-keyword">if</span> (j &gt; (i / j)) 
+                   Console.WriteLine(<span class="hljs-string">&quot;{0} &#x662F;&#x8D28;&#x6570;&quot;</span>, i);
+             }
+
+             Console.ReadLine();
+          }
+       }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-number">2</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">3</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">5</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">7</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">11</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">13</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">17</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">19</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">23</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">29</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">31</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">37</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">41</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">43</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">47</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">53</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">59</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">61</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">67</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">71</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">73</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">79</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">83</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">89</span> &#x662F;&#x8D28;&#x6570;
+    <span class="hljs-number">97</span> &#x662F;&#x8D28;&#x6570;
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E94;&#x3001;&#x5FAA;&#x73AF;&#x63A7;&#x5236;&#x8BED;&#x53E5;">&#x4E94;&#x3001;&#x5FAA;&#x73AF;&#x63A7;&#x5236;&#x8BED;&#x53E5;</h3>
+<p>&#x5FAA;&#x73AF;&#x63A7;&#x5236;&#x8BED;&#x53E5;&#x66F4;&#x6539;&#x6267;&#x884C;&#x7684;&#x6B63;&#x5E38;&#x5E8F;&#x5217;&#x3002;&#x5F53;&#x6267;&#x884C;&#x79BB;&#x5F00;&#x4E00;&#x4E2A;&#x8303;&#x56F4;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x5728;&#x8BE5;&#x8303;&#x56F4;&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x81EA;&#x52A8;&#x5BF9;&#x8C61;&#x90FD;&#x4F1A;&#x88AB;&#x9500;&#x6BC1;&#x3002;</p>
+<p>C# &#x63D0;&#x4F9B;&#x4E86;&#x4E0B;&#x5217;&#x7684;&#x63A7;&#x5236;&#x8BED;&#x53E5;&#xFF1A;</p>
+<ol>
+<li><p><code>break</code>&#x8BED;&#x53E5;&#x3002;&#x7EC8;&#x6B62; <code>loop</code> &#x6216; <code>switch</code> &#x8BED;&#x53E5;&#xFF0C;&#x7A0B;&#x5E8F;&#x6D41;&#x5C06;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x7D27;&#x63A5;&#x7740; <code>loop</code> &#x6216; <code>switch</code> &#x7684;&#x4E0B;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#x3002;</p>
+</li>
+<li><p><code>continue</code>&#x8BED;&#x53E5;&#x3002;&#x5F15;&#x8D77;&#x5FAA;&#x73AF;&#x8DF3;&#x8FC7;&#x4E3B;&#x4F53;&#x7684;&#x5269;&#x4F59;&#x90E8;&#x5206;&#xFF0C;&#x7ACB;&#x5373;&#x91CD;&#x65B0;&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;&#x6761;&#x4EF6;&#x3002;</p>
+</li>
+</ol>
+<p>&#x2003;</p>
+<h4 id="51-break-&#x8BED;&#x53E5;">5.1 break &#x8BED;&#x53E5;</h4>
+<p><strong>C# &#x4E2D; break &#x8BED;&#x53E5;&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x7528;&#x6CD5;&#xFF1A;</strong></p>
+<ol>
+<li><p>&#x5F53; <code>break</code> &#x8BED;&#x53E5;&#x51FA;&#x73B0;&#x5728;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x5185;&#x65F6;&#xFF0C;&#x5FAA;&#x73AF;&#x4F1A;&#x7ACB;&#x5373;&#x7EC8;&#x6B62;&#xFF0C;&#x4E14;&#x7A0B;&#x5E8F;&#x6D41;&#x5C06;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x7D27;&#x63A5;&#x7740;&#x5FAA;&#x73AF;&#x7684;&#x4E0B;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#x3002;</p>
+</li>
+<li><p>&#x5B83;&#x53EF;&#x7528;&#x4E8E;&#x7EC8;&#x6B62; <code>switch</code> &#x8BED;&#x53E5;&#x4E2D;&#x7684;&#x4E00;&#x4E2A; <code>case</code>&#x3002;</p>
+</li>
+</ol>
+<p>&#x2003;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x5D4C;&#x5957;&#x5FAA;&#x73AF;&#xFF08;&#x5373;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x5185;&#x5D4C;&#x5957;&#x53E6;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#xFF09;&#xFF0C;break &#x8BED;&#x53E5;&#x4F1A;&#x505C;&#x6B62;&#x6267;&#x884C;&#x6700;&#x5185;&#x5C42;&#x7684;&#x5FAA;&#x73AF;&#xFF0C;&#x7136;&#x540E;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x8BE5;&#x5757;&#x4E4B;&#x540E;&#x7684;&#x4E0B;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x2003;</p>
+<p><strong>&#x5B9E;&#x4F8B;</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">Loops</span>
+    {
+
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9A;&#x4E49; */</span>
+                <span class="hljs-keyword">int</span> a = <span class="hljs-number">10</span>;
+
+                <span class="hljs-comment">/* while &#x5FAA;&#x73AF;&#x6267;&#x884C; */</span>
+                <span class="hljs-keyword">while</span> (a &lt; <span class="hljs-number">20</span>)
+                {
+                    Console.WriteLine(<span class="hljs-string">&quot;a &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, a);
+                    a++;
+                    <span class="hljs-keyword">if</span> (a &gt; <span class="hljs-number">15</span>)
+                    {
+                        <span class="hljs-comment">/* &#x4F7F;&#x7528; break &#x8BED;&#x53E5;&#x7EC8;&#x6B62; loop */</span>
+                        <span class="hljs-keyword">break</span>;
+                    }
+                }
+                Console.ReadLine();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">10</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">11</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">12</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">13</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">14</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">15</span>
+</code></pre>
+<p>&#x2003;</p>
+<h4 id="52-continue-&#x8BED;&#x53E5;">5.2 continue &#x8BED;&#x53E5;</h4>
+<p>C# &#x4E2D;&#x7684; <code>continue</code> &#x8BED;&#x53E5;&#x6709;&#x70B9;&#x50CF; <code>break</code> &#x8BED;&#x53E5;&#x3002;&#x4F46;&#x5B83;&#x4E0D;&#x662F;&#x5F3A;&#x8FEB;&#x7EC8;&#x6B62;&#xFF0C;<code>continue</code> &#x4F1A;&#x8DF3;&#x8FC7;&#x5F53;&#x524D;&#x5FAA;&#x73AF;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5F3A;&#x8FEB;&#x5F00;&#x59CB;&#x4E0B;&#x4E00;&#x6B21;&#x5FAA;&#x73AF;&#x3002;
+&#x5BF9;&#x4E8E; <code>for</code> &#x5FAA;&#x73AF;&#xFF0C;<code>continue</code> &#x8BED;&#x53E5;&#x4F1A;&#x5BFC;&#x81F4;&#x6267;&#x884C;&#x6761;&#x4EF6;&#x6D4B;&#x8BD5;&#x548C;&#x5FAA;&#x73AF;&#x589E;&#x91CF;&#x90E8;&#x5206;&#x3002;&#x5BF9;&#x4E8E; <code>while</code> &#x548C; <code>do...while</code> &#x5FAA;&#x73AF;&#xFF0C;<code>continue</code> &#x8BED;&#x53E5;&#x4F1A;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x63A7;&#x5236;&#x56DE;&#x5230;&#x6761;&#x4EF6;&#x6D4B;&#x8BD5;&#x4E0A;&#x3002;</p>
+<p>&#x2003;</p>
+<p><strong>&#x5B9E;&#x4F8B;</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">Loops</span>
+    {
+
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9A;&#x4E49; */</span>
+                <span class="hljs-keyword">int</span> a = <span class="hljs-number">10</span>;
+
+                <span class="hljs-comment">/* do &#x5FAA;&#x73AF;&#x6267;&#x884C; */</span>
+                <span class="hljs-keyword">do</span>
+                {
+                    <span class="hljs-keyword">if</span> (a == <span class="hljs-number">15</span>)
+                    {
+                        <span class="hljs-comment">/* &#x8DF3;&#x8FC7;&#x8FED;&#x4EE3; */</span>
+                        a = a + <span class="hljs-number">1</span>;
+                        <span class="hljs-keyword">continue</span>;
+                    }
+                    Console.WriteLine(<span class="hljs-string">&quot;a &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, a);
+                    a++;
+
+                } <span class="hljs-keyword">while</span> (a &lt; <span class="hljs-number">20</span>);
+
+                Console.ReadLine();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">10</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">11</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">12</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">13</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">14</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">16</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">17</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">18</span>
+    a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">19</span>
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x516D;&#x3001;&#x65E0;&#x9650;&#x5FAA;&#x73AF;">&#x516D;&#x3001;&#x65E0;&#x9650;&#x5FAA;&#x73AF;</h3>
+<p>&#x5982;&#x679C;&#x6761;&#x4EF6;&#x6C38;&#x8FDC;&#x4E0D;&#x4E3A;&#x5047;&#xFF0C;&#x5219;&#x5FAA;&#x73AF;&#x5C06;&#x53D8;&#x6210;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#x3002;<code>for</code> &#x5FAA;&#x73AF;&#x5728;&#x4F20;&#x7EDF;&#x610F;&#x4E49;&#x4E0A;&#x53EF;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#x3002;&#x7531;&#x4E8E;&#x6784;&#x6210;&#x5FAA;&#x73AF;&#x7684;&#x4E09;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x90FD;&#x4E0D;&#x662F;&#x5FC5;&#x9700;&#x7684;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5C06;&#x67D0;&#x4E9B;&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;&#x7559;&#x7A7A;&#x6765;&#x6784;&#x6210;&#x4E00;&#x4E2A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#x3002;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">Loops</span>
+    {
+
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                <span class="hljs-keyword">for</span> (; ; )
+                {
+                    Console.WriteLine(<span class="hljs-string">&quot;Hey! I am Trapped&quot;</span>);
+                }
+
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x5B83;&#x88AB;&#x5047;&#x8BBE;&#x4E3A;&#x771F;&#x3002;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x503C;&#x548C;&#x589E;&#x91CF;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7A0B;&#x5E8F;&#x5458;&#x504F;&#x5411;&#x4E8E;&#x4F7F;&#x7528; <code>for(;;)</code> &#x7ED3;&#x6784;&#x6765;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#x3002;</p>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -698,7 +1166,7 @@
                 </a>
                 
                 
-                <a href="1_7 CSharp 访问修饰符.md" class="navigation navigation-next " aria-label="Next page: 1.7 C# 访问修饰符">
+                <a href="1_7 CSharp 访问修饰符.html" class="navigation navigation-next " aria-label="Next page: 1.7 C# 访问修饰符">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -709,7 +1177,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.6 C# 循环语句","level":"1.2.6","depth":2,"next":{"title":"1.7 C# 访问修饰符","level":"1.2.7","depth":2,"path":"一、CSharp 基础教程/1_7 CSharp 访问修饰符.md","ref":"一、CSharp 基础教程/1_7 CSharp 访问修饰符.md","articles":[]},"previous":{"title":"1.5 C# 分支语句","level":"1.2.5","depth":2,"path":"一、CSharp 基础教程/1_5 CSharp 分支语句.md","ref":"一、CSharp 基础教程/1_5 CSharp 分支语句.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_6 CSharp 循环语句.md","mtime":"2017-11-04T16:39:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.6 C# 循环语句","level":"1.2.6","depth":2,"next":{"title":"1.7 C# 访问修饰符","level":"1.2.7","depth":2,"path":"一、CSharp 基础教程/1_7 CSharp 访问修饰符.md","ref":"一、CSharp 基础教程/1_7 CSharp 访问修饰符.md","articles":[]},"previous":{"title":"1.5 C# 分支语句","level":"1.2.5","depth":2,"path":"一、CSharp 基础教程/1_5 CSharp 分支语句.md","ref":"一、CSharp 基础教程/1_5 CSharp 分支语句.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_6 CSharp 循环语句.md","mtime":"2017-11-05T07:57:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

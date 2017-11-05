@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="2_14 CSharp LINQ.html">
+            
+                <a href="2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,48 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x96C6;&#x5408;">C# &#x96C6;&#x5408;</h2>
+<p>&#x96C6;&#x5408;&#xFF08;Collection&#xFF09;&#x7C7B;&#x662F;&#x4E13;&#x95E8;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x548C;&#x68C0;&#x7D22;&#x7684;&#x7C7B;&#x3002;&#x8FD9;&#x4E9B;&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x5BF9;&#x6808;&#xFF08;stack&#xFF09;&#x3001;&#x961F;&#x5217;&#xFF08;queue&#xFF09;&#x3001;&#x5217;&#x8868;&#xFF08;list&#xFF09;&#x548C;&#x54C8;&#x5E0C;&#x8868;&#xFF08;hash table&#xFF09;&#x7684;&#x652F;&#x6301;&#x3002;&#x5927;&#x591A;&#x6570;&#x96C6;&#x5408;&#x7C7B;&#x5B9E;&#x73B0;&#x4E86;&#x76F8;&#x540C;&#x7684;&#x63A5;&#x53E3;&#x3002;
+&#x96C6;&#x5408;&#xFF08;Collection&#xFF09;&#x7C7B;&#x670D;&#x52A1;&#x4E8E;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x5982;&#x4E3A;&#x5143;&#x7D20;&#x52A8;&#x6001;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF0C;&#x57FA;&#x4E8E;&#x7D22;&#x5F15;&#x8BBF;&#x95EE;&#x5217;&#x8868;&#x9879;&#x7B49;&#x7B49;&#x3002;&#x8FD9;&#x4E9B;&#x7C7B;&#x521B;&#x5EFA; Object &#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x96C6;&#x5408;&#x3002;&#x5728; C# &#x4E2D;&#xFF0C;Object &#x7C7B;&#x662F;&#x6240;&#x6709;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x57FA;&#x7C7B;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;&#x5404;&#x79CD;&#x96C6;&#x5408;&#x7C7B;&#x548C;&#x5B83;&#x4EEC;&#x7684;&#x7528;&#x6CD5;">&#x4E00;&#x3001;&#x5404;&#x79CD;&#x96C6;&#x5408;&#x7C7B;&#x548C;&#x5B83;&#x4EEC;&#x7684;&#x7528;&#x6CD5;</h3>
+<p>&#x4E0B;&#x9762;&#x662F;&#x5404;&#x79CD;&#x5E38;&#x7528;&#x7684; System.Collection &#x547D;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x7C7B;&#x3002;&#x70B9;&#x51FB;&#x4E0B;&#x9762;&#x7684;&#x94FE;&#x63A5;&#x67E5;&#x770B;&#x7EC6;&#x8282;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x7C7B;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;&#x548C;&#x7528;&#x6CD5;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x52A8;&#x6001;&#x6570;&#x7EC4;&#xFF08;ArrayList&#xFF09;</td>
+<td style="text-align:left">&#x5B83;&#x4EE3;&#x8868;&#x4E86;&#x53EF;&#x88AB;&#x5355;&#x72EC;&#x7D22;&#x5F15;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x3002;<br>&#x5B83;&#x57FA;&#x672C;&#x4E0A;&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x4E0E;&#x6570;&#x7EC4;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&#x6DFB;&#x52A0;&#x548C;&#x79FB;&#x9664;&#x9879;&#x76EE;&#xFF0C;&#x52A8;&#x6001;&#x6570;&#x7EC4;&#x4F1A;&#x81EA;&#x52A8;&#x91CD;&#x65B0;&#x8C03;&#x6574;&#x5B83;&#x7684;&#x5927;&#x5C0F;&#x3002;&#x5B83;&#x4E5F;&#x5141;&#x8BB8;&#x5728;&#x5217;&#x8868;&#x4E2D;&#x8FDB;&#x884C;&#x52A8;&#x6001;&#x5185;&#x5B58;&#x5206;&#x914D;&#x3001;&#x589E;&#x52A0;&#x3001;&#x641C;&#x7D22;&#x3001;&#x6392;&#x5E8F;&#x5404;&#x9879;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x54C8;&#x5E0C;&#x8868;&#xFF08;Hashtable&#xFF09;</td>
+<td style="text-align:left">&#x5B83;&#x4F7F;&#x7528;&#x952E;&#x6765;&#x8BBF;&#x95EE;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x3002;<br>&#x5F53;&#x60A8;&#x4F7F;&#x7528;&#x952E;&#x8BBF;&#x95EE;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x54C8;&#x5E0C;&#x8868;&#xFF0C;&#x800C;&#x4E14;&#x60A8;&#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x4E00;&#x4E2A;&#x6709;&#x7528;&#x7684;&#x952E;&#x503C;&#x3002;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x952E;/&#x503C;&#x5BF9;&#x3002;&#x952E;&#x7528;&#x4E8E;&#x8BBF;&#x95EE;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x9879;&#x76EE;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x6392;&#x5E8F;&#x5217;&#x8868;&#xFF08;SortedList&#xFF09;</td>
+<td style="text-align:left">&#x5B83;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x952E;&#x548C;&#x7D22;&#x5F15;&#x6765;&#x8BBF;&#x95EE;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x9879;&#x3002;<br>&#x6392;&#x5E8F;&#x5217;&#x8868;&#x662F;&#x6570;&#x7EC4;&#x548C;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x7EC4;&#x5408;&#x3002;&#x5B83;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x53EF;&#x4F7F;&#x7528;&#x952E;&#x6216;&#x7D22;&#x5F15;&#x8BBF;&#x95EE;&#x5404;&#x9879;&#x7684;&#x5217;&#x8868;&#x3002;&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x8BBF;&#x95EE;&#x5404;&#x9879;&#xFF0C;&#x5219;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x52A8;&#x6001;&#x6570;&#x7EC4;&#xFF08;ArrayList&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x952E;&#x8BBF;&#x95EE;&#x5404;&#x9879;&#xFF0C;&#x5219;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x8868;&#xFF08;Hashtable&#xFF09;&#x3002;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x5404;&#x9879;&#x603B;&#x662F;&#x6309;&#x952E;&#x503C;&#x6392;&#x5E8F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x5806;&#x6808;&#xFF08;Stack&#xFF09;</td>
+<td style="text-align:left">&#x5B83;&#x4EE3;&#x8868;&#x4E86;&#x4E00;&#x4E2A;&#x540E;&#x8FDB;&#x5148;&#x51FA;&#x7684;&#x5BF9;&#x8C61;&#x96C6;&#x5408;&#x3002;<br>&#x5F53;&#x60A8;&#x9700;&#x8981;&#x5BF9;&#x5404;&#x9879;&#x8FDB;&#x884C;&#x540E;&#x8FDB;&#x5148;&#x51FA;&#x7684;&#x8BBF;&#x95EE;&#x65F6;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x5806;&#x6808;&#x3002;&#x5F53;&#x60A8;&#x5728;&#x5217;&#x8868;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x9879;&#xFF0C;&#x79F0;&#x4E3A;&#x63A8;&#x5165;&#x5143;&#x7D20;&#xFF0C;&#x5F53;&#x60A8;&#x4ECE;&#x5217;&#x8868;&#x4E2D;&#x79FB;&#x9664;&#x4E00;&#x9879;&#x65F6;&#xFF0C;&#x79F0;&#x4E3A;&#x5F39;&#x51FA;&#x5143;&#x7D20;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x961F;&#x5217;&#xFF08;Queue&#xFF09;</td>
+<td style="text-align:left">&#x5B83;&#x4EE3;&#x8868;&#x4E86;&#x4E00;&#x4E2A;&#x5148;&#x8FDB;&#x5148;&#x51FA;&#x7684;&#x5BF9;&#x8C61;&#x96C6;&#x5408;&#x3002;<br>&#x5F53;&#x60A8;&#x9700;&#x8981;&#x5BF9;&#x5404;&#x9879;&#x8FDB;&#x884C;&#x5148;&#x8FDB;&#x5148;&#x51FA;&#x7684;&#x8BBF;&#x95EE;&#x65F6;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x961F;&#x5217;&#x3002;&#x5F53;&#x60A8;&#x5728;&#x5217;&#x8868;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x9879;&#xFF0C;&#x79F0;&#x4E3A;&#x5165;&#x961F;&#xFF0C;&#x5F53;&#x60A8;&#x4ECE;&#x5217;&#x8868;&#x4E2D;&#x79FB;&#x9664;&#x4E00;&#x9879;&#x65F6;&#xFF0C;&#x79F0;&#x4E3A;&#x51FA;&#x961F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x70B9;&#x9635;&#x5217;&#xFF08;BitArray&#xFF09;</td>
+<td style="text-align:left">&#x5B83;&#x4EE3;&#x8868;&#x4E86;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x503C; 1 &#x548C; 0 &#x6765;&#x8868;&#x793A;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x7EC4;&#x3002;<br>&#x5F53;&#x60A8;&#x9700;&#x8981;&#x5B58;&#x50A8;&#x4F4D;&#xFF0C;&#x4F46;&#x662F;&#x4E8B;&#x5148;&#x4E0D;&#x77E5;&#x9053;&#x4F4D;&#x6570;&#x65F6;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x70B9;&#x9635;&#x5217;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6574;&#x578B;&#x7D22;&#x5F15;&#x4ECE;&#x70B9;&#x9635;&#x5217;&#x96C6;&#x5408;&#x4E2D;&#x8BBF;&#x95EE;&#x5404;&#x9879;&#xFF0C;&#x7D22;&#x5F15;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -709,7 +763,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.6 C# 集合","level":"1.3.6","depth":2,"next":{"title":"2.7 C# 匿名方法","level":"1.3.7","depth":2,"path":"二、CSharp 高级教程/2_7 CSharp 匿名方法.md","ref":"二、CSharp 高级教程/2_7 CSharp 匿名方法.md","articles":[]},"previous":{"title":"2.5 C# 泛型","level":"1.3.5","depth":2,"path":"二、CSharp 高级教程/2_5 CSharp 泛型.md","ref":"二、CSharp 高级教程/2_5 CSharp 泛型.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_6 CSharp 集合.md","mtime":"2017-11-04T16:56:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.6 C# 集合","level":"1.3.6","depth":2,"next":{"title":"2.7 C# 匿名方法","level":"1.3.7","depth":2,"path":"二、CSharp 高级教程/2_7 CSharp 匿名方法.md","ref":"二、CSharp 高级教程/2_7 CSharp 匿名方法.md","articles":[]},"previous":{"title":"2.5 C# 泛型","level":"1.3.5","depth":2,"path":"二、CSharp 高级教程/2_5 CSharp 泛型.md","ref":"二、CSharp 高级教程/2_5 CSharp 泛型.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_6 CSharp 集合.md","mtime":"2017-11-05T13:59:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

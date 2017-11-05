@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                <a href="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,195 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x5F02;&#x5E38;&#x5904;&#x7406;">C# &#x5F02;&#x5E38;&#x5904;&#x7406;</h2>
+<p>&#x5F02;&#x5E38;&#x662F;&#x5728;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x671F;&#x95F4;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;&#x3002;C# &#x4E2D;&#x7684;&#x5F02;&#x5E38;&#x662F;&#x5BF9;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x51FA;&#x73B0;&#x7684;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x7684;&#x4E00;&#x79CD;&#x54CD;&#x5E94;&#xFF0C;&#x6BD4;&#x5982;&#x5C1D;&#x8BD5;&#x9664;&#x4EE5;&#x96F6;&#x3002;</p>
+<p>&#x5F02;&#x5E38;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x628A;&#x7A0B;&#x5E8F;&#x63A7;&#x5236;&#x6743;&#x4ECE;&#x67D0;&#x4E2A;&#x90E8;&#x5206;&#x8F6C;&#x79FB;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x90E8;&#x5206;&#x7684;&#x65B9;&#x5F0F;&#x3002;C# &#x5F02;&#x5E38;&#x5904;&#x7406;&#x65F6;&#x5EFA;&#x7ACB;&#x5728;&#x56DB;&#x4E2A;&#x5173;&#x952E;&#x8BCD;&#x4E4B;&#x4E0A;&#x7684;&#xFF1A;<strong>try</strong>&#x3001;<strong>catch</strong>&#x3001;<strong>finally</strong> &#x548C; <strong>throw</strong>&#x3002;</p>
+<ol>
+<li><p>try&#xFF1A;&#x4E00;&#x4E2A; try &#x5757;&#x6807;&#x8BC6;&#x4E86;&#x4E00;&#x4E2A;&#x5C06;&#x88AB;&#x6FC0;&#x6D3B;&#x7684;&#x7279;&#x5B9A;&#x7684;&#x5F02;&#x5E38;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x3002;&#x540E;&#x8DDF;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A; catch &#x5757;&#x3002;</p>
+</li>
+<li><p>catch&#xFF1A;&#x7A0B;&#x5E8F;&#x901A;&#x8FC7;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x6355;&#x83B7;&#x5F02;&#x5E38;&#x3002;catch &#x5173;&#x952E;&#x5B57;&#x8868;&#x793A;&#x5F02;&#x5E38;&#x7684;&#x6355;&#x83B7;&#x3002;</p>
+</li>
+<li><p>finally&#xFF1A;finally &#x5757;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x7ED9;&#x5B9A;&#x7684;&#x8BED;&#x53E5;&#xFF0C;&#x4E0D;&#x7BA1;&#x5F02;&#x5E38;&#x662F;&#x5426;&#x88AB;&#x629B;&#x51FA;&#x90FD;&#x4F1A;&#x6267;&#x884C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x5426;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#x6587;&#x4EF6;&#x90FD;&#x8981;&#x88AB;&#x5173;&#x95ED;&#x3002;</p>
+</li>
+<li><p>throw&#xFF1A;&#x5F53;&#x95EE;&#x9898;&#x51FA;&#x73B0;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x3002;&#x4F7F;&#x7528; throw &#x5173;&#x952E;&#x5B57;&#x6765;&#x5B8C;&#x6210;&#x3002;</p>
+</li>
+</ol>
+<p>&#x2003;</p>
+<h4 id="&#x8BED;&#x6CD5;">&#x8BED;&#x6CD5;</h4>
+<p>&#x5047;&#x8BBE;&#x4E00;&#x4E2A;&#x5757;&#x5C06;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#xFF0C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x4F7F;&#x7528; try &#x548C; catch &#x5173;&#x952E;&#x5B57;&#x6355;&#x83B7;&#x5F02;&#x5E38;&#x3002;try/catch &#x5757;&#x5185;&#x7684;&#x4EE3;&#x7801;&#x4E3A;&#x53D7;&#x4FDD;&#x62A4;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F7F;&#x7528; try/catch &#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">try</span>
+   {
+      <span class="hljs-comment">// &#x5F15;&#x8D77;&#x5F02;&#x5E38;&#x7684;&#x8BED;&#x53E5;</span>
+   }
+   <span class="hljs-keyword">catch</span>( ExceptionName e1 )
+   {
+      <span class="hljs-comment">// &#x9519;&#x8BEF;&#x5904;&#x7406;&#x4EE3;&#x7801;</span>
+   }
+   <span class="hljs-keyword">catch</span>( ExceptionName e2 )
+   {
+      <span class="hljs-comment">// &#x9519;&#x8BEF;&#x5904;&#x7406;&#x4EE3;&#x7801;</span>
+   }
+   <span class="hljs-keyword">catch</span>( ExceptionName eN )
+   {
+      <span class="hljs-comment">// &#x9519;&#x8BEF;&#x5904;&#x7406;&#x4EE3;&#x7801;</span>
+   }
+   <span class="hljs-keyword">finally</span>
+   {
+      <span class="hljs-comment">// &#x8981;&#x6267;&#x884C;&#x7684;&#x8BED;&#x53E5;</span>
+   }
+</code></pre>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5217;&#x51FA;&#x591A;&#x4E2A; catch &#x8BED;&#x53E5;&#x6355;&#x83B7;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x4EE5;&#x9632; try &#x5757;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x751F;&#x6210;&#x591A;&#x4E2A;&#x5F02;&#x5E38;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;c-&#x4E2D;&#x7684;&#x5F02;&#x5E38;&#x7C7B;">&#x4E00;&#x3001;C# &#x4E2D;&#x7684;&#x5F02;&#x5E38;&#x7C7B;</h3>
+<p>C# &#x5F02;&#x5E38;&#x662F;&#x4F7F;&#x7528;&#x7C7B;&#x6765;&#x8868;&#x793A;&#x7684;&#x3002;C# &#x4E2D;&#x7684;&#x5F02;&#x5E38;&#x7C7B;&#x4E3B;&#x8981;&#x662F;&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x5730;&#x6D3E;&#x751F;&#x4E8E; <strong>System.Exception</strong> &#x7C7B;&#x3002;<strong>System.ApplicationException</strong> &#x548C; <strong>System.SystemException</strong> &#x7C7B;&#x662F;&#x6D3E;&#x751F;&#x4E8E; System.Exception &#x7C7B;&#x7684;&#x5F02;&#x5E38;&#x7C7B;&#x3002;</p>
+<p><strong>System.ApplicationException</strong> &#x7C7B;&#x652F;&#x6301;&#x7531;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x751F;&#x6210;&#x7684;&#x5F02;&#x5E38;&#x3002;&#x6240;&#x4EE5;&#x7A0B;&#x5E8F;&#x5458;&#x5B9A;&#x4E49;&#x7684;&#x5F02;&#x5E38;&#x90FD;&#x5E94;&#x6D3E;&#x751F;&#x81EA;&#x8BE5;&#x7C7B;&#x3002;</p>
+<p><strong>System.SystemException</strong> &#x7C7B;&#x662F;&#x6240;&#x6709;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#x7684;&#x57FA;&#x7C7B;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x4E00;&#x4E9B;&#x6D3E;&#x751F;&#x81EA; Sytem.SystemException &#x7C7B;&#x7684;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x5F02;&#x5E38;&#x7C7B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5F02;&#x5E38;&#x7C7B;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">System.IO.IOException</td>
+<td style="text-align:left">&#x5904;&#x7406; I/O &#x9519;&#x8BEF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">System.IndexOutOfRangeException</td>
+<td style="text-align:left">&#x5904;&#x7406;&#x5F53;&#x65B9;&#x6CD5;&#x6307;&#x5411;&#x8D85;&#x51FA;&#x8303;&#x56F4;&#x7684;&#x6570;&#x7EC4;&#x7D22;&#x5F15;&#x65F6;&#x751F;&#x6210;&#x7684;&#x9519;&#x8BEF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">System.ArrayTypeMismatchException</td>
+<td style="text-align:left">&#x5904;&#x7406;&#x5F53;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x4E0D;&#x5339;&#x914D;&#x65F6;&#x751F;&#x6210;&#x7684;&#x9519;&#x8BEF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">System.NullReferenceException</td>
+<td style="text-align:left">&#x5904;&#x7406;&#x5F53;&#x4F9D;&#x4ECE;&#x4E00;&#x4E2A;&#x7A7A;&#x5BF9;&#x8C61;&#x65F6;&#x751F;&#x6210;&#x7684;&#x9519;&#x8BEF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">System.DivideByZeroException</td>
+<td style="text-align:left">&#x5904;&#x7406;&#x5F53;&#x9664;&#x4EE5;&#x96F6;&#x65F6;&#x751F;&#x6210;&#x7684;&#x9519;&#x8BEF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">System.InvalidCastException</td>
+<td style="text-align:left">&#x5904;&#x7406;&#x5728;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x671F;&#x95F4;&#x751F;&#x6210;&#x7684;&#x9519;&#x8BEF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">System.OutOfMemoryException</td>
+<td style="text-align:left">&#x5904;&#x7406;&#x7A7A;&#x95F2;&#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#x751F;&#x6210;&#x7684;&#x9519;&#x8BEF;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">System.StackOverflowException</td>
+<td style="text-align:left">&#x5904;&#x7406;&#x6808;&#x6EA2;&#x51FA;&#x751F;&#x6210;&#x7684;&#x9519;&#x8BEF;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;">&#x4E8C;&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;</h3>
+<p>C# &#x4EE5; try &#x548C; catch &#x5757;&#x7684;&#x5F62;&#x5F0F;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x65B9;&#x6848;&#x3002;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5757;&#xFF0C;&#x628A;&#x6838;&#x5FC3;&#x7A0B;&#x5E8F;&#x8BED;&#x53E5;&#x4E0E;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x8BED;&#x53E5;&#x5206;&#x79BB;&#x5F00;&#x3002;</p>
+<p>&#x8FD9;&#x4E9B;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x5757;&#x662F;&#x4F7F;&#x7528; <strong>try</strong>&#x3001;<strong>catch</strong> &#x548C; <strong>finally</strong> &#x5173;&#x952E;&#x5B57;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5F53;&#x9664;&#x4EE5;&#x96F6;&#x65F6;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">ErrorHandlingApplication</span>
+   {
+       <span class="hljs-keyword">class</span> <span class="hljs-title">DivNumbers</span>
+       {
+           <span class="hljs-keyword">int</span> result;
+           DivNumbers()
+           {
+               result = <span class="hljs-number">0</span>;
+           }
+           <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">division</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> num1, <span class="hljs-keyword">int</span> num2</span>)
+           </span>{
+               <span class="hljs-keyword">try</span>
+               {
+                   result = num1 / num2;
+               }
+               <span class="hljs-keyword">catch</span> (DivideByZeroException e)
+               {
+                   Console.WriteLine(<span class="hljs-string">&quot;Exception caught: {0}&quot;</span>, e);
+               }
+               <span class="hljs-keyword">finally</span>
+               {
+                   Console.WriteLine(<span class="hljs-string">&quot;Result: {0}&quot;</span>, result);
+               }
+
+           }
+           <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+           </span>{
+               DivNumbers d = <span class="hljs-keyword">new</span> DivNumbers();
+               d.division(<span class="hljs-number">25</span>, <span class="hljs-number">0</span>);
+               Console.ReadKey();
+           }
+       }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   Exception caught: System.DivideByZeroException: Attempted to divide by zero. 
+   at ...
+   Result: <span class="hljs-number">0</span>
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E09;&#x3001;&#x521B;&#x5EFA;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;">&#x4E09;&#x3001;&#x521B;&#x5EFA;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;</h3>
+<p>&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x5F02;&#x5E38;&#x3002;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5F02;&#x5E38;&#x7C7B;&#x662F;&#x6D3E;&#x751F;&#x81EA; <strong>ApplicationException</strong> &#x7C7B;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x8FD9;&#x70B9;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">UserDefinedException</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">TestTemperature</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            Temperature temp = <span class="hljs-keyword">new</span> Temperature();
+            <span class="hljs-keyword">try</span>
+            {
+               temp.showTemp();
+            }
+            <span class="hljs-keyword">catch</span>(TempIsZeroException e)
+            {
+               Console.WriteLine(<span class="hljs-string">&quot;TempIsZeroException: {0}&quot;</span>, e.Message);
+            }
+            Console.ReadKey();
+         }
+      }
+   }
+   <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">TempIsZeroException</span>: <span class="hljs-title">ApplicationException</span>
+   {
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TempIsZeroException</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> message</span>): <span class="hljs-title">base</span>(<span class="hljs-params">message</span>)
+      </span>{
+      }
+   }
+   <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Temperature</span>
+   {
+      <span class="hljs-keyword">int</span> temperature = <span class="hljs-number">0</span>;
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showTemp</span>(<span class="hljs-params"></span>)
+      </span>{
+         <span class="hljs-keyword">if</span>(temperature == <span class="hljs-number">0</span>)
+         {
+            <span class="hljs-keyword">throw</span> (<span class="hljs-keyword">new</span> TempIsZeroException(<span class="hljs-string">&quot;Zero Temperature found&quot;</span>));
+         }
+         <span class="hljs-keyword">else</span>
+         {
+            Console.WriteLine(<span class="hljs-string">&quot;Temperature: {0}&quot;</span>, temperature);
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   TempIsZeroException: Zero Temperature found
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x56DB;&#x3001;&#x629B;&#x51FA;&#x5BF9;&#x8C61;">&#x56DB;&#x3001;&#x629B;&#x51FA;&#x5BF9;&#x8C61;</h3>
+<p>&#x5982;&#x679C;&#x5F02;&#x5E38;&#x662F;&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x6D3E;&#x751F;&#x81EA; <strong>System.Exception</strong> &#x7C7B;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x5728; catch &#x5757;&#x4E2D;&#x4F7F;&#x7528; throw &#x8BED;&#x53E5;&#x6765;&#x629B;&#x51FA;&#x5F53;&#x524D;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-csharp">   Catch(Exception e)
+   {
+      ...
+      Throw e
+   }
+</code></pre>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -709,7 +910,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.21 C# 异常处理","level":"1.2.21","depth":2,"next":{"title":"1.22 C# 预处理指令","level":"1.2.22","depth":2,"path":"一、CSharp 基础教程/1_22 CSharp 预处理指令.md","ref":"一、CSharp 基础教程/1_22 CSharp 预处理指令.md","articles":[]},"previous":{"title":"1.20 C# 命名空间","level":"1.2.20","depth":2,"path":"一、CSharp 基础教程/1_20 CSharp 命名空间.md","ref":"一、CSharp 基础教程/1_20 CSharp 命名空间.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_21 CSharp 异常处理.md","mtime":"2017-11-04T16:56:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.21 C# 异常处理","level":"1.2.21","depth":2,"next":{"title":"1.22 C# 预处理指令","level":"1.2.22","depth":2,"path":"一、CSharp 基础教程/1_22 CSharp 预处理指令.md","ref":"一、CSharp 基础教程/1_22 CSharp 预处理指令.md","articles":[]},"previous":{"title":"1.20 C# 命名空间","level":"1.2.20","depth":2,"path":"一、CSharp 基础教程/1_20 CSharp 命名空间.md","ref":"一、CSharp 基础教程/1_20 CSharp 命名空间.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_21 CSharp 异常处理.md","mtime":"2017-11-05T11:33:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>1.9 C# 常量 · GitBook</title>
+        <title>1.7 C# 访问修饰符 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1_10 CSharp 可空类型.html" />
+    <link rel="next" href="1_8 CSharp 方法.html" />
     
     
-    <link rel="prev" href="1_8 CSharp 方法.html" />
+    <link rel="prev" href="1_6 CSharp 循环语句.html" />
     
 
     </head>
@@ -194,7 +194,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.html">
+        <li class="chapter active" data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.html">
             
                 <a href="1_7 CSharp 访问修饰符.html">
             
@@ -220,7 +220,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.9" data-path="1_9 CSharp 常量.html">
+        <li class="chapter " data-level="1.2.9" data-path="1_9 CSharp 常量.html">
             
                 <a href="1_9 CSharp 常量.html">
             
@@ -664,7 +664,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >1.9 C# 常量</a>
+        <a href=".." >1.7 C# 访问修饰符</a>
     </h1>
 </div>
 
@@ -679,173 +679,179 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="c-&#x5E38;&#x91CF;">C# &#x5E38;&#x91CF;</h2>
-<p>&#x5E38;&#x91CF;&#x662F;&#x56FA;&#x5B9A;&#x503C;&#xFF0C;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x671F;&#x95F4;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x3002;&#x5E38;&#x91CF;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x6BD4;&#x5982;&#x6574;&#x6570;&#x5E38;&#x91CF;&#x3001;&#x6D6E;&#x70B9;&#x5E38;&#x91CF;&#x3001;&#x5B57;&#x7B26;&#x5E38;&#x91CF;&#x6216;&#x8005;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF0C;&#x8FD8;&#x6709;&#x679A;&#x4E3E;&#x5E38;&#x91CF;&#x3002;
-&#x5E38;&#x91CF;&#x53EF;&#x4EE5;&#x88AB;&#x5F53;&#x4F5C;&#x5E38;&#x89C4;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x53EA;&#x662F;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#x5728;&#x5B9A;&#x4E49;&#x540E;&#x4E0D;&#x80FD;&#x88AB;&#x4FEE;&#x6539;&#x3002;</p>
+                                <h2 id="c-&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;">C# &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;</h2>
+<p>&#x5C01;&#x88C5; &#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&quot;&#x628A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x9879;&#x76EE;&#x5C01;&#x95ED;&#x5728;&#x4E00;&#x4E2A;&#x7269;&#x7406;&#x7684;&#x6216;&#x8005;&#x903B;&#x8F91;&#x7684;&#x5305;&#x4E2D;&quot;&#x3002;&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x65B9;&#x6CD5;&#x8BBA;&#x4E2D;&#xFF0C;&#x5C01;&#x88C5;&#x662F;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x5BF9;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x7684;&#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x62BD;&#x8C61;&#x548C;&#x5C01;&#x88C5;&#x662F;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7684;&#x76F8;&#x5173;&#x7279;&#x6027;&#x3002;&#x62BD;&#x8C61;&#x5141;&#x8BB8;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x53EF;&#x89C6;&#x5316;&#xFF0C;&#x5C01;&#x88C5;&#x5219;&#x4F7F;&#x5F00;&#x53D1;&#x8005;&#x5B9E;&#x73B0;&#x6240;&#x9700;&#x7EA7;&#x522B;&#x7684;&#x62BD;&#x8C61;&#x3002;</p>
+<p>C# &#x5C01;&#x88C5;&#x6839;&#x636E;&#x5177;&#x4F53;&#x7684;&#x9700;&#x8981;&#xFF0C;&#x8BBE;&#x7F6E;&#x4F7F;&#x7528;&#x8005;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF0C;&#x5E76;&#x901A;&#x8FC7; &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26; &#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x4E00;&#x4E2A; &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26; &#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7C7B;&#x6210;&#x5458;&#x7684;&#x8303;&#x56F4;&#x548C;&#x53EF;&#x89C1;&#x6027;&#x3002;C# &#x652F;&#x6301;&#x7684;&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<ol>
+<li><p>Public&#xFF1A;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#xFF1B;</p>
+</li>
+<li><p>Private&#xFF1A;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x5728;&#x5BF9;&#x8C61;&#x5185;&#x90E8;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#xFF1B;</p>
+</li>
+<li><p>Protected&#xFF1A;&#x53EA;&#x6709;&#x8BE5;&#x7C7B;&#x5BF9;&#x8C61;&#x53CA;&#x5176;&#x5B50;&#x7C7B;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;</p>
+</li>
+<li><p>Internal&#xFF1A;&#x540C;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x96C6;&#x7684;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#xFF1B;</p>
+</li>
+<li><p>Protected internal&#xFF1A;&#x8BE5;&#x7A0B;&#x5E8F;&#x96C6;&#x5185;&#x7684;&#x6D3E;&#x751F;&#x7C7B;&#x8BBF;&#x95EE;&#xFF0C;&#x662F;protected&#x548C;internal&#x7684;&#x4EA4;&#x96C6;&#xFF1B;</p>
+</li>
+</ol>
 <p>&#x2003;</p>
-<h3 id="&#x4E00;&#x3001;&#x6574;&#x6570;&#x5E38;&#x91CF;">&#x4E00;&#x3001;&#x6574;&#x6570;&#x5E38;&#x91CF;</h3>
-<p>&#x6574;&#x6570;&#x5E38;&#x91CF;&#x53EF;&#x4EE5;&#x662F;&#x5341;&#x8FDB;&#x5236;&#x3001;&#x516B;&#x8FDB;&#x5236;&#x6216;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x7684;&#x5E38;&#x91CF;&#x3002;&#x524D;&#x7F00;&#x6307;&#x5B9A;&#x57FA;&#x6570;&#xFF1A;0x &#x6216; 0X &#x8868;&#x793A;&#x5341;&#x516D;&#x8FDB;&#x5236;&#xFF0C;0 &#x8868;&#x793A;&#x516B;&#x8FDB;&#x5236;&#xFF0C;&#x6CA1;&#x6709;&#x524D;&#x7F00;&#x5219;&#x8868;&#x793A;&#x5341;&#x8FDB;&#x5236;&#x3002;</p>
-<p>&#x6574;&#x6570;&#x5E38;&#x91CF;&#x4E5F;&#x53EF;&#x4EE5;&#x6709;&#x540E;&#x7F00;&#xFF0C;&#x53EF;&#x4EE5;&#x662F; U &#x548C; L &#x7684;&#x7EC4;&#x5408;&#xFF0C;&#x5176;&#x4E2D;&#xFF0C;U &#x548C; L &#x5206;&#x522B;&#x8868;&#x793A; <code>unsigned</code> &#x548C; <code>long</code>&#x3002;&#x540E;&#x7F00;&#x53EF;&#x4EE5;&#x662F;&#x5927;&#x5199;&#x6216;&#x8005;&#x5C0F;&#x5199;&#xFF0C;&#x591A;&#x4E2A;&#x540E;&#x7F00;&#x4EE5;&#x4EFB;&#x610F;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x7EC4;&#x5408;&#x3002;</p>
-<p><strong>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E9B;&#x6574;&#x6570;&#x5E38;&#x91CF;&#x7684;&#x5B9E;&#x4F8B;&#xFF1A;</strong></p>
-<pre><code class="lang-csharp"><span class="hljs-number">212</span>         <span class="hljs-comment">/* &#x5408;&#x6CD5; */</span>
-<span class="hljs-number">215</span>u        <span class="hljs-comment">/* &#x5408;&#x6CD5; */</span>
-<span class="hljs-number">0xFee</span>L      <span class="hljs-comment">/* &#x5408;&#x6CD5; */</span>
-<span class="hljs-number">078</span>         <span class="hljs-comment">/* &#x975E;&#x6CD5;&#xFF1A;8 &#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x516B;&#x8FDB;&#x5236;&#x6570;&#x5B57; */</span>
-<span class="hljs-number">032</span>UU       <span class="hljs-comment">/* &#x975E;&#x6CD5;&#xFF1A;&#x4E0D;&#x80FD;&#x91CD;&#x590D;&#x540E;&#x7F00; */</span>
-</code></pre>
-<p><strong>&#x4EE5;&#x4E0B;&#x662F;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6574;&#x6570;&#x5E38;&#x91CF;&#x7684;&#x5B9E;&#x4F8B;&#xFF1A;</strong></p>
-<pre><code class="lang-csharp">    <span class="hljs-number">85</span>         <span class="hljs-comment">/* &#x5341;&#x8FDB;&#x5236; */</span>
-    <span class="hljs-number">0213</span>       <span class="hljs-comment">/* &#x516B;&#x8FDB;&#x5236; */</span>
-    <span class="hljs-number">0x4b</span>       <span class="hljs-comment">/* &#x5341;&#x516D;&#x8FDB;&#x5236; */</span>
-    <span class="hljs-number">30</span>         <span class="hljs-comment">/* int */</span>
-    <span class="hljs-number">30</span>u        <span class="hljs-comment">/* &#x65E0;&#x7B26;&#x53F7; int */</span>
-    <span class="hljs-number">30</span>l        <span class="hljs-comment">/* long */</span>
-    <span class="hljs-number">30</span>ul       <span class="hljs-comment">/* &#x65E0;&#x7B26;&#x53F7; long */</span>
-</code></pre>
+<h3 id="&#x4E00;&#x3001;public-&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;">&#x4E00;&#x3001;Public &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;</h3>
+<p><code>Public</code> &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x7C7B;&#x5C06;&#x5176;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x6210;&#x5458;&#x51FD;&#x6570;&#x66B4;&#x9732;&#x7ED9;&#x5176;&#x4ED6;&#x7684;&#x51FD;&#x6570;&#x548C;&#x5BF9;&#x8C61;&#x3002;&#x4EFB;&#x4F55;&#x516C;&#x6709;&#x6210;&#x5458;&#x53EF;&#x4EE5;&#x88AB;&#x5916;&#x90E8;&#x7684;&#x7C7B;&#x8BBF;&#x95EE;&#x3002;</p>
 <p>&#x2003;</p>
-<h3 id="&#x4E8C;&#x3001;&#x6D6E;&#x70B9;&#x5E38;&#x91CF;">&#x4E8C;&#x3001;&#x6D6E;&#x70B9;&#x5E38;&#x91CF;</h3>
-<p>&#x4E00;&#x4E2A;&#x6D6E;&#x70B9;&#x5E38;&#x91CF;&#x662F;&#x7531;&#x6574;&#x6570;&#x90E8;&#x5206;&#x3001;&#x5C0F;&#x6570;&#x70B9;&#x3001;&#x5C0F;&#x6570;&#x90E8;&#x5206;&#x548C;&#x6307;&#x6570;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5C0F;&#x6570;&#x5F62;&#x5F0F;&#x6216;&#x8005;&#x6307;&#x6570;&#x5F62;&#x5F0F;&#x6765;&#x8868;&#x793A;&#x6D6E;&#x70B9;&#x5E38;&#x91CF;&#x3002;</p>
-<p>&#x2003;</p>
-<p><strong>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E9B;&#x6D6E;&#x70B9;&#x5E38;&#x91CF;&#x7684;&#x5B9E;&#x4F8B;&#xFF1A;</strong></p>
-<pre><code class="lang-csharp">    <span class="hljs-number">3.14159</span>       <span class="hljs-comment">/* &#x5408;&#x6CD5; */</span>
-    <span class="hljs-number">314159E-5</span>L    <span class="hljs-comment">/* &#x5408;&#x6CD5; */</span>
-    <span class="hljs-number">510</span>E          <span class="hljs-comment">/* &#x975E;&#x6CD5;&#xFF1A;&#x4E0D;&#x5B8C;&#x5168;&#x6307;&#x6570; */</span>
-    <span class="hljs-number">210</span>f          <span class="hljs-comment">/* &#x975E;&#x6CD5;&#xFF1A;&#x6CA1;&#x6709;&#x5C0F;&#x6570;&#x6216;&#x6307;&#x6570; */</span>
-    .e55          <span class="hljs-comment">/* &#x975E;&#x6CD5;&#xFF1A;&#x7F3A;&#x5C11;&#x6574;&#x6570;&#x6216;&#x5C0F;&#x6570; */</span>
-</code></pre>
-<p>&#x4F7F;&#x7528;&#x5C0F;&#x6570;&#x5F62;&#x5F0F;&#x8868;&#x793A;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x5305;&#x542B;&#x5C0F;&#x6570;&#x70B9;&#x3001;&#x6307;&#x6570;&#x6216;&#x540C;&#x65F6;&#x5305;&#x542B;&#x4E24;&#x8005;&#x3002;&#x4F7F;&#x7528;&#x6307;&#x6570;&#x5F62;&#x5F0F;&#x8868;&#x793A;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x5305;&#x542B;&#x6574;&#x6570;&#x90E8;&#x5206;&#x3001;&#x5C0F;&#x6570;&#x90E8;&#x5206;&#x6216;&#x540C;&#x65F6;&#x5305;&#x542B;&#x4E24;&#x8005;&#x3002;&#x6709;&#x7B26;&#x53F7;&#x7684;&#x6307;&#x6570;&#x662F;&#x7528; e &#x6216; E &#x8868;&#x793A;&#x7684;&#x3002;</p>
-<p>&#x2003;</p>
-<h3 id="&#x4E09;&#x3001;&#x5B57;&#x7B26;&#x5E38;&#x91CF;">&#x4E09;&#x3001;&#x5B57;&#x7B26;&#x5E38;&#x91CF;</h3>
-<p>&#x5B57;&#x7B26;&#x5E38;&#x91CF;&#x662F;&#x62EC;&#x5728;&#x5355;&#x5F15;&#x53F7;&#x91CC;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&apos;x&apos;&#xFF0C;&#x4E14;&#x53EF;&#x5B58;&#x50A8;&#x5728;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x4E2D;&#x3002;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5E38;&#x91CF;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x5B57;&#x7B26;&#xFF08;&#x4F8B;&#x5982; &apos;x&apos;&#xFF09;&#x3001;&#x4E00;&#x4E2A;&#x8F6C;&#x4E49;&#x5E8F;&#x5217;&#xFF08;&#x4F8B;&#x5982; &apos;\t&apos;&#xFF09;&#x6216;&#x8005;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x5B57;&#x7B26;&#xFF08;&#x4F8B;&#x5982; &apos;\u02C0&apos;&#xFF09;&#x3002;</p>
-<p>&#x5728; C# &#x4E2D;&#x6709;&#x4E00;&#x4E9B;&#x7279;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x5F53;&#x5B83;&#x4EEC;&#x7684;&#x524D;&#x9762;&#x5E26;&#x6709;&#x53CD;&#x659C;&#x6760;&#x65F6;&#x6709;&#x7279;&#x6B8A;&#x7684;&#x610F;&#x4E49;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x6362;&#x884C;&#x7B26;&#xFF08;\n&#xFF09;&#x6216;&#x5236;&#x8868;&#x7B26; tab&#xFF08;\t&#xFF09;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x5217;&#x51FA;&#x4E00;&#x4E9B;&#x8F6C;&#x4E49;&#x5E8F;&#x5217;&#x7801;&#xFF1A;</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">&#x8F6C;&#x4E49;&#x5E8F;&#x5217;</th>
-<th style="text-align:left">&#x542B;&#x4E49;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">\\</td>
-<td style="text-align:left">\ &#x5B57;&#x7B26;</td>
-</tr>
-<tr>
-<td style="text-align:left">\&apos;</td>
-<td style="text-align:left">&apos; &#x5B57;&#x7B26;</td>
-</tr>
-<tr>
-<td style="text-align:left">\&quot;</td>
-<td style="text-align:left">&quot; &#x5B57;&#x7B26;</td>
-</tr>
-<tr>
-<td style="text-align:left">\?</td>
-<td style="text-align:left">? &#x5B57;&#x7B26;</td>
-</tr>
-<tr>
-<td style="text-align:left">\a</td>
-<td style="text-align:left">Alert &#x6216; bell</td>
-</tr>
-<tr>
-<td style="text-align:left">\b</td>
-<td style="text-align:left">&#x9000;&#x683C;&#x952E;&#xFF08;Backspace&#xFF09;</td>
-</tr>
-<tr>
-<td style="text-align:left">\f</td>
-<td style="text-align:left">&#x6362;&#x9875;&#x7B26;&#xFF08;Form feed&#xFF09;</td>
-</tr>
-<tr>
-<td style="text-align:left">\n</td>
-<td style="text-align:left">&#x6362;&#x884C;&#x7B26;&#xFF08;Newline&#xFF09;</td>
-</tr>
-<tr>
-<td style="text-align:left">\r</td>
-<td style="text-align:left">&#x56DE;&#x8F66;</td>
-</tr>
-<tr>
-<td style="text-align:left">\t</td>
-<td style="text-align:left">&#x6C34;&#x5E73;&#x5236;&#x8868;&#x7B26; tab</td>
-</tr>
-<tr>
-<td style="text-align:left">\v</td>
-<td style="text-align:left">&#x5782;&#x76F4;&#x5236;&#x8868;&#x7B26; tab</td>
-</tr>
-<tr>
-<td style="text-align:left">\ooo</td>
-<td style="text-align:left">&#x4E00;&#x5230;&#x4E09;&#x4F4D;&#x7684;&#x516B;&#x8FDB;&#x5236;&#x6570;</td>
-</tr>
-<tr>
-<td style="text-align:left">\xhh . . .</td>
-<td style="text-align:left">&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6570;&#x5B57;&#x7684;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x6570;</td>
-</tr>
-</tbody>
-</table>
-<p>&#x2003;</p>
-<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E9B;&#x8F6C;&#x4E49;&#x5E8F;&#x5217;&#x5B57;&#x7B26;&#x7684;&#x5B9E;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-csharp">    <span class="hljs-keyword">namespace</span> <span class="hljs-title">EscapeChar</span>
-    {
-        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
-        {
-            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
-            </span>{
-                Console.WriteLine(<span class="hljs-string">&quot;Hello\tWorld\n\n&quot;</span>);
-                Console.ReadLine();
-            }
-        }
-    }
-</code></pre>
-<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
-<pre><code class="lang-csharp">    Hello   World
-</code></pre>
-<p>&#x2003;</p>
-<h3 id="&#x56DB;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;">&#x56DB;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;</h3>
-<p>&#x5B57;&#x7B26;&#x5E38;&#x91CF;&#x662F;&#x62EC;&#x5728;&#x53CC;&#x5F15;&#x53F7; <code>&quot;&quot;</code> &#x91CC;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x62EC;&#x5728; <code>@&quot;&quot;</code> &#x91CC;&#x3002;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x5305;&#x542B;&#x7684;&#x5B57;&#x7B26;&#x4E0E;&#x5B57;&#x7B26;&#x5E38;&#x91CF;&#x76F8;&#x4F3C;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#xFF1A;&#x666E;&#x901A;&#x5B57;&#x7B26;&#x3001;&#x8F6C;&#x4E49;&#x5E8F;&#x5217;&#x548C;&#x901A;&#x7528;&#x5B57;&#x7B26;</p>
-<p>&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;&#x5F88;&#x957F;&#x7684;&#x884C;&#x62C6;&#x6210;&#x591A;&#x4E2A;&#x884C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x5404;&#x4E2A;&#x90E8;&#x5206;&#x3002;</p>
-<p>&#x8FD9;&#x91CC;&#x662F;&#x4E00;&#x4E9B;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x7684;&#x5B9E;&#x4F8B;&#x3002;&#x4E0B;&#x9762;&#x6240;&#x5217;&#x7684;&#x5404;&#x79CD;&#x5F62;&#x5F0F;&#x8868;&#x793A;&#x76F8;&#x540C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
-<pre><code class="lang-csharp">    <span class="hljs-keyword">string</span> a = <span class="hljs-string">&quot;hello, world&quot;</span>;                  <span class="hljs-comment">// hello, world</span>
-    <span class="hljs-keyword">string</span> b = <span class="hljs-string">@&quot;hello, world&quot;</span>;               <span class="hljs-comment">// hello, world</span>
-    <span class="hljs-keyword">string</span> c = <span class="hljs-string">&quot;hello \t world&quot;</span>;               <span class="hljs-comment">// hello     world</span>
-    <span class="hljs-keyword">string</span> d = <span class="hljs-string">@&quot;hello \t world&quot;</span>;               <span class="hljs-comment">// hello \t world</span>
-    <span class="hljs-keyword">string</span> e = <span class="hljs-string">&quot;Joe said \&quot;Hello\&quot; to me&quot;</span>;      <span class="hljs-comment">// Joe said &quot;Hello&quot; to me</span>
-    <span class="hljs-keyword">string</span> f = <span class="hljs-string">@&quot;Joe said &quot;&quot;Hello&quot;&quot; to me&quot;</span>;   <span class="hljs-comment">// Joe said &quot;Hello&quot; to me</span>
-    <span class="hljs-keyword">string</span> g = <span class="hljs-string">&quot;\\\\server\\share\\file.txt&quot;</span>;   <span class="hljs-comment">// \\server\share\file.txt</span>
-    <span class="hljs-keyword">string</span> h = <span class="hljs-string">@&quot;\\server\share\file.txt&quot;</span>;      <span class="hljs-comment">// \\server\share\file.txt</span>
-    <span class="hljs-keyword">string</span> i = <span class="hljs-string">&quot;one\r\ntwo\r\nthree&quot;</span>;
-    <span class="hljs-keyword">string</span> j = <span class="hljs-string">@&quot;one
-    two
-    three&quot;</span>;
-</code></pre>
-<p>&#x2003;</p>
-<h3 id="&#x4E94;&#x3001;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;">&#x4E94;&#x3001;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;</h3>
-<p>&#x5E38;&#x91CF;&#x662F;&#x4F7F;&#x7528; <strong>const</strong> &#x5173;&#x952E;&#x5B57;&#x6765;&#x5B9A;&#x4E49;&#x7684; &#x3002;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#x7684;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-csharp">    <span class="hljs-keyword">const</span> &lt;data_type&gt; &lt;constant_name&gt; = <span class="hljs-keyword">value</span>;
-</code></pre>
-<p>&#x2003;</p>
-<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x5E38;&#x91CF;&#xFF1A;</p>
+<p><strong>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x8BF4;&#x660E;&#x4E86;&#x8FD9;&#x70B9;&#xFF1A;</strong></p>
 <pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
 
-    <span class="hljs-keyword">namespace</span> <span class="hljs-title">DeclaringConstants</span>
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">RectangleApplication</span>
     {
-        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span>
+        {
+            <span class="hljs-comment">//&#x6210;&#x5458;&#x53D8;&#x91CF;</span>
+            <span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> length;
+            <span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> width;
+
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">GetArea</span>(<span class="hljs-params"></span>)
+            </span>{
+                <span class="hljs-keyword">return</span> length * width;
+            }
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Display</span>(<span class="hljs-params"></span>)
+            </span>{
+                Console.WriteLine(<span class="hljs-string">&quot;&#x957F;&#x5EA6;&#xFF1A; {0}&quot;</span>, length);
+                Console.WriteLine(<span class="hljs-string">&quot;&#x5BBD;&#x5EA6;&#xFF1A; {0}&quot;</span>, width);
+                Console.WriteLine(<span class="hljs-string">&quot;&#x9762;&#x79EF;&#xFF1A; {0}&quot;</span>, GetArea());
+            }
+        }<span class="hljs-comment">// Rectangle &#x7ED3;&#x675F;</span>
+
+        <span class="hljs-keyword">class</span> <span class="hljs-title">ExecuteRectangle</span>
         {
             <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
             </span>{
-                <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> pi = <span class="hljs-number">3.14159</span>; <span class="hljs-comment">// &#x5E38;&#x91CF;&#x58F0;&#x660E;</span>
-                <span class="hljs-keyword">double</span> r;
-                Console.WriteLine(<span class="hljs-string">&quot;Enter Radius: &quot;</span>);
-                r = Convert.ToDouble(Console.ReadLine());
-                <span class="hljs-keyword">double</span> areaCircle = pi * r * r;
-                Console.WriteLine(<span class="hljs-string">&quot;Radius: {0}, Area: {1}&quot;</span>, r, areaCircle);
+                Rectangle r = <span class="hljs-keyword">new</span> Rectangle();
+                r.length = <span class="hljs-number">4.5</span>;
+            r.width = <span class="hljs-number">3.5</span>;
+                r.Display();
                 Console.ReadLine();
             }
         }
     }
 </code></pre>
 <p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
-<pre><code class="lang-csharp">    Enter Radius: 
-    <span class="hljs-number">3</span>
-    Radius: <span class="hljs-number">3</span>, Area: <span class="hljs-number">28.27431</span>
+<pre><code class="lang-csharp">    &#x957F;&#x5EA6;&#xFF1A; <span class="hljs-number">4.5</span>
+    &#x5BBD;&#x5EA6;&#xFF1A; <span class="hljs-number">3.5</span>
+    &#x9762;&#x79EF;&#xFF1A; <span class="hljs-number">15.75</span>
 </code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x4E2D;&#xFF0C;&#x6210;&#x5458;&#x53D8;&#x91CF; <code>length</code> &#x548C; <code>width</code> &#x88AB;&#x58F0;&#x660E;&#x4E3A; <code>public</code>&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x88AB;&#x51FD;&#x6570; <code>Main()</code> &#x4F7F;&#x7528; <code>Rectangle</code> &#x7C7B;&#x7684;&#x5B9E;&#x4F8B; <code>r</code> &#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x6210;&#x5458;&#x51FD;&#x6570; <code>Display()</code> &#x548C; <code>GetArea()</code> &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x6210;&#x5458;&#x51FD;&#x6570; <code>Display()</code> &#x4E5F;&#x88AB;&#x58F0;&#x660E;&#x4E3A; <code>public</code>&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4E5F;&#x80FD;&#x88AB; <code>Main()</code> &#x4F7F;&#x7528; <code>Rectangle</code> &#x7C7B;&#x7684;&#x5B9E;&#x4F8B; <code>r</code> &#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;private-&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;">&#x4E8C;&#x3001;Private &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;</h3>
+<p><code>Private</code> &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x7C7B;&#x5C06;&#x5176;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5BF9;&#x5176;&#x4ED6;&#x7684;&#x51FD;&#x6570;&#x548C;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x9690;&#x85CF;&#x3002;&#x53EA;&#x6709;&#x540C;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5B83;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;&#x3002;&#x5373;&#x4F7F;&#x662F;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x4E5F;&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;&#x5B83;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;&#x3002;</p>
+<p>&#x2003;</p>
+<p><strong>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x8BF4;&#x660E;&#x4E86;&#x8FD9;&#x70B9;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">RectangleApplication</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span>
+        {
+            <span class="hljs-comment">//&#x6210;&#x5458;&#x53D8;&#x91CF;</span>
+            <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> length;
+            <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> width;
+
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Acceptdetails</span>(<span class="hljs-params"></span>)
+            </span>{
+                Console.WriteLine(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x957F;&#x5EA6;&#xFF1A;&quot;</span>);
+                length = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x5BBD;&#x5EA6;&#xFF1A;&quot;</span>);
+                width = Convert.ToDouble(Console.ReadLine());
+            }
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">GetArea</span>(<span class="hljs-params"></span>)
+            </span>{
+                <span class="hljs-keyword">return</span> length * width;
+            }
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Display</span>(<span class="hljs-params"></span>)
+            </span>{
+                Console.WriteLine(<span class="hljs-string">&quot;&#x957F;&#x5EA6;&#xFF1A; {0}&quot;</span>, length);
+                Console.WriteLine(<span class="hljs-string">&quot;&#x5BBD;&#x5EA6;&#xFF1A; {0}&quot;</span>, width);
+                Console.WriteLine(<span class="hljs-string">&quot;&#x9762;&#x79EF;&#xFF1A; {0}&quot;</span>, GetArea());
+            }
+        }<span class="hljs-comment">//end class Rectangle    </span>
+        <span class="hljs-keyword">class</span> <span class="hljs-title">ExecuteRectangle</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                Rectangle r = <span class="hljs-keyword">new</span> Rectangle();
+                r.Acceptdetails();
+                r.Display();
+                Console.ReadLine();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    &#x8BF7;&#x8F93;&#x5165;&#x957F;&#x5EA6;&#xFF1A;
+    <span class="hljs-number">4.4</span>
+    &#x8BF7;&#x8F93;&#x5165;&#x5BBD;&#x5EA6;&#xFF1A;
+    <span class="hljs-number">3.3</span>
+    &#x957F;&#x5EA6;&#xFF1A; <span class="hljs-number">4.4</span>
+    &#x5BBD;&#x5EA6;&#xFF1A; <span class="hljs-number">3.3</span>
+    &#x9762;&#x79EF;&#xFF1A; <span class="hljs-number">14.52</span>
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x4E2D;&#xFF0C;&#x6210;&#x5458;&#x53D8;&#x91CF; <code>length</code> &#x548C; <code>width</code> &#x88AB;&#x58F0;&#x660E;&#x4E3A; <code>private</code>&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x4E0D;&#x80FD;&#x88AB;&#x51FD;&#x6570; <code>Main()</code> &#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x6210;&#x5458;&#x51FD;&#x6570; <code>AcceptDetails()</code> &#x548C; <code>Display()</code> &#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x6210;&#x5458;&#x51FD;&#x6570; <code>AcceptDetails()</code> &#x548C; <code>Display()</code> &#x88AB;&#x58F0;&#x660E;&#x4E3A; <code>public</code>&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x88AB; <code>Main()</code> &#x4F7F;&#x7528; <code>Rectangle</code> &#x7C7B;&#x7684;&#x5B9E;&#x4F8B; <code>r</code> &#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E09;&#x3001;protected-&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;">&#x4E09;&#x3001;Protected &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;</h3>
+<p><code>Protected</code> &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#x5141;&#x8BB8;&#x5B50;&#x7C7B;&#x8BBF;&#x95EE;&#x5B83;&#x7684;&#x57FA;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x6210;&#x5458;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x6837;&#x6709;&#x52A9;&#x4E8E;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x7EE7;&#x627F;&#x7684;&#x7AE0;&#x8282;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;&#x8FD9;&#x4E2A;&#x3002;&#x66F4;&#x8BE6;&#x7EC6;&#x5730;&#x8BA8;&#x8BBA;&#x8FD9;&#x4E2A;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x56DB;&#x3001;internal-&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;">&#x56DB;&#x3001;Internal &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;</h3>
+<p><code>Internal</code> &#x8BBF;&#x95EE;&#x8BF4;&#x660E;&#x7B26;&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x7C7B;&#x5C06;&#x5176;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x6210;&#x5458;&#x51FD;&#x6570;&#x66B4;&#x9732;&#x7ED9;&#x5F53;&#x524D;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x51FD;&#x6570;&#x548C;&#x5BF9;&#x8C61;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5E26;&#x6709; <code>internal</code> &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#x7684;&#x4EFB;&#x4F55;&#x6210;&#x5458;&#x53EF;&#x4EE5;&#x88AB;&#x5B9A;&#x4E49;&#x5728;&#x8BE5;&#x6210;&#x5458;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5185;&#x7684;&#x4EFB;&#x4F55;&#x7C7B;&#x6216;&#x65B9;&#x6CD5;&#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x2003;</p>
+<p><strong>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x8BF4;&#x660E;&#x4E86;&#x8FD9;&#x70B9;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">RectangleApplication</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span>
+        {
+            <span class="hljs-comment">//&#x6210;&#x5458;&#x53D8;&#x91CF;</span>
+            <span class="hljs-keyword">internal</span> <span class="hljs-keyword">double</span> length;
+            <span class="hljs-keyword">internal</span> <span class="hljs-keyword">double</span> width;
+
+            <span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">GetArea</span>(<span class="hljs-params"></span>)
+            </span>{
+                <span class="hljs-keyword">return</span> length * width;
+            }
+           <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Display</span>(<span class="hljs-params"></span>)
+            </span>{
+                Console.WriteLine(<span class="hljs-string">&quot;&#x957F;&#x5EA6;&#xFF1A; {0}&quot;</span>, length);
+                Console.WriteLine(<span class="hljs-string">&quot;&#x5BBD;&#x5EA6;&#xFF1A; {0}&quot;</span>, width);
+                Console.WriteLine(<span class="hljs-string">&quot;&#x9762;&#x79EF;&#xFF1A; {0}&quot;</span>, GetArea());
+            }
+        }<span class="hljs-comment">//end class Rectangle    </span>
+        <span class="hljs-keyword">class</span> <span class="hljs-title">ExecuteRectangle</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                Rectangle r = <span class="hljs-keyword">new</span> Rectangle();
+                r.length = <span class="hljs-number">4.5</span>;
+                r.width = <span class="hljs-number">3.5</span>;
+                r.Display();
+                Console.ReadLine();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    &#x957F;&#x5EA6;&#xFF1A; <span class="hljs-number">4.5</span>
+    &#x5BBD;&#x5EA6;&#xFF1A; <span class="hljs-number">3.5</span>
+    &#x9762;&#x79EF;&#xFF1A; <span class="hljs-number">15.75</span>
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x4E2D;&#xFF0C;&#x8BF7;&#x6CE8;&#x610F;&#x6210;&#x5458;&#x51FD;&#x6570; <code>GetArea()</code> &#x58F0;&#x660E;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x5E26;&#x6709;&#x4EFB;&#x4F55;&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x7C7B;&#x6210;&#x5458;&#x7684;&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#xFF0C;&#x5373;&#x4E3A; <code>private</code>&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E94;&#x3001;protected-internal-&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;">&#x4E94;&#x3001;Protected Internal &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;</h3>
+<p><code>Protected Internal</code> &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#x5141;&#x8BB8;&#x5728;&#x672C;&#x7C7B;,&#x6D3E;&#x751F;&#x7C7B;&#x6216;&#x8005;&#x5305;&#x542B;&#x8BE5;&#x7C7B;&#x7684;&#x7A0B;&#x5E8F;&#x96C6;&#x4E2D;&#x8BBF;&#x95EE;&#x3002;&#x8FD9;&#x4E5F;&#x88AB;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;&#x3002;</p>
 <p>&#x1F51A;</p>
 
                                 
@@ -874,12 +880,12 @@
 
             
                 
-                <a href="1_8 CSharp 方法.html" class="navigation navigation-prev " aria-label="Previous page: 1.8 C# 方法">
+                <a href="1_6 CSharp 循环语句.html" class="navigation navigation-prev " aria-label="Previous page: 1.6 C# 循环语句">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="1_10 CSharp 可空类型.html" class="navigation navigation-next " aria-label="Next page: 1.10 C# 可空类型">
+                <a href="1_8 CSharp 方法.html" class="navigation navigation-next " aria-label="Next page: 1.8 C# 方法">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -890,7 +896,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.9 C# 常量","level":"1.2.9","depth":2,"next":{"title":"1.10 C# 可空类型","level":"1.2.10","depth":2,"path":"一、CSharp 基础教程/1_10 CSharp 可空类型.md","ref":"一、CSharp 基础教程/1_10 CSharp 可空类型.md","articles":[]},"previous":{"title":"1.8 C# 方法","level":"1.2.8","depth":2,"path":"一、CSharp 基础教程/1_8 CSharp 方法.md","ref":"一、CSharp 基础教程/1_8 CSharp 方法.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_9 CSharp 常量.md","mtime":"2017-11-05T08:30:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.7 C# 访问修饰符","level":"1.2.7","depth":2,"next":{"title":"1.8 C# 方法","level":"1.2.8","depth":2,"path":"一、CSharp 基础教程/1_8 CSharp 方法.md","ref":"一、CSharp 基础教程/1_8 CSharp 方法.md","articles":[]},"previous":{"title":"1.6 C# 循环语句","level":"1.2.6","depth":2,"path":"一、CSharp 基础教程/1_6 CSharp 循环语句.md","ref":"一、CSharp 基础教程/1_6 CSharp 循环语句.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_7 CSharp 访问修饰符.md","mtime":"2017-11-05T08:07:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

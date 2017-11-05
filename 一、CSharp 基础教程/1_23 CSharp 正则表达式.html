@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                <a href="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,770 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;">C# &#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</h2>
+<p><strong>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</strong> &#x662F;&#x4E00;&#x79CD;&#x5339;&#x914D;&#x8F93;&#x5165;&#x6587;&#x672C;&#x7684;&#x6A21;&#x5F0F;&#x3002;.Net &#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x4E86;&#x5141;&#x8BB8;&#x8FD9;&#x79CD;&#x5339;&#x914D;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5F15;&#x64CE;&#x3002;&#x6A21;&#x5F0F;&#x7531;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#x3001;&#x8FD0;&#x7B97;&#x7B26;&#x548C;&#x7ED3;&#x6784;&#x7EC4;&#x6210;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x5B9A;&#x4E49;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;">&#x5B9A;&#x4E49;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</h3>
+<p>&#x4E0B;&#x9762;&#x5217;&#x51FA;&#x4E86;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5404;&#x79CD;&#x7C7B;&#x522B;&#x7684;&#x5B57;&#x7B26;&#x3001;&#x8FD0;&#x7B97;&#x7B26;&#x548C;&#x7ED3;&#x6784;&#x3002;</p>
+<pre><code>  &#x2022; &#x5B57;&#x7B26;&#x8F6C;&#x4E49;
+  &#x2022; &#x5B57;&#x7B26;&#x7C7B;
+  &#x2022; &#x5B9A;&#x4F4D;&#x70B9;
+  &#x2022; &#x5206;&#x7EC4;&#x6784;&#x9020;
+  &#x2022; &#x9650;&#x5B9A;&#x7B26;
+  &#x2022; &#x53CD;&#x5411;&#x5F15;&#x7528;&#x6784;&#x9020;
+  &#x2022; &#x5907;&#x7528;&#x6784;&#x9020;
+  &#x2022; &#x66FF;&#x6362;
+  &#x2022; &#x6742;&#x9879;&#x6784;&#x9020;
+</code></pre><p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;&#x5B57;&#x7B26;&#x8F6C;&#x4E49;">&#x4E00;&#x3001;&#x5B57;&#x7B26;&#x8F6C;&#x4E49;</h3>
+<p>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x7684;&#x53CD;&#x659C;&#x6760;&#x5B57;&#x7B26;&#xFF08;\&#xFF09;&#x6307;&#x793A;&#x5176;&#x540E;&#x8DDF;&#x7684;&#x5B57;&#x7B26;&#x662F;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#xFF0C;&#x6216;&#x5E94;&#x6309;&#x539F;&#x4E49;&#x89E3;&#x91CA;&#x8BE5;&#x5B57;&#x7B26;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:left">&#x6A21;&#x5F0F;</th>
+<th style="text-align:left">&#x5339;&#x914D;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\a</td>
+<td style="text-align:left">&#x4E0E;&#x62A5;&#x8B66; (bell) &#x7B26; \u0007 &#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">\a</td>
+<td style="text-align:left">&quot;Warning!&quot; + &apos;\u0007&apos; &#x4E2D;&#x7684; &quot;\u0007&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\b</td>
+<td style="text-align:left">&#x5728;&#x5B57;&#x7B26;&#x7C7B;&#x4E2D;&#xFF0C;&#x4E0E;&#x9000;&#x683C;&#x952E; \u0008 &#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">[\b]{3,}</td>
+<td style="text-align:left">&quot;\b\b\b\b&quot; &#x4E2D;&#x7684; &quot;\b\b\b\b&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\t</td>
+<td style="text-align:left">&#x4E0E;&#x5236;&#x8868;&#x7B26; \u0009 &#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">(\w+)\t</td>
+<td style="text-align:left">&quot;Name\tAddr\t&quot; &#x4E2D;&#x7684; &quot;Name\t&quot; &#x548C; &quot;Addr\t&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\r</td>
+<td style="text-align:left">&#x4E0E;&#x56DE;&#x8F66;&#x7B26; \u000D &#x5339;&#x914D;&#x3002;&#xFF08;\r &#x4E0E;&#x6362;&#x884C;&#x7B26; \n &#x4E0D;&#x662F;&#x7B49;&#x6548;&#x7684;&#x3002;&#xFF09;</td>
+<td style="text-align:left">\r\n(\w+)</td>
+<td style="text-align:left">&quot;\r\Hello\nWorld.&quot; &#x4E2D;&#x7684; &quot;\r\nHello&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\v</td>
+<td style="text-align:left">&#x4E0E;&#x5782;&#x76F4;&#x5236;&#x8868;&#x7B26; \u000B &#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">[\v]{2,}</td>
+<td style="text-align:left">&quot;\v\v\v&quot; &#x4E2D;&#x7684; &quot;\v\v\v&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\f</td>
+<td style="text-align:left">&#x4E0E;&#x6362;&#x9875;&#x7B26; \u000C &#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">[\f]{2,}</td>
+<td style="text-align:left">&quot;\f\f\f&quot; &#x4E2D;&#x7684; &quot;\f\f\f&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">&#x4E0E;&#x6362;&#x884C;&#x7B26; \u000A &#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">\r\n(\w+)</td>
+<td style="text-align:left">&quot;\r\Hello\nWorld.&quot; &#x4E2D;&#x7684; &quot;\r\nHello&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\e</td>
+<td style="text-align:left">&#x4E0E;&#x8F6C;&#x4E49;&#x7B26; \u001B &#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">\e    &quot;\x001B&quot; &#x4E2D;&#x7684; &quot;\x001B&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\ nnn</td>
+<td style="text-align:left">&#x4F7F;&#x7528;&#x516B;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF08;nnn &#x7531;&#x4E8C;&#x5230;&#x4E09;&#x4F4D;&#x6570;&#x5B57;&#x7EC4;&#x6210;&#xFF09;&#x3002;</td>
+<td style="text-align:left">\w\040\w</td>
+<td style="text-align:left">&quot;a bc d&quot; &#x4E2D;&#x7684; &quot;a b&quot; &#x548C; &quot;c d&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\x nn</td>
+<td style="text-align:left">&#x4F7F;&#x7528;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#xFF08;nn &#x6070;&#x597D;&#x7531;&#x4E24;&#x4F4D;&#x6570;&#x5B57;&#x7EC4;&#x6210;&#xFF09;&#x3002;</td>
+<td style="text-align:left">\w\x20\w</td>
+<td style="text-align:left">&quot;a bc d&quot; &#x4E2D;&#x7684; &quot;a b&quot; &#x548C; &quot;c d&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\c X \c x</td>
+<td style="text-align:left">&#x5339;&#x914D; X &#x6216; x &#x6307;&#x5B9A;&#x7684; ASCII &#x63A7;&#x4EF6;&#x5B57;&#x7B26;&#xFF0C;&#x5176;&#x4E2D; X &#x6216; x &#x662F;&#x63A7;&#x4EF6;&#x5B57;&#x7B26;&#x7684;&#x5B57;&#x6BCD;&#x3002;</td>
+<td style="text-align:left">\cC</td>
+<td style="text-align:left">&quot;\x0003&quot; &#x4E2D;&#x7684; &quot;\x0003&quot; (Ctrl-C)</td>
+</tr>
+<tr>
+<td style="text-align:left">\u nnnn</td>
+<td style="text-align:left">&#x4F7F;&#x7528;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x5339;&#x914D;&#x4E00;&#x4E2A; Unicode &#x5B57;&#x7B26;&#xFF08;&#x7531; nnnn &#x8868;&#x793A;&#x7684;&#x56DB;&#x4F4D;&#x6570;&#xFF09;&#x3002;</td>
+<td style="text-align:left">\w\u0020\w</td>
+<td style="text-align:left">&quot;a bc d&quot; &#x4E2D;&#x7684; &quot;a b&quot; &#x548C; &quot;c d&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\</td>
+<td style="text-align:left">&#x5728;&#x540E;&#x9762;&#x5E26;&#x6709;&#x4E0D;&#x8BC6;&#x522B;&#x7684;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#x65F6;&#xFF0C;&#x4E0E;&#x8BE5;&#x5B57;&#x7B26;&#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">\d+[+-x*]\d+\d+[+-x*\d+</td>
+<td style="text-align:left">&quot;(2+2) <em> 3</em>9&quot; &#x4E2D;&#x7684; &quot;2+2&quot; &#x548C; &quot;3*9&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;&#x5B57;&#x7B26;&#x7C7B;">&#x4E8C;&#x3001;&#x5B57;&#x7B26;&#x7C7B;</h3>
+<p>&#x5B57;&#x7B26;&#x7C7B;&#x4E0E;&#x4E00;&#x7EC4;&#x5B57;&#x7B26;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5339;&#x914D;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x5B57;&#x7B26;&#x7C7B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5B57;&#x7B26;&#x7C7B;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:left">&#x6A21;&#x5F0F;</th>
+<th style="text-align:left">&#x5339;&#x914D;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[character_group]</td>
+<td style="text-align:left">&#x5339;&#x914D; character_group &#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5339;&#x914D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x3002;</td>
+<td style="text-align:left">[mn]</td>
+<td style="text-align:left">&quot;mat&quot; &#x4E2D;&#x7684; &quot;m&quot;&#xFF0C;&quot;moon&quot; &#x4E2D;&#x7684; &quot;m&quot; &#x548C; &quot;n&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left"><sup><a href="#fn_character_group" id="reffn_character_group">character_group</a></sup></td>
+<td style="text-align:left">&#x975E;&#xFF1A;&#x4E0E;&#x4E0D;&#x5728; character_group &#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x5339;&#x914D;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;character_group &#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x3002;</td>
+<td style="text-align:left"><sup><a href="#fn_aei" id="reffn_aei">aei</a></sup></td>
+<td style="text-align:left">&quot;avail&quot; &#x4E2D;&#x7684; &quot;v&quot; &#x548C; &quot;l&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">[ first - last ]</td>
+<td style="text-align:left">&#x5B57;&#x7B26;&#x8303;&#x56F4;&#xFF1A;&#x4E0E;&#x4ECE; first &#x5230; last &#x7684;&#x8303;&#x56F4;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">(\w+)\t</td>
+<td style="text-align:left">&quot;Name\tAddr\t&quot; &#x4E2D;&#x7684; &quot;Name\t&quot; &#x548C; &quot;Addr\t&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">.</td>
+<td style="text-align:left">&#x901A;&#x914D;&#x7B26;&#xFF1A;&#x4E0E;&#x9664; \n &#x4E4B;&#x5916;&#x7684;&#x4EFB;&#x4F55;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x5339;&#x914D;&#x3002; <br>&#x82E5;&#x8981;&#x5339;&#x914D;&#x539F;&#x610F;&#x53E5;&#x70B9;&#x5B57;&#x7B26;&#xFF08;. &#x6216; \u002E&#xFF09;&#xFF0C;&#x60A8;&#x5FC5;&#x987B;&#x5728;&#x8BE5;&#x5B57;&#x7B26;&#x524D;&#x9762;&#x52A0;&#x4E0A;&#x8F6C;&#x4E49;&#x7B26; (.)&#x3002;</td>
+<td style="text-align:left">a.e</td>
+<td style="text-align:left">&quot;have&quot; &#x4E2D;&#x7684; &quot;ave&quot;&#xFF0C; &quot;mate&quot; &#x4E2D;&#x7684; &quot;ate&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\p{ name }</td>
+<td style="text-align:left">&#x4E0E; name &#x6307;&#x5B9A;&#x7684; Unicode &#x901A;&#x7528;&#x7C7B;&#x522B;&#x6216;&#x547D;&#x540D;&#x5757;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">\p{Lu}</td>
+<td style="text-align:left">&quot;City Lights&quot; &#x4E2D;&#x7684; &quot;C&quot; &#x548C; &quot;L&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\P{ name }</td>
+<td style="text-align:left">&#x4E0E;&#x4E0D;&#x5728; name &#x6307;&#x5B9A;&#x7684; Unicode &#x901A;&#x7528;&#x7C7B;&#x522B;&#x6216;&#x547D;&#x540D;&#x5757;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">\P{Lu}</td>
+<td style="text-align:left">&quot;City&quot; &#x4E2D;&#x7684; &quot;i&quot;&#x3001; &quot;t&quot; &#x548C; &quot;y&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\w</td>
+<td style="text-align:left">&#x4E0E;&#x4EFB;&#x4F55;&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">\w</td>
+<td style="text-align:left">&quot;Room#1&quot; &#x4E2D;&#x7684; &quot;R&quot;&#x3001; &quot;o&quot;&#x3001; &quot;m&quot; &#x548C; &quot;1&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\W</td>
+<td style="text-align:left">&#x4E0E;&#x4EFB;&#x4F55;&#x975E;&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">\W</td>
+<td style="text-align:left">&quot;Room#1&quot; &#x4E2D;&#x7684; &quot;#&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\s</td>
+<td style="text-align:left">&#x4E0E;&#x4EFB;&#x4F55;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">\w\s</td>
+<td style="text-align:left">&quot;ID A1.3&quot; &#x4E2D;&#x7684; &quot;D &quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\S</td>
+<td style="text-align:left">&#x4E0E;&#x4EFB;&#x4F55;&#x975E;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">\s\S</td>
+<td style="text-align:left">&quot;int <em>_ctr&quot; &#x4E2D;&#x7684; &quot; </em>&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\d</td>
+<td style="text-align:left">&#x4E0E;&#x4EFB;&#x4F55;&#x5341;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#x5339;&#x914D;&#x3002;</td>
+<td style="text-align:left">\d</td>
+<td style="text-align:left">&quot;4 = IV&quot; &#x4E2D;&#x7684; &quot;4&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\D</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E0D;&#x662F;&#x5341;&#x8FDB;&#x5236;&#x6570;&#x7684;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x3002;</td>
+<td style="text-align:left">\D</td>
+<td style="text-align:left">&quot;4 = IV&quot; &#x4E2D;&#x7684; &quot; &quot;&#x3001; &quot;=&quot;&#x3001; &quot; &quot;&#x3001; &quot;I&quot; &#x548C; &quot;V&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h3 id="&#x4E09;&#x3001;&#x5B9A;&#x4F4D;&#x70B9;">&#x4E09;&#x3001;&#x5B9A;&#x4F4D;&#x70B9;</h3>
+<p>&#x5B9A;&#x4F4D;&#x70B9;&#x6216;&#x539F;&#x5B50;&#x96F6;&#x5BBD;&#x5EA6;&#x65AD;&#x8A00;&#x4F1A;&#x4F7F;&#x5339;&#x914D;&#x6210;&#x529F;&#x6216;&#x5931;&#x8D25;&#xFF0C;&#x5177;&#x4F53;&#x53D6;&#x51B3;&#x4E8E;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x4E0D;&#x4F1A;&#x4F7F;&#x5F15;&#x64CE;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x524D;&#x8FDB;&#x6216;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x5B9A;&#x4F4D;&#x70B9;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65AD;&#x8A00;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:left">&#x6A21;&#x5F0F;</th>
+<th style="text-align:left">&#x5339;&#x914D;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">^</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x5FC5;&#x987B;&#x4ECE;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x4E00;&#x884C;&#x7684;&#x5F00;&#x5934;&#x5F00;&#x59CB;&#x3002;</td>
+<td style="text-align:left">^\d{3}</td>
+<td style="text-align:left">&quot;567-777-&quot; &#x4E2D;&#x7684; &quot;567&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">$</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x5FC5;&#x987B;&#x51FA;&#x73B0;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x672B;&#x5C3E;&#x6216;&#x51FA;&#x73B0;&#x5728;&#x884C;&#x6216;&#x5B57;&#x7B26;&#x4E32;&#x672B;&#x5C3E;&#x7684; \n &#x4E4B;&#x524D;&#x3002;</td>
+<td style="text-align:left">-\d{4}$</td>
+<td style="text-align:left">&quot;8-12-2012&quot; &#x4E2D;&#x7684; &quot;-2012&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\A</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x5FC5;&#x987B;&#x51FA;&#x73B0;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5F00;&#x5934;&#x3002;</td>
+<td style="text-align:left">\A\w{4}</td>
+<td style="text-align:left">&quot;Code-007-&quot; &#x4E2D;&#x7684; &quot;Code&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\Z</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x5FC5;&#x987B;&#x51FA;&#x73B0;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x672B;&#x5C3E;&#x6216;&#x51FA;&#x73B0;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x672B;&#x5C3E;&#x7684; \n &#x4E4B;&#x524D;&#x3002;</td>
+<td style="text-align:left">-\d{3}\Z</td>
+<td style="text-align:left">&quot;Bond-901-007&quot; &#x4E2D;&#x7684; &quot;-007&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\z</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x5FC5;&#x987B;&#x51FA;&#x73B0;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x672B;&#x5C3E;&#x3002;</td>
+<td style="text-align:left">-\d{3}\z</td>
+<td style="text-align:left">&quot;-901-333&quot; &#x4E2D;&#x7684; &quot;-333&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\G</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x5FC5;&#x987B;&#x51FA;&#x73B0;&#x5728;&#x4E0A;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x7ED3;&#x675F;&#x7684;&#x5730;&#x65B9;&#x3002;</td>
+<td style="text-align:left">\G(\d)</td>
+<td style="text-align:left">&quot;(1)(3)(5)<a href="9">7</a>&quot; &#x4E2D;&#x7684; &quot;(1)&quot;&#x3001; &quot;(3)&quot; &#x548C; &quot;(5)&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\b</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x8FB9;&#x754C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6307;&#x5355;&#x8BCD;&#x548C;&#x7A7A;&#x683C;&#x95F4;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</td>
+<td style="text-align:left">er\b</td>
+<td style="text-align:left">&#x5339;&#x914D;&quot;never&quot;&#x4E2D;&#x7684;&quot;er&quot;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x5339;&#x914D;&quot;verb&quot;&#x4E2D;&#x7684;&quot;er&quot;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">\B</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x975E;&#x5355;&#x8BCD;&#x8FB9;&#x754C;&#x3002;</td>
+<td style="text-align:left">er\B</td>
+<td style="text-align:left">&#x5339;&#x914D;&quot;verb&quot;&#x4E2D;&#x7684;&quot;er&quot;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x5339;&#x914D;&quot;never&quot;&#x4E2D;&#x7684;&quot;er&quot;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h3 id="&#x56DB;&#x3001;&#x5206;&#x7EC4;&#x6784;&#x9020;">&#x56DB;&#x3001;&#x5206;&#x7EC4;&#x6784;&#x9020;</h3>
+<p>&#x5206;&#x7EC4;&#x6784;&#x9020;&#x63CF;&#x8FF0;&#x4E86;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5B50;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x6355;&#x83B7;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x5206;&#x7EC4;&#x6784;&#x9020;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5206;&#x7EC4;&#x6784;&#x9020;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:left">&#x6A21;&#x5F0F;</th>
+<th style="text-align:left">&#x5339;&#x914D;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">( subexpression )</td>
+<td style="text-align:left">&#x6355;&#x83B7;&#x5339;&#x914D;&#x7684;&#x5B50;&#x8868;&#x8FBE;&#x5F0F;&#x5E76;&#x5C06;&#x5176;&#x5206;&#x914D;&#x5230;&#x4E00;&#x4E2A;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x7684;&#x5E8F;&#x53F7;&#x4E2D;&#x3002;</td>
+<td style="text-align:left">(\w)\1</td>
+<td style="text-align:left">&quot;deep&quot; &#x4E2D;&#x7684; &quot;ee&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&lt; name &gt;subexpression)</td>
+<td style="text-align:left">&#x5C06;&#x5339;&#x914D;&#x7684;&#x5B50;&#x8868;&#x8FBE;&#x5F0F;&#x6355;&#x83B7;&#x5230;&#x4E00;&#x4E2A;&#x547D;&#x540D;&#x7EC4;&#x4E2D;&#x3002;</td>
+<td style="text-align:left">(?&lt; double&gt;\w)\k&lt; double&gt;</td>
+<td style="text-align:left">&quot;deep&quot; &#x4E2D;&#x7684; &quot;ee&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&lt; name1 -name2 &gt;subexpression)</td>
+<td style="text-align:left">&#x5B9A;&#x4E49;&#x5E73;&#x8861;&#x7EC4;&#x5B9A;&#x4E49;&#x3002;</td>
+<td style="text-align:left">(((?&apos;Open&apos;()<sup><a href="#fn_%5C(%5C)" id="reffn_\(\)">\(\)</a></sup><em>)+((?&apos;Close-Open&apos;))<sup><a href="#fn_%5C(%5C)" id="reffn_\(\)">\(\)</a></sup></em>)+)*(?(Open)(?!))$</td>
+<td style="text-align:left">&quot;3+2^((1-3)<em>(3-1))&quot; &#x4E2D;&#x7684; &quot;((1-3)</em>(3-1))&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">(?: subexpression)</td>
+<td style="text-align:left">&#x5B9A;&#x4E49;&#x975E;&#x6355;&#x83B7;&#x7EC4;&#x3002;</td>
+<td style="text-align:left">Write(?:Line)?</td>
+<td style="text-align:left">&quot;Console.WriteLine()&quot; &#x4E2D;&#x7684; &quot;WriteLine&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">(?imnsx-imnsx:subexpression)</td>
+<td style="text-align:left">&#x5E94;&#x7528;&#x6216;&#x7981;&#x7528; subexpression &#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x9009;&#x9879;&#x3002;</td>
+<td style="text-align:left">A\d{2}(?i:\w+)\b</td>
+<td style="text-align:left">&quot;A12xl A12XL a12xl&quot; &#x4E2D;&#x7684; &quot;A12xl&quot; &#x548C; &quot;A12XL&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">(?= subexpression)</td>
+<td style="text-align:left">&#x96F6;&#x5BBD;&#x5EA6;&#x6B63;&#x9884;&#x6D4B;&#x5148;&#x884C;&#x65AD;&#x8A00;&#x3002;</td>
+<td style="text-align:left">\w+(?=.)</td>
+<td style="text-align:left">&quot;He is. The dog ran. The sun is out.&quot; &#x4E2D;&#x7684; &quot;is&quot;&#x3001; &quot;ran&quot; &#x548C; &quot;out&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">(?! subexpression)</td>
+<td style="text-align:left">&#x96F6;&#x5BBD;&#x5EA6;&#x8D1F;&#x9884;&#x6D4B;&#x5148;&#x884C;&#x65AD;&#x8A00;&#x3002;</td>
+<td style="text-align:left">\b(?!un)\w+\b</td>
+<td style="text-align:left">&quot;unsure sure unity used&quot; &#x4E2D;&#x7684; &quot;sure&quot; &#x548C; &quot;used&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&lt;=subexpression)</td>
+<td style="text-align:left">&#x96F6;&#x5BBD;&#x5EA6;&#x6B63;&#x56DE;&#x987E;&#x540E;&#x53D1;&#x65AD;&#x8A00;&#x3002;</td>
+<td style="text-align:left">(?&lt;=19)\d{2}\b</td>
+<td style="text-align:left">&quot;1851 1999 1950 1905 2003&quot; &#x4E2D;&#x7684; &quot;99&quot;&#x3001;&quot;50&quot;&#x548C; &quot;05&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&lt;! subexpression)</td>
+<td style="text-align:left">&#x96F6;&#x5BBD;&#x5EA6;&#x8D1F;&#x56DE;&#x987E;&#x540E;&#x53D1;&#x65AD;&#x8A00;&#x3002;</td>
+<td style="text-align:left">(?</td>
+<td style="text-align:left">&quot;Hi woman Hi man&quot; &#x4E2D;&#x7684; &quot;man&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&gt; subexpression)</td>
+<td style="text-align:left">&#x975E;&#x56DE;&#x6EAF;&#xFF08;&#x4E5F;&#x79F0;&#x4E3A;&quot;&#x8D2A;&#x5A6A;&quot;&#xFF09;&#x5B50;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</td>
+<td style="text-align:left"><a href="">13579</a></td>
+<td style="text-align:left">&quot;1ABB 3ABBC 5AB 5AC&quot; &#x4E2D;&#x7684; &quot;1ABB&quot;&#x3001; &quot;3ABB&quot; &#x548C; &quot;5AB&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h4 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h4>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+   <span class="hljs-keyword">using</span> System.Text.RegularExpressions;
+
+   <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Example</span>
+   {
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>)
+      </span>{
+         <span class="hljs-keyword">string</span> input = <span class="hljs-string">&quot;1851 1999 1950 1905 2003&quot;</span>;
+         <span class="hljs-keyword">string</span> pattern = <span class="hljs-string">@&quot;(?&lt;=19)\d{2}\b&quot;</span>;
+
+         <span class="hljs-keyword">foreach</span> (Match match <span class="hljs-keyword">in</span> Regex.Matches(input, pattern))
+            Console.WriteLine(match.Value);
+      }
+   }
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E94;&#x3001;&#x9650;&#x5B9A;&#x7B26;">&#x4E94;&#x3001;&#x9650;&#x5B9A;&#x7B26;</h3>
+<p>&#x9650;&#x5B9A;&#x7B26;&#x6307;&#x5B9A;&#x5728;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x5FC5;&#x987B;&#x5B58;&#x5728;&#x4E0A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF08;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x7B26;&#x3001;&#x7EC4;&#x6216;&#x5B57;&#x7B26;&#x7C7B;&#xFF09;&#x7684;&#x591A;&#x5C11;&#x4E2A;&#x5B9E;&#x4F8B;&#x624D;&#x80FD;&#x51FA;&#x73B0;&#x5339;&#x914D;&#x9879;&#x3002; &#x9650;&#x5B9A;&#x7B26;&#x5305;&#x62EC;&#x4E0B;&#x8868;&#x4E2D;&#x5217;&#x51FA;&#x7684;&#x8BED;&#x8A00;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x9650;&#x5B9A;&#x7B26;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9650;&#x5B9A;&#x7B26;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:left">&#x6A21;&#x5F0F;</th>
+<th style="text-align:left">&#x5339;&#x914D;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E0A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x96F6;&#x6B21;&#x6216;&#x591A;&#x6B21;&#x3002;</td>
+<td style="text-align:left">\d*.\d</td>
+<td style="text-align:left">&quot;.0&quot;&#x3001; &quot;19.9&quot;&#x3001; &quot;219.9&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E0A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E00;&#x6B21;&#x6216;&#x591A;&#x6B21;&#x3002;</td>
+<td style="text-align:left">&quot;be+&quot;</td>
+<td style="text-align:left">&quot;been&quot; &#x4E2D;&#x7684; &quot;bee&quot;&#xFF0C; &quot;bent&quot; &#x4E2D;&#x7684; &quot;be&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E0A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x96F6;&#x6B21;&#x6216;&#x4E00;&#x6B21;&#x3002;</td>
+<td style="text-align:left">&quot;rai?n&quot;</td>
+<td style="text-align:left">&quot;ran&quot;&#x3001; &quot;rain&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">{ n }</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E0A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6070;&#x597D; n &#x6B21;&#x3002;</td>
+<td style="text-align:left">&quot;,\d{3}&quot;</td>
+<td style="text-align:left">&quot;1,043.6&quot; &#x4E2D;&#x7684; &quot;,043&quot;&#xFF0C; &quot;9,876,543,210&quot; &#x4E2D;&#x7684; &quot;,876&quot;&#x3001; &quot;,543&quot; &#x548C; &quot;,210&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">{ n ,}</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E0A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x81F3;&#x5C11; n &#x6B21;&#x3002;</td>
+<td style="text-align:left">&quot;\d{2,}&quot;</td>
+<td style="text-align:left">&quot;166&quot;&#x3001; &quot;29&quot;&#x3001; &quot;1930&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">{ n , m }</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E0A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x81F3;&#x5C11; n &#x6B21;&#xFF0C;&#x4F46;&#x4E0D;&#x591A;&#x4E8E; m &#x6B21;&#x3002;</td>
+<td style="text-align:left">&quot;\d{3,5}&quot;</td>
+<td style="text-align:left">&quot;166&quot;&#xFF0C; &quot;17668&quot;&#xFF0C; &quot;193024&quot; &#x4E2D;&#x7684; &quot;19302&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">*?</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E0A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x96F6;&#x6B21;&#x6216;&#x591A;&#x6B21;&#xFF0C;&#x4F46;&#x6B21;&#x6570;&#x5C3D;&#x53EF;&#x80FD;&#x5C11;&#x3002;</td>
+<td style="text-align:left">\d*?.\d</td>
+<td style="text-align:left">&quot;.0&quot;&#x3001; &quot;19.9&quot;&#x3001; &quot;219.9&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">+?</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E0A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E00;&#x6B21;&#x6216;&#x591A;&#x6B21;&#xFF0C;&#x4F46;&#x6B21;&#x6570;&#x5C3D;&#x53EF;&#x80FD;&#x5C11;&#x3002;</td>
+<td style="text-align:left">&quot;be+?&quot;</td>
+<td style="text-align:left">&quot;been&quot; &#x4E2D;&#x7684; &quot;be&quot;&#xFF0C; &quot;bent&quot; &#x4E2D;&#x7684; &quot;be&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">??</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E0A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x96F6;&#x6B21;&#x6216;&#x4E00;&#x6B21;&#xFF0C;&#x4F46;&#x6B21;&#x6570;&#x5C3D;&#x53EF;&#x80FD;&#x5C11;&#x3002;</td>
+<td style="text-align:left">&quot;rai??n&quot;</td>
+<td style="text-align:left">&quot;ran&quot;&#x3001; &quot;rain&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">{ n }?</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x524D;&#x5BFC;&#x5143;&#x7D20;&#x6070;&#x597D; n &#x6B21;&#x3002;</td>
+<td style="text-align:left">&quot;,\d{3}?&quot;</td>
+<td style="text-align:left">&quot;1,043.6&quot; &#x4E2D;&#x7684; &quot;,043&quot;&#xFF0C; &quot;9,876,543,210&quot; &#x4E2D;&#x7684; &quot;,876&quot;&#x3001; &quot;,543&quot; &#x548C; &quot;,210&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">{ n ,}?</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E0A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x81F3;&#x5C11; n &#x6B21;&#xFF0C;&#x4F46;&#x6B21;&#x6570;&#x5C3D;&#x53EF;&#x80FD;&#x5C11;&#x3002;</td>
+<td style="text-align:left">&quot;\d{2,}?&quot;</td>
+<td style="text-align:left">&quot;166&quot;&#x3001; &quot;29&quot; &#x548C; &quot;1930&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">{ n , m }?</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E0A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x6B21;&#x6570;&#x4ECB;&#x4E8E; n &#x548C; m &#x4E4B;&#x95F4;&#xFF0C;&#x4F46;&#x6B21;&#x6570;&#x5C3D;&#x53EF;&#x80FD;&#x5C11;&#x3002;</td>
+<td style="text-align:left">&quot;\d{3,5}?&quot;</td>
+<td style="text-align:left">&quot;166&quot;&#xFF0C; &quot;17668&quot;&#xFF0C; &quot;193024&quot; &#x4E2D;&#x7684; &quot;193&quot; &#x548C; &quot;024&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h3 id="&#x516D;&#x3001;&#x53CD;&#x5411;&#x5F15;&#x7528;&#x6784;&#x9020;">&#x516D;&#x3001;&#x53CD;&#x5411;&#x5F15;&#x7528;&#x6784;&#x9020;</h3>
+<p>&#x53CD;&#x5411;&#x5F15;&#x7528;&#x5141;&#x8BB8;&#x5728;&#x540C;&#x4E00;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x968F;&#x540E;&#x6807;&#x8BC6;&#x4EE5;&#x524D;&#x5339;&#x914D;&#x7684;&#x5B50;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x53CD;&#x5411;&#x5F15;&#x7528;&#x6784;&#x9020;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53CD;&#x5411;&#x5F15;&#x7528;&#x6784;&#x9020;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:left">&#x6A21;&#x5F0F;</th>
+<th style="text-align:left">&#x5339;&#x914D;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\ number</td>
+<td style="text-align:left">&#x53CD;&#x5411;&#x5F15;&#x7528;&#x3002; &#x5339;&#x914D;&#x7F16;&#x53F7;&#x5B50;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#x3002;</td>
+<td style="text-align:left">(\w)\1</td>
+<td style="text-align:left">&quot;seek&quot; &#x4E2D;&#x7684; &quot;ee&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">\k&lt; name &gt;</td>
+<td style="text-align:left">&#x547D;&#x540D;&#x53CD;&#x5411;&#x5F15;&#x7528;&#x3002; &#x5339;&#x914D;&#x547D;&#x540D;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#x3002;</td>
+<td style="text-align:left">(?&lt; char&gt;\w)\k&lt; char&gt;</td>
+<td style="text-align:left">&quot;seek&quot; &#x4E2D;&#x7684; &quot;ee&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h3 id="&#x4E03;&#x3001;&#x5907;&#x7528;&#x6784;&#x9020;">&#x4E03;&#x3001;&#x5907;&#x7528;&#x6784;&#x9020;</h3>
+<p>&#x5907;&#x7528;&#x6784;&#x9020;&#x7528;&#x4E8E;&#x4FEE;&#x6539;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4EE5;&#x542F;&#x7528; either/or &#x5339;&#x914D;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x5907;&#x7528;&#x6784;&#x9020;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5907;&#x7528;&#x6784;&#x9020;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:left">&#x6A21;&#x5F0F;</th>
+<th style="text-align:left">&#x5339;&#x914D;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4EE5;&#x7AD6;&#x7EBF; (</td>
+<td style="text-align:left">) &#x5B57;&#x7B26;&#x5206;&#x9694;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;</td>
+<td>th(e</td>
+<td>is</td>
+<td>at)</td>
+<td>&quot;this is the day. &quot; &#x4E2D;&#x7684; &quot;the&quot; &#x548C; &quot;this&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">(?( expression )yes</td>
+<td style="text-align:left">no )</td>
+<td style="text-align:left">&#x5982;&#x679C;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x5F0F;&#x7531; expression &#x5339;&#x914D;&#x6307;&#x5B9A;&#xFF0C;&#x5219;&#x5339;&#x914D; yes&#xFF1B;&#x5426;&#x5219;&#x5339;&#x914D;&#x53EF;&#x9009;&#x7684; no &#x90E8;&#x5206;&#x3002; expression &#x88AB;&#x89E3;&#x91CA;&#x4E3A;&#x96F6;&#x5BBD;&#x5EA6;&#x65AD;&#x8A00;&#x3002;</td>
+<td style="text-align:left">(?(A)A\d{2}\b</td>
+<td>\b\d{3}\b)</td>
+<td>&quot;A10 C103 910&quot; &#x4E2D;&#x7684; &quot;A10&quot; &#x548C; &quot;910&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">(?( name )yes</td>
+<td style="text-align:left">no )</td>
+<td style="text-align:left">&#x5982;&#x679C; name &#x6216;&#x5DF2;&#x547D;&#x540D;&#x6216;&#x5DF2;&#x7F16;&#x53F7;&#x7684;&#x6355;&#x83B7;&#x7EC4;&#x5177;&#x6709;&#x5339;&#x914D;&#xFF0C;&#x5219;&#x5339;&#x914D; yes&#xFF1B;&#x5426;&#x5219;&#x5339;&#x914D;&#x53EF;&#x9009;&#x7684; no&#x3002;</td>
+<td style="text-align:left">(?&lt; quoted&gt;&quot;)?(?(quoted).+?&quot;</td>
+<td>\S+\s)</td>
+<td>&quot;Dogs.jpg &quot;Yiska playing.jpg&quot;&quot; &#x4E2D;&#x7684; Dogs.jpg &#x548C; &quot;Yiska playing.jpg&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h3 id="&#x516B;&#x3001;&#x66FF;&#x6362;">&#x516B;&#x3001;&#x66FF;&#x6362;</h3>
+<p>&#x66FF;&#x6362;&#x662F;&#x66FF;&#x6362;&#x6A21;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x7528;&#x4E8E;&#x66FF;&#x6362;&#x7684;&#x5B57;&#x7B26;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5B57;&#x7B26;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:left">&#x6A21;&#x5F0F;</th>
+<th style="text-align:left">&#x66FF;&#x6362;&#x6A21;&#x5F0F;</th>
+<th style="text-align:left">&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;</th>
+<th style="text-align:left">&#x7ED3;&#x679C;&#x5B57;&#x7B26;&#x4E32;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>$number</code></td>
+<td style="text-align:left">&#x66FF;&#x6362;&#x6309;&#x7EC4; number &#x5339;&#x914D;&#x7684;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+<td style="text-align:left"><code>\b(\w+)(\s)(\w+)\b</code></td>
+<td style="text-align:left"><code>$3$2$1</code></td>
+<td style="text-align:left">&quot;one two&quot;</td>
+<td style="text-align:left">&quot;two one&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>${name}</code></td>
+<td style="text-align:left">&#x66FF;&#x6362;&#x6309;&#x547D;&#x540D;&#x7EC4; name &#x5339;&#x914D;&#x7684;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+<td style="text-align:left"><code>\b(?&lt; word1&gt;\w+)(\s)(?&lt; word2&gt;\w+)\b</code></td>
+<td style="text-align:left"><code>${word2}</code> <code>${word1}</code></td>
+<td style="text-align:left">&quot;one two&quot;</td>
+<td style="text-align:left">&quot;two one&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">$$</td>
+<td style="text-align:left">&#x66FF;&#x6362;&#x5B57;&#x7B26;&quot;$&quot;&#x3002;</td>
+<td style="text-align:left">\b(\d+)\s?USD</td>
+<td style="text-align:left">$$$1</td>
+<td style="text-align:left">&quot;103 USD&quot;</td>
+<td style="text-align:left">&quot;$103&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">$&amp;</td>
+<td style="text-align:left">&#x66FF;&#x6362;&#x6574;&#x4E2A;&#x5339;&#x914D;&#x9879;&#x7684;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#x3002;</td>
+<td style="text-align:left"><code>(\$*(\d*(\.+\d+)?){1})</code></td>
+<td style="text-align:left"><code>**$&amp;</code></td>
+<td style="text-align:left"><code>&quot;$1.30&quot;</code></td>
+<td style="text-align:left"><code>&quot;**$1.30**&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">$`</td>
+<td style="text-align:left">&#x66FF;&#x6362;&#x5339;&#x914D;&#x524D;&#x7684;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6240;&#x6709;&#x6587;&#x672C;&#x3002;</td>
+<td style="text-align:left">B+</td>
+<td style="text-align:left">$`</td>
+<td style="text-align:left">&quot;AABBCC&quot;</td>
+<td style="text-align:left">&quot;AAAACC&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">$&apos;</td>
+<td style="text-align:left">&#x66FF;&#x6362;&#x5339;&#x914D;&#x540E;&#x7684;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6240;&#x6709;&#x6587;&#x672C;&#x3002;</td>
+<td style="text-align:left">B+</td>
+<td style="text-align:left"><code>$&apos;</code></td>
+<td style="text-align:left">&quot;AABBCC&quot;</td>
+<td style="text-align:left">&quot;AACCCC&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">$+</td>
+<td style="text-align:left">&#x66FF;&#x6362;&#x6700;&#x540E;&#x6355;&#x83B7;&#x7684;&#x7EC4;&#x3002;</td>
+<td style="text-align:left">B+(C+)</td>
+<td style="text-align:left"><code>$+</code></td>
+<td style="text-align:left">&quot;AABBCCDD&quot;</td>
+<td style="text-align:left">AACCDD</td>
+</tr>
+<tr>
+<td style="text-align:left">$_</td>
+<td style="text-align:left">&#x66FF;&#x6362;&#x6574;&#x4E2A;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+<td style="text-align:left">B+</td>
+<td style="text-align:left"><code>$_</code></td>
+<td style="text-align:left">&quot;AABBCC&quot;</td>
+<td style="text-align:left">&quot;AAAABBCCCC&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h3 id="&#x4E5D;&#x3001;&#x6742;&#x9879;&#x6784;&#x9020;">&#x4E5D;&#x3001;&#x6742;&#x9879;&#x6784;&#x9020;</h3>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x5404;&#x79CD;&#x6742;&#x9879;&#x6784;&#x9020;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x6784;&#x9020;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:left">&#x5B9E;&#x4F8B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">(?imnsx-imnsx)</td>
+<td style="text-align:left">&#x5728;&#x6A21;&#x5F0F;&#x4E2D;&#x95F4;&#x5BF9;&#x8BF8;&#x5982;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x8FD9;&#x6837;&#x7684;&#x9009;&#x9879;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x6216;&#x7981;&#x7528;&#x3002;</td>
+<td style="text-align:left">\bA(?i)b\w+\b &#x5339;&#x914D; &quot;ABA Able Act&quot; &#x4E2D;&#x7684; &quot;ABA&quot; &#x548C; &quot;Able&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">(?#&#x6CE8;&#x91CA;)</td>
+<td style="text-align:left">&#x5185;&#x8054;&#x6CE8;&#x91CA;&#x3002;&#x8BE5;&#x6CE8;&#x91CA;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x53F3;&#x62EC;&#x53F7;&#x5904;&#x7EC8;&#x6B62;&#x3002;</td>
+<td style="text-align:left">\bA(?#&#x5339;&#x914D;&#x4EE5;A&#x5F00;&#x5934;&#x7684;&#x5355;&#x8BCD;)\w+\b</td>
+</tr>
+<tr>
+<td style="text-align:left"># [&#x884C;&#x5C3E;]</td>
+<td style="text-align:left">&#x8BE5;&#x6CE8;&#x91CA;&#x4EE5;&#x975E;&#x8F6C;&#x4E49;&#x7684; # &#x5F00;&#x5934;&#xFF0C;&#x5E76;&#x7EE7;&#x7EED;&#x5230;&#x884C;&#x7684;&#x7ED3;&#x5C3E;&#x3002;</td>
+<td style="text-align:left">(?x)\bA\w+\b#&#x5339;&#x914D;&#x4EE5; A &#x5F00;&#x5934;&#x7684;&#x5355;&#x8BCD;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h3 id="&#x5341;&#x3001;regex-&#x7C7B;">&#x5341;&#x3001;Regex &#x7C7B;</h3>
+<p>Regex &#x7C7B;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; Regex &#x7C7B;&#x4E2D;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5E8F;&#x53F7;</th>
+<th style="text-align:left">&#x65B9;&#x6CD5; &amp; &#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">public bool IsMatch( string input ) <br>&#x6307;&#x793A; Regex &#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x662F;&#x5426;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x627E;&#x5230;&#x5339;&#x914D;&#x9879;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">public bool IsMatch( string input, int startat ) <br>&#x6307;&#x793A; Regex &#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x662F;&#x5426;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x627E;&#x5230;&#x5339;&#x914D;&#x9879;&#xFF0C;&#x4ECE;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">public static bool IsMatch( string input, string pattern ) <br>&#x6307;&#x793A;&#x6307;&#x5B9A;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x662F;&#x5426;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x627E;&#x5230;&#x5339;&#x914D;&#x9879;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">public MatchCollection Matches( string input ) <br>&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x641C;&#x7D22;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x6240;&#x6709;&#x5339;&#x914D;&#x9879;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">public string Replace( string input, string replacement ) <br>&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#xFF0C;&#x628A;&#x6240;&#x6709;&#x5339;&#x914D;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x5F0F;&#x7684;&#x6240;&#x6709;&#x5339;&#x914D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;&#x4E3A;&#x6307;&#x5B9A;&#x7684;&#x66FF;&#x6362;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">public string[] Split( string input ) <br>&#x628A;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x5206;&#x5272;&#x4E3A;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x6839;&#x636E;&#x5728; Regex &#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x5F0F;&#x5B9A;&#x4E49;&#x7684;&#x4F4D;&#x7F6E;&#x8FDB;&#x884C;&#x5206;&#x5272;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5982;&#x9700;&#x4E86;&#x89E3; Regex &#x7C7B;&#x7684;&#x5B8C;&#x6574;&#x7684;&#x5C5E;&#x6027;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;&#x5FAE;&#x8F6F;&#x7684; C# &#x6587;&#x6863;&#x3002;</p>
+<h4 id="&#x5B9E;&#x4F8B;-1">&#x5B9E;&#x4F8B; 1</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x5339;&#x914D;&#x4E86;&#x4EE5; &apos;S&apos; &#x5F00;&#x5934;&#x7684;&#x5355;&#x8BCD;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+   <span class="hljs-keyword">using</span> System.Text.RegularExpressions;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">RegExApplication</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showMatch</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> text, <span class="hljs-keyword">string</span> expr</span>)
+         </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;The Expression: &quot;</span> + expr);
+            MatchCollection mc = Regex.Matches(text, expr);
+            <span class="hljs-keyword">foreach</span> (Match m <span class="hljs-keyword">in</span> mc)
+            {
+               Console.WriteLine(m);
+            }
+         }
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            <span class="hljs-keyword">string</span> str = <span class="hljs-string">&quot;A Thousand Splendid Suns&quot;</span>;
+
+            Console.WriteLine(<span class="hljs-string">&quot;Matching words that start with &apos;S&apos;: &quot;</span>);
+            showMatch(str, <span class="hljs-string">@&quot;\bS\S*&quot;</span>);
+            Console.ReadKey();
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   Matching words that start with <span class="hljs-string">&apos;S&apos;</span>:
+   The Expression: \bS\S*
+   Splendid
+   Suns
+</code></pre>
+<p>&#x2003;</p>
+<h4 id="&#x5B9E;&#x4F8B;-2">&#x5B9E;&#x4F8B; 2</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x5339;&#x914D;&#x4E86;&#x4EE5; &apos;m&apos; &#x5F00;&#x5934;&#x4EE5; &apos;e&apos; &#x7ED3;&#x5C3E;&#x7684;&#x5355;&#x8BCD;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+   <span class="hljs-keyword">using</span> System.Text.RegularExpressions;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">RegExApplication</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showMatch</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> text, <span class="hljs-keyword">string</span> expr</span>)
+         </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;The Expression: &quot;</span> + expr);
+            MatchCollection mc = Regex.Matches(text, expr);
+            <span class="hljs-keyword">foreach</span> (Match m <span class="hljs-keyword">in</span> mc)
+            {
+               Console.WriteLine(m);
+            }
+         }
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            <span class="hljs-keyword">string</span> str = <span class="hljs-string">&quot;make maze and manage to measure it&quot;</span>;
+
+            Console.WriteLine(<span class="hljs-string">&quot;Matching words start with &apos;m&apos; and ends with &apos;e&apos;:&quot;</span>);
+            showMatch(str, <span class="hljs-string">@&quot;\bm\S*e\b&quot;</span>);
+            Console.ReadKey();
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   Matching words start with <span class="hljs-string">&apos;m&apos;</span> and ends with <span class="hljs-string">&apos;e&apos;</span>:
+   The Expression: \bm\S*e\b
+   make
+   maze
+   manage
+   measure
+</code></pre>
+<p>&#x2003;</p>
+<h4 id="&#x5B9E;&#x4F8B;-3">&#x5B9E;&#x4F8B; 3</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x66FF;&#x6362;&#x6389;&#x591A;&#x4F59;&#x7684;&#x7A7A;&#x683C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+   <span class="hljs-keyword">using</span> System.Text.RegularExpressions;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">RegExApplication</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            <span class="hljs-keyword">string</span> input = <span class="hljs-string">&quot;Hello   World   &quot;</span>;
+            <span class="hljs-keyword">string</span> pattern = <span class="hljs-string">&quot;\\s+&quot;</span>;
+            <span class="hljs-keyword">string</span> replacement = <span class="hljs-string">&quot; &quot;</span>;
+            Regex rgx = <span class="hljs-keyword">new</span> Regex(pattern);
+            <span class="hljs-keyword">string</span> result = rgx.Replace(input, replacement);
+
+            Console.WriteLine(<span class="hljs-string">&quot;Original String: {0}&quot;</span>, input);
+            Console.WriteLine(<span class="hljs-string">&quot;Replacement String: {0}&quot;</span>, result);    
+            Console.ReadKey();
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   Original String: Hello   World   
+   Replacement String: Hello World
+</code></pre>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -709,7 +1485,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.23 C# 正则表达式","level":"1.2.23","depth":2,"next":{"title":"1.24 C# 文件处理","level":"1.2.24","depth":2,"path":"一、CSharp 基础教程/1_24 CSharp 文件处理.md","ref":"一、CSharp 基础教程/1_24 CSharp 文件处理.md","articles":[]},"previous":{"title":"1.22 C# 预处理指令","level":"1.2.22","depth":2,"path":"一、CSharp 基础教程/1_22 CSharp 预处理指令.md","ref":"一、CSharp 基础教程/1_22 CSharp 预处理指令.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_23 CSharp 正则表达式.md","mtime":"2017-11-04T16:56:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.23 C# 正则表达式","level":"1.2.23","depth":2,"next":{"title":"1.24 C# 文件处理","level":"1.2.24","depth":2,"path":"一、CSharp 基础教程/1_24 CSharp 文件处理.md","ref":"一、CSharp 基础教程/1_24 CSharp 文件处理.md","articles":[]},"previous":{"title":"1.22 C# 预处理指令","level":"1.2.22","depth":2,"path":"一、CSharp 基础教程/1_22 CSharp 预处理指令.md","ref":"一、CSharp 基础教程/1_22 CSharp 预处理指令.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_23 CSharp 正则表达式.md","mtime":"2017-11-05T12:38:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                <a href="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,351 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x5B57;&#x7B26;&#x4E32;">C# &#x5B57;&#x7B26;&#x4E32;</h2>
+<p>&#x5728; C# &#x4E2D;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x6765;&#x8868;&#x793A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x66F4;&#x5E38;&#x89C1;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x4F7F;&#x7528; <code>string</code> &#x5173;&#x952E;&#x5B57;&#x6765;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x53D8;&#x91CF;&#x3002;<code>string</code> &#x5173;&#x952E;&#x5B57;&#x662F; <code>System.String</code> &#x7C7B;&#x7684;&#x522B;&#x540D;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;&#x521B;&#x5EFA;-string-&#x5BF9;&#x8C61;">&#x4E00;&#x3001;&#x521B;&#x5EFA; String &#x5BF9;&#x8C61;</h3>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#x4E4B;&#x4E00;&#x6765;&#x521B;&#x5EFA; <code>string</code> &#x5BF9;&#x8C61;&#xFF1A;</p>
+<ol>
+<li><p>&#x901A;&#x8FC7;&#x7ED9; <code>String</code> &#x53D8;&#x91CF;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;</p>
+</li>
+<li><p>&#x901A;&#x8FC7;&#x4F7F;&#x7528; <code>String</code> &#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;</p>
+</li>
+<li><p>&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x4E32;&#x8054;&#x8FD0;&#x7B97;&#x7B26;&#xFF08; <code>+</code> &#xFF09;</p>
+</li>
+<li><p>&#x901A;&#x8FC7;&#x68C0;&#x7D22;&#x5C5E;&#x6027;&#x6216;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65B9;&#x6CD5;</p>
+</li>
+<li><p>&#x901A;&#x8FC7;&#x683C;&#x5F0F;&#x5316;&#x65B9;&#x6CD5;&#x6765;&#x8F6C;&#x6362;&#x4E00;&#x4E2A;&#x503C;&#x6216;&#x5BF9;&#x8C61;&#x4E3A;&#x5B83;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x793A;&#x5F62;&#x5F0F;</p>
+</li>
+</ol>
+<p>&#x2003;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x8FD9;&#x70B9;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">StringApplication</span>
+   {
+       <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+       {
+           <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+           </span>{
+              <span class="hljs-comment">//&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x8FDE;&#x63A5;</span>
+               <span class="hljs-keyword">string</span> fname, lname;
+               fname = <span class="hljs-string">&quot;Rowan&quot;</span>;
+               lname = <span class="hljs-string">&quot;Atkinson&quot;</span>;
+
+               <span class="hljs-keyword">string</span> fullname = fname + lname;
+               Console.WriteLine(<span class="hljs-string">&quot;Full Name: {0}&quot;</span>, fullname);
+
+               <span class="hljs-comment">//&#x901A;&#x8FC7;&#x4F7F;&#x7528; string &#x6784;&#x9020;&#x51FD;&#x6570;</span>
+               <span class="hljs-keyword">char</span>[] letters = { <span class="hljs-string">&apos;H&apos;</span>, <span class="hljs-string">&apos;e&apos;</span>, <span class="hljs-string">&apos;l&apos;</span>, <span class="hljs-string">&apos;l&apos;</span>,<span class="hljs-string">&apos;o&apos;</span> };
+               <span class="hljs-keyword">string</span> greetings = <span class="hljs-keyword">new</span> <span class="hljs-keyword">string</span>(letters);
+               Console.WriteLine(<span class="hljs-string">&quot;Greetings: {0}&quot;</span>, greetings);
+
+               <span class="hljs-comment">//&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;</span>
+               <span class="hljs-keyword">string</span>[] sarray = { <span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-string">&quot;From&quot;</span>, <span class="hljs-string">&quot;Tutorials&quot;</span>, <span class="hljs-string">&quot;Point&quot;</span> };
+               <span class="hljs-keyword">string</span> message = String.Join(<span class="hljs-string">&quot; &quot;</span>, sarray);
+               Console.WriteLine(<span class="hljs-string">&quot;Message: {0}&quot;</span>, message);
+
+               <span class="hljs-comment">//&#x7528;&#x4E8E;&#x8F6C;&#x5316;&#x503C;&#x7684;&#x683C;&#x5F0F;&#x5316;&#x65B9;&#x6CD5;</span>
+               DateTime waiting = <span class="hljs-keyword">new</span> DateTime(<span class="hljs-number">2012</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">17</span>, <span class="hljs-number">58</span>, <span class="hljs-number">1</span>);
+               <span class="hljs-keyword">string</span> chat = String.Format(<span class="hljs-string">&quot;Message sent at {0:t} on {0:D}&quot;</span>, 
+               waiting);
+               Console.WriteLine(<span class="hljs-string">&quot;Message: {0}&quot;</span>, chat);
+               Console.ReadKey() ;
+           }
+       }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   Full Name: RowanAtkinson
+   Greetings: Hello
+   Message: Hello From Tutorials Point
+   Message: Message sent at <span class="hljs-number">17</span>:<span class="hljs-number">58</span> on Wednesday, <span class="hljs-number">10</span> October <span class="hljs-number">2012</span>
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;string-&#x7C7B;&#x7684;&#x5C5E;&#x6027;">&#x4E8C;&#x3001;String &#x7C7B;&#x7684;&#x5C5E;&#x6027;</h3>
+<p>String &#x7C7B;&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5E8F;&#x53F7;</th>
+<th style="text-align:left">&#x5C5E;&#x6027;&#x540D;&#x79F0; &amp; &#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Chars<br>&#x5728;&#x5F53;&#x524D; String &#x5BF9;&#x8C61;&#x4E2D;&#x83B7;&#x53D6; Char &#x5BF9;&#x8C61;&#x7684;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">Length<br>&#x5728;&#x5F53;&#x524D;&#x7684; String &#x5BF9;&#x8C61;&#x4E2D;&#x83B7;&#x53D6;&#x5B57;&#x7B26;&#x6570;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h3 id="&#x4E09;&#x3001;string-&#x7C7B;&#x7684;&#x65B9;&#x6CD5;">&#x4E09;&#x3001;String &#x7C7B;&#x7684;&#x65B9;&#x6CD5;</h3>
+<p><code>String</code> &#x7C7B;&#x6709;&#x8BB8;&#x591A;&#x65B9;&#x6CD5;&#x7528;&#x4E8E; <code>string</code> &#x5BF9;&#x8C61;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x8868;&#x683C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x6700;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5E8F;&#x53F7;</th>
+<th style="text-align:left">&#x65B9;&#x6CD5;&#x540D;&#x79F0; &amp; &#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">public static int Compare( string strA, string strB ) <br>&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x6307;&#x5B9A;&#x7684; string &#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x5B83;&#x4EEC;&#x5728;&#x6392;&#x5217;&#x987A;&#x5E8F;&#x4E2D;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x7684;&#x6574;&#x6570;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">public static int Compare( string strA, string strB, bool ignoreCase ) <br>&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x6307;&#x5B9A;&#x7684; string &#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x5B83;&#x4EEC;&#x5728;&#x6392;&#x5217;&#x987A;&#x5E8F;&#x4E2D;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x7684;&#x6574;&#x6570;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5E03;&#x5C14;&#x53C2;&#x6570;&#x4E3A;&#x771F;&#x65F6;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">public static string Concat( string str0, string str1 ) <br>&#x8FDE;&#x63A5;&#x4E24;&#x4E2A; string &#x5BF9;&#x8C61;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">public static string Concat( string str0, string str1, string str2 ) <br>&#x8FDE;&#x63A5;&#x4E09;&#x4E2A; string &#x5BF9;&#x8C61;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">public static string Concat( string str0, string str1, string str2, string str3 ) <br>&#x8FDE;&#x63A5;&#x56DB;&#x4E2A; string &#x5BF9;&#x8C61;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">public bool Contains( string value ) <br>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x6307;&#x5B9A; string &#x5BF9;&#x8C61;&#x662F;&#x5426;&#x51FA;&#x73B0;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">public static string Copy( string str ) <br>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E0E;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x4E32;&#x5177;&#x6709;&#x76F8;&#x540C;&#x503C;&#x7684;&#x65B0;&#x7684; String &#x5BF9;&#x8C61;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">public void CopyTo( int sourceIndex, char[] destination, int destinationIndex, int count ) <br>&#x4ECE; string &#x5BF9;&#x8C61;&#x7684;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x590D;&#x5236;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x5B57;&#x7B26;&#x5230; Unicode &#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">public bool EndsWith( string value ) <br>&#x5224;&#x65AD; string &#x5BF9;&#x8C61;&#x7684;&#x7ED3;&#x5C3E;&#x662F;&#x5426;&#x5339;&#x914D;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:left">public bool Equals( string value ) <br>&#x5224;&#x65AD;&#x5F53;&#x524D;&#x7684; string &#x5BF9;&#x8C61;&#x662F;&#x5426;&#x4E0E;&#x6307;&#x5B9A;&#x7684; string &#x5BF9;&#x8C61;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">11</td>
+<td style="text-align:left">public static bool Equals( string a, string b ) <br>&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x6307;&#x5B9A;&#x7684; string &#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">12</td>
+<td style="text-align:left">public static string Format( string format, Object arg0 ) <br>&#x628A;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x683C;&#x5F0F;&#x9879;&#x66FF;&#x6362;&#x4E3A;&#x6307;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">13</td>
+<td style="text-align:left">public int IndexOf( char value ) <br>&#x8FD4;&#x56DE;&#x6307;&#x5B9A; Unicode &#x5B57;&#x7B26;&#x5728;&#x5F53;&#x524D;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x7D22;&#x5F15;&#x4ECE; 0 &#x5F00;&#x59CB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">14</td>
+<td style="text-align:left">public int IndexOf( string value ) <br>&#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x4E32;&#x5728;&#x8BE5;&#x5B9E;&#x4F8B;&#x4E2D;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x7D22;&#x5F15;&#x4ECE; 0 &#x5F00;&#x59CB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">15</td>
+<td style="text-align:left">public int IndexOf( char value, int startIndex ) <br>&#x8FD4;&#x56DE;&#x6307;&#x5B9A; Unicode &#x5B57;&#x7B26;&#x4ECE;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x641C;&#x7D22;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x7D22;&#x5F15;&#x4ECE; 0 &#x5F00;&#x59CB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">16</td>
+<td style="text-align:left">public int IndexOf( string value, int startIndex ) <br>&#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x4E32;&#x4ECE;&#x8BE5;&#x5B9E;&#x4F8B;&#x4E2D;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x641C;&#x7D22;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x7D22;&#x5F15;&#x4ECE; 0 &#x5F00;&#x59CB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">17</td>
+<td style="text-align:left">public int IndexOfAny( char[] anyOf ) <br>&#x8FD4;&#x56DE;&#x67D0;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684; Unicode &#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x4E2D;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x5728;&#x8BE5;&#x5B9E;&#x4F8B;&#x4E2D;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x7D22;&#x5F15;&#x4ECE; 0 &#x5F00;&#x59CB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">18</td>
+<td style="text-align:left">public int IndexOfAny( char[] anyOf, int startIndex ) <br>&#x8FD4;&#x56DE;&#x67D0;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684; Unicode &#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x4E2D;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4ECE;&#x8BE5;&#x5B9E;&#x4F8B;&#x4E2D;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x641C;&#x7D22;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x7D22;&#x5F15;&#x4ECE; 0 &#x5F00;&#x59CB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">19</td>
+<td style="text-align:left">public string Insert( int startIndex, string value ) <br>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5176;&#x4E2D;&#xFF0C;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x88AB;&#x63D2;&#x5165;&#x5728;&#x5F53;&#x524D; string &#x5BF9;&#x8C61;&#x7684;&#x6307;&#x5B9A;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">20</td>
+<td style="text-align:left">public static bool IsNullOrEmpty( string value ) <br>&#x6307;&#x793A;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4E3A; null &#x6216;&#x8005;&#x662F;&#x5426;&#x4E3A;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">21</td>
+<td style="text-align:left">public static string Join( string separator, string[] value ) <br>&#x8FDE;&#x63A5;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#xFF0C;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x5206;&#x9694;&#x7B26;&#x5206;&#x9694;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">22</td>
+<td style="text-align:left">public static string Join( string separator, string[] value, int startIndex, int count ) <br>&#x8FDE;&#x63A5;&#x63A5;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x7684;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#xFF0C;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x5206;&#x9694;&#x7B26;&#x5206;&#x9694;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">23</td>
+<td style="text-align:left">public int LastIndexOf( char value ) <br>&#x8FD4;&#x56DE;&#x6307;&#x5B9A; Unicode &#x5B57;&#x7B26;&#x5728;&#x5F53;&#x524D; string &#x5BF9;&#x8C61;&#x4E2D;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;&#xFF0C;&#x7D22;&#x5F15;&#x4ECE; 0 &#x5F00;&#x59CB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">24</td>
+<td style="text-align:left">public int LastIndexOf( string value ) <br>&#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x4E32;&#x5728;&#x5F53;&#x524D; string &#x5BF9;&#x8C61;&#x4E2D;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;&#xFF0C;&#x7D22;&#x5F15;&#x4ECE; 0 &#x5F00;&#x59CB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">25</td>
+<td style="text-align:left">public string Remove( int startIndex ) <br>&#x79FB;&#x9664;&#x5F53;&#x524D;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;&#xFF0C;&#x4ECE;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#xFF0C;&#x4E00;&#x76F4;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x4E3A;&#x6B62;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">26</td>
+<td style="text-align:left">public string Remove( int startIndex, int count ) <br>&#x4ECE;&#x5F53;&#x524D;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x79FB;&#x9664;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">27</td>
+<td style="text-align:left">public string Replace( char oldChar, char newChar ) <br>&#x628A;&#x5F53;&#x524D; string &#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x6307;&#x5B9A;&#x7684; Unicode &#x5B57;&#x7B26;&#x66FF;&#x6362;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684; Unicode &#x5B57;&#x7B26;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">28</td>
+<td style="text-align:left">public string Replace( string oldValue, string newValue ) <br>&#x628A;&#x5F53;&#x524D; string &#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">29</td>
+<td style="text-align:left">public string[] Split( params char[] separator ) <br>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x5305;&#x542B;&#x5F53;&#x524D;&#x7684; string &#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684; Unicode &#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x5206;&#x9694;&#x7684;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">30</td>
+<td style="text-align:left">public string[] Split( char[] separator, int count ) <br>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x5305;&#x542B;&#x5F53;&#x524D;&#x7684; string &#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684; Unicode &#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x5206;&#x9694;&#x7684;&#x3002;int &#x53C2;&#x6570;&#x6307;&#x5B9A;&#x8981;&#x8FD4;&#x56DE;&#x7684;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6700;&#x5927;&#x6570;&#x76EE;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">31</td>
+<td style="text-align:left">public bool StartsWith( string value ) <br>&#x5224;&#x65AD;&#x5B57;&#x7B26;&#x4E32;&#x5B9E;&#x4F8B;&#x7684;&#x5F00;&#x5934;&#x662F;&#x5426;&#x5339;&#x914D;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">32</td>
+<td style="text-align:left">public char[] ToCharArray()<br>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x5F53;&#x524D; string &#x5BF9;&#x8C61;&#x4E2D;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x7684; Unicode &#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">33</td>
+<td style="text-align:left">public char[] ToCharArray( int startIndex, int length ) <br>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x5F53;&#x524D; string &#x5BF9;&#x8C61;&#x4E2D;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x7684; Unicode &#x5B57;&#x7B26;&#x6570;&#x7EC4;&#xFF0C;&#x4ECE;&#x6307;&#x5B9A;&#x7684;&#x7D22;&#x5F15;&#x5F00;&#x59CB;&#xFF0C;&#x76F4;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x957F;&#x5EA6;&#x4E3A;&#x6B62;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">34</td>
+<td style="text-align:left">public string ToLower()<br>&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x5C0F;&#x5199;&#x5E76;&#x8FD4;&#x56DE;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">35</td>
+<td style="text-align:left">public string ToUpper()<br>&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x5927;&#x5199;&#x5E76;&#x8FD4;&#x56DE;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">36</td>
+<td style="text-align:left">public string Trim()<br>&#x79FB;&#x9664;&#x5F53;&#x524D; String &#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x524D;&#x5BFC;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x548C;&#x540E;&#x7F6E;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x5217;&#x8868;&#x5E76;&#x4E0D;&#x8BE6;&#x5C3D;&#xFF0C;&#x8BF7;&#x8BBF;&#x95EE; MSDN &#x5E93;&#xFF0C;&#x67E5;&#x770B;&#x5B8C;&#x6574;&#x7684;&#x65B9;&#x6CD5;&#x5217;&#x8868;&#x548C; <code>String</code> &#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x2003;</p>
+<h4 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p><strong>&#x6BD4;&#x8F83;&#x5B57;&#x7B26;&#x4E32;</strong></p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">StringApplication</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">StringProg</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            <span class="hljs-keyword">string</span> str1 = <span class="hljs-string">&quot;This is test&quot;</span>;
+            <span class="hljs-keyword">string</span> str2 = <span class="hljs-string">&quot;This is text&quot;</span>;
+
+            <span class="hljs-keyword">if</span> (String.Compare(str1, str2) == <span class="hljs-number">0</span>)
+            {
+               Console.WriteLine(str1 + <span class="hljs-string">&quot; and &quot;</span> + str2 +  <span class="hljs-string">&quot; are equal.&quot;</span>);
+            }
+            <span class="hljs-keyword">else</span>
+            {
+               Console.WriteLine(str1 + <span class="hljs-string">&quot; and &quot;</span> + str2 + <span class="hljs-string">&quot; are not equal.&quot;</span>);
+            }
+            Console.ReadKey() ;
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   This <span class="hljs-keyword">is</span> test and This <span class="hljs-keyword">is</span> text are not equal.
+</code></pre>
+<p><strong>&#x5B57;&#x7B26;&#x4E32;&#x5305;&#x542B;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">StringApplication</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">StringProg</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            <span class="hljs-keyword">string</span> str = <span class="hljs-string">&quot;This is test&quot;</span>;
+            <span class="hljs-keyword">if</span> (str.Contains(<span class="hljs-string">&quot;test&quot;</span>))
+            {
+               Console.WriteLine(<span class="hljs-string">&quot;The sequence &apos;test&apos; was found.&quot;</span>);
+            }
+            Console.ReadKey() ;
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   The sequence <span class="hljs-string">&apos;test&apos;</span> was found.
+</code></pre>
+<p><strong>&#x83B7;&#x53D6;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System; 
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">StringApplication</span> 
+   {
+       <span class="hljs-keyword">class</span> <span class="hljs-title">StringProg</span> 
+       { 
+           <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>) 
+           </span>{ 
+               <span class="hljs-keyword">string</span> str = <span class="hljs-string">&quot;Last night I dreamt of San Pedro&quot;</span>; 
+               Console.WriteLine(str); 
+               <span class="hljs-keyword">string</span> substr = str.Substring(<span class="hljs-number">23</span>); 
+               Console.WriteLine(substr); 
+               Console.ReadKey() ; 
+           } 
+       } 
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   Last night I dreamt of San Pedro
+   San Pedro
+</code></pre>
+<p><strong>&#x8FDE;&#x63A5;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">StringApplication</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">StringProg</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            <span class="hljs-keyword">string</span>[] starray = <span class="hljs-keyword">new</span> <span class="hljs-keyword">string</span>[]{<span class="hljs-string">&quot;Down the way nights are dark&quot;</span>,
+            <span class="hljs-string">&quot;And the sun shines daily on the mountain top&quot;</span>,
+            <span class="hljs-string">&quot;I took a trip on a sailing ship&quot;</span>,
+            <span class="hljs-string">&quot;And when I reached Jamaica&quot;</span>,
+            <span class="hljs-string">&quot;I made a stop&quot;</span>};
+
+            <span class="hljs-keyword">string</span> str = String.Join(<span class="hljs-string">&quot;\n&quot;</span>, starray);
+            Console.WriteLine(str);
+            Console.ReadKey() ;
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   Down the way nights are dark
+   And the sun shines daily on the mountain top
+   I took a trip on a sailing ship
+   And <span class="hljs-keyword">when</span> I reached Jamaica
+   I made a stop
+</code></pre>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -709,7 +1066,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.11 C# 字符串","level":"1.2.11","depth":2,"next":{"title":"1.12 C# 数组","level":"1.2.12","depth":2,"path":"一、CSharp 基础教程/1_12 CSharp 数组.md","ref":"一、CSharp 基础教程/1_12 CSharp 数组.md","articles":[]},"previous":{"title":"1.10 C# 可空类型","level":"1.2.10","depth":2,"path":"一、CSharp 基础教程/1_10 CSharp 可空类型.md","ref":"一、CSharp 基础教程/1_10 CSharp 可空类型.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_11 CSharp 字符串.md","mtime":"2017-11-04T16:39:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.11 C# 字符串","level":"1.2.11","depth":2,"next":{"title":"1.12 C# 数组","level":"1.2.12","depth":2,"path":"一、CSharp 基础教程/1_12 CSharp 数组.md","ref":"一、CSharp 基础教程/1_12 CSharp 数组.md","articles":[]},"previous":{"title":"1.10 C# 可空类型","level":"1.2.10","depth":2,"path":"一、CSharp 基础教程/1_10 CSharp 可空类型.md","ref":"一、CSharp 基础教程/1_10 CSharp 可空类型.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_11 CSharp 字符串.md","mtime":"2017-11-05T09:11:17.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

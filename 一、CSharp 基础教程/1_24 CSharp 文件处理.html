@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                <a href="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,735 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x6587;&#x4EF6;&#x5904;&#x7406;">C# &#x6587;&#x4EF6;&#x5904;&#x7406;</h2>
+<p>&#x4E00;&#x4E2A; <strong>&#x6587;&#x4EF6;</strong> &#x662F;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x5728;&#x78C1;&#x76D8;&#x4E2D;&#x5E26;&#x6709;&#x6307;&#x5B9A;&#x540D;&#x79F0;&#x548C;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;&#x7684;&#x6570;&#x636E;&#x96C6;&#x5408;&#x3002;&#x5F53;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x65F6;&#xFF0C;&#x5B83;&#x53D8;&#x6210;&#x4E00;&#x4E2A; <strong>&#x6D41;</strong>&#x3002;</p>
+<p>&#x4ECE;&#x6839;&#x672C;&#x4E0A;&#x8BF4;&#xFF0C;&#x6D41;&#x662F;&#x901A;&#x8FC7;&#x901A;&#x4FE1;&#x8DEF;&#x5F84;&#x4F20;&#x9012;&#x7684;&#x5B57;&#x8282;&#x5E8F;&#x5217;&#x3002;&#x6709;&#x4E24;&#x4E2A;&#x4E3B;&#x8981;&#x7684;&#x6D41;&#xFF1A;<strong>&#x8F93;&#x5165;&#x6D41;</strong> &#x548C; <strong>&#x8F93;&#x51FA;&#x6D41;</strong>&#x3002;<strong>&#x8F93;&#x5165;&#x6D41;</strong>&#x7528;&#x4E8E;&#x4ECE;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF08;&#x8BFB;&#x64CD;&#x4F5C;&#xFF09;&#xFF0C;<strong>&#x8F93;&#x51FA;&#x6D41;</strong>&#x7528;&#x4E8E;&#x5411;&#x6587;&#x4EF6;&#x5199;&#x5165;&#x6570;&#x636E;&#xFF08;&#x5199;&#x64CD;&#x4F5C;&#xFF09;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;c-io-&#x7C7B;">&#x4E00;&#x3001;C# I/O &#x7C7B;</h3>
+<p>System.IO &#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6709;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#xFF0C;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x5404;&#x79CD;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x521B;&#x5EFA;&#x548C;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x3001;&#x8BFB;&#x53D6;&#x6216;&#x5199;&#x5165;&#x6587;&#x4EF6;&#xFF0C;&#x5173;&#x95ED;&#x6587;&#x4EF6;&#x7B49;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x4E00;&#x4E9B; System.IO &#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x975E;&#x62BD;&#x8C61;&#x7C7B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">I/O &#x7C7B;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">BinaryReader</td>
+<td style="text-align:left">&#x4ECE;&#x4E8C;&#x8FDB;&#x5236;&#x6D41;&#x8BFB;&#x53D6;&#x539F;&#x59CB;&#x6570;&#x636E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">BinaryWriter</td>
+<td style="text-align:left">&#x4EE5;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#x5199;&#x5165;&#x539F;&#x59CB;&#x6570;&#x636E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">BufferedStream</td>
+<td style="text-align:left">&#x5B57;&#x8282;&#x6D41;&#x7684;&#x4E34;&#x65F6;&#x5B58;&#x50A8;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Directory</td>
+<td style="text-align:left">&#x6709;&#x52A9;&#x4E8E;&#x64CD;&#x4F5C;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">DirectoryInfo</td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x5BF9;&#x76EE;&#x5F55;&#x6267;&#x884C;&#x64CD;&#x4F5C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">DriveInfo</td>
+<td style="text-align:left">&#x63D0;&#x4F9B;&#x9A71;&#x52A8;&#x5668;&#x7684;&#x4FE1;&#x606F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">File</td>
+<td style="text-align:left">&#x6709;&#x52A9;&#x4E8E;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">FileInfo</td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x5BF9;&#x6587;&#x4EF6;&#x6267;&#x884C;&#x64CD;&#x4F5C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">FileStream</td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x6587;&#x4EF6;&#x4E2D;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#x7684;&#x8BFB;&#x5199;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">MemoryStream</td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#x5B58;&#x50A8;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x6D41;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">Path</td>
+<td style="text-align:left">&#x5BF9;&#x8DEF;&#x5F84;&#x4FE1;&#x606F;&#x6267;&#x884C;&#x64CD;&#x4F5C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">StreamReader</td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x4ECE;&#x5B57;&#x8282;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x5B57;&#x7B26;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">StreamWriter</td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x5411;&#x4E00;&#x4E2A;&#x6D41;&#x4E2D;&#x5199;&#x5165;&#x5B57;&#x7B26;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">StringReader</td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x8BFB;&#x53D6;&#x5B57;&#x7B26;&#x4E32;&#x7F13;&#x51B2;&#x533A;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">StringWriter</td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x5199;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x7F13;&#x51B2;&#x533A;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;filestream-&#x7C7B;">&#x4E8C;&#x3001;FileStream &#x7C7B;</h3>
+<p>System.IO &#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684; <strong>FileStream</strong> &#x7C7B;&#x6709;&#x52A9;&#x4E8E;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x5199;&#x4E0E;&#x5173;&#x95ED;&#x3002;&#x8BE5;&#x7C7B;&#x6D3E;&#x751F;&#x81EA;&#x62BD;&#x8C61;&#x7C7B; Stream&#x3002;</p>
+<p>&#x60A8;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <strong>FileStream</strong> &#x5BF9;&#x8C61;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6216;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x5DF2;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x521B;&#x5EFA; <strong>FileStream</strong> &#x5BF9;&#x8C61;&#x7684;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-csharp">    FileStream &lt;object_name&gt; = <span class="hljs-keyword">new</span> FileStream( &lt;file_name&gt;,
+    &lt;FileMode Enumerator&gt;, &lt;FileAccess Enumerator&gt;, &lt;FileShare Enumerator&gt;);
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; FileStream &#x5BF9;&#x8C61; F &#x6765;&#x8BFB;&#x53D6;&#x540D;&#x4E3A; sample.txt &#x7684;&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-csharp">    FileStream F = <span class="hljs-keyword">new</span> FileStream(<span class="hljs-string">&quot;sample.txt&quot;</span>, FileMode.Open, FileAccess.Read, FileShare.Read);
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">FileMode</td>
+<td style="text-align:left">FileMode &#x679A;&#x4E3E;&#x5B9A;&#x4E49;&#x4E86;&#x5404;&#x79CD;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x3002;FileMode &#x679A;&#x4E3E;&#x7684;&#x6210;&#x5458;&#x6709;&#xFF1A;<br>&#x2022; Append&#xFF1A;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x5DF2;&#x6709;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x5C06;&#x5149;&#x6807;&#x653E;&#x7F6E;&#x5728;&#x6587;&#x4EF6;&#x7684;&#x672B;&#x5C3E;&#x3002;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x3002;<br>&#x2022; Create&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x5DF2;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x5220;&#x9664;&#x65E7;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x521B;&#x5EFA;&#x65B0;&#x6587;&#x4EF6;&#x3002;<br>&#x2022; CreateNew&#xFF1A;&#x6307;&#x5B9A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5E94;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x5DF2;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;<br>&#x2022; Open&#xFF1A;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x5DF2;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;<br>&#x2022; OpenOrCreate&#xFF1A;&#x6307;&#x5B9A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5E94;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x5DF2;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x540D;&#x79F0;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x6253;&#x5F00;&#x3002;<br>&#x2022; Truncate&#xFF1A;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x5DF2;&#x6709;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x4E00;&#x65E6;&#x6253;&#x5F00;&#xFF0C;&#x5C31;&#x5C06;&#x88AB;&#x622A;&#x65AD;&#x4E3A;&#x96F6;&#x5B57;&#x8282;&#x5927;&#x5C0F;&#x3002;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5411;&#x6587;&#x4EF6;&#x5199;&#x5165;&#x5168;&#x65B0;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x662F;&#x4FDD;&#x7559;&#x6587;&#x4EF6;&#x7684;&#x521D;&#x59CB;&#x521B;&#x5EFA;&#x65E5;&#x671F;&#x3002;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">FileAccess</td>
+<td style="text-align:left">FileAccess &#x679A;&#x4E3E;&#x7684;&#x6210;&#x5458;&#x6709;&#xFF1A;Read&#x3001;ReadWrite &#x548C; Write&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">FileShare</td>
+<td style="text-align:left">FileShare &#x679A;&#x4E3E;&#x7684;&#x6210;&#x5458;&#x6709;&#xFF1A;<br>&#x2022; Inheritable&#xFF1A;&#x5141;&#x8BB8;&#x6587;&#x4EF6;&#x53E5;&#x67C4;&#x53EF;&#x7531;&#x5B50;&#x8FDB;&#x7A0B;&#x7EE7;&#x627F;&#x3002;Win32 &#x4E0D;&#x76F4;&#x63A5;&#x652F;&#x6301;&#x6B64;&#x529F;&#x80FD;&#x3002;<br>&#x2022; None&#xFF1A;&#x8C22;&#x7EDD;&#x5171;&#x4EAB;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x3002;&#x6587;&#x4EF6;&#x5173;&#x95ED;&#x524D;&#xFF0C;&#x6253;&#x5F00;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x4EFB;&#x4F55;&#x8BF7;&#x6C42;&#xFF08;&#x7531;&#x6B64;&#x8FDB;&#x7A0B;&#x6216;&#x53E6;&#x4E00;&#x8FDB;&#x7A0B;&#x53D1;&#x51FA;&#x7684;&#x8BF7;&#x6C42;&#xFF09;&#x90FD;&#x5C06;&#x5931;&#x8D25;&#x3002;<br>&#x2022; Read&#xFF1A;&#x5141;&#x8BB8;&#x968F;&#x540E;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x3002;&#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#x6B64;&#x6807;&#x5FD7;&#xFF0C;&#x5219;&#x6587;&#x4EF6;&#x5173;&#x95ED;&#x524D;&#xFF0C;&#x4EFB;&#x4F55;&#x6253;&#x5F00;&#x8BE5;&#x6587;&#x4EF6;&#x4EE5;&#x8FDB;&#x884C;&#x8BFB;&#x53D6;&#x7684;&#x8BF7;&#x6C42;&#xFF08;&#x7531;&#x6B64;&#x8FDB;&#x7A0B;&#x6216;&#x53E6;&#x4E00;&#x8FDB;&#x7A0B;&#x53D1;&#x51FA;&#x7684;&#x8BF7;&#x6C42;&#xFF09;&#x90FD;&#x5C06;&#x5931;&#x8D25;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5373;&#x4F7F;&#x6307;&#x5B9A;&#x4E86;&#x6B64;&#x6807;&#x5FD7;&#xFF0C;&#x4ECD;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x9644;&#x52A0;&#x6743;&#x9650;&#x624D;&#x80FD;&#x591F;&#x8BBF;&#x95EE;&#x8BE5;&#x6587;&#x4EF6;&#x3002;<br>&#x2022; ReadWrite&#xFF1A;&#x5141;&#x8BB8;&#x968F;&#x540E;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x6216;&#x5199;&#x5165;&#x3002;&#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#x6B64;&#x6807;&#x5FD7;&#xFF0C;&#x5219;&#x6587;&#x4EF6;&#x5173;&#x95ED;&#x524D;&#xFF0C;&#x4EFB;&#x4F55;&#x6253;&#x5F00;&#x8BE5;&#x6587;&#x4EF6;&#x4EE5;&#x8FDB;&#x884C;&#x8BFB;&#x53D6;&#x6216;&#x5199;&#x5165;&#x7684;&#x8BF7;&#x6C42;&#xFF08;&#x7531;&#x6B64;&#x8FDB;&#x7A0B;&#x6216;&#x53E6;&#x4E00;&#x8FDB;&#x7A0B;&#x53D1;&#x51FA;&#xFF09;&#x90FD;&#x5C06;&#x5931;&#x8D25;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5373;&#x4F7F;&#x6307;&#x5B9A;&#x4E86;&#x6B64;&#x6807;&#x5FD7;&#xFF0C;&#x4ECD;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x9644;&#x52A0;&#x6743;&#x9650;&#x624D;&#x80FD;&#x591F;&#x8BBF;&#x95EE;&#x8BE5;&#x6587;&#x4EF6;&#x3002;<br>&#x2022; Write&#xFF1A;&#x5141;&#x8BB8;&#x968F;&#x540E;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x5199;&#x5165;&#x3002;&#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#x6B64;&#x6807;&#x5FD7;&#xFF0C;&#x5219;&#x6587;&#x4EF6;&#x5173;&#x95ED;&#x524D;&#xFF0C;&#x4EFB;&#x4F55;&#x6253;&#x5F00;&#x8BE5;&#x6587;&#x4EF6;&#x4EE5;&#x8FDB;&#x884C;&#x5199;&#x5165;&#x7684;&#x8BF7;&#x6C42;&#xFF08;&#x7531;&#x6B64;&#x8FDB;&#x7A0B;&#x6216;&#x53E6;&#x4E00;&#x8FDB;&#x8FC7;&#x7A0B;&#x53D1;&#x51FA;&#x7684;&#x8BF7;&#x6C42;&#xFF09;&#x90FD;&#x5C06;&#x5931;&#x8D25;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5373;&#x4F7F;&#x6307;&#x5B9A;&#x4E86;&#x6B64;&#x6807;&#x5FD7;&#xFF0C;&#x4ECD;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x9644;&#x52A0;&#x6743;&#x9650;&#x624D;&#x80FD;&#x591F;&#x8BBF;&#x95EE;&#x8BE5;&#x6587;&#x4EF6;&#x3002;<br>&#x2022; Delete&#xFF1A;&#x5141;&#x8BB8;&#x968F;&#x540E;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h4 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x6F14;&#x793A;&#x4E86; FileStream &#x7C7B;&#x7684;&#x7528;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">using</span> System.IO;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">FileIOApplication</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                FileStream F = <span class="hljs-keyword">new</span> FileStream(<span class="hljs-string">&quot;test.dat&quot;</span>, 
+                FileMode.OpenOrCreate, FileAccess.ReadWrite);
+
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">20</span>; i++)
+                {
+                    F.WriteByte((<span class="hljs-keyword">byte</span>)i);
+                }
+
+                F.Position = <span class="hljs-number">0</span>;
+
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">20</span>; i++)
+                {
+                    Console.Write(F.ReadByte() + <span class="hljs-string">&quot; &quot;</span>);
+                }
+                F.Close();
+                Console.ReadKey();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">10</span> <span class="hljs-number">11</span> <span class="hljs-number">12</span> <span class="hljs-number">13</span> <span class="hljs-number">14</span> <span class="hljs-number">15</span> <span class="hljs-number">16</span> <span class="hljs-number">17</span> <span class="hljs-number">18</span> <span class="hljs-number">19</span> <span class="hljs-number">20</span> <span class="hljs-number">-1</span>
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E09;&#x3001;c-&#x9AD8;&#x7EA7;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;">&#x4E09;&#x3001;C# &#x9AD8;&#x7EA7;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</h3>
+<p>&#x4E0A;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86; C# &#x4E2D;&#x7B80;&#x5355;&#x7684;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8981;&#x5145;&#x5206;&#x5229;&#x7528; C# System.IO &#x7C7B;&#x7684;&#x5F3A;&#x5927;&#x529F;&#x80FD;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x77E5;&#x9053;&#x8FD9;&#x4E9B;&#x7C7B;&#x5E38;&#x7528;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x3002;
+&#x5728;&#x4E0B;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BA8;&#x8BBA;&#x8FD9;&#x4E9B;&#x7C7B;&#x548C;&#x5B83;&#x4EEC;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x56DB;&#x3001;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x5199;">&#x56DB;&#x3001;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x5199;</h3>
+<p><strong>StreamReader</strong> &#x548C; <strong>StreamWriter</strong> &#x7C7B;&#x7528;&#x4E8E;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x8BFB;&#x5199;&#x3002;&#x8FD9;&#x4E9B;&#x7C7B;&#x4ECE;&#x62BD;&#x8C61;&#x57FA;&#x7C7B; Stream &#x7EE7;&#x627F;&#xFF0C;Stream &#x652F;&#x6301;&#x6587;&#x4EF6;&#x6D41;&#x7684;&#x5B57;&#x8282;&#x8BFB;&#x5199;&#x3002;</p>
+<p>&#x2003;</p>
+<h4 id="41-streamreader-&#x7C7B;">4.1 StreamReader &#x7C7B;</h4>
+<p><strong>StreamReader</strong> &#x7C7B;&#x7EE7;&#x627F;&#x81EA;&#x62BD;&#x8C61;&#x57FA;&#x7C7B; TextReader&#xFF0C;&#x8868;&#x793A;&#x9605;&#x8BFB;&#x5668;&#x8BFB;&#x53D6;&#x4E00;&#x7CFB;&#x5217;&#x5B57;&#x7B26;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; <strong>StreamReader</strong> &#x7C7B;&#x4E2D;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5E8F;&#x53F7;</th>
+<th style="text-align:left">&#x65B9;&#x6CD5; &amp; &#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">public override void Close()<br>&#x5173;&#x95ED; StreamReader &#x5BF9;&#x8C61;&#x548C;&#x57FA;&#x7840;&#x6D41;&#xFF0C;&#x5E76;&#x91CA;&#x653E;&#x4EFB;&#x4F55;&#x4E0E;&#x8BFB;&#x8005;&#x76F8;&#x5173;&#x7684;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">public override int Peek()<br>&#x8FD4;&#x56DE;&#x4E0B;&#x4E00;&#x4E2A;&#x53EF;&#x7528;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x4F46;&#x4E0D;&#x4F7F;&#x7528;&#x5B83;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">public override int Read()<br>&#x4ECE;&#x8F93;&#x5165;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x5E76;&#x628A;&#x5B57;&#x7B26;&#x4F4D;&#x7F6E;&#x5F80;&#x524D;&#x79FB;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5982;&#x9700;&#x67E5;&#x770B;&#x5B8C;&#x6574;&#x7684;&#x65B9;&#x6CD5;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x8BBF;&#x95EE;&#x5FAE;&#x8F6F;&#x7684; C# &#x6587;&#x6863;&#x3002;
+&#x5B9E;&#x4F8B;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x8BFB;&#x53D6;&#x540D;&#x4E3A; Jamaica.txt &#x7684;&#x6587;&#x4EF6;&#x3002;&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-csharp">    Down the way <span class="hljs-keyword">where</span> the nights are gay
+    And the sun shines daily on the mountain top
+    I took a trip on a sailing ship
+    And <span class="hljs-keyword">when</span> I reached Jamaica
+    I made a stop
+</code></pre>
+<p>&#x2003;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">using</span> System.IO;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">FileApplication</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                <span class="hljs-keyword">try</span>
+                {
+                    <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A; StreamReader &#x7684;&#x5B9E;&#x4F8B;&#x6765;&#x8BFB;&#x53D6;&#x6587;&#x4EF6; </span>
+                    <span class="hljs-comment">// using &#x8BED;&#x53E5;&#x4E5F;&#x80FD;&#x5173;&#x95ED; StreamReader</span>
+                    <span class="hljs-keyword">using</span> (StreamReader sr = <span class="hljs-keyword">new</span> StreamReader(<span class="hljs-string">&quot;c:/jamaica.txt&quot;</span>))
+                    {
+                        <span class="hljs-keyword">string</span> line;
+
+                        <span class="hljs-comment">// &#x4ECE;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x5E76;&#x663E;&#x793A;&#x884C;&#xFF0C;&#x76F4;&#x5230;&#x6587;&#x4EF6;&#x7684;&#x672B;&#x5C3E; </span>
+                        <span class="hljs-keyword">while</span> ((line = sr.ReadLine()) != <span class="hljs-keyword">null</span>)
+                        {
+                            Console.WriteLine(line);
+                        }
+                    }
+                }
+                <span class="hljs-keyword">catch</span> (Exception e)
+                {
+                    <span class="hljs-comment">// &#x5411;&#x7528;&#x6237;&#x663E;&#x793A;&#x51FA;&#x9519;&#x6D88;&#x606F;</span>
+                    Console.WriteLine(<span class="hljs-string">&quot;The file could not be read:&quot;</span>);
+                    Console.WriteLine(e.Message);
+                }
+                Console.ReadKey();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x60A8;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x2003;</p>
+<h4 id="42-streamwriter-&#x7C7B;">4.2 StreamWriter &#x7C7B;</h4>
+<p><strong>StreamWriter</strong> &#x7C7B;&#x7EE7;&#x627F;&#x81EA;&#x62BD;&#x8C61;&#x7C7B; TextWriter&#xFF0C;&#x8868;&#x793A;&#x7F16;&#x5199;&#x5668;&#x5199;&#x5165;&#x4E00;&#x7CFB;&#x5217;&#x5B57;&#x7B26;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; <strong>StreamWriter</strong> &#x7C7B;&#x4E2D;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5E8F;&#x53F7;</th>
+<th style="text-align:left">&#x65B9;&#x6CD5; &amp; &#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">public override void Close()<br>&#x5173;&#x95ED;&#x5F53;&#x524D;&#x7684; StreamWriter &#x5BF9;&#x8C61;&#x548C;&#x57FA;&#x7840;&#x6D41;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">public override void Flush()<br>&#x6E05;&#x7406;&#x5F53;&#x524D;&#x7F16;&#x5199;&#x5668;&#x7684;&#x6240;&#x6709;&#x7F13;&#x51B2;&#x533A;&#xFF0C;&#x4F7F;&#x5F97;&#x6240;&#x6709;&#x7F13;&#x51B2;&#x6570;&#x636E;&#x5199;&#x5165;&#x57FA;&#x7840;&#x6D41;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">public virtual void Write(bool value)<br>&#x628A;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#x7684;&#x6587;&#x672C;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x5199;&#x5165;&#x5230;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x6D41;&#x3002;&#xFF08;&#x7EE7;&#x627F;&#x81EA; TextWriter&#x3002;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">public override void Write( char value ) <br>&#x628A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5199;&#x5165;&#x5230;&#x6D41;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">public virtual void Write( decimal value ) <br>&#x628A;&#x4E00;&#x4E2A;&#x5341;&#x8FDB;&#x5236;&#x503C;&#x7684;&#x6587;&#x672C;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x5199;&#x5165;&#x5230;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x6D41;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">public virtual void Write( double value ) <br>&#x628A;&#x4E00;&#x4E2A; 8 &#x5B57;&#x8282;&#x6D6E;&#x70B9;&#x503C;&#x7684;&#x6587;&#x672C;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x5199;&#x5165;&#x5230;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x6D41;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">public virtual void Write( int value ) <br>&#x628A;&#x4E00;&#x4E2A; 4 &#x5B57;&#x8282;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x7684;&#x6587;&#x672C;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x5199;&#x5165;&#x5230;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x6D41;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">public override void Write( string value ) <br>&#x628A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5199;&#x5165;&#x5230;&#x6D41;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">public virtual void WriteLine()<br>&#x628A;&#x884C;&#x7ED3;&#x675F;&#x7B26;&#x5199;&#x5165;&#x5230;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x6D41;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<p>&#x5982;&#x9700;&#x67E5;&#x770B;&#x5B8C;&#x6574;&#x7684;&#x65B9;&#x6CD5;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x8BBF;&#x95EE;&#x5FAE;&#x8F6F;&#x7684; C# &#x6587;&#x6863;&#x3002;</p>
+<h4 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x4F7F;&#x7528; StreamWriter &#x7C7B;&#x5411;&#x6587;&#x4EF6;&#x5199;&#x5165;&#x6587;&#x672C;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">using</span> System.IO;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">FileApplication</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+
+                <span class="hljs-keyword">string</span>[] names = <span class="hljs-keyword">new</span> <span class="hljs-keyword">string</span>[] {<span class="hljs-string">&quot;Zara Ali&quot;</span>, <span class="hljs-string">&quot;Nuha Ali&quot;</span>};
+                <span class="hljs-keyword">using</span> (StreamWriter sw = <span class="hljs-keyword">new</span> StreamWriter(<span class="hljs-string">&quot;names.txt&quot;</span>))
+                {
+                    <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">string</span> s <span class="hljs-keyword">in</span> names)
+                    {
+                        sw.WriteLine(s);
+
+                    }
+                }
+
+                <span class="hljs-comment">// &#x4ECE;&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x5E76;&#x663E;&#x793A;&#x6BCF;&#x884C;</span>
+                <span class="hljs-keyword">string</span> line = <span class="hljs-string">&quot;&quot;</span>;
+                <span class="hljs-keyword">using</span> (StreamReader sr = <span class="hljs-keyword">new</span> StreamReader(<span class="hljs-string">&quot;names.txt&quot;</span>))
+                {
+                    <span class="hljs-keyword">while</span> ((line = sr.ReadLine()) != <span class="hljs-keyword">null</span>)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+                Console.ReadKey();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    Zara Ali
+    Nuha Ali
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E94;&#x3001;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x5199;">&#x4E94;&#x3001;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x5199;</h3>
+<p><strong>BinaryReader</strong> &#x548C; <strong>BinaryWriter</strong> &#x7C7B;&#x7528;&#x4E8E;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x5199;&#x3002;</p>
+<h4 id="51-binaryreader-&#x7C7B;">5.1 BinaryReader &#x7C7B;</h4>
+<p><strong>BinaryReader</strong> &#x7C7B;&#x7528;&#x4E8E;&#x4ECE;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x3002;&#x4E00;&#x4E2A; <strong>BinaryReader</strong> &#x5BF9;&#x8C61;&#x901A;&#x8FC7;&#x5411;&#x5B83;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4F20;&#x9012; <strong>FileStream</strong> &#x5BF9;&#x8C61;&#x800C;&#x88AB;&#x521B;&#x5EFA;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; BinaryReader &#x7C7B;&#x4E2D;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p>&#x2003;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5E8F;&#x53F7;</th>
+<th style="text-align:left">&#x65B9;&#x6CD5; &amp; &#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">public override void Close()<br>&#x5173;&#x95ED; BinaryReader &#x5BF9;&#x8C61;&#x548C;&#x57FA;&#x7840;&#x6D41;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">public virtual int Read()<br>&#x4ECE;&#x57FA;&#x7840;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x5B57;&#x7B26;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x5F80;&#x524D;&#x79FB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">public virtual bool ReadBoolean()<br>&#x4ECE;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x5F80;&#x524D;&#x79FB;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">public virtual byte ReadByte()<br>&#x4ECE;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x5F80;&#x524D;&#x79FB;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">public virtual byte[] ReadBytes( int count ) <br>&#x4ECE;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x6307;&#x5B9A;&#x6570;&#x76EE;&#x7684;&#x5B57;&#x8282;&#x5230;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x5F80;&#x524D;&#x79FB;&#x6307;&#x5B9A;&#x6570;&#x76EE;&#x7684;&#x5B57;&#x8282;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">public virtual char ReadChar()<br>&#x4ECE;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x6309;&#x7167;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F16;&#x7801;&#x548C;&#x4ECE;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x7684;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x5F80;&#x524D;&#x79FB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">public virtual char[] ReadChars( int count )<br>&#x4ECE;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x6307;&#x5B9A;&#x6570;&#x76EE;&#x7684;&#x5B57;&#x8282;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x4E2D;&#x8FD4;&#x56DE;&#x6570;&#x7EC4;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x6309;&#x7167;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F16;&#x7801;&#x548C;&#x4ECE;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x7684;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x5F80;&#x524D;&#x79FB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">public virtual double ReadDouble()<br>&#x4ECE;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A; 8 &#x5B57;&#x8282;&#x6D6E;&#x70B9;&#x503C;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x5F80;&#x524D;&#x79FB;&#x516B;&#x4E2A;&#x5B57;&#x8282;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">public virtual int ReadInt32()<br>&#x4ECE;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A; 4 &#x5B57;&#x8282;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x5F80;&#x524D;&#x79FB;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:left">public virtual string ReadString() <br>&#x4ECE;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5B57;&#x7B26;&#x4E32;&#x4EE5;&#x957F;&#x5EA6;&#x4F5C;&#x4E3A;&#x524D;&#x7F00;&#xFF0C;&#x540C;&#x65F6;&#x7F16;&#x7801;&#x4E3A;&#x4E00;&#x4E2A;&#x4E03;&#x4F4D;&#x7684;&#x6574;&#x6570;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<p>&#x5982;&#x9700;&#x67E5;&#x770B;&#x5B8C;&#x6574;&#x7684;&#x65B9;&#x6CD5;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x8BBF;&#x95EE;&#x5FAE;&#x8F6F;&#x7684; C# &#x6587;&#x6863;&#x3002;</p>
+<p>&#x2003;</p>
+<h4 id="52-binarywriter-&#x7C7B;">5.2 BinaryWriter &#x7C7B;</h4>
+<p><strong>BinaryWriter</strong> &#x7C7B;&#x7528;&#x4E8E;&#x5411;&#x6587;&#x4EF6;&#x5199;&#x5165;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x3002;&#x4E00;&#x4E2A; <strong>BinaryWriter</strong> &#x5BF9;&#x8C61;&#x901A;&#x8FC7;&#x5411;&#x5B83;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4F20;&#x9012; <strong>FileStream</strong> &#x5BF9;&#x8C61;&#x800C;&#x88AB;&#x521B;&#x5EFA;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; <strong>BinaryWriter</strong> &#x7C7B;&#x4E2D;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5E8F;&#x53F7;</th>
+<th style="text-align:left">&#x65B9;&#x6CD5; &amp; &#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">public override void Close()<br>&#x5173;&#x95ED; BinaryWriter &#x5BF9;&#x8C61;&#x548C;&#x57FA;&#x7840;&#x6D41;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">public virtual void Flush()<br>&#x6E05;&#x7406;&#x5F53;&#x524D;&#x7F16;&#x5199;&#x5668;&#x7684;&#x6240;&#x6709;&#x7F13;&#x51B2;&#x533A;&#xFF0C;&#x4F7F;&#x5F97;&#x6240;&#x6709;&#x7F13;&#x51B2;&#x6570;&#x636E;&#x5199;&#x5165;&#x57FA;&#x7840;&#x8BBE;&#x5907;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">public virtual long Seek( int offset, SeekOrigin origin ) <br>&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x6D41;&#x5185;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">public virtual void Write( bool value ) <br>&#x628A;&#x4E00;&#x4E2A;&#x5355;&#x5B57;&#x8282;&#x7684;&#x5E03;&#x5C14;&#x503C;&#x5199;&#x5165;&#x5230;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#xFF0C;0 &#x8868;&#x793A; false&#xFF0C;1 &#x8868;&#x793A; true&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">public virtual void Write( byte value ) <br>&#x628A;&#x4E00;&#x4E2A;&#x65E0;&#x7B26;&#x53F7;&#x5B57;&#x8282;&#x5199;&#x5165;&#x5230;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x7684;&#x4F4D;&#x7F6E;&#x5F80;&#x524D;&#x79FB;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">public virtual void Write( byte[] buffer ) <br>&#x628A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x5199;&#x5165;&#x5230;&#x57FA;&#x7840;&#x6D41;&#x4E2D;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">public virtual void Write( char ch ) <br>&#x628A;&#x4E00;&#x4E2A; Unicode &#x5B57;&#x7B26;&#x5199;&#x5165;&#x5230;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x6309;&#x7167;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F16;&#x7801;&#x548C;&#x8981;&#x5199;&#x5165;&#x5230;&#x6D41;&#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x5F80;&#x524D;&#x79FB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">public virtual void Write( char[] chars ) <br>&#x628A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x5199;&#x5165;&#x5230;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x6309;&#x7167;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F16;&#x7801;&#x548C;&#x8981;&#x5199;&#x5165;&#x5230;&#x6D41;&#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x5F80;&#x524D;&#x79FB;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">public virtual void Write( double value ) <br>&#x628A;&#x4E00;&#x4E2A; 8 &#x5B57;&#x8282;&#x6D6E;&#x70B9;&#x503C;&#x5199;&#x5165;&#x5230;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x4F4D;&#x7F6E;&#x5F80;&#x524D;&#x79FB;&#x516B;&#x4E2A;&#x5B57;&#x8282;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:left">public virtual void Write( int value ) <br>&#x628A;&#x4E00;&#x4E2A; 4 &#x5B57;&#x8282;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x5199;&#x5165;&#x5230;&#x5F53;&#x524D;&#x6D41;&#x4E2D;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x4F4D;&#x7F6E;&#x5F80;&#x524D;&#x79FB;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">11</td>
+<td style="text-align:left">public virtual void Write( string value ) <br>&#x628A;&#x4E00;&#x4E2A;&#x4EE5;&#x957F;&#x5EA6;&#x4E3A;&#x524D;&#x7F00;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5199;&#x5165;&#x5230; BinaryWriter &#x7684;&#x5F53;&#x524D;&#x7F16;&#x7801;&#x7684;&#x6D41;&#x4E2D;&#xFF0C;&#x5E76;&#x628A;&#x6D41;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x6309;&#x7167;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F16;&#x7801;&#x548C;&#x8981;&#x5199;&#x5165;&#x5230;&#x6D41;&#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x5F80;&#x524D;&#x79FB;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<p>&#x5982;&#x9700;&#x67E5;&#x770B;&#x5B8C;&#x6574;&#x7684;&#x65B9;&#x6CD5;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x8BBF;&#x95EE;&#x5FAE;&#x8F6F;&#x7684; C# &#x6587;&#x6863;&#x3002;</p>
+<h4 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x8BFB;&#x53D6;&#x548C;&#x5199;&#x5165;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">using</span> System.IO;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">BinaryFileApplication</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                BinaryWriter bw;
+                BinaryReader br;
+                <span class="hljs-keyword">int</span> i = <span class="hljs-number">25</span>;
+                <span class="hljs-keyword">double</span> d = <span class="hljs-number">3.14157</span>;
+                <span class="hljs-keyword">bool</span> b = <span class="hljs-keyword">true</span>;
+                <span class="hljs-keyword">string</span> s = <span class="hljs-string">&quot;I am happy&quot;</span>;
+                <span class="hljs-comment">// &#x521B;&#x5EFA;&#x6587;&#x4EF6;</span>
+                <span class="hljs-keyword">try</span>
+                {
+                    bw = <span class="hljs-keyword">new</span> BinaryWriter(<span class="hljs-keyword">new</span> FileStream(<span class="hljs-string">&quot;mydata&quot;</span>,
+                    FileMode.Create));
+                }
+                <span class="hljs-keyword">catch</span> (IOException e)
+                {
+                    Console.WriteLine(e.Message + <span class="hljs-string">&quot;\n Cannot create file.&quot;</span>);
+                    <span class="hljs-keyword">return</span>;
+                }
+                <span class="hljs-comment">// &#x5199;&#x5165;&#x6587;&#x4EF6;</span>
+                <span class="hljs-keyword">try</span>
+                {
+                    bw.Write(i);
+                    bw.Write(d);
+                    bw.Write(b);
+                    bw.Write(s);
+                }
+                <span class="hljs-keyword">catch</span> (IOException e)
+                {
+                    Console.WriteLine(e.Message + <span class="hljs-string">&quot;\n Cannot write to file.&quot;</span>);
+                    <span class="hljs-keyword">return</span>;
+                }
+
+                bw.Close();
+                <span class="hljs-comment">// &#x8BFB;&#x53D6;&#x6587;&#x4EF6;</span>
+                <span class="hljs-keyword">try</span>
+                {
+                    br = <span class="hljs-keyword">new</span> BinaryReader(<span class="hljs-keyword">new</span> FileStream(<span class="hljs-string">&quot;mydata&quot;</span>,
+                    FileMode.Open));
+                }
+                <span class="hljs-keyword">catch</span> (IOException e)
+                {
+                    Console.WriteLine(e.Message + <span class="hljs-string">&quot;\n Cannot open file.&quot;</span>);
+                    <span class="hljs-keyword">return</span>;
+                }
+                <span class="hljs-keyword">try</span>
+                {
+                    i = br.ReadInt32();
+                    Console.WriteLine(<span class="hljs-string">&quot;Integer data: {0}&quot;</span>, i);
+                    d = br.ReadDouble();
+                    Console.WriteLine(<span class="hljs-string">&quot;Double data: {0}&quot;</span>, d);
+                    b = br.ReadBoolean();
+                    Console.WriteLine(<span class="hljs-string">&quot;Boolean data: {0}&quot;</span>, b);
+                    s = br.ReadString();
+                    Console.WriteLine(<span class="hljs-string">&quot;String data: {0}&quot;</span>, s);
+                }
+                <span class="hljs-keyword">catch</span> (IOException e)
+                {
+                    Console.WriteLine(e.Message + <span class="hljs-string">&quot;\n Cannot read from file.&quot;</span>);
+                    <span class="hljs-keyword">return</span>;
+                }
+                br.Close();
+                Console.ReadKey();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    Integer data: <span class="hljs-number">25</span>
+    Double data: <span class="hljs-number">3.14157</span>
+    Boolean data: True
+    String data: I am happy
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x516D;&#x3001;windows-&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x64CD;&#x4F5C;">&#x516D;&#x3001;Windows &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x64CD;&#x4F5C;</h3>
+<p>C# &#x5141;&#x8BB8;&#x60A8;&#x4F7F;&#x7528;&#x5404;&#x79CD;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#x76F8;&#x5173;&#x7684;&#x7C7B;&#x6765;&#x64CD;&#x4F5C;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982; <strong>DirectoryInfo</strong> &#x7C7B;&#x548C; <strong>FileInfo</strong> &#x7C7B;&#x3002;</p>
+<p>&#x2003;</p>
+<h4 id="61-directoryinfo-&#x7C7B;">6.1 DirectoryInfo &#x7C7B;</h4>
+<p><strong>DirectoryInfo</strong> &#x7C7B;&#x6D3E;&#x751F;&#x81EA; <strong>FileSystemInfo</strong> &#x7C7B;&#x3002;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x5404;&#x79CD;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x3001;&#x79FB;&#x52A8;&#x3001;&#x6D4F;&#x89C8;&#x76EE;&#x5F55;&#x548C;&#x5B50;&#x76EE;&#x5F55;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x8BE5;&#x7C7B;&#x4E0D;&#x80FD;&#x88AB;&#x7EE7;&#x627F;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; <strong>DirectoryInfo</strong> &#x7C7B;&#x4E2D;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x5C5E;&#x6027;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5E8F;&#x53F7;</th>
+<th style="text-align:left">&#x5C5E;&#x6027; &amp; &#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Attributes<br>&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x7684;&#x5C5E;&#x6027;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">CreationTime<br>&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x7684;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">Exists<br>&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x76EE;&#x5F55;&#x662F;&#x5426;&#x5B58;&#x5728;&#x7684;&#x5E03;&#x5C14;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">Extension<br>&#x83B7;&#x53D6;&#x8868;&#x793A;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">FullName<br>&#x83B7;&#x53D6;&#x76EE;&#x5F55;&#x6216;&#x6587;&#x4EF6;&#x7684;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">LastAccessTime<br>&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x6700;&#x540E;&#x88AB;&#x8BBF;&#x95EE;&#x7684;&#x65F6;&#x95F4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">Name<br>&#x83B7;&#x53D6;&#x8BE5; DirectoryInfo &#x5B9E;&#x4F8B;&#x7684;&#x540D;&#x79F0;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; <strong>DirectoryInfo</strong> &#x7C7B;&#x4E2D;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5E8F;&#x53F7;</th>
+<th style="text-align:left">&#x65B9;&#x6CD5; &amp; &#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">public void Create()<br>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">public DirectoryInfo CreateSubdirectory( string path ) <br>&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x4E0A;&#x521B;&#x5EFA;&#x5B50;&#x76EE;&#x5F55;&#x3002;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x53EF;&#x4EE5;&#x662F;&#x76F8;&#x5BF9;&#x4E8E; DirectoryInfo &#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x7684;&#x8DEF;&#x5F84;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">public override void Delete()<br>&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#x7684;&#xFF0C;&#x5219;&#x5220;&#x9664;&#x8BE5; DirectoryInfo&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">public DirectoryInfo[] GetDirectories()<br>&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;&#x5B50;&#x76EE;&#x5F55;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">public FileInfo[] GetFiles()<br>&#x4ECE;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x5217;&#x8868;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<p>&#x5982;&#x9700;&#x67E5;&#x770B;&#x5B8C;&#x6574;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x8BBF;&#x95EE;&#x5FAE;&#x8F6F;&#x7684; C# &#x6587;&#x6863;&#x3002;</p>
+<p>&#x2003;</p>
+<h4 id="62-fileinfo-&#x7C7B;">6.2 FileInfo &#x7C7B;</h4>
+<p><strong>FileInfo</strong> &#x7C7B;&#x6D3E;&#x751F;&#x81EA; <strong>FileSystemInfo</strong> &#x7C7B;&#x3002;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x3001;&#x590D;&#x5236;&#x3001;&#x5220;&#x9664;&#x3001;&#x79FB;&#x52A8;&#x3001;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x4E14;&#x6709;&#x52A9;&#x4E8E; FileStream &#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x3002;&#x8BE5;&#x7C7B;&#x4E0D;&#x80FD;&#x88AB;&#x7EE7;&#x627F;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; <strong>FileInfo</strong> &#x7C7B;&#x4E2D;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;<strong>&#x5C5E;&#x6027;</strong>&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5E8F;&#x53F7;</th>
+<th style="text-align:left">&#x5C5E;&#x6027; &amp; &#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Attributes<br>&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x7684;&#x5C5E;&#x6027;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">CreationTime<br>&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x7684;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">Directory<br>&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x6240;&#x5C5E;&#x76EE;&#x5F55;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">Exists<br>&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#x7684;&#x5E03;&#x5C14;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">Extension<br>&#x83B7;&#x53D6;&#x8868;&#x793A;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">FullName<br>&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x7684;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">LastAccessTime<br>&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x88AB;&#x8BBF;&#x95EE;&#x7684;&#x65F6;&#x95F4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">LastWriteTime<br>&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x88AB;&#x5199;&#x5165;&#x7684;&#x65F6;&#x95F4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">Length<br>&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x4EE5;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:left">Name<br>&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; <strong>FileInfo</strong> &#x7C7B;&#x4E2D;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5E8F;&#x53F7;</th>
+<th style="text-align:left">&#x65B9;&#x6CD5; &amp; &#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">public StreamWriter AppendText()<br>&#x521B;&#x5EFA;&#x4E00;&#x4E2A; StreamWriter&#xFF0C;&#x8FFD;&#x52A0;&#x6587;&#x672C;&#x5230;&#x7531; FileInfo &#x7684;&#x5B9E;&#x4F8B;&#x8868;&#x793A;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">public FileStream Create()<br>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">public override void Delete()<br>&#x6C38;&#x4E45;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">public void MoveTo( string destFileName ) <br>&#x79FB;&#x52A8;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x63D0;&#x4F9B;&#x9009;&#x9879;&#x6765;&#x6307;&#x5B9A;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">public FileStream Open( FileMode mode ) <br>&#x4EE5;&#x6307;&#x5B9A;&#x7684;&#x6A21;&#x5F0F;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">public FileStream Open( FileMode mode, FileAccess access ) <br>&#x4EE5;&#x6307;&#x5B9A;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528; read&#x3001;write &#x6216; read/write &#x8BBF;&#x95EE;&#xFF0C;&#x6765;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">public FileStream Open( FileMode mode, FileAccess access, FileShare share ) <br>&#x4EE5;&#x6307;&#x5B9A;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528; read&#x3001;write &#x6216; read/write &#x8BBF;&#x95EE;&#xFF0C;&#x4EE5;&#x53CA;&#x6307;&#x5B9A;&#x7684;&#x5206;&#x4EAB;&#x9009;&#x9879;&#xFF0C;&#x6765;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">public FileStream OpenRead()<br>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EA;&#x8BFB;&#x7684; FileStream&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">public FileStream OpenWrite()<br>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EA;&#x5199;&#x7684; FileStream&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<p>&#x5982;&#x9700;&#x67E5;&#x770B;&#x5B8C;&#x6574;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x8BBF;&#x95EE;&#x5FAE;&#x8F6F;&#x7684; C# &#x6587;&#x6863;&#x3002;</p>
+<p>&#x2003;</p>
+<h4 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x7C7B;&#x7684;&#x7528;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">using</span> System.IO;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">WindowsFileApplication</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+        {
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A; DirectoryInfo &#x5BF9;&#x8C61;</span>
+                DirectoryInfo mydir = <span class="hljs-keyword">new</span> DirectoryInfo(<span class="hljs-string">@&quot;c:\Windows&quot;</span>);
+
+                <span class="hljs-comment">// &#x83B7;&#x53D6;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x4EE5;&#x53CA;&#x5B83;&#x4EEC;&#x7684;&#x540D;&#x79F0;&#x548C;&#x5927;&#x5C0F;</span>
+                FileInfo [] f = mydir.GetFiles();
+                <span class="hljs-keyword">foreach</span> (FileInfo file <span class="hljs-keyword">in</span> f)
+                {
+                    Console.WriteLine(<span class="hljs-string">&quot;File Name: {0} Size: {1}&quot;</span>,
+                        file.Name, file.Length);
+                }
+                Console.ReadKey();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x60A8;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x53CA;&#x5B83;&#x4EEC;&#x5728; Windows &#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -709,7 +1450,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.24 C# 文件处理","level":"1.2.24","depth":2,"next":{"title":"二、C# 高级教程","level":"1.3","depth":1,"path":"二、CSharp 高级教程/README.md","ref":"二、CSharp 高级教程/README.md","articles":[{"title":"2.1 C# 属性","level":"1.3.1","depth":2,"path":"二、CSharp 高级教程/2_1 CSharp 属性.md","ref":"二、CSharp 高级教程/2_1 CSharp 属性.md","articles":[]},{"title":"2.2 C# 索引器","level":"1.3.2","depth":2,"path":"二、CSharp 高级教程/2_2 CSharp 索引器.md","ref":"二、CSharp 高级教程/2_2 CSharp 索引器.md","articles":[]},{"title":"2.3 C# 委托","level":"1.3.3","depth":2,"path":"二、CSharp 高级教程/2_3 CSharp 委托.md","ref":"二、CSharp 高级教程/2_3 CSharp 委托.md","articles":[]},{"title":"2.4 C# 事件","level":"1.3.4","depth":2,"path":"二、CSharp 高级教程/2_4 CSharp 事件.md","ref":"二、CSharp 高级教程/2_4 CSharp 事件.md","articles":[]},{"title":"2.5 C# 泛型","level":"1.3.5","depth":2,"path":"二、CSharp 高级教程/2_5 CSharp 泛型.md","ref":"二、CSharp 高级教程/2_5 CSharp 泛型.md","articles":[]},{"title":"2.6 C# 集合","level":"1.3.6","depth":2,"path":"二、CSharp 高级教程/2_6 CSharp 集合.md","ref":"二、CSharp 高级教程/2_6 CSharp 集合.md","articles":[]},{"title":"2.7 C# 匿名方法","level":"1.3.7","depth":2,"path":"二、CSharp 高级教程/2_7 CSharp 匿名方法.md","ref":"二、CSharp 高级教程/2_7 CSharp 匿名方法.md","articles":[]},{"title":"2.8 C# 初始化器","level":"1.3.8","depth":2,"path":"二、CSharp 高级教程/2_8 CSharp 初始化器.md","ref":"二、CSharp 高级教程/2_8 CSharp 初始化器.md","articles":[]},{"title":"2.9 C# Lambda表达式","level":"1.3.9","depth":2,"path":"二、CSharp 高级教程/2_9 CSharp Lambda表达式.md","ref":"二、CSharp 高级教程/2_9 CSharp Lambda表达式.md","articles":[]},{"title":"2.10 C# 特性","level":"1.3.10","depth":2,"path":"二、CSharp 高级教程/2_10 CSharp 特性.md","ref":"二、CSharp 高级教程/2_10 CSharp 特性.md","articles":[]},{"title":"2.11 C# 反射","level":"1.3.11","depth":2,"path":"二、CSharp 高级教程/2_11 CSharp 反射.md","ref":"二、CSharp 高级教程/2_11 CSharp 反射.md","articles":[]},{"title":"2.12 C# 不安全代码","level":"1.3.12","depth":2,"path":"二、CSharp 高级教程/2_12 CSharp 不安全代码.md","ref":"二、CSharp 高级教程/2_12 CSharp 不安全代码.md","articles":[]},{"title":"2.13 C# 多线程","level":"1.3.13","depth":2,"path":"二、CSharp 高级教程/2_13 CSharp 多线程.md","ref":"二、CSharp 高级教程/2_13 CSharp 多线程.md","articles":[]}]},"previous":{"title":"1.23 C# 正则表达式","level":"1.2.23","depth":2,"path":"一、CSharp 基础教程/1_23 CSharp 正则表达式.md","ref":"一、CSharp 基础教程/1_23 CSharp 正则表达式.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_24 CSharp 文件处理.md","mtime":"2017-11-04T16:56:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.24 C# 文件处理","level":"1.2.24","depth":2,"next":{"title":"二、C# 高级教程","level":"1.3","depth":1,"path":"二、CSharp 高级教程/README.md","ref":"二、CSharp 高级教程/README.md","articles":[{"title":"2.1 C# 属性","level":"1.3.1","depth":2,"path":"二、CSharp 高级教程/2_1 CSharp 属性.md","ref":"二、CSharp 高级教程/2_1 CSharp 属性.md","articles":[]},{"title":"2.2 C# 索引器","level":"1.3.2","depth":2,"path":"二、CSharp 高级教程/2_2 CSharp 索引器.md","ref":"二、CSharp 高级教程/2_2 CSharp 索引器.md","articles":[]},{"title":"2.3 C# 委托","level":"1.3.3","depth":2,"path":"二、CSharp 高级教程/2_3 CSharp 委托.md","ref":"二、CSharp 高级教程/2_3 CSharp 委托.md","articles":[]},{"title":"2.4 C# 事件","level":"1.3.4","depth":2,"path":"二、CSharp 高级教程/2_4 CSharp 事件.md","ref":"二、CSharp 高级教程/2_4 CSharp 事件.md","articles":[]},{"title":"2.5 C# 泛型","level":"1.3.5","depth":2,"path":"二、CSharp 高级教程/2_5 CSharp 泛型.md","ref":"二、CSharp 高级教程/2_5 CSharp 泛型.md","articles":[]},{"title":"2.6 C# 集合","level":"1.3.6","depth":2,"path":"二、CSharp 高级教程/2_6 CSharp 集合.md","ref":"二、CSharp 高级教程/2_6 CSharp 集合.md","articles":[]},{"title":"2.7 C# 匿名方法","level":"1.3.7","depth":2,"path":"二、CSharp 高级教程/2_7 CSharp 匿名方法.md","ref":"二、CSharp 高级教程/2_7 CSharp 匿名方法.md","articles":[]},{"title":"2.8 C# 初始化器","level":"1.3.8","depth":2,"path":"二、CSharp 高级教程/2_8 CSharp 初始化器.md","ref":"二、CSharp 高级教程/2_8 CSharp 初始化器.md","articles":[]},{"title":"2.9 C# Lambda表达式","level":"1.3.9","depth":2,"path":"二、CSharp 高级教程/2_9 CSharp Lambda表达式.md","ref":"二、CSharp 高级教程/2_9 CSharp Lambda表达式.md","articles":[]},{"title":"2.10 C# 特性","level":"1.3.10","depth":2,"path":"二、CSharp 高级教程/2_10 CSharp 特性.md","ref":"二、CSharp 高级教程/2_10 CSharp 特性.md","articles":[]},{"title":"2.11 C# 反射","level":"1.3.11","depth":2,"path":"二、CSharp 高级教程/2_11 CSharp 反射.md","ref":"二、CSharp 高级教程/2_11 CSharp 反射.md","articles":[]},{"title":"2.12 C# 不安全代码","level":"1.3.12","depth":2,"path":"二、CSharp 高级教程/2_12 CSharp 不安全代码.md","ref":"二、CSharp 高级教程/2_12 CSharp 不安全代码.md","articles":[]},{"title":"2.13 C# 多线程","level":"1.3.13","depth":2,"path":"二、CSharp 高级教程/2_13 CSharp 多线程.md","ref":"二、CSharp 高级教程/2_13 CSharp 多线程.md","articles":[]},{"title":"2.14 C# LINQ","level":"1.3.14","depth":2,"path":"二、CSharp 高级教程/2_14 CSharp LINQ.md","ref":"二、CSharp 高级教程/2_14 CSharp LINQ.md","articles":[]}]},"previous":{"title":"1.23 C# 正则表达式","level":"1.2.23","depth":2,"path":"一、CSharp 基础教程/1_23 CSharp 正则表达式.md","ref":"一、CSharp 基础教程/1_23 CSharp 正则表达式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_24 CSharp 文件处理.md","mtime":"2017-11-05T13:33:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

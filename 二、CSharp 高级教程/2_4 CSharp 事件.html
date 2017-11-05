@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="2_14 CSharp LINQ.html">
+            
+                <a href="2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,212 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x4E8B;&#x4EF6;">C# &#x4E8B;&#x4EF6;</h2>
+<p><strong>&#x4E8B;&#x4EF6;&#xFF08;Event&#xFF09;</strong> &#x57FA;&#x672C;&#x4E0A;&#x8BF4;&#x662F;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x6309;&#x952E;&#x3001;&#x70B9;&#x51FB;&#x3001;&#x9F20;&#x6807;&#x79FB;&#x52A8;&#x7B49;&#x7B49;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x4E00;&#x4E9B;&#x51FA;&#x73B0;&#xFF0C;&#x5982;&#x7CFB;&#x7EDF;&#x751F;&#x6210;&#x7684;&#x901A;&#x77E5;&#x3002;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x9700;&#x8981;&#x5728;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x54CD;&#x5E94;&#x4E8B;&#x4EF6;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E2D;&#x65AD;&#x3002;&#x4E8B;&#x4EF6;&#x662F;&#x7528;&#x4E8E;&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x4F7F;&#x7528;&#x59D4;&#x6258;">&#x4E00;&#x3001;&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x4F7F;&#x7528;&#x59D4;&#x6258;</h3>
+<p>&#x4E8B;&#x4EF6;&#x5728;&#x7C7B;&#x4E2D;&#x58F0;&#x660E;&#x4E14;&#x751F;&#x6210;&#xFF0C;&#x4E14;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x7C7B;&#x6216;&#x5176;&#x4ED6;&#x7C7B;&#x4E2D;&#x7684;&#x59D4;&#x6258;&#x4E0E;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x5173;&#x8054;&#x3002;&#x5305;&#x542B;&#x4E8B;&#x4EF6;&#x7684;&#x7C7B;&#x7528;&#x4E8E;&#x53D1;&#x5E03;&#x4E8B;&#x4EF6;&#x3002;&#x8FD9;&#x88AB;&#x79F0;&#x4E3A; <strong>&#x53D1;&#x5E03;&#x5668;&#xFF08;publisher&#xFF09;</strong> &#x7C7B;&#x3002;&#x5176;&#x4ED6;&#x63A5;&#x53D7;&#x8BE5;&#x4E8B;&#x4EF6;&#x7684;&#x7C7B;&#x88AB;&#x79F0;&#x4E3A; <strong>&#x8BA2;&#x9605;&#x5668;&#xFF08;subscriber&#xFF09;</strong> &#x7C7B;&#x3002;&#x4E8B;&#x4EF6;&#x4F7F;&#x7528; <strong>&#x53D1;&#x5E03;-&#x8BA2;&#x9605;&#xFF08;publisher-subscriber&#xFF09;</strong> &#x6A21;&#x578B;&#x3002;
+<strong>&#x53D1;&#x5E03;&#x5668;&#xFF08;publisher&#xFF09;</strong> &#x662F;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E8B;&#x4EF6;&#x548C;&#x59D4;&#x6258;&#x5B9A;&#x4E49;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x4E8B;&#x4EF6;&#x548C;&#x59D4;&#x6258;&#x4E4B;&#x95F4;&#x7684;&#x8054;&#x7CFB;&#x4E5F;&#x5B9A;&#x4E49;&#x5728;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#x3002;&#x53D1;&#x5E03;&#x5668;&#xFF08;publisher&#xFF09;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x901A;&#x77E5;&#x5176;&#x4ED6;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p><strong>&#x8BA2;&#x9605;&#x5668;&#xFF08;subscriber&#xFF09;</strong> &#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x53D7;&#x4E8B;&#x4EF6;&#x5E76;&#x63D0;&#x4F9B;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x5728;&#x53D1;&#x5E03;&#x5668;&#xFF08;publisher&#xFF09;&#x7C7B;&#x4E2D;&#x7684;&#x59D4;&#x6258;&#x8C03;&#x7528;&#x8BA2;&#x9605;&#x5668;&#xFF08;subscriber&#xFF09;&#x7C7B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#xFF08;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#xFF09;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;&#x58F0;&#x660E;&#x4E8B;&#x4EF6;&#xFF08;event&#xFF09;">&#x4E8C;&#x3001;&#x58F0;&#x660E;&#x4E8B;&#x4EF6;&#xFF08;Event&#xFF09;</h3>
+<p>&#x5728;&#x7C7B;&#x7684;&#x5185;&#x90E8;&#x58F0;&#x660E;&#x4E8B;&#x4EF6;&#xFF0C;&#x9996;&#x5148;&#x5FC5;&#x987B;&#x58F0;&#x660E;&#x8BE5;&#x4E8B;&#x4EF6;&#x7684;&#x59D4;&#x6258;&#x7C7B;&#x578B;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">delegate</span> <span class="hljs-keyword">void</span> <span class="hljs-title">BoilerLogHandler</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> status</span>)</span>;
+</code></pre>
+<p>&#x7136;&#x540E;&#xFF0C;&#x58F0;&#x660E;&#x4E8B;&#x4EF6;&#x672C;&#x8EAB;&#xFF0C;&#x4F7F;&#x7528; <strong>event</strong> &#x5173;&#x952E;&#x5B57;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-comment">// &#x57FA;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x59D4;&#x6258;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;</span>
+   <span class="hljs-keyword">public</span> <span class="hljs-keyword">event</span> BoilerLogHandler BoilerEventLog;
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; BoilerLogHandler &#x7684;&#x59D4;&#x6258;&#x548C;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; BoilerEventLog &#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x8BE5;&#x4E8B;&#x4EF6;&#x5728;&#x751F;&#x6210;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8C03;&#x7528;&#x59D4;&#x6258;&#x3002;</p>
+<p>&#x2003;</p>
+<h4 id="&#x5B9E;&#x4F8B;-1">&#x5B9E;&#x4F8B; 1</h4>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">SimpleEvent</span>
+   {
+     <span class="hljs-keyword">using</span> System;
+     <span class="hljs-comment">/***********&#x53D1;&#x5E03;&#x5668;&#x7C7B;***********/</span>
+     <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">EventTest</span>
+     {
+       <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-keyword">value</span>;
+
+       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">delegate</span> <span class="hljs-keyword">void</span> <span class="hljs-title">NumManipulationHandler</span>(<span class="hljs-params"></span>)</span>;
+
+
+       <span class="hljs-keyword">public</span> <span class="hljs-keyword">event</span> NumManipulationHandler ChangeNum;
+       <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnNumChanged</span>(<span class="hljs-params"></span>)
+       </span>{
+         <span class="hljs-keyword">if</span> ( ChangeNum != <span class="hljs-keyword">null</span> )
+         {
+           ChangeNum(); <span class="hljs-comment">/* &#x4E8B;&#x4EF6;&#x88AB;&#x89E6;&#x53D1; */</span>
+         }<span class="hljs-keyword">else</span> {
+           Console.WriteLine( <span class="hljs-string">&quot;event not fire&quot;</span> );
+           Console.ReadKey(); <span class="hljs-comment">/* &#x56DE;&#x8F66;&#x7EE7;&#x7EED; */</span>
+         }
+       }
+
+
+       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">EventTest</span>(<span class="hljs-params"></span>)
+       </span>{
+         <span class="hljs-keyword">int</span> n = <span class="hljs-number">5</span>;
+         SetValue( n );
+       }
+
+
+       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetValue</span>(<span class="hljs-params"> <span class="hljs-keyword">int</span> n </span>)
+       </span>{
+         <span class="hljs-keyword">if</span> ( <span class="hljs-keyword">value</span> != n )
+         {
+           <span class="hljs-keyword">value</span> = n;
+           OnNumChanged();
+         }
+       }
+     }
+
+
+     <span class="hljs-comment">/***********&#x8BA2;&#x9605;&#x5668;&#x7C7B;***********/</span>
+
+     <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">subscribEvent</span>
+     {
+       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printf</span>(<span class="hljs-params"></span>)
+       </span>{
+         Console.WriteLine( <span class="hljs-string">&quot;event fire&quot;</span> );
+         Console.ReadKey(); <span class="hljs-comment">/* &#x56DE;&#x8F66;&#x7EE7;&#x7EED; */</span>
+       }
+     }
+
+     <span class="hljs-comment">/***********&#x89E6;&#x53D1;***********/</span>
+     <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MainClass</span>
+     {
+       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>)
+       </span>{
+         EventTest e = <span class="hljs-keyword">new</span> EventTest(); <span class="hljs-comment">/* &#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;,&#x7B2C;&#x4E00;&#x6B21;&#x6CA1;&#x6709;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6; */</span>
+         subscribEvent v = <span class="hljs-keyword">new</span> subscribEvent(); <span class="hljs-comment">/* &#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61; */</span>
+         e.ChangeNum += <span class="hljs-keyword">new</span> EventTest.NumManipulationHandler( v.printf ); <span class="hljs-comment">/* &#x6CE8;&#x518C; */</span>
+         e.SetValue( <span class="hljs-number">7</span> );
+         e.SetValue( <span class="hljs-number">11</span> );
+       }
+     }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">event</span> not fire
+   <span class="hljs-keyword">event</span> fire
+   <span class="hljs-keyword">event</span> fire
+</code></pre>
+<p>&#x2003;</p>
+<h4 id="&#x5B9E;&#x4F8B;-2">&#x5B9E;&#x4F8B; 2</h4>
+<p>&#x672C;&#x5B9E;&#x4F8B;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x7528;&#x4E8E;&#x70ED;&#x6C34;&#x9505;&#x7089;&#x7CFB;&#x7EDF;&#x6545;&#x969C;&#x6392;&#x9664;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;&#x5F53;&#x7EF4;&#x4FEE;&#x5DE5;&#x7A0B;&#x5E08;&#x68C0;&#x67E5;&#x9505;&#x7089;&#x65F6;&#xFF0C;&#x9505;&#x7089;&#x7684;&#x6E29;&#x5EA6;&#x548C;&#x538B;&#x529B;&#x4F1A;&#x968F;&#x7740;&#x7EF4;&#x4FEE;&#x5DE5;&#x7A0B;&#x5E08;&#x7684;&#x5907;&#x6CE8;&#x81EA;&#x52A8;&#x8BB0;&#x5F55;&#x5230;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+   <span class="hljs-keyword">using</span> System.IO;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">BoilerEventAppl</span>
+   {
+
+      <span class="hljs-comment">// boiler &#x7C7B;</span>
+      <span class="hljs-keyword">class</span> <span class="hljs-title">Boiler</span>
+      {
+         <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> temp;
+         <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> pressure;
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Boiler</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> t, <span class="hljs-keyword">int</span> p</span>)
+         </span>{
+            temp = t;
+            pressure = p;
+         }
+
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getTemp</span>(<span class="hljs-params"></span>)
+         </span>{
+            <span class="hljs-keyword">return</span> temp;
+         }
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getPressure</span>(<span class="hljs-params"></span>)
+         </span>{
+            <span class="hljs-keyword">return</span> pressure;
+         }
+      }
+      <span class="hljs-comment">// &#x4E8B;&#x4EF6;&#x53D1;&#x5E03;&#x5668;</span>
+      <span class="hljs-keyword">class</span> <span class="hljs-title">DelegateBoilerEvent</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">delegate</span> <span class="hljs-keyword">void</span> <span class="hljs-title">BoilerLogHandler</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> status</span>)</span>;
+
+         <span class="hljs-comment">// &#x57FA;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x59D4;&#x6258;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;</span>
+         <span class="hljs-keyword">public</span> <span class="hljs-keyword">event</span> BoilerLogHandler BoilerEventLog;
+
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">LogProcess</span>(<span class="hljs-params"></span>)
+         </span>{
+            <span class="hljs-keyword">string</span> remarks = <span class="hljs-string">&quot;O. K&quot;</span>;
+            Boiler b = <span class="hljs-keyword">new</span> Boiler(<span class="hljs-number">100</span>, <span class="hljs-number">12</span>);
+            <span class="hljs-keyword">int</span> t = b.getTemp();
+            <span class="hljs-keyword">int</span> p = b.getPressure();
+            <span class="hljs-keyword">if</span>(t &gt; <span class="hljs-number">150</span> || t &lt; <span class="hljs-number">80</span> || p &lt; <span class="hljs-number">12</span> || p &gt; <span class="hljs-number">15</span>)
+            {
+               remarks = <span class="hljs-string">&quot;Need Maintenance&quot;</span>;
+            }
+            OnBoilerEventLog(<span class="hljs-string">&quot;Logging Info:\n&quot;</span>);
+            OnBoilerEventLog(<span class="hljs-string">&quot;Temparature &quot;</span> + t + <span class="hljs-string">&quot;\nPressure: &quot;</span> + p);
+            OnBoilerEventLog(<span class="hljs-string">&quot;\nMessage: &quot;</span> + remarks);
+         }
+
+         <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnBoilerEventLog</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> message</span>)
+         </span>{
+            <span class="hljs-keyword">if</span> (BoilerEventLog != <span class="hljs-keyword">null</span>)
+            {
+               BoilerEventLog(message);
+            }
+         }
+      }
+      <span class="hljs-comment">// &#x8BE5;&#x7C7B;&#x4FDD;&#x7559;&#x5199;&#x5165;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x7684;&#x6761;&#x6B3E;</span>
+      <span class="hljs-keyword">class</span> <span class="hljs-title">BoilerInfoLogger</span>
+      {
+         FileStream fs;
+         StreamWriter sw;
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BoilerInfoLogger</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> filename</span>)
+         </span>{
+            fs = <span class="hljs-keyword">new</span> FileStream(filename, FileMode.Append, FileAccess.Write);
+            sw = <span class="hljs-keyword">new</span> StreamWriter(fs);
+         }
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Logger</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> info</span>)
+         </span>{
+            sw.WriteLine(info);
+         }
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Close</span>(<span class="hljs-params"></span>)
+         </span>{
+            sw.Close();
+            fs.Close();
+         }
+      }
+      <span class="hljs-comment">// &#x4E8B;&#x4EF6;&#x8BA2;&#x9605;&#x5668;</span>
+      <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">RecordBoilerInfo</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Logger</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> info</span>)
+         </span>{
+            Console.WriteLine(info);
+         }<span class="hljs-comment">//end of Logger</span>
+
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            BoilerInfoLogger filelog = <span class="hljs-keyword">new</span> BoilerInfoLogger(<span class="hljs-string">&quot;e:\\boiler.txt&quot;</span>);
+            DelegateBoilerEvent boilerEvent = <span class="hljs-keyword">new</span> DelegateBoilerEvent();
+            boilerEvent.BoilerEventLog += <span class="hljs-keyword">new</span> 
+            DelegateBoilerEvent.BoilerLogHandler(Logger);
+            boilerEvent.BoilerEventLog += <span class="hljs-keyword">new</span> 
+            DelegateBoilerEvent.BoilerLogHandler(filelog.Logger);
+            boilerEvent.LogProcess();
+            Console.ReadLine();
+            filelog.Close();
+         }<span class="hljs-comment">//end of main</span>
+
+      }<span class="hljs-comment">//end of RecordBoilerInfo</span>
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   Logging info:
+
+   Temperature <span class="hljs-number">100</span>
+   Pressure <span class="hljs-number">12</span>
+
+   Message: O. K
+</code></pre>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -709,7 +927,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.4 C# 事件","level":"1.3.4","depth":2,"next":{"title":"2.5 C# 泛型","level":"1.3.5","depth":2,"path":"二、CSharp 高级教程/2_5 CSharp 泛型.md","ref":"二、CSharp 高级教程/2_5 CSharp 泛型.md","articles":[]},"previous":{"title":"2.3 C# 委托","level":"1.3.3","depth":2,"path":"二、CSharp 高级教程/2_3 CSharp 委托.md","ref":"二、CSharp 高级教程/2_3 CSharp 委托.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_4 CSharp 事件.md","mtime":"2017-11-04T16:56:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.4 C# 事件","level":"1.3.4","depth":2,"next":{"title":"2.5 C# 泛型","level":"1.3.5","depth":2,"path":"二、CSharp 高级教程/2_5 CSharp 泛型.md","ref":"二、CSharp 高级教程/2_5 CSharp 泛型.md","articles":[]},"previous":{"title":"2.3 C# 委托","level":"1.3.3","depth":2,"path":"二、CSharp 高级教程/2_3 CSharp 委托.md","ref":"二、CSharp 高级教程/2_3 CSharp 委托.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_4 CSharp 事件.md","mtime":"2017-11-05T13:51:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

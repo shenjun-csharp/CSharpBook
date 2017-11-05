@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                <a href="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,92 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x63A5;&#x53E3;">C# &#x63A5;&#x53E3;</h2>
+<p>&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86;&#x6240;&#x6709;&#x7C7B;&#x7EE7;&#x627F;&#x63A5;&#x53E3;&#x65F6;&#x5E94;&#x9075;&#x5FAA;&#x7684;&#x8BED;&#x6CD5;&#x5408;&#x540C;&#x3002;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86;&#x8BED;&#x6CD5;&#x5408;&#x540C; &quot;<strong>&#x662F;&#x4EC0;&#x4E48;</strong>&quot; &#x90E8;&#x5206;&#xFF0C;&#x6D3E;&#x751F;&#x7C7B;&#x5B9A;&#x4E49;&#x4E86;&#x8BED;&#x6CD5;&#x5408;&#x540C; &quot;<strong>&#x600E;&#x4E48;&#x505A;</strong>&quot; &#x90E8;&#x5206;&#x3002;</p>
+<p>&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86;&#x5C5E;&#x6027;&#x3001;&#x65B9;&#x6CD5;&#x548C;&#x4E8B;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x63A5;&#x53E3;&#x7684;&#x6210;&#x5458;&#x3002;&#x63A5;&#x53E3;&#x53EA;&#x5305;&#x542B;&#x4E86;&#x6210;&#x5458;&#x7684;&#x58F0;&#x660E;&#x3002;&#x6210;&#x5458;&#x7684;&#x5B9A;&#x4E49;&#x662F;&#x6D3E;&#x751F;&#x7C7B;&#x7684;&#x8D23;&#x4EFB;&#x3002;&#x63A5;&#x53E3;&#x63D0;&#x4F9B;&#x4E86;&#x6D3E;&#x751F;&#x7C7B;&#x5E94;&#x9075;&#x5FAA;&#x7684;&#x6807;&#x51C6;&#x7ED3;&#x6784;&#x3002;</p>
+<p>&#x63A5;&#x53E3;&#x4F7F;&#x5F97;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#x6216;&#x7ED3;&#x6784;&#x5728;&#x5F62;&#x5F0F;&#x4E0A;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;</p>
+<p>&#x62BD;&#x8C61;&#x7C7B;&#x5728;&#x67D0;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;&#x4E0E;&#x63A5;&#x53E3;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5B83;&#x4EEC;&#x5927;&#x591A;&#x53EA;&#x662F;&#x7528;&#x5728;&#x5F53;&#x53EA;&#x6709;&#x5C11;&#x6570;&#x65B9;&#x6CD5;&#x7531;&#x57FA;&#x7C7B;&#x58F0;&#x660E;&#x7531;&#x6D3E;&#x751F;&#x7C7B;&#x5B9E;&#x73B0;&#x65F6;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;&#x5B9A;&#x4E49;&#x63A5;&#x53E3;-myinterfacecs">&#x4E00;&#x3001;&#x5B9A;&#x4E49;&#x63A5;&#x53E3;: MyInterface.cs</h3>
+<p>&#x63A5;&#x53E3;&#x4F7F;&#x7528; <strong>interface</strong> &#x5173;&#x952E;&#x5B57;&#x58F0;&#x660E;&#xFF0C;&#x5B83;&#x4E0E;&#x7C7B;&#x7684;&#x58F0;&#x660E;&#x7C7B;&#x4F3C;&#x3002;&#x63A5;&#x53E3;&#x58F0;&#x660E;&#x9ED8;&#x8BA4;&#x662F; <code>public</code> &#x7684;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x58F0;&#x660E;&#x7684;&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">interface</span> <span class="hljs-title">IMyInterface</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MethodToImplement</span>(<span class="hljs-params"></span>)</span>;
+    }
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x5B9A;&#x4E49;&#x4E86;&#x63A5;&#x53E3; <code>IMyInterface</code>&#x3002;&#x901A;&#x5E38;&#x63A5;&#x53E3;&#x547D;&#x4EE4;&#x4EE5; <strong>I</strong> &#x5B57;&#x6BCD;&#x5F00;&#x5934;&#xFF0C;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5; <code>MethodToImplement()</code>&#xFF0C;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5F53;&#x7136;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x9700;&#x6C42;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x5E76;&#x6CA1;&#x6709;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x2003;</p>
+<p><strong>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x6765;&#x5B9E;&#x73B0;&#x4EE5;&#x4E0A;&#x63A5;&#x53E3;&#xFF1A;InterfaceImplementer.cs</strong></p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">interface</span> <span class="hljs-title">IMyInterface</span>
+    {
+        <span class="hljs-comment">// &#x63A5;&#x53E3;&#x6210;&#x5458;</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MethodToImplement</span>(<span class="hljs-params"></span>)</span>;
+    }
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title">InterfaceImplementer</span> : <span class="hljs-title">IMyInterface</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>)
+        </span>{
+            InterfaceImplementer iImp = <span class="hljs-keyword">new</span> InterfaceImplementer();
+            iImp.MethodToImplement();
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">MethodToImplement</span>(<span class="hljs-params"></span>)
+        </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;MethodToImplement() called.&quot;</span>);
+        }
+    }
+</code></pre>
+<p><code>InterfaceImplementer</code> &#x7C7B;&#x5B9E;&#x73B0;&#x4E86; <code>IMyInterface</code> &#x63A5;&#x53E3;&#xFF0C;&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;&#x4E0E;&#x7C7B;&#x7684;&#x7EE7;&#x627F;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x7C7B;&#x4F3C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">class</span> <span class="hljs-title">InterfaceImplementer</span> : <span class="hljs-title">IMyInterface</span>
+</code></pre>
+<p>&#x7EE7;&#x627F;&#x63A5;&#x53E3;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x7684;&#x65B9;&#x6CD5; MethodToImplement() , &#x65B9;&#x6CD5;&#x540D;&#x5FC5;&#x987B;&#x4E0E;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x4E00;&#x81F4;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;&#x63A5;&#x53E3;&#x7EE7;&#x627F;-interfaceinheritancecs">&#x4E8C;&#x3001;&#x63A5;&#x53E3;&#x7EE7;&#x627F;: InterfaceInheritance.cs</h3>
+<p>&#x4EE5;&#x4E0B;&#x5B9E;&#x4F8B;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x63A5;&#x53E3; <code>IMyInterface</code> &#x548C; <code>IParentInterface</code>&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x7EE7;&#x627F;&#x5176;&#x4ED6;&#x63A5;&#x53E3;&#xFF0C;&#x90A3;&#x4E48;&#x5B9E;&#x73B0;&#x7C7B;&#x6216;&#x7ED3;&#x6784;&#x5C31;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x6240;&#x6709;&#x63A5;&#x53E3;&#x7684;&#x6210;&#x5458;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x5B9E;&#x4F8B; <code>IMyInterface</code> &#x7EE7;&#x627F;&#x4E86; <code>IParentInterface</code> &#x63A5;&#x53E3;&#xFF0C;&#x56E0;&#x6B64;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x7C7B;&#x5FC5;&#x987B;&#x5B9E;&#x73B0; <code>MethodToImplement()</code> &#x548C; <code>ParentInterfaceMethod()</code> &#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">interface</span> <span class="hljs-title">IParentInterface</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ParentInterfaceMethod</span>(<span class="hljs-params"></span>)</span>;
+    }
+
+    <span class="hljs-keyword">interface</span> <span class="hljs-title">IMyInterface</span> : <span class="hljs-title">IParentInterface</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MethodToImplement</span>(<span class="hljs-params"></span>)</span>;
+    }
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title">InterfaceImplementer</span> : <span class="hljs-title">IMyInterface</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>)
+        </span>{
+            InterfaceImplementer iImp = <span class="hljs-keyword">new</span> InterfaceImplementer();
+            iImp.MethodToImplement();
+            iImp.ParentInterfaceMethod();
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">MethodToImplement</span>(<span class="hljs-params"></span>)
+        </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;MethodToImplement() called.&quot;</span>);
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ParentInterfaceMethod</span>(<span class="hljs-params"></span>)
+        </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;ParentInterfaceMethod() called.&quot;</span>);
+        }
+    }
+</code></pre>
+<p>&#x5B9E;&#x4F8B;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-csharp">    MethodToImplement() called.
+    ParentInterfaceMethod() called.
+</code></pre>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -709,7 +807,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.19 C# 接口","level":"1.2.19","depth":2,"next":{"title":"1.20 C# 命名空间","level":"1.2.20","depth":2,"path":"一、CSharp 基础教程/1_20 CSharp 命名空间.md","ref":"一、CSharp 基础教程/1_20 CSharp 命名空间.md","articles":[]},"previous":{"title":"1.18 C# 运算符重载","level":"1.2.18","depth":2,"path":"一、CSharp 基础教程/1_18 CSharp 运算符重载.md","ref":"一、CSharp 基础教程/1_18 CSharp 运算符重载.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_19 CSharp 接口.md","mtime":"2017-11-04T16:56:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.19 C# 接口","level":"1.2.19","depth":2,"next":{"title":"1.20 C# 命名空间","level":"1.2.20","depth":2,"path":"一、CSharp 基础教程/1_20 CSharp 命名空间.md","ref":"一、CSharp 基础教程/1_20 CSharp 命名空间.md","articles":[]},"previous":{"title":"1.18 C# 运算符重载","level":"1.2.18","depth":2,"path":"一、CSharp 基础教程/1_18 CSharp 运算符重载.md","ref":"一、CSharp 基础教程/1_18 CSharp 运算符重载.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_19 CSharp 接口.md","mtime":"2017-11-05T11:19:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="2_14 CSharp LINQ.html">
+            
+                <a href="2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,86 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x533F;&#x540D;&#x65B9;&#x6CD5;">C# &#x533F;&#x540D;&#x65B9;&#x6CD5;</h2>
+<p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x63D0;&#x5230;&#x8FC7;&#xFF0C;&#x59D4;&#x6258;&#x662F;&#x7528;&#x4E8E;&#x5F15;&#x7528;&#x4E0E;&#x5176;&#x5177;&#x6709;&#x76F8;&#x540C;&#x6807;&#x7B7E;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x59D4;&#x6258;&#x5BF9;&#x8C61;&#x8C03;&#x7528;&#x53EF;&#x7531;&#x59D4;&#x6258;&#x5F15;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p><strong>&#x533F;&#x540D;&#x65B9;&#x6CD5;&#xFF08;Anonymous methods&#xFF09;</strong> &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x4F20;&#x9012;&#x4EE3;&#x7801;&#x5757;&#x4F5C;&#x4E3A;&#x59D4;&#x6258;&#x53C2;&#x6570;&#x7684;&#x6280;&#x672F;&#x3002;&#x533F;&#x540D;&#x65B9;&#x6CD5;&#x662F;&#x6CA1;&#x6709;&#x540D;&#x79F0;&#x53EA;&#x6709;&#x4E3B;&#x4F53;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5728;&#x533F;&#x540D;&#x65B9;&#x6CD5;&#x4E2D;&#x60A8;&#x4E0D;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x662F;&#x4ECE;&#x65B9;&#x6CD5;&#x4E3B;&#x4F53;&#x5185;&#x7684; return &#x8BED;&#x53E5;&#x63A8;&#x65AD;&#x7684;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;&#x7F16;&#x5199;&#x533F;&#x540D;&#x65B9;&#x6CD5;&#x7684;&#x8BED;&#x6CD5;">&#x4E00;&#x3001;&#x7F16;&#x5199;&#x533F;&#x540D;&#x65B9;&#x6CD5;&#x7684;&#x8BED;&#x6CD5;</h3>
+<p>&#x533F;&#x540D;&#x65B9;&#x6CD5;&#x662F;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <strong>delegate</strong> &#x5173;&#x952E;&#x5B57;&#x521B;&#x5EFA;&#x59D4;&#x6258;&#x5B9E;&#x4F8B;&#x6765;&#x58F0;&#x660E;&#x7684;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-function"><span class="hljs-keyword">delegate</span> <span class="hljs-keyword">void</span> <span class="hljs-title">NumberChanger</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> n</span>)</span>;
+    ...
+    NumberChanger nc = <span class="hljs-keyword">delegate</span>(<span class="hljs-keyword">int</span> x)
+    {
+        Console.WriteLine(<span class="hljs-string">&quot;Anonymous Method: {0}&quot;</span>, x);
+    };
+</code></pre>
+<p>&#x4EE3;&#x7801;&#x5757; Console.WriteLine(&quot;Anonymous Method: {0}&quot;, x); &#x662F;&#x533F;&#x540D;&#x65B9;&#x6CD5;&#x7684;&#x4E3B;&#x4F53;&#x3002;
+&#x59D4;&#x6258;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x533F;&#x540D;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x547D;&#x540D;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#xFF0C;&#x5373;&#xFF0C;&#x901A;&#x8FC7;&#x5411;&#x59D4;&#x6258;&#x5BF9;&#x8C61;&#x4F20;&#x9012;&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#x3002;
+&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-csharp">    nc(<span class="hljs-number">10</span>);
+</code></pre>
+<p>&#x2003;</p>
+<h4 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x533F;&#x540D;&#x65B9;&#x6CD5;&#x7684;&#x6982;&#x5FF5;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-function"><span class="hljs-keyword">delegate</span> <span class="hljs-keyword">void</span> <span class="hljs-title">NumberChanger</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> n</span>)</span>;
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">DelegateAppl</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">TestDelegate</span>
+        {
+            <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> num = <span class="hljs-number">10</span>;
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">AddNum</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> p</span>)
+            </span>{
+                num += p;
+                Console.WriteLine(<span class="hljs-string">&quot;Named Method: {0}&quot;</span>, num);
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">MultNum</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> q</span>)
+            </span>{
+                num *= q;
+                Console.WriteLine(<span class="hljs-string">&quot;Named Method: {0}&quot;</span>, num);
+            }
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getNum</span>(<span class="hljs-params"></span>)
+            </span>{
+                <span class="hljs-keyword">return</span> num;
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+            </span>{
+                <span class="hljs-comment">// &#x4F7F;&#x7528;&#x533F;&#x540D;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x59D4;&#x6258;&#x5B9E;&#x4F8B;</span>
+                NumberChanger nc = <span class="hljs-keyword">delegate</span>(<span class="hljs-keyword">int</span> x)
+                {
+                   Console.WriteLine(<span class="hljs-string">&quot;Anonymous Method: {0}&quot;</span>, x);
+                };
+
+                <span class="hljs-comment">// &#x4F7F;&#x7528;&#x533F;&#x540D;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x59D4;&#x6258;</span>
+                nc(<span class="hljs-number">10</span>);
+
+                <span class="hljs-comment">// &#x4F7F;&#x7528;&#x547D;&#x540D;&#x65B9;&#x6CD5;&#x5B9E;&#x4F8B;&#x5316;&#x59D4;&#x6258;</span>
+                nc =  <span class="hljs-keyword">new</span> NumberChanger(AddNum);
+
+                <span class="hljs-comment">// &#x4F7F;&#x7528;&#x547D;&#x540D;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x59D4;&#x6258;</span>
+                nc(<span class="hljs-number">5</span>);
+
+                <span class="hljs-comment">// &#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x547D;&#x540D;&#x65B9;&#x6CD5;&#x5B9E;&#x4F8B;&#x5316;&#x59D4;&#x6258;</span>
+                nc =  <span class="hljs-keyword">new</span> NumberChanger(MultNum);
+
+                <span class="hljs-comment">// &#x4F7F;&#x7528;&#x547D;&#x540D;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x59D4;&#x6258;</span>
+                nc(<span class="hljs-number">2</span>);
+                Console.ReadKey();
+            }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    Anonymous Method: <span class="hljs-number">10</span>
+    Named Method: <span class="hljs-number">15</span>
+    Named Method: <span class="hljs-number">30</span>
+</code></pre>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -709,7 +801,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.7 C# 匿名方法","level":"1.3.7","depth":2,"next":{"title":"2.8 C# 初始化器","level":"1.3.8","depth":2,"path":"二、CSharp 高级教程/2_8 CSharp 初始化器.md","ref":"二、CSharp 高级教程/2_8 CSharp 初始化器.md","articles":[]},"previous":{"title":"2.6 C# 集合","level":"1.3.6","depth":2,"path":"二、CSharp 高级教程/2_6 CSharp 集合.md","ref":"二、CSharp 高级教程/2_6 CSharp 集合.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_7 CSharp 匿名方法.md","mtime":"2017-11-04T16:56:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.7 C# 匿名方法","level":"1.3.7","depth":2,"next":{"title":"2.8 C# 初始化器","level":"1.3.8","depth":2,"path":"二、CSharp 高级教程/2_8 CSharp 初始化器.md","ref":"二、CSharp 高级教程/2_8 CSharp 初始化器.md","articles":[]},"previous":{"title":"2.6 C# 集合","level":"1.3.6","depth":2,"path":"二、CSharp 高级教程/2_6 CSharp 集合.md","ref":"二、CSharp 高级教程/2_6 CSharp 集合.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_7 CSharp 匿名方法.md","mtime":"2017-11-05T14:00:53.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

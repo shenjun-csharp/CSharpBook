@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="2_14 CSharp LINQ.html">
+            
+                <a href="2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,171 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x59D4;&#x6258;">C# &#x59D4;&#x6258;</h2>
+<p>C# &#x4E2D;&#x7684;&#x59D4;&#x6258;&#xFF08;Delegate&#xFF09;&#x7C7B;&#x4F3C;&#x4E8E; C &#x6216; C++ &#x4E2D;&#x51FD;&#x6570;&#x7684;&#x6307;&#x9488;&#x3002;<strong>&#x59D4;&#x6258;&#xFF08;Delegate&#xFF09;</strong> &#x662F;&#x5B58;&#x6709;&#x5BF9;&#x67D0;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x5F15;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x3002;&#x5F15;&#x7528;&#x53EF;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x88AB;&#x6539;&#x53D8;&#x3002;</p>
+<p>&#x59D4;&#x6258;&#xFF08;Delegate&#xFF09;&#x7279;&#x522B;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x4E8B;&#x4EF6;&#x548C;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#x3002;&#x6240;&#x6709;&#x7684;&#x59D4;&#x6258;&#xFF08;Delegate&#xFF09;&#x90FD;&#x6D3E;&#x751F;&#x81EA; <strong>System.Delegate</strong> &#x7C7B;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;&#x58F0;&#x660E;&#x59D4;&#x6258;&#xFF08;delegate&#xFF09;">&#x4E00;&#x3001;&#x58F0;&#x660E;&#x59D4;&#x6258;&#xFF08;Delegate&#xFF09;</h3>
+<p>&#x59D4;&#x6258;&#x58F0;&#x660E;&#x51B3;&#x5B9A;&#x4E86;&#x53EF;&#x7531;&#x8BE5;&#x59D4;&#x6258;&#x5F15;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x59D4;&#x6258;&#x53EF;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x4E0E;&#x5176;&#x5177;&#x6709;&#x76F8;&#x540C;&#x6807;&#x7B7E;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;&#x6709;&#x4E00;&#x4E2A;&#x59D4;&#x6258;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">delegate</span> <span class="hljs-keyword">int</span> <span class="hljs-title">MyDelegate</span> (<span class="hljs-params"><span class="hljs-keyword">string</span> s</span>)</span>;
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x59D4;&#x6258;&#x53EF;&#x88AB;&#x7528;&#x4E8E;&#x5F15;&#x7528;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x4E00;&#x4E2A;&#x5355;&#x4E00;&#x7684; string &#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; int &#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x58F0;&#x660E;&#x59D4;&#x6258;&#x7684;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">delegate</span> &lt;<span class="hljs-keyword">return</span> type&gt; &lt;<span class="hljs-keyword">delegate</span>-name&gt; &lt;parameter list&gt;
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;&#x5B9E;&#x4F8B;&#x5316;&#x59D4;&#x6258;&#xFF08;delegate&#xFF09;">&#x4E8C;&#x3001;&#x5B9E;&#x4F8B;&#x5316;&#x59D4;&#x6258;&#xFF08;Delegate&#xFF09;</h3>
+<p>&#x4E00;&#x65E6;&#x58F0;&#x660E;&#x4E86;&#x59D4;&#x6258;&#x7C7B;&#x578B;&#xFF0C;&#x59D4;&#x6258;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x4F7F;&#x7528; <strong>new</strong> &#x5173;&#x952E;&#x5B57;&#x6765;&#x521B;&#x5EFA;&#xFF0C;&#x4E14;&#x4E0E;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x5173;&#x3002;&#x5F53;&#x521B;&#x5EFA;&#x59D4;&#x6258;&#x65F6;&#xFF0C;&#x4F20;&#x9012;&#x5230; <strong>new</strong> &#x8BED;&#x53E5;&#x7684;&#x53C2;&#x6570;&#x5C31;&#x50CF;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E00;&#x6837;&#x4E66;&#x5199;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x5E26;&#x6709;&#x53C2;&#x6570;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">delegate</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printString</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> s</span>)</span>;
+   ...
+   printString ps1 = <span class="hljs-keyword">new</span> printString(WriteToScreen);
+   printString ps2 = <span class="hljs-keyword">new</span> printString(WriteToFile);
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x59D4;&#x6258;&#x7684;&#x58F0;&#x660E;&#x3001;&#x5B9E;&#x4F8B;&#x5316;&#x548C;&#x4F7F;&#x7528;&#xFF0C;&#x8BE5;&#x59D4;&#x6258;&#x53EF;&#x7528;&#x4E8E;&#x5F15;&#x7528;&#x5E26;&#x6709;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x503C;&#x3002;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+
+   <span class="hljs-function"><span class="hljs-keyword">delegate</span> <span class="hljs-keyword">int</span> <span class="hljs-title">NumberChanger</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> n</span>)</span>;
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">DelegateAppl</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">TestDelegate</span>
+      {
+         <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> num = <span class="hljs-number">10</span>;
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">AddNum</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> p</span>)
+         </span>{
+            num += p;
+            <span class="hljs-keyword">return</span> num;
+         }
+
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">MultNum</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> q</span>)
+         </span>{
+            num *= q;
+            <span class="hljs-keyword">return</span> num;
+         }
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getNum</span>(<span class="hljs-params"></span>)
+         </span>{
+            <span class="hljs-keyword">return</span> num;
+         }
+
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            <span class="hljs-comment">// &#x521B;&#x5EFA;&#x59D4;&#x6258;&#x5B9E;&#x4F8B;</span>
+            NumberChanger nc1 = <span class="hljs-keyword">new</span> NumberChanger(AddNum);
+            NumberChanger nc2 = <span class="hljs-keyword">new</span> NumberChanger(MultNum);
+            <span class="hljs-comment">// &#x4F7F;&#x7528;&#x59D4;&#x6258;&#x5BF9;&#x8C61;&#x8C03;&#x7528;&#x65B9;&#x6CD5;</span>
+            nc1(<span class="hljs-number">25</span>);
+            Console.WriteLine(<span class="hljs-string">&quot;Value of Num: {0}&quot;</span>, getNum());
+            nc2(<span class="hljs-number">5</span>);
+            Console.WriteLine(<span class="hljs-string">&quot;Value of Num: {0}&quot;</span>, getNum());
+            Console.ReadKey();
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   Value of Num: <span class="hljs-number">35</span>
+   Value of Num: <span class="hljs-number">175</span>
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E09;&#x3001;&#x59D4;&#x6258;&#x7684;&#x591A;&#x64AD;&#xFF08;multicasting-of-a-delegate&#xFF09;">&#x4E09;&#x3001;&#x59D4;&#x6258;&#x7684;&#x591A;&#x64AD;&#xFF08;Multicasting of a Delegate&#xFF09;</h3>
+<p>&#x59D4;&#x6258;&#x5BF9;&#x8C61;&#x53EF;&#x4F7F;&#x7528; &quot;+&quot; &#x8FD0;&#x7B97;&#x7B26;&#x8FDB;&#x884C;&#x5408;&#x5E76;&#x3002;&#x4E00;&#x4E2A;&#x5408;&#x5E76;&#x59D4;&#x6258;&#x8C03;&#x7528;&#x5B83;&#x6240;&#x5408;&#x5E76;&#x7684;&#x4E24;&#x4E2A;&#x59D4;&#x6258;&#x3002;&#x53EA;&#x6709;&#x76F8;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x59D4;&#x6258;&#x53EF;&#x88AB;&#x5408;&#x5E76;&#x3002;&quot;-&quot; &#x8FD0;&#x7B97;&#x7B26;&#x53EF;&#x7528;&#x4E8E;&#x4ECE;&#x5408;&#x5E76;&#x7684;&#x59D4;&#x6258;&#x4E2D;&#x79FB;&#x9664;&#x7EC4;&#x4EF6;&#x59D4;&#x6258;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x59D4;&#x6258;&#x7684;&#x8FD9;&#x4E2A;&#x6709;&#x7528;&#x7684;&#x7279;&#x70B9;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x59D4;&#x6258;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#x8981;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#x5217;&#x8868;&#x3002;&#x8FD9;&#x88AB;&#x79F0;&#x4E3A;&#x59D4;&#x6258;&#x7684; <strong>&#x591A;&#x64AD;&#xFF08;multicasting&#xFF09;</strong>&#xFF0C;&#x4E5F;&#x53EB;&#x7EC4;&#x64AD;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x6F14;&#x793A;&#x4E86;&#x59D4;&#x6258;&#x7684;&#x591A;&#x64AD;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+
+   <span class="hljs-function"><span class="hljs-keyword">delegate</span> <span class="hljs-keyword">int</span> <span class="hljs-title">NumberChanger</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> n</span>)</span>;
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">DelegateAppl</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">TestDelegate</span>
+      {
+         <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> num = <span class="hljs-number">10</span>;
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">AddNum</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> p</span>)
+         </span>{
+            num += p;
+            <span class="hljs-keyword">return</span> num;
+         }
+
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">MultNum</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> q</span>)
+         </span>{
+            num *= q;
+            <span class="hljs-keyword">return</span> num;
+         }
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getNum</span>(<span class="hljs-params"></span>)
+         </span>{
+            <span class="hljs-keyword">return</span> num;
+         }
+
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            <span class="hljs-comment">// &#x521B;&#x5EFA;&#x59D4;&#x6258;&#x5B9E;&#x4F8B;</span>
+            NumberChanger nc;
+            NumberChanger nc1 = <span class="hljs-keyword">new</span> NumberChanger(AddNum);
+            NumberChanger nc2 = <span class="hljs-keyword">new</span> NumberChanger(MultNum);
+            nc = nc1;
+            nc += nc2;
+            <span class="hljs-comment">// &#x8C03;&#x7528;&#x591A;&#x64AD;</span>
+            nc(<span class="hljs-number">5</span>);
+            Console.WriteLine(<span class="hljs-string">&quot;Value of Num: {0}&quot;</span>, getNum());
+            Console.ReadKey();
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   Value of Num: <span class="hljs-number">75</span>
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x56DB;&#x3001;&#x59D4;&#x6258;&#xFF08;delegate&#xFF09;&#x7684;&#x7528;&#x9014;">&#x56DB;&#x3001;&#x59D4;&#x6258;&#xFF08;Delegate&#xFF09;&#x7684;&#x7528;&#x9014;</h3>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x59D4;&#x6258;&#x7684;&#x7528;&#x6CD5;&#x3002;&#x59D4;&#x6258; printString &#x53EF;&#x7528;&#x4E8E;&#x5F15;&#x7528;&#x5E26;&#x6709;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4E0D;&#x8FD4;&#x56DE;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x59D4;&#x6258;&#x6765;&#x8C03;&#x7528;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x6253;&#x5370;&#x5230;&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x6253;&#x5370;&#x5230;&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+   <span class="hljs-keyword">using</span> System.IO;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">DelegateAppl</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">PrintString</span>
+      {
+         <span class="hljs-keyword">static</span> FileStream fs;
+         <span class="hljs-keyword">static</span> StreamWriter sw;
+         <span class="hljs-comment">// &#x59D4;&#x6258;&#x58F0;&#x660E;</span>
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">delegate</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printString</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> s</span>)</span>;
+
+         <span class="hljs-comment">// &#x8BE5;&#x65B9;&#x6CD5;&#x6253;&#x5370;&#x5230;&#x63A7;&#x5236;&#x53F0;</span>
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">WriteToScreen</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> str</span>)
+         </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;The String is: {0}&quot;</span>, str);
+         }
+         <span class="hljs-comment">// &#x8BE5;&#x65B9;&#x6CD5;&#x6253;&#x5370;&#x5230;&#x6587;&#x4EF6;</span>
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">WriteToFile</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> s</span>)
+         </span>{
+            fs = <span class="hljs-keyword">new</span> FileStream(<span class="hljs-string">&quot;c:\\message.txt&quot;</span>,
+            FileMode.Append, FileAccess.Write);
+            sw = <span class="hljs-keyword">new</span> StreamWriter(fs);
+            sw.WriteLine(s);
+            sw.Flush();
+            sw.Close();
+            fs.Close();
+         }
+         <span class="hljs-comment">// &#x8BE5;&#x65B9;&#x6CD5;&#x628A;&#x59D4;&#x6258;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x5B83;&#x8C03;&#x7528;&#x65B9;&#x6CD5;</span>
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sendString</span>(<span class="hljs-params">printString ps</span>)
+         </span>{
+            ps(<span class="hljs-string">&quot;Hello World&quot;</span>);
+         }
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            printString ps1 = <span class="hljs-keyword">new</span> printString(WriteToScreen);
+            printString ps2 = <span class="hljs-keyword">new</span> printString(WriteToFile);
+            sendString(ps1);
+            sendString(ps2);
+            Console.ReadKey();
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   The String <span class="hljs-keyword">is</span>: Hello World
+</code></pre>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -709,7 +886,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.3 C# 委托","level":"1.3.3","depth":2,"next":{"title":"2.4 C# 事件","level":"1.3.4","depth":2,"path":"二、CSharp 高级教程/2_4 CSharp 事件.md","ref":"二、CSharp 高级教程/2_4 CSharp 事件.md","articles":[]},"previous":{"title":"2.2 C# 索引器","level":"1.3.2","depth":2,"path":"二、CSharp 高级教程/2_2 CSharp 索引器.md","ref":"二、CSharp 高级教程/2_2 CSharp 索引器.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_3 CSharp 委托.md","mtime":"2017-11-04T16:56:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3 C# 委托","level":"1.3.3","depth":2,"next":{"title":"2.4 C# 事件","level":"1.3.4","depth":2,"path":"二、CSharp 高级教程/2_4 CSharp 事件.md","ref":"二、CSharp 高级教程/2_4 CSharp 事件.md","articles":[]},"previous":{"title":"2.2 C# 索引器","level":"1.3.2","depth":2,"path":"二、CSharp 高级教程/2_2 CSharp 索引器.md","ref":"二、CSharp 高级教程/2_2 CSharp 索引器.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_3 CSharp 委托.md","mtime":"2017-11-05T13:47:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="../一、CSharp 基础教程/1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="2_14 CSharp LINQ.html">
+            
+                <a href="2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,259 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x7279;&#x6027;">C# &#x7279;&#x6027;</h2>
+<p><strong>&#x7279;&#x6027;&#xFF08;Attribute&#xFF09;</strong>&#x662F;&#x7528;&#x4E8E;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x4F20;&#x9012;&#x7A0B;&#x5E8F;&#x4E2D;&#x5404;&#x79CD;&#x5143;&#x7D20;&#xFF08;&#x6BD4;&#x5982;&#x7C7B;&#x3001;&#x65B9;&#x6CD5;&#x3001;&#x7ED3;&#x6784;&#x3001;&#x679A;&#x4E3E;&#x3001;&#x7EC4;&#x4EF6;&#x7B49;&#xFF09;&#x7684;&#x884C;&#x4E3A;&#x4FE1;&#x606F;&#x7684;&#x58F0;&#x660E;&#x6027;&#x6807;&#x7B7E;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x7279;&#x6027;&#x5411;&#x7A0B;&#x5E8F;&#x6DFB;&#x52A0;&#x58F0;&#x660E;&#x6027;&#x4FE1;&#x606F;&#x3002;&#x4E00;&#x4E2A;&#x58F0;&#x660E;&#x6027;&#x6807;&#x7B7E;&#x662F;&#x901A;&#x8FC7;&#x653E;&#x7F6E;&#x5728;&#x5B83;&#x6240;&#x5E94;&#x7528;&#x7684;&#x5143;&#x7D20;&#x524D;&#x9762;&#x7684;&#x65B9;&#x62EC;&#x53F7;&#xFF08;[ ]&#xFF09;&#x6765;&#x63CF;&#x8FF0;&#x7684;&#x3002;</p>
+<p>&#x7279;&#x6027;&#xFF08;Attribute&#xFF09;&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#x5143;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x7F16;&#x8BD1;&#x5668;&#x6307;&#x4EE4;&#x548C;&#x6CE8;&#x91CA;&#x3001;&#x63CF;&#x8FF0;&#x3001;&#x65B9;&#x6CD5;&#x3001;&#x7C7B;&#x7B49;&#x5176;&#x4ED6;&#x4FE1;&#x606F;&#x3002;.Net &#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x7279;&#x6027;&#xFF1A;&#x9884;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#x548C;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;&#x89C4;&#x5B9A;&#x7279;&#x6027;&#xFF08;attribute&#xFF09;">&#x4E00;&#x3001;&#x89C4;&#x5B9A;&#x7279;&#x6027;&#xFF08;Attribute&#xFF09;</h3>
+<p>&#x89C4;&#x5B9A;&#x7279;&#x6027;&#xFF08;Attribute&#xFF09;&#x7684;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-csharp">    [attribute(positional_parameters, name_parameter = <span class="hljs-keyword">value</span>, ...)]
+    element
+</code></pre>
+<p>&#x7279;&#x6027;&#xFF08;Attribute&#xFF09;&#x7684;&#x540D;&#x79F0;&#x548C;&#x503C;&#x662F;&#x5728;&#x65B9;&#x62EC;&#x53F7;&#x5185;&#x89C4;&#x5B9A;&#x7684;&#xFF0C;&#x653E;&#x7F6E;&#x5728;&#x5B83;&#x6240;&#x5E94;&#x7528;&#x7684;&#x5143;&#x7D20;&#x4E4B;&#x524D;&#x3002;positional_parameters &#x89C4;&#x5B9A;&#x5FC5;&#x9700;&#x7684;&#x4FE1;&#x606F;&#xFF0C;name_parameter &#x89C4;&#x5B9A;&#x53EF;&#x9009;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;&#x9884;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#xFF08;attribute&#xFF09;">&#x4E8C;&#x3001;&#x9884;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#xFF08;Attribute&#xFF09;</h3>
+<p>.Net &#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x4E86;&#x4E09;&#x79CD;&#x9884;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#xFF1A;</p>
+<pre><code>    &#x2022; AttributeUsage
+    &#x2022; Conditional
+    &#x2022; Obsolete
+</code></pre><h4 id="21-attributeusage">2.1 AttributeUsage</h4>
+<p>&#x9884;&#x5B9A;&#x4E49;&#x7279;&#x6027; <strong>AttributeUsage</strong> &#x63CF;&#x8FF0;&#x4E86;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#x7C7B;&#x3002;&#x5B83;&#x89C4;&#x5B9A;&#x4E86;&#x7279;&#x6027;&#x53EF;&#x5E94;&#x7528;&#x5230;&#x7684;&#x9879;&#x76EE;&#x7684;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x89C4;&#x5B9A;&#x8BE5;&#x7279;&#x6027;&#x7684;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-csharp">    [AttributeUsage(
+       validon,
+       AllowMultiple=allowmultiple,
+       Inherited=inherited
+    )]
+</code></pre>
+<p><strong>&#x5176;&#x4E2D;&#xFF1A;</strong></p>
+<ol>
+<li><p>&#x53C2;&#x6570; validon &#x89C4;&#x5B9A;&#x7279;&#x6027;&#x53EF;&#x88AB;&#x653E;&#x7F6E;&#x7684;&#x8BED;&#x8A00;&#x5143;&#x7D20;&#x3002;&#x5B83;&#x662F;&#x679A;&#x4E3E;&#x5668; AttributeTargets &#x7684;&#x503C;&#x7684;&#x7EC4;&#x5408;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x662F; AttributeTargets.All&#x3002;</p>
+</li>
+<li><p>&#x53C2;&#x6570; allowmultiple&#xFF08;&#x53EF;&#x9009;&#x7684;&#xFF09;&#x4E3A;&#x8BE5;&#x7279;&#x6027;&#x7684; AllowMultiple &#x5C5E;&#x6027;&#xFF08;property&#xFF09;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#x3002;&#x5982;&#x679C;&#x4E3A; true&#xFF0C;&#x5219;&#x8BE5;&#x7279;&#x6027;&#x662F;&#x591A;&#x7528;&#x7684;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x662F; false&#xFF08;&#x5355;&#x7528;&#x7684;&#xFF09;&#x3002;</p>
+</li>
+<li><p>&#x53C2;&#x6570; inherited&#xFF08;&#x53EF;&#x9009;&#x7684;&#xFF09;&#x4E3A;&#x8BE5;&#x7279;&#x6027;&#x7684; Inherited &#x5C5E;&#x6027;&#xFF08;property&#xFF09;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#x3002;&#x5982;&#x679C;&#x4E3A; true&#xFF0C;&#x5219;&#x8BE5;&#x7279;&#x6027;&#x53EF;&#x88AB;&#x6D3E;&#x751F;&#x7C7B;&#x7EE7;&#x627F;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x662F; false&#xFF08;&#x4E0D;&#x88AB;&#x7EE7;&#x627F;&#xFF09;&#x3002;</p>
+</li>
+</ol>
+<p>&#x2003;</p>
+<p><strong>&#x4F8B;&#x5982;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">    [AttributeUsage(AttributeTargets.Class |
+    AttributeTargets.Constructor |
+    AttributeTargets.Field |
+    AttributeTargets.Method |
+    AttributeTargets.Property, 
+    AllowMultiple = <span class="hljs-keyword">true</span>)]
+</code></pre>
+<p>&#x2003;</p>
+<h4 id="22-conditional">2.2 Conditional</h4>
+<p>&#x8FD9;&#x4E2A;&#x9884;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#x6807;&#x8BB0;&#x4E86;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x65B9;&#x6CD5;&#xFF0C;&#x5176;&#x6267;&#x884C;&#x4F9D;&#x8D56;&#x4E8E;&#x6307;&#x5B9A;&#x7684;&#x9884;&#x5904;&#x7406;&#x6807;&#x8BC6;&#x7B26;&#x3002;</p>
+<p>&#x5B83;&#x4F1A;&#x5F15;&#x8D77;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7684;&#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#xFF0C;&#x53D6;&#x51B3;&#x4E8E;&#x6307;&#x5B9A;&#x7684;&#x503C;&#xFF0C;&#x6BD4;&#x5982; <strong>Debug</strong> &#x6216; <strong>Trace</strong>&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;&#x8C03;&#x8BD5;&#x4EE3;&#x7801;&#x65F6;&#x663E;&#x793A;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x89C4;&#x5B9A;&#x8BE5;&#x7279;&#x6027;&#x7684;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-csharp">    [Conditional(
+       conditionalSymbol
+    )]
+</code></pre>
+<p><strong>&#x4F8B;&#x5982;&#xFF1A;</strong></p>
+<pre><code class="lang-csharp">    [Conditional(<span class="hljs-string">&quot;DEBUG&quot;</span>)]
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x8BE5;&#x7279;&#x6027;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> DEBUG</span>
+    <span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">using</span> System.Diagnostics;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Myclass</span>
+    {
+        [Conditional(<span class="hljs-string">&quot;DEBUG&quot;</span>)]
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Message</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> msg</span>)
+        </span>{
+            Console.WriteLine(msg);
+        }
+    }
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">function1</span>(<span class="hljs-params"></span>)
+        </span>{
+            Myclass.Message(<span class="hljs-string">&quot;In Function 1.&quot;</span>);
+            function2();
+        }
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">function2</span>(<span class="hljs-params"></span>)
+        </span>{
+            Myclass.Message(<span class="hljs-string">&quot;In Function 2.&quot;</span>);
+        }
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>)
+        </span>{
+            Myclass.Message(<span class="hljs-string">&quot;In Main function.&quot;</span>);
+            function1();
+            Console.ReadKey();
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    In Main function
+    In Function <span class="hljs-number">1</span>
+    In Function <span class="hljs-number">2</span>
+</code></pre>
+<p>&#x2003;</p>
+<h4 id="23-obsolete">2.3 Obsolete</h4>
+<p>&#x8FD9;&#x4E2A;&#x9884;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#x6807;&#x8BB0;&#x4E86;&#x4E0D;&#x5E94;&#x88AB;&#x4F7F;&#x7528;&#x7684;&#x7A0B;&#x5E8F;&#x5B9E;&#x4F53;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x8BA9;&#x60A8;&#x901A;&#x77E5;&#x7F16;&#x8BD1;&#x5668;&#x4E22;&#x5F03;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x65B0;&#x65B9;&#x6CD5;&#x88AB;&#x7528;&#x5728;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#xFF0C;&#x4F46;&#x662F;&#x60A8;&#x4ECD;&#x7136;&#x60F3;&#x8981;&#x4FDD;&#x6301;&#x7C7B;&#x4E2D;&#x7684;&#x65E7;&#x65B9;&#x6CD5;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x65B0;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x65E7;&#x65B9;&#x6CD5;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x6765;&#x628A;&#x5B83;&#x6807;&#x8BB0;&#x4E3A; obsolete&#xFF08;&#x8FC7;&#x65F6;&#x7684;&#xFF09;&#x3002;</p>
+<p>&#x89C4;&#x5B9A;&#x8BE5;&#x7279;&#x6027;&#x7684;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-csharp">    [Obsolete(
+       message
+    )]
+    [Obsolete(
+       message,
+       iserror
+    )]
+</code></pre>
+<p><strong>&#x5176;&#x4E2D;&#xFF1A;</strong></p>
+<ol>
+<li><p>&#x53C2;&#x6570; message&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x63CF;&#x8FF0;&#x9879;&#x76EE;&#x4E3A;&#x4EC0;&#x4E48;&#x8FC7;&#x65F6;&#x7684;&#x539F;&#x56E0;&#x4EE5;&#x53CA;&#x8BE5;&#x66FF;&#x4EE3;&#x4F7F;&#x7528;&#x4EC0;&#x4E48;&#x3002;</p>
+</li>
+<li><p>&#x53C2;&#x6570; iserror&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#x3002;&#x5982;&#x679C;&#x8BE5;&#x503C;&#x4E3A; true&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5E94;&#x628A;&#x8BE5;&#x9879;&#x76EE;&#x7684;&#x4F7F;&#x7528;&#x5F53;&#x4F5C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x662F; false&#xFF08;&#x7F16;&#x8BD1;&#x5668;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x8B66;&#x544A;&#xFF09;&#x3002;</p>
+</li>
+</ol>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x8BE5;&#x7279;&#x6027;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span>
+    {
+       [Obsolete(<span class="hljs-string">&quot;Don&apos;t use OldMethod, use NewMethod instead&quot;</span>, <span class="hljs-keyword">true</span>)]
+       <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OldMethod</span>(<span class="hljs-params"></span>)
+       </span>{ 
+          Console.WriteLine(<span class="hljs-string">&quot;It is the old method&quot;</span>);
+       }
+       <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">NewMethod</span>(<span class="hljs-params"></span>)
+       </span>{ 
+          Console.WriteLine(<span class="hljs-string">&quot;It is the new method&quot;</span>); 
+       }
+       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>)
+       </span>{
+          OldMethod();
+       }
+    }
+</code></pre>
+<p>&#x5F53;&#x60A8;&#x5C1D;&#x8BD5;&#x7F16;&#x8BD1;&#x8BE5;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#x8BF4;&#x660E;&#xFF1A;</p>
+<pre><code class="lang-csharp">    Don&apos;t use OldMethod, use NewMethod instead
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E09;&#x3001;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#xFF08;attribute&#xFF09;">&#x4E09;&#x3001;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#xFF08;Attribute&#xFF09;</h3>
+<p>.Net &#x6846;&#x67B6;&#x5141;&#x8BB8;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x58F0;&#x660E;&#x6027;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4E14;&#x53EF;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x88AB;&#x68C0;&#x7D22;&#x3002;&#x8BE5;&#x4FE1;&#x606F;&#x6839;&#x636E;&#x8BBE;&#x8BA1;&#x6807;&#x51C6;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x9700;&#x8981;&#xFF0C;&#x53EF;&#x4E0E;&#x4EFB;&#x4F55;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x76F8;&#x5173;&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x5E76;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#x5305;&#x542B;&#x56DB;&#x4E2A;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<pre><code>    &#x2022; &#x58F0;&#x660E;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;
+    &#x2022; &#x6784;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;
+    &#x2022; &#x5728;&#x76EE;&#x6807;&#x7A0B;&#x5E8F;&#x5143;&#x7D20;&#x4E0A;&#x5E94;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;
+    &#x2022; &#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x8BBF;&#x95EE;&#x7279;&#x6027;
+</code></pre><p>&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;&#x5305;&#x542B;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x7A0B;&#x5E8F;&#x6765;&#x8BFB;&#x53D6;&#x5143;&#x6570;&#x636E;&#x4EE5;&#x4FBF;&#x67E5;&#x627E;&#x5404;&#x79CD;&#x7B26;&#x53F7;&#x3002;&#x5143;&#x6570;&#x636E;&#x662F;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x7684;&#x6570;&#x636E;&#x548C;&#x4FE1;&#x606F;&#x3002;&#x8BE5;&#x7A0B;&#x5E8F;&#x5E94;&#x4F7F;&#x7528;&#x53CD;&#x5C04;&#x6765;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x8BBF;&#x95EE;&#x7279;&#x6027;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x4E0B;&#x4E00;&#x7AE0;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;&#x8FD9;&#x70B9;&#x3002;</p>
+<p>&#x2003;</p>
+<h4 id="31-&#x58F0;&#x660E;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;">3.1 &#x58F0;&#x660E;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;</h4>
+<p>&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#x5E94;&#x6D3E;&#x751F;&#x81EA; <strong>System.Attribute</strong> &#x7C7B;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-csharp">    // &#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027; BugFix &#x88AB;&#x8D4B;&#x7ED9;&#x7C7B;&#x53CA;&#x5176;&#x6210;&#x5458;
+    [AttributeUsage(AttributeTargets.Class |
+    AttributeTargets.Constructor |
+    AttributeTargets.Field |
+    AttributeTargets.Method |
+    AttributeTargets.Property,
+    AllowMultiple = true)]
+
+    public class DeBugInfo : System.Attribute
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x58F0;&#x660E;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; DeBugInfo &#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#x3002;</p>
+<p>&#x2003;</p>
+<h4 id="32-&#x6784;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;">3.2 &#x6784;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;</h4>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; <code>DeBugInfo</code> &#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;&#xFF0C;&#x8BE5;&#x7279;&#x6027;&#x5C06;&#x5B58;&#x50A8;&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;&#x83B7;&#x5F97;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x5B83;&#x5B58;&#x50A8;&#x4E0B;&#x9762;&#x7684;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code>    &#x2022; bug &#x7684;&#x4EE3;&#x7801;&#x7F16;&#x53F7;
+    &#x2022; &#x8FA8;&#x8BA4;&#x8BE5; bug &#x7684;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x540D;&#x5B57;
+    &#x2022; &#x6700;&#x540E;&#x4E00;&#x6B21;&#x5BA1;&#x67E5;&#x8BE5;&#x4EE3;&#x7801;&#x7684;&#x65E5;&#x671F;
+    &#x2022; &#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x4E86;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6807;&#x8BB0;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6D88;&#x606F;
+</code></pre><p>&#x6211;&#x4EEC;&#x7684; DeBugInfo &#x7C7B;&#x5C06;&#x5E26;&#x6709;&#x4E09;&#x4E2A;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x524D;&#x4E09;&#x4E2A;&#x4FE1;&#x606F;&#x7684;&#x79C1;&#x6709;&#x5C5E;&#x6027;&#xFF08;property&#xFF09;&#x548C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x6D88;&#x606F;&#x7684;&#x516C;&#x6709;&#x5C5E;&#x6027;&#xFF08;property&#xFF09;&#x3002;&#x6240;&#x4EE5; bug &#x7F16;&#x53F7;&#x3001;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x540D;&#x5B57;&#x548C;&#x5BA1;&#x67E5;&#x65E5;&#x671F;&#x5C06;&#x662F; DeBugInfo &#x7C7B;&#x7684;&#x5FC5;&#x9700;&#x7684;&#x5B9A;&#x4F4D;&#xFF08; positional&#xFF09;&#x53C2;&#x6570;&#xFF0C;&#x6D88;&#x606F;&#x5C06;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x547D;&#x540D;&#xFF08;named&#xFF09;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;&#x7279;&#x6027;&#x5FC5;&#x987B;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x5FC5;&#x9700;&#x7684;&#x5B9A;&#x4F4D;&#xFF08; positional&#xFF09;&#x53C2;&#x6570;&#x5E94;&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4F20;&#x9012;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E86; DeBugInfo &#x7C7B;&#xFF1A;</p>
+<pre><code class="lang-csharp">    // &#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027; BugFix &#x88AB;&#x8D4B;&#x7ED9;&#x7C7B;&#x53CA;&#x5176;&#x6210;&#x5458;
+    [AttributeUsage(AttributeTargets.Class |
+    AttributeTargets.Constructor |
+    AttributeTargets.Field |
+    AttributeTargets.Method |
+    AttributeTargets.Property,
+    AllowMultiple = true)]
+
+    public class DeBugInfo : System.Attribute
+    {
+      private int bugNo;
+      private string developer;
+      private string lastReview;
+      public string message;
+
+      public DeBugInfo(int bg, string dev, string d)
+      {
+          this.bugNo = bg;
+          this.developer = dev;
+          this.lastReview = d;
+      }
+
+      public int BugNo
+      {
+          get
+          {
+              return bugNo;
+          }
+      }
+      public string Developer
+      {
+          get
+          {
+              return developer;
+          }
+      }
+      public string LastReview
+      {
+          get
+          {
+              return lastReview;
+          }
+      }
+      public string Message
+      {
+          get
+          {
+              return message;
+          }
+          set
+          {
+              message = value;
+          }
+      }
+    }
+</code></pre>
+<p>&#x2003;</p>
+<h4 id="33-&#x5E94;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;">3.3 &#x5E94;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x6027;</h4>
+<p>&#x901A;&#x8FC7;&#x628A;&#x7279;&#x6027;&#x653E;&#x7F6E;&#x5728;&#x7D27;&#x63A5;&#x7740;&#x5B83;&#x7684;&#x76EE;&#x6807;&#x4E4B;&#x524D;&#xFF0C;&#x6765;&#x5E94;&#x7528;&#x8BE5;&#x7279;&#x6027;&#xFF1A;</p>
+<pre><code class="lang-csharp">    [DeBugInfo(<span class="hljs-number">45</span>, <span class="hljs-string">&quot;Zara Ali&quot;</span>, <span class="hljs-string">&quot;12/8/2012&quot;</span>, Message = <span class="hljs-string">&quot;Return type mismatch&quot;</span>)]
+    [DeBugInfo(<span class="hljs-number">49</span>, <span class="hljs-string">&quot;Nuha Ali&quot;</span>, <span class="hljs-string">&quot;10/10/2012&quot;</span>, Message = <span class="hljs-string">&quot;Unused variable&quot;</span>)]
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span>
+    {
+      <span class="hljs-comment">// &#x6210;&#x5458;&#x53D8;&#x91CF;</span>
+      <span class="hljs-keyword">protected</span> <span class="hljs-keyword">double</span> length;
+      <span class="hljs-keyword">protected</span> <span class="hljs-keyword">double</span> width;
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Rectangle</span>(<span class="hljs-params"><span class="hljs-keyword">double</span> l, <span class="hljs-keyword">double</span> w</span>)
+      </span>{
+          length = l;
+          width = w;
+      }
+      [DeBugInfo(<span class="hljs-number">55</span>, <span class="hljs-string">&quot;Zara Ali&quot;</span>, <span class="hljs-string">&quot;19/10/2012&quot;</span>,
+      Message = <span class="hljs-string">&quot;Return type mismatch&quot;</span>)]
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">GetArea</span>(<span class="hljs-params"></span>)
+      </span>{
+          <span class="hljs-keyword">return</span> length * width;
+      }
+      [DeBugInfo(<span class="hljs-number">56</span>, <span class="hljs-string">&quot;Zara Ali&quot;</span>, <span class="hljs-string">&quot;19/10/2012&quot;</span>)]
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Display</span>(<span class="hljs-params"></span>)
+      </span>{
+          Console.WriteLine(<span class="hljs-string">&quot;Length: {0}&quot;</span>, length);
+          Console.WriteLine(<span class="hljs-string">&quot;Width: {0}&quot;</span>, width);
+          Console.WriteLine(<span class="hljs-string">&quot;Area: {0}&quot;</span>, GetArea());
+      }
+    }
+</code></pre>
+<p>&#x5728;&#x4E0B;&#x4E00;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528; Reflection &#x7C7B;&#x5BF9;&#x8C61;&#x6765;&#x68C0;&#x7D22;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -709,7 +974,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.10 C# 特性","level":"1.3.10","depth":2,"next":{"title":"2.11 C# 反射","level":"1.3.11","depth":2,"path":"二、CSharp 高级教程/2_11 CSharp 反射.md","ref":"二、CSharp 高级教程/2_11 CSharp 反射.md","articles":[]},"previous":{"title":"2.9 C# Lambda表达式","level":"1.3.9","depth":2,"path":"二、CSharp 高级教程/2_9 CSharp Lambda表达式.md","ref":"二、CSharp 高级教程/2_9 CSharp Lambda表达式.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_10 CSharp 特性.md","mtime":"2017-11-04T16:56:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.10 C# 特性","level":"1.3.10","depth":2,"next":{"title":"2.11 C# 反射","level":"1.3.11","depth":2,"path":"二、CSharp 高级教程/2_11 CSharp 反射.md","ref":"二、CSharp 高级教程/2_11 CSharp 反射.md","articles":[]},"previous":{"title":"2.9 C# Lambda表达式","level":"1.3.9","depth":2,"path":"二、CSharp 高级教程/2_9 CSharp Lambda表达式.md","ref":"二、CSharp 高级教程/2_9 CSharp Lambda表达式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_10 CSharp 特性.md","mtime":"2017-11-05T14:13:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

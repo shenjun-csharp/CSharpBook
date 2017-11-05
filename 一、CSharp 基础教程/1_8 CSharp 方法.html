@@ -60,7 +60,7 @@
     <link rel="next" href="1_9 CSharp 常量.html" />
     
     
-    <link rel="prev" href="1_7 CSharp 访问修饰符.md" />
+    <link rel="prev" href="1_7 CSharp 访问修饰符.html" />
     
 
     </head>
@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                <a href="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,375 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x65B9;&#x6CD5;">C# &#x65B9;&#x6CD5;</h2>
+<p>&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x628A;&#x4E00;&#x4E9B;&#x76F8;&#x5173;&#x7684;&#x8BED;&#x53E5;&#x7EC4;&#x7EC7;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x7528;&#x6765;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x8BED;&#x53E5;&#x5757;&#x3002;&#x6BCF;&#x4E00;&#x4E2A; C# &#x7A0B;&#x5E8F;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A;&#x5E26;&#x6709; <code>Main</code> &#x65B9;&#x6CD5;&#x7684;&#x7C7B;&#x3002;</p>
+<p><strong>&#x8981;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#xFF1A;</strong></p>
+<pre><code>1. &#x5B9A;&#x4E49;&#x65B9;&#x6CD5;
+2. &#x8C03;&#x7528;&#x65B9;&#x6CD5;
+</code></pre><p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;c-&#x4E2D;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;">&#x4E00;&#x3001;C# &#x4E2D;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;</h3>
+<p>&#x5F53;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x4ECE;&#x6839;&#x672C;&#x4E0A;&#x8BF4;&#x662F;&#x5728;&#x58F0;&#x660E;&#x5B83;&#x7684;&#x7ED3;&#x6784;&#x7684;&#x5143;&#x7D20;&#x3002;&#x5728; C# &#x4E2D;&#xFF0C;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#x7684;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-csharp">   &lt;Access Specifier&gt; &lt;Return Type&gt; &lt;Method Name&gt;(Parameter List)
+   {
+      Method Body
+   }
+</code></pre>
+<p>&#x2003;</p>
+<p><strong>&#x4E0B;&#x9762;&#x662F;&#x65B9;&#x6CD5;&#x7684;&#x5404;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;</strong></p>
+<ol>
+<li><p>Access Specifier&#xFF1A;&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#xFF0C;&#x8FD9;&#x4E2A;&#x51B3;&#x5B9A;&#x4E86;&#x53D8;&#x91CF;&#x6216;&#x65B9;&#x6CD5;&#x5BF9;&#x4E8E;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x53EF;&#x89C1;&#x6027;&#x3002;</p>
+</li>
+<li><p>Return type&#xFF1A;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#xFF0C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x503C;&#x3002;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x662F;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x503C;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;&#x5982;&#x679C;&#x65B9;&#x6CD5;&#x4E0D;&#x8FD4;&#x56DE;&#x4EFB;&#x4F55;&#x503C;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x4E3A; void&#x3002;</p>
+</li>
+<li><p>Method name&#xFF1A;&#x65B9;&#x6CD5;&#x540D;&#x79F0;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x552F;&#x4E00;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x4E14;&#x662F;&#x5927;&#x5C0F;&#x5199;&#x654F;&#x611F;&#x7684;&#x3002;&#x5B83;&#x4E0D;&#x80FD;&#x4E0E;&#x7C7B;&#x4E2D;&#x58F0;&#x660E;&#x7684;&#x5176;&#x4ED6;&#x6807;&#x8BC6;&#x7B26;&#x76F8;&#x540C;&#x3002;</p>
+</li>
+<li><p>Parameter list&#xFF1A;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF0C;&#x4F7F;&#x7528;&#x5706;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x662F;&#x7528;&#x6765;&#x4F20;&#x9012;&#x548C;&#x63A5;&#x6536;&#x65B9;&#x6CD5;&#x7684;&#x6570;&#x636E;&#x3002;&#x53C2;&#x6570;&#x5217;&#x8868;&#x662F;&#x6307;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x3001;&#x987A;&#x5E8F;&#x548C;&#x6570;&#x91CF;&#x3002;&#x53C2;&#x6570;&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x80FD;&#x4E0D;&#x5305;&#x542B;&#x53C2;&#x6570;&#x3002;</p>
+</li>
+<li><p>Method body&#xFF1A;&#x65B9;&#x6CD5;&#x4E3B;&#x4F53;&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x6240;&#x9700;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#x3002;</p>
+</li>
+</ol>
+<p>&#x2003;</p>
+<h4 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x51FD;&#x6570; <code>FindMax</code>&#xFF0C;&#x5B83;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x503C;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E24;&#x4E2A;&#x4E2D;&#x7684;&#x8F83;&#x5927;&#x503C;&#x3002;&#x5B83;&#x6709; <code>public</code> &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x4ECE;&#x7C7B;&#x7684;&#x5916;&#x90E8;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x3002;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">class</span> <span class="hljs-title">NumberManipulator</span>
+   {
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">FindMax</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> num1, <span class="hljs-keyword">int</span> num2</span>)
+      </span>{
+         <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x58F0;&#x660E; */</span>
+         <span class="hljs-keyword">int</span> result;
+
+         <span class="hljs-keyword">if</span> (num1 &gt; num2)
+            result = num1;
+         <span class="hljs-keyword">else</span>
+            result = num2;
+
+         <span class="hljs-keyword">return</span> result;
+      }
+      ...
+   }
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;c-&#x4E2D;&#x8C03;&#x7528;&#x65B9;&#x6CD5;">&#x4E8C;&#x3001;C# &#x4E2D;&#x8C03;&#x7528;&#x65B9;&#x6CD5;</h3>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x540D;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x8FD9;&#x70B9;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">CalculatorApplication</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">NumberManipulator</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">FindMax</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> num1, <span class="hljs-keyword">int</span> num2</span>)
+         </span>{
+            <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x58F0;&#x660E; */</span>
+            <span class="hljs-keyword">int</span> result;
+
+            <span class="hljs-keyword">if</span> (num1 &gt; num2)
+               result = num1;
+            <span class="hljs-keyword">else</span>
+               result = num2;
+
+            <span class="hljs-keyword">return</span> result;
+         }
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9A;&#x4E49; */</span>
+            <span class="hljs-keyword">int</span> a = <span class="hljs-number">100</span>;
+            <span class="hljs-keyword">int</span> b = <span class="hljs-number">200</span>;
+            <span class="hljs-keyword">int</span> ret;
+            NumberManipulator n = <span class="hljs-keyword">new</span> NumberManipulator();
+
+            <span class="hljs-comment">//&#x8C03;&#x7528; FindMax &#x65B9;&#x6CD5;</span>
+            ret = n.FindMax(a, b);
+            Console.WriteLine(<span class="hljs-string">&quot;&#x6700;&#x5927;&#x503C;&#x662F;&#xFF1A; {0}&quot;</span>, ret );
+            Console.ReadLine();
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   &#x6700;&#x5927;&#x503C;&#x662F;&#xFF1A; <span class="hljs-number">200</span>
+</code></pre>
+<p>&#x2003;</p>
+<p>&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x4ECE;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x7C7B;&#x7684;&#x516C;&#x6709;&#x65B9;&#x6CD5;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x65B9;&#x6CD5; <code>FindMax</code> &#x5C5E;&#x4E8E; <code>NumberManipulator</code> &#x7C7B;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4ECE;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B; <code>Test</code> &#x4E2D;&#x8C03;&#x7528;&#x5B83;&#x3002;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">CalculatorApplication</span>
+   {
+       <span class="hljs-keyword">class</span> <span class="hljs-title">NumberManipulator</span>
+       {
+           <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">FindMax</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> num1, <span class="hljs-keyword">int</span> num2</span>)
+           </span>{
+               <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x58F0;&#x660E; */</span>
+               <span class="hljs-keyword">int</span> result;
+
+               <span class="hljs-keyword">if</span> (num1 &gt; num2)
+                   result = num1;
+               <span class="hljs-keyword">else</span>
+                   result = num2;
+
+               <span class="hljs-keyword">return</span> result;
+           }
+       }
+       <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>
+       {
+           <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+           </span>{
+               <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9A;&#x4E49; */</span>
+               <span class="hljs-keyword">int</span> a = <span class="hljs-number">100</span>;
+               <span class="hljs-keyword">int</span> b = <span class="hljs-number">200</span>;
+               <span class="hljs-keyword">int</span> ret;
+               NumberManipulator n = <span class="hljs-keyword">new</span> NumberManipulator();
+               <span class="hljs-comment">//&#x8C03;&#x7528; FindMax &#x65B9;&#x6CD5;</span>
+               ret = n.FindMax(a, b);
+               Console.WriteLine(<span class="hljs-string">&quot;&#x6700;&#x5927;&#x503C;&#x662F;&#xFF1A; {0}&quot;</span>, ret );
+               Console.ReadLine();
+
+           }
+       }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   &#x6700;&#x5927;&#x503C;&#x662F;&#xFF1A; <span class="hljs-number">200</span>
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E09;&#x3001;&#x9012;&#x5F52;&#x65B9;&#x6CD5;&#x8C03;&#x7528;">&#x4E09;&#x3001;&#x9012;&#x5F52;&#x65B9;&#x6CD5;&#x8C03;&#x7528;</h3>
+<p>&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x81EA;&#x6211;&#x8C03;&#x7528;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684; &#x9012;&#x5F52;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x4F7F;&#x7528;&#x9012;&#x5F52;&#x51FD;&#x6570;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x9636;&#x4E58;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">CalculatorApplication</span>
+   {
+       <span class="hljs-keyword">class</span> <span class="hljs-title">NumberManipulator</span>
+       {
+           <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">factorial</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> num</span>)
+           </span>{
+               <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9A;&#x4E49; */</span>
+               <span class="hljs-keyword">int</span> result;
+
+               <span class="hljs-keyword">if</span> (num == <span class="hljs-number">1</span>)
+               {
+                   <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+               }
+               <span class="hljs-keyword">else</span>
+               {
+                   result = factorial(num - <span class="hljs-number">1</span>) * num;
+                   <span class="hljs-keyword">return</span> result;
+               }
+           }
+
+           <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+           </span>{
+               NumberManipulator n = <span class="hljs-keyword">new</span> NumberManipulator();
+               <span class="hljs-comment">//&#x8C03;&#x7528; factorial &#x65B9;&#x6CD5;</span>
+               Console.WriteLine(<span class="hljs-string">&quot;6 &#x7684;&#x9636;&#x4E58;&#x662F;&#xFF1A; {0}&quot;</span>, n.factorial(<span class="hljs-number">6</span>));
+               Console.WriteLine(<span class="hljs-string">&quot;7 &#x7684;&#x9636;&#x4E58;&#x662F;&#xFF1A; {0}&quot;</span>, n.factorial(<span class="hljs-number">7</span>));
+               Console.WriteLine(<span class="hljs-string">&quot;8 &#x7684;&#x9636;&#x4E58;&#x662F;&#xFF1A; {0}&quot;</span>, n.factorial(<span class="hljs-number">8</span>));
+               Console.ReadLine();
+
+           }
+       }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-number">6</span> &#x7684;&#x9636;&#x4E58;&#x662F;&#xFF1A; <span class="hljs-number">720</span>
+   <span class="hljs-number">7</span> &#x7684;&#x9636;&#x4E58;&#x662F;&#xFF1A; <span class="hljs-number">5040</span>
+   <span class="hljs-number">8</span> &#x7684;&#x9636;&#x4E58;&#x662F;&#xFF1A; <span class="hljs-number">40320</span>
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x56DB;&#x3001;&#x53C2;&#x6570;&#x4F20;&#x9012;">&#x56DB;&#x3001;&#x53C2;&#x6570;&#x4F20;&#x9012;</h3>
+<p>&#x5F53;&#x8C03;&#x7528;&#x5E26;&#x6709;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x5411;&#x65B9;&#x6CD5;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x3002;&#x5728; C# &#x4E2D;&#xFF0C;&#x6709;&#x4E09;&#x79CD;&#x5411;&#x65B9;&#x6CD5;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65B9;&#x5F0F;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x503C;&#x53C2;&#x6570;</td>
+<td style="text-align:left">&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x590D;&#x5236;&#x53C2;&#x6570;&#x7684;&#x5B9E;&#x9645;&#x503C;&#x7ED9;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x53C2;&#x6570;&#xFF0C;&#x5B9E;&#x53C2;&#x548C;&#x5F62;&#x53C2;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x503C;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F53;&#x5F62;&#x53C2;&#x7684;&#x503C;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5B9E;&#x53C2;&#x7684;&#x503C;&#xFF0C;&#x4ECE;&#x800C;&#x4FDD;&#x8BC1;&#x4E86;&#x5B9E;&#x53C2;&#x6570;&#x636E;&#x7684;&#x5B89;&#x5168;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x5F15;&#x7528;&#x53C2;&#x6570;</td>
+<td style="text-align:left">&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x590D;&#x5236;&#x53C2;&#x6570;&#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#x7684;&#x5F15;&#x7528;&#x7ED9;&#x5F62;&#x5F0F;&#x53C2;&#x6570;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5F53;&#x5F62;&#x53C2;&#x7684;&#x503C;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x6539;&#x53D8;&#x5B9E;&#x53C2;&#x7684;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x8F93;&#x51FA;&#x53C2;&#x6570;</td>
+<td style="text-align:left">&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x503C;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h4 id="41-&#x6309;&#x503C;&#x4F20;&#x9012;&#x53C2;&#x6570;">4.1 &#x6309;&#x503C;&#x4F20;&#x9012;&#x53C2;&#x6570;</h4>
+<p>&#x8FD9;&#x662F;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4E0B;&#xFF0C;&#x5F53;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x4F1A;&#x4E3A;&#x6BCF;&#x4E2A;&#x503C;&#x53C2;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#x3002;
+&#x5B9E;&#x9645;&#x53C2;&#x6570;&#x7684;&#x503C;&#x4F1A;&#x590D;&#x5236;&#x7ED9;&#x5F62;&#x53C2;&#xFF0C;&#x5B9E;&#x53C2;&#x548C;&#x5F62;&#x53C2;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x503C;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5F53;&#x5F62;&#x53C2;&#x7684;&#x503C;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5B9E;&#x53C2;&#x7684;&#x503C;&#xFF0C;&#x4ECE;&#x800C;&#x4FDD;&#x8BC1;&#x4E86;&#x5B9E;&#x53C2;&#x6570;&#x636E;&#x7684;&#x5B89;&#x5168;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">CalculatorApplication</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">NumberManipulator</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y</span>)
+         </span>{
+            <span class="hljs-keyword">int</span> temp;
+
+            temp = x; <span class="hljs-comment">/* &#x4FDD;&#x5B58; x &#x7684;&#x503C; */</span>
+            x = y;    <span class="hljs-comment">/* &#x628A; y &#x8D4B;&#x503C;&#x7ED9; x */</span>
+            y = temp; <span class="hljs-comment">/* &#x628A; temp &#x8D4B;&#x503C;&#x7ED9; y */</span>
+         }
+
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            NumberManipulator n = <span class="hljs-keyword">new</span> NumberManipulator();
+            <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9A;&#x4E49; */</span>
+            <span class="hljs-keyword">int</span> a = <span class="hljs-number">100</span>;
+            <span class="hljs-keyword">int</span> b = <span class="hljs-number">200</span>;
+
+            Console.WriteLine(<span class="hljs-string">&quot;&#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x524D;&#xFF0C;a &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, a);
+            Console.WriteLine(<span class="hljs-string">&quot;&#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x524D;&#xFF0C;b &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, b);
+
+            <span class="hljs-comment">/* &#x8C03;&#x7528;&#x51FD;&#x6570;&#x6765;&#x4EA4;&#x6362;&#x503C; */</span>
+            n.swap(a, b);
+
+            Console.WriteLine(<span class="hljs-string">&quot;&#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x540E;&#xFF0C;a &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, a);
+            Console.WriteLine(<span class="hljs-string">&quot;&#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x540E;&#xFF0C;b &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, b);
+
+            Console.ReadLine();
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   &#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x524D;&#xFF0C;a &#x7684;&#x503C;&#xFF1A;<span class="hljs-number">100</span>
+   &#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x524D;&#xFF0C;b &#x7684;&#x503C;&#xFF1A;<span class="hljs-number">200</span>
+   &#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x540E;&#xFF0C;a &#x7684;&#x503C;&#xFF1A;<span class="hljs-number">100</span>
+   &#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x540E;&#xFF0C;b &#x7684;&#x503C;&#xFF1A;<span class="hljs-number">200</span>
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x8868;&#x660E;&#xFF0C;&#x5373;&#x4F7F;&#x5728;&#x51FD;&#x6570;&#x5185;&#x6539;&#x53D8;&#x4E86;&#x503C;&#xFF0C;&#x503C;&#x4E5F;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x4EFB;&#x4F55;&#x7684;&#x53D8;&#x5316;&#x3002;</p>
+<p>&#x2003;</p>
+<h4 id="42-&#x6309;&#x5F15;&#x7528;&#x4F20;&#x9012;&#x53C2;&#x6570;">4.2 &#x6309;&#x5F15;&#x7528;&#x4F20;&#x9012;&#x53C2;&#x6570;</h4>
+<p>&#x5F15;&#x7528;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x53D8;&#x91CF;&#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#x7684;&#x5F15;&#x7528;&#x3002;&#x5F53;&#x6309;&#x5F15;&#x7528;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x4E0E;&#x503C;&#x53C2;&#x6570;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x5B83;&#x4E0D;&#x4F1A;&#x4E3A;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#x3002;&#x5F15;&#x7528;&#x53C2;&#x6570;&#x8868;&#x793A;&#x4E0E;&#x63D0;&#x4F9B;&#x7ED9;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x9645;&#x53C2;&#x6570;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x5728; C# &#x4E2D;&#xFF0C;&#x4F7F;&#x7528; <code>ref</code> &#x5173;&#x952E;&#x5B57;&#x58F0;&#x660E;&#x5F15;&#x7528;&#x53C2;&#x6570;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x8FD9;&#x70B9;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">CalculatorApplication</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">NumberManipulator</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span>(<span class="hljs-params"><span class="hljs-keyword">ref</span> <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">ref</span> <span class="hljs-keyword">int</span> y</span>)
+         </span>{
+            <span class="hljs-keyword">int</span> temp;
+
+            temp = x; <span class="hljs-comment">/* &#x4FDD;&#x5B58; x &#x7684;&#x503C; */</span>
+            x = y;    <span class="hljs-comment">/* &#x628A; y &#x8D4B;&#x503C;&#x7ED9; x */</span>
+            y = temp; <span class="hljs-comment">/* &#x628A; temp &#x8D4B;&#x503C;&#x7ED9; y */</span>
+          }
+
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            NumberManipulator n = <span class="hljs-keyword">new</span> NumberManipulator();
+            <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9A;&#x4E49; */</span>
+            <span class="hljs-keyword">int</span> a = <span class="hljs-number">100</span>;
+            <span class="hljs-keyword">int</span> b = <span class="hljs-number">200</span>;
+
+            Console.WriteLine(<span class="hljs-string">&quot;&#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x524D;&#xFF0C;a &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, a);
+            Console.WriteLine(<span class="hljs-string">&quot;&#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x524D;&#xFF0C;b &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, b);
+
+            <span class="hljs-comment">/* &#x8C03;&#x7528;&#x51FD;&#x6570;&#x6765;&#x4EA4;&#x6362;&#x503C; */</span>
+            n.swap(<span class="hljs-keyword">ref</span> a, <span class="hljs-keyword">ref</span> b);
+
+            Console.WriteLine(<span class="hljs-string">&quot;&#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x540E;&#xFF0C;a &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, a);
+            Console.WriteLine(<span class="hljs-string">&quot;&#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x540E;&#xFF0C;b &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, b);
+
+            Console.ReadLine();
+
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   &#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x524D;&#xFF0C;a &#x7684;&#x503C;&#xFF1A;<span class="hljs-number">100</span>
+   &#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x524D;&#xFF0C;b &#x7684;&#x503C;&#xFF1A;<span class="hljs-number">200</span>
+   &#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x540E;&#xFF0C;a &#x7684;&#x503C;&#xFF1A;<span class="hljs-number">200</span>
+   &#x5728;&#x4EA4;&#x6362;&#x4E4B;&#x540E;&#xFF0C;b &#x7684;&#x503C;&#xFF1A;<span class="hljs-number">100</span>
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x8868;&#x660E;&#xFF0C;<code>swap</code> &#x51FD;&#x6570;&#x5185;&#x7684;&#x503C;&#x6539;&#x53D8;&#x4E86;&#xFF0C;&#x4E14;&#x8FD9;&#x4E2A;&#x6539;&#x53D8;&#x53EF;&#x4EE5;&#x5728; <code>Main</code> &#x51FD;&#x6570;&#x4E2D;&#x53CD;&#x6620;&#x51FA;&#x6765;&#x3002;</p>
+<p>&#x2003;</p>
+<h4 id="43-&#x6309;&#x8F93;&#x51FA;&#x4F20;&#x9012;&#x53C2;&#x6570;">4.3 &#x6309;&#x8F93;&#x51FA;&#x4F20;&#x9012;&#x53C2;&#x6570;</h4>
+<p><code>return</code> &#x8BED;&#x53E5;&#x53EF;&#x7528;&#x4E8E;&#x53EA;&#x4ECE;&#x51FD;&#x6570;&#x4E2D;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x503C;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong>&#x8F93;&#x51FA;&#x53C2;&#x6570;</strong> &#x6765;&#x4ECE;&#x51FD;&#x6570;&#x4E2D;&#x8FD4;&#x56DE;&#x4E24;&#x4E2A;&#x503C;&#x3002;&#x8F93;&#x51FA;&#x53C2;&#x6570;&#x4F1A;&#x628A;&#x65B9;&#x6CD5;&#x8F93;&#x51FA;&#x7684;&#x6570;&#x636E;&#x8D4B;&#x7ED9;&#x81EA;&#x5DF1;&#xFF0C;&#x5176;&#x4ED6;&#x65B9;&#x9762;&#x4E0E;&#x5F15;&#x7528;&#x53C2;&#x6570;&#x76F8;&#x4F3C;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x8FD9;&#x70B9;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">CalculatorApplication</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">NumberManipulator</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getValue</span>(<span class="hljs-params"><span class="hljs-keyword">out</span> <span class="hljs-keyword">int</span> x </span>)
+         </span>{
+            <span class="hljs-keyword">int</span> temp = <span class="hljs-number">5</span>;
+            x = temp;
+         }
+
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            NumberManipulator n = <span class="hljs-keyword">new</span> NumberManipulator();
+            <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9A;&#x4E49; */</span>
+            <span class="hljs-keyword">int</span> a = <span class="hljs-number">100</span>;
+
+            Console.WriteLine(<span class="hljs-string">&quot;&#x5728;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E4B;&#x524D;&#xFF0C;a &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, a);
+
+            <span class="hljs-comment">/* &#x8C03;&#x7528;&#x51FD;&#x6570;&#x6765;&#x83B7;&#x53D6;&#x503C; */</span>
+            n.getValue(<span class="hljs-keyword">out</span> a);
+
+            Console.WriteLine(<span class="hljs-string">&quot;&#x5728;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E4B;&#x540E;&#xFF0C;a &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, a);
+            Console.ReadLine();
+
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   &#x5728;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E4B;&#x524D;&#xFF0C;a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">100</span>
+   &#x5728;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E4B;&#x540E;&#xFF0C;a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">5</span>
+</code></pre>
+<p>&#x63D0;&#x4F9B;&#x7ED9;&#x8F93;&#x51FA;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x91CF;&#x4E0D;&#x9700;&#x8981;&#x8D4B;&#x503C;&#x3002;&#x5F53;&#x9700;&#x8981;&#x4ECE;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x521D;&#x59CB;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x8FD4;&#x56DE;&#x503C;&#x65F6;&#xFF0C;&#x8F93;&#x51FA;&#x53C2;&#x6570;&#x7279;&#x522B;&#x6709;&#x7528;&#x3002;&#x8BF7;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x6765;&#x7406;&#x89E3;&#x8FD9;&#x4E00;&#x70B9;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">using</span> System;
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">CalculatorApplication</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">NumberManipulator</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getValues</span>(<span class="hljs-params"><span class="hljs-keyword">out</span> <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">out</span> <span class="hljs-keyword">int</span> y </span>)
+         </span>{
+             Console.WriteLine(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x7B2C;&#x4E00;&#x4E2A;&#x503C;&#xFF1A; &quot;</span>);
+             x = Convert.ToInt32(Console.ReadLine());
+             Console.WriteLine(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x7B2C;&#x4E8C;&#x4E2A;&#x503C;&#xFF1A; &quot;</span>);
+             y = Convert.ToInt32(Console.ReadLine());
+         }
+
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            NumberManipulator n = <span class="hljs-keyword">new</span> NumberManipulator();
+            <span class="hljs-comment">/* &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9A;&#x4E49; */</span>
+            <span class="hljs-keyword">int</span> a , b;
+
+            <span class="hljs-comment">/* &#x8C03;&#x7528;&#x51FD;&#x6570;&#x6765;&#x83B7;&#x53D6;&#x503C; */</span>
+            n.getValues(<span class="hljs-keyword">out</span> a, <span class="hljs-keyword">out</span> b);
+
+            Console.WriteLine(<span class="hljs-string">&quot;&#x5728;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E4B;&#x540E;&#xFF0C;a &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, a);
+            Console.WriteLine(<span class="hljs-string">&quot;&#x5728;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E4B;&#x540E;&#xFF0C;b &#x7684;&#x503C;&#xFF1A; {0}&quot;</span>, b);
+            Console.ReadLine();
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF08;&#x53D6;&#x51B3;&#x4E8E;&#x7528;&#x6237;&#x8F93;&#x5165;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-csharp">   &#x8BF7;&#x8F93;&#x5165;&#x7B2C;&#x4E00;&#x4E2A;&#x503C;&#xFF1A;
+   <span class="hljs-number">7</span>
+   &#x8BF7;&#x8F93;&#x5165;&#x7B2C;&#x4E8C;&#x4E2A;&#x503C;&#xFF1A;
+   <span class="hljs-number">8</span>
+   &#x5728;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E4B;&#x540E;&#xFF0C;a &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">7</span>
+   &#x5728;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E4B;&#x540E;&#xFF0C;b &#x7684;&#x503C;&#xFF1A; <span class="hljs-number">8</span>
+</code></pre>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -693,7 +1074,7 @@
 
             
                 
-                <a href="1_7 CSharp 访问修饰符.md" class="navigation navigation-prev " aria-label="Previous page: 1.7 C# 访问修饰符">
+                <a href="1_7 CSharp 访问修饰符.html" class="navigation navigation-prev " aria-label="Previous page: 1.7 C# 访问修饰符">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -709,7 +1090,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.8 C# 方法","level":"1.2.8","depth":2,"next":{"title":"1.9 C# 常量","level":"1.2.9","depth":2,"path":"一、CSharp 基础教程/1_9 CSharp 常量.md","ref":"一、CSharp 基础教程/1_9 CSharp 常量.md","articles":[]},"previous":{"title":"1.7 C# 访问修饰符","level":"1.2.7","depth":2,"path":"一、CSharp 基础教程/1_7 CSharp 访问修饰符.md","ref":"一、CSharp 基础教程/1_7 CSharp 访问修饰符.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_8 CSharp 方法.md","mtime":"2017-11-04T16:39:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.8 C# 方法","level":"1.2.8","depth":2,"next":{"title":"1.9 C# 常量","level":"1.2.9","depth":2,"path":"一、CSharp 基础教程/1_9 CSharp 常量.md","ref":"一、CSharp 基础教程/1_9 CSharp 常量.md","articles":[]},"previous":{"title":"1.7 C# 访问修饰符","level":"1.2.7","depth":2,"path":"一、CSharp 基础教程/1_7 CSharp 访问修饰符.md","ref":"一、CSharp 基础教程/1_7 CSharp 访问修饰符.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_8 CSharp 方法.md","mtime":"2017-11-05T08:22:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

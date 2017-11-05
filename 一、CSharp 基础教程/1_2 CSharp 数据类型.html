@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                <a href="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,172 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="c-&#x6570;&#x636E;&#x7C7B;&#x578B;">C# &#x6570;&#x636E;&#x7C7B;&#x578B;</h2>
+<p>&#x5728; C# &#x4E2D;&#xFF0C;&#x53D8;&#x91CF;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code>&#x2022; &#x503C;&#x7C7B;&#x578B;&#xFF08;Value types&#xFF09;
+&#x2022; &#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF08;Reference types&#xFF09;
+&#x2022; &#x6307;&#x9488;&#x7C7B;&#x578B;&#xFF08;Pointer types&#xFF09;
+</code></pre><h3 id="&#x4E00;&#x3001;&#x503C;&#x7C7B;&#x578B;&#xFF08;value-types&#xFF09;">&#x4E00;&#x3001;&#x503C;&#x7C7B;&#x578B;&#xFF08;Value types&#xFF09;</h3>
+<p>&#x503C;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5206;&#x914D;&#x7ED9;&#x4E00;&#x4E2A;&#x503C;&#x3002;&#x5B83;&#x4EEC;&#x662F;&#x4ECE;&#x7C7B; <code>System.ValueType</code> &#x4E2D;&#x6D3E;&#x751F;&#x7684;&#x3002;
+&#x503C;&#x7C7B;&#x578B;&#x76F4;&#x63A5;&#x5305;&#x542B;&#x6570;&#x636E;&#x3002;&#x6BD4;&#x5982; <code>int</code>&#x3001;<code>char</code>&#x3001;<code>float</code>&#xFF0C;&#x5B83;&#x4EEC;&#x5206;&#x522B;&#x5B58;&#x50A8;&#x6570;&#x5B57;&#x3001;&#x5B57;&#x6BCD;&#x3001;&#x6D6E;&#x70B9;&#x6570;&#x3002;&#x5F53;&#x60A8;&#x58F0;&#x660E;&#x4E00;&#x4E2A; <code>int</code> &#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x5206;&#x914D;&#x5185;&#x5B58;&#x6765;&#x5B58;&#x50A8;&#x503C;&#x3002;</p>
+<p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86; C# 2010 &#x4E2D;&#x53EF;&#x7528;&#x7684;&#x503C;&#x7C7B;&#x578B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:left">&#x8303;&#x56F4;</th>
+<th style="text-align:left">&#x9ED8;&#x8BA4;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">bool</td>
+<td style="text-align:left">&#x5E03;&#x5C14;&#x503C;</td>
+<td style="text-align:left">True &#x6216; False</td>
+<td style="text-align:left">False</td>
+</tr>
+<tr>
+<td style="text-align:left">byte</td>
+<td style="text-align:left">8 &#x4F4D;&#x65E0;&#x7B26;&#x53F7;&#x6574;&#x6570;</td>
+<td style="text-align:left">0 &#x5230; 255</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">char</td>
+<td style="text-align:left">16 &#x4F4D; Unicode &#x5B57;&#x7B26;</td>
+<td style="text-align:left">U +0000 &#x5230; U +ffff</td>
+<td style="text-align:left">&apos;\0&apos;</td>
+</tr>
+<tr>
+<td style="text-align:left">decimal</td>
+<td style="text-align:left">128 &#x4F4D;&#x7CBE;&#x786E;&#x7684;&#x5341;&#x8FDB;&#x5236;&#x503C;&#xFF0C;28-29 &#x6709;&#x6548;&#x4F4D;&#x6570;</td>
+<td style="text-align:left">(-7.9 x 1028 &#x5230; 7.9 x 1028) / 100 &#x5230; 28</td>
+<td style="text-align:left">0.0M</td>
+</tr>
+<tr>
+<td style="text-align:left">double</td>
+<td style="text-align:left">64 &#x4F4D;&#x53CC;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x578B;</td>
+<td style="text-align:left">(+/-)5.0 x 10-324 &#x5230; (+/-)1.7 x 10308</td>
+<td style="text-align:left">0.0D</td>
+</tr>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:left">32 &#x4F4D;&#x5355;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x578B;</td>
+<td style="text-align:left">-3.4 x 1038 &#x5230; + 3.4 x 1038</td>
+<td style="text-align:left">0.0F</td>
+</tr>
+<tr>
+<td style="text-align:left">int</td>
+<td style="text-align:left">32 &#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x7C7B;&#x578B;</td>
+<td style="text-align:left">-2,147,483,648 &#x5230; 2,147,483,647</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">long</td>
+<td style="text-align:left">64 &#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x7C7B;&#x578B;</td>
+<td style="text-align:left">-923,372,036,854,775,808 &#x5230; 9,223,372,036,854,775,807</td>
+<td style="text-align:left">0L</td>
+</tr>
+<tr>
+<td style="text-align:left">sbyte</td>
+<td style="text-align:left">8 &#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x7C7B;&#x578B;</td>
+<td style="text-align:left">-128 &#x5230; 127</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">short</td>
+<td style="text-align:left">16 &#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x7C7B;&#x578B;</td>
+<td style="text-align:left">-32,768 &#x5230; 32,767</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">uint</td>
+<td style="text-align:left">32 &#x4F4D;&#x65E0;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x7C7B;&#x578B;</td>
+<td style="text-align:left">0 &#x5230; 4,294,967,295</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">ulong</td>
+<td style="text-align:left">64 &#x4F4D;&#x65E0;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x7C7B;&#x578B;</td>
+<td style="text-align:left">0 &#x5230; 18,446,744,073,709,551,615</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">ushort</td>
+<td style="text-align:left">16 &#x4F4D;&#x65E0;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x7C7B;&#x578B;</td>
+<td style="text-align:left">0 &#x5230; 65,535</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5982;&#x9700;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x6216;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5728;&#x7279;&#x5B9A;&#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x51C6;&#x786E;&#x5C3A;&#x5BF8;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>sizeof</code> &#x65B9;&#x6CD5;&#x3002;&#x8868;&#x8FBE;&#x5F0F; <code>sizeof(type)</code> &#x4EA7;&#x751F;&#x4EE5;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;&#x5B58;&#x50A8;&#x5BF9;&#x8C61;&#x6216;&#x7C7B;&#x578B;&#x7684;&#x5B58;&#x50A8;&#x5C3A;&#x5BF8;&#x3002;&#x4E0B;&#x9762;&#x4E3E;&#x4F8B;&#x83B7;&#x53D6;&#x4EFB;&#x4F55;&#x673A;&#x5668;&#x4E0A; <code>int</code> &#x7C7B;&#x578B;&#x7684;&#x5B58;&#x50A8;&#x5C3A;&#x5BF8;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">namespace</span> <span class="hljs-title">DataTypeApplication</span>
+   {
+      <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+      {
+         <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+         </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;Size of int: {0}&quot;</span>, <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>));
+            Console.ReadLine();
+         }
+      }
+   }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">   Size of <span class="hljs-keyword">int</span>: <span class="hljs-number">4</span>
+</code></pre>
+<h3 id="&#x4E8C;&#x3001;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF08;reference-types&#xFF09;">&#x4E8C;&#x3001;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF08;Reference types&#xFF09;</h3>
+<p>&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x4E0D;&#x5305;&#x542B;&#x5B58;&#x50A8;&#x5728;&#x53D8;&#x91CF;&#x4E2D;&#x7684;&#x5B9E;&#x9645;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x5305;&#x542B;&#x5BF9;&#x53D8;&#x91CF;&#x7684;&#x5F15;&#x7528;&#x3002;
+&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5B83;&#x4EEC;&#x6307;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#x3002;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#x3002;&#x5982;&#x679C;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#x7684;&#x6570;&#x636E;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x6539;&#x53D8;&#x7684;&#xFF0C;&#x5176;&#x4ED6;&#x53D8;&#x91CF;&#x4F1A;&#x81EA;&#x52A8;&#x53CD;&#x6620;&#x8FD9;&#x79CD;&#x503C;&#x7684;&#x53D8;&#x5316;&#x3002;&#x5185;&#x7F6E;&#x7684; &#x5F15;&#x7528;&#x7C7B;&#x578B;&#x6709;&#xFF1A;<code>object</code>&#x3001;<code>dynamic</code> &#x548C; <code>string</code>&#x3002;</p>
+<h4 id="&#xFF08;1&#xFF09;&#x3001;&#x5BF9;&#x8C61;&#xFF08;object&#xFF09;&#x7C7B;&#x578B;">&#xFF08;1&#xFF09;&#x3001;&#x5BF9;&#x8C61;&#xFF08;Object&#xFF09;&#x7C7B;&#x578B;</h4>
+<p>&#x5BF9;&#x8C61;&#xFF08;<code>Object</code>&#xFF09;&#x7C7B;&#x578B; &#x662F; C# &#x901A;&#x7528;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;&#xFF08;Common Type System - CTS&#xFF09;&#x4E2D;&#x6240;&#x6709;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x7EC8;&#x6781;&#x57FA;&#x7C7B;&#x3002;<code>Object</code> &#x662F; <code>System.Object</code> &#x7C7B;&#x7684;&#x522B;&#x540D;&#x3002;&#x6240;&#x4EE5;&#x5BF9;&#x8C61;&#xFF08;<code>Object</code>&#xFF09;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x88AB;&#x5206;&#x914D;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#xFF08;&#x503C;&#x7C7B;&#x578B;&#x3001;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x3001;&#x9884;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x6216;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#xFF09;&#x7684;&#x503C;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5728;&#x5206;&#x914D;&#x503C;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;
+<strong>&#x5F53;&#x4E00;&#x4E2A;&#x503C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x5219;&#x88AB;&#x79F0;&#x4E3A; &#x88C5;&#x7BB1;&#xFF1B;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x503C;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x5219;&#x88AB;&#x79F0;&#x4E3A; &#x62C6;&#x7BB1;&#x3002;</strong></p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">object</span> obj;
+   obj = <span class="hljs-number">100</span>; <span class="hljs-comment">// &#x8FD9;&#x662F;&#x88C5;&#x7BB1;</span>
+</code></pre>
+<h4 id="&#xFF08;2&#xFF09;&#x3001;&#x52A8;&#x6001;&#xFF08;dynamic&#xFF09;&#x7C7B;&#x578B;">&#xFF08;2&#xFF09;&#x3001;&#x52A8;&#x6001;&#xFF08;Dynamic&#xFF09;&#x7C7B;&#x578B;</h4>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x5728;&#x52A8;&#x6001;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x4E2D;&#x3002;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x662F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x53D1;&#x751F;&#x7684;&#x3002;
+&#x58F0;&#x660E;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">dynamic</span> &lt;variable_name&gt; = <span class="hljs-keyword">value</span>;
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">dynamic</span> d = <span class="hljs-number">20</span>;
+</code></pre>
+<p>&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x4E0E;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x76F8;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x53D1;&#x751F;&#x7684;&#xFF0C;&#x800C;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x662F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x53D1;&#x751F;&#x7684;&#x3002;</p>
+<h4 id="&#xFF08;3&#xFF09;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#xFF08;string&#xFF09;&#x7C7B;&#x578B;">&#xFF08;3&#xFF09;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#xFF08;String&#xFF09;&#x7C7B;&#x578B;</h4>
+<p>&#x5B57;&#x7B26;&#x4E32;&#xFF08;<code>String</code>&#xFF09;&#x7C7B;&#x578B; &#x5141;&#x8BB8;&#x60A8;&#x7ED9;&#x53D8;&#x91CF;&#x5206;&#x914D;&#x4EFB;&#x4F55;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#x3002;&#x5B57;&#x7B26;&#x4E32;&#xFF08;<code>String</code>&#xFF09;&#x7C7B;&#x578B;&#x662F; <code>System.String</code> &#x7C7B;&#x7684;&#x522B;&#x540D;&#x3002;&#x5B83;&#x662F;&#x4ECE;&#x5BF9;&#x8C61;&#xFF08;<code>Object</code>&#xFF09;&#x7C7B;&#x578B;&#x6D3E;&#x751F;&#x7684;&#x3002;&#x5B57;&#x7B26;&#x4E32;&#xFF08;<code>String</code>&#xFF09;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x5206;&#x914D;&#xFF1A;<strong>&#x5F15;&#x53F7;</strong>&#x548C; <strong>@&#x5F15;&#x53F7;</strong>&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-csharp">   String str = <span class="hljs-string">&quot;runoob.com&quot;</span>;
+</code></pre>
+<p>&#x4E00;&#x4E2A; @&#x5F15;&#x53F7;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-string">@&quot;runoob.com&quot;</span>;
+</code></pre>
+<p>C# <code>string</code> &#x5B57;&#x7B26;&#x4E32;&#x7684;&#x524D;&#x9762;&#x53EF;&#x4EE5;&#x52A0; <strong>@</strong>&#xFF08;&#x79F0;&#x4F5C;&quot;&#x9010;&#x5B57;&#x5B57;&#x7B26;&#x4E32;&quot;&#xFF09;<strong>&#x5C06;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#xFF08;\&#xFF09;&#x5F53;&#x4F5C;&#x666E;&#x901A;&#x5B57;&#x7B26;&#x5BF9;&#x5F85;</strong>&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">string</span> str = <span class="hljs-string">@&quot;C:\Windows&quot;</span>;
+</code></pre>
+<p>&#x7B49;&#x4EF7;&#x4E8E;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">string</span> str = <span class="hljs-string">&quot;C:\\Windows&quot;</span>;
+</code></pre>
+<p>@ &#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x6362;&#x884C;&#xFF0C;&#x6362;&#x884C;&#x7B26;&#x53CA;&#x7F29;&#x8FDB;&#x7A7A;&#x683C;&#x90FD;&#x8BA1;&#x7B97;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x4E4B;&#x5185;&#x3002;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">string</span> str = <span class="hljs-string">@&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot;&gt;
+       &lt;!--
+       --&gt;
+   &lt;/script&gt;&quot;</span>;
+</code></pre>
+<p>&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x6709;&#xFF1A;<code>class</code>&#x3001;<code>interface</code> &#x6216; <code>delegate</code>&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x4EE5;&#x540E;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x8BA8;&#x8BBA;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x3002;</p>
+<h3 id="&#x4E09;&#x3001;&#x6307;&#x9488;&#x7C7B;&#x578B;&#xFF08;pointer-types&#xFF09;">&#x4E09;&#x3001;&#x6307;&#x9488;&#x7C7B;&#x578B;&#xFF08;Pointer types&#xFF09;</h3>
+<p>&#x6307;&#x9488;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x5B58;&#x50A8;&#x53E6;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x3002;C# &#x4E2D;&#x7684;&#x6307;&#x9488;&#x4E0E; C &#x6216; C++ &#x4E2D;&#x7684;&#x6307;&#x9488;&#x6709;&#x76F8;&#x540C;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x58F0;&#x660E;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-csharp">   type* identifier;
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-csharp">   <span class="hljs-keyword">char</span>* cptr;
+   <span class="hljs-keyword">int</span>* iptr;
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x7AE0;&#x8282;&quot;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x4EE3;&#x7801;&quot;&#x4E2D;&#x8BA8;&#x8BBA;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -709,7 +887,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.2 C# 数据类型","level":"1.2.2","depth":2,"next":{"title":"1.3 C# 变量","level":"1.2.3","depth":2,"path":"一、CSharp 基础教程/1_3 CSharp 变量.md","ref":"一、CSharp 基础教程/1_3 CSharp 变量.md","articles":[]},"previous":{"title":"1.1 C# 简介","level":"1.2.1","depth":2,"path":"一、CSharp 基础教程/1_1 CSharp 简介.md","ref":"一、CSharp 基础教程/1_1 CSharp 简介.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_2 CSharp 数据类型.md","mtime":"2017-11-04T16:39:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.2 C# 数据类型","level":"1.2.2","depth":2,"next":{"title":"1.3 C# 变量","level":"1.2.3","depth":2,"path":"一、CSharp 基础教程/1_3 CSharp 变量.md","ref":"一、CSharp 基础教程/1_3 CSharp 变量.md","articles":[]},"previous":{"title":"1.1 C# 简介","level":"1.2.1","depth":2,"path":"一、CSharp 基础教程/1_1 CSharp 简介.md","ref":"一、CSharp 基础教程/1_1 CSharp 简介.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_2 CSharp 数据类型.md","mtime":"2017-11-05T04:19:05.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

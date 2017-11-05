@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.md">
+        <li class="chapter " data-level="1.2.7" data-path="1_7 CSharp 访问修饰符.html">
             
-                <span>
+                <a href="1_7 CSharp 访问修饰符.html">
             
                     
                     1.7 C# 访问修饰符
@@ -616,6 +616,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.14" data-path="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                <a href="../二、CSharp 高级教程/2_14 CSharp LINQ.html">
+            
+                    
+                    2.14 C# LINQ
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +679,342 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;">&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;</h2>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x91CD;&#x5B9A;&#x4E49;&#x6216;&#x91CD;&#x8F7D; C# &#x4E2D;&#x5185;&#x7F6E;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x7A0B;&#x5E8F;&#x5458;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x3002;&#x91CD;&#x8F7D;&#x8FD0;&#x7B97;&#x7B26;&#x662F;&#x5177;&#x6709;&#x7279;&#x6B8A;&#x540D;&#x79F0;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x662F;&#x901A;&#x8FC7;&#x5173;&#x952E;&#x5B57; <strong>operator</strong> &#x540E;&#x8DDF;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x7B26;&#x53F7;&#x6765;&#x5B9A;&#x4E49;&#x7684;&#x3002;&#x4E0E;&#x5176;&#x4ED6;&#x51FD;&#x6570;&#x4E00;&#x6837;&#xFF0C;&#x91CD;&#x8F7D;&#x8FD0;&#x7B97;&#x7B26;&#x6709;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x548C;&#x53C2;&#x6570;&#x5217;&#x8868;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x8BF7;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Box <span class="hljs-keyword">operator</span>+ (Box b, Box c)
+    {
+       Box box = <span class="hljs-keyword">new</span> Box();
+       box.length = b.length + c.length;
+       box.breadth = b.breadth + c.breadth;
+       box.height = b.height + c.height;
+       <span class="hljs-keyword">return</span> box;
+    }
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x51FD;&#x6570;&#x4E3A;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7C7B; Box &#x5B9E;&#x73B0;&#x4E86;&#x52A0;&#x6CD5;&#x8FD0;&#x7B97;&#x7B26;&#xFF08;+&#xFF09;&#x3002;&#x5B83;&#x628A;&#x4E24;&#x4E2A; Box &#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x76F8;&#x52A0;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x76F8;&#x52A0;&#x540E;&#x7684; Box &#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x2003;</p>
+<h3 id="&#x4E00;&#x3001;&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;&#x7684;&#x5B9E;&#x73B0;">&#x4E00;&#x3001;&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;&#x7684;&#x5B9E;&#x73B0;</h3>
+<p>&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x6F14;&#x793A;&#x4E86;&#x5B8C;&#x6574;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">OperatorOvlApplication</span>
+    {
+       <span class="hljs-keyword">class</span> <span class="hljs-title">Box</span>
+       {
+          <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> length;      <span class="hljs-comment">// &#x957F;&#x5EA6;</span>
+          <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> breadth;     <span class="hljs-comment">// &#x5BBD;&#x5EA6;</span>
+          <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> height;      <span class="hljs-comment">// &#x9AD8;&#x5EA6;</span>
+
+          <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">getVolume</span>(<span class="hljs-params"></span>)
+          </span>{
+             <span class="hljs-keyword">return</span> length * breadth * height;
+          }
+          <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setLength</span>(<span class="hljs-params"> <span class="hljs-keyword">double</span> len </span>)
+          </span>{
+             length = len;
+          }
+
+          <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setBreadth</span>(<span class="hljs-params"> <span class="hljs-keyword">double</span> bre </span>)
+          </span>{
+             breadth = bre;
+          }
+
+          <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setHeight</span>(<span class="hljs-params"> <span class="hljs-keyword">double</span> hei </span>)
+          </span>{
+             height = hei;
+          }
+          <span class="hljs-comment">// &#x91CD;&#x8F7D; + &#x8FD0;&#x7B97;&#x7B26;&#x6765;&#x628A;&#x4E24;&#x4E2A; Box &#x5BF9;&#x8C61;&#x76F8;&#x52A0;</span>
+          <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Box <span class="hljs-keyword">operator</span>+ (Box b, Box c)
+          {
+             Box box = <span class="hljs-keyword">new</span> Box();
+             box.length = b.length + c.length;
+             box.breadth = b.breadth + c.breadth;
+             box.height = b.height + c.height;
+             <span class="hljs-keyword">return</span> box;
+          }
+
+       }
+
+       <span class="hljs-keyword">class</span> <span class="hljs-title">Tester</span>
+       {
+          <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+          </span>{
+             Box Box1 = <span class="hljs-keyword">new</span> Box();         <span class="hljs-comment">// &#x58F0;&#x660E; Box1&#xFF0C;&#x7C7B;&#x578B;&#x4E3A; Box</span>
+             Box Box2 = <span class="hljs-keyword">new</span> Box();         <span class="hljs-comment">// &#x58F0;&#x660E; Box2&#xFF0C;&#x7C7B;&#x578B;&#x4E3A; Box</span>
+             Box Box3 = <span class="hljs-keyword">new</span> Box();         <span class="hljs-comment">// &#x58F0;&#x660E; Box3&#xFF0C;&#x7C7B;&#x578B;&#x4E3A; Box</span>
+             <span class="hljs-keyword">double</span> volume = <span class="hljs-number">0.0</span>;          <span class="hljs-comment">// &#x4F53;&#x79EF;</span>
+
+             <span class="hljs-comment">// Box1 &#x8BE6;&#x8FF0;</span>
+             Box1.setLength(<span class="hljs-number">6.0</span>);
+             Box1.setBreadth(<span class="hljs-number">7.0</span>);
+             Box1.setHeight(<span class="hljs-number">5.0</span>);
+
+             <span class="hljs-comment">// Box2 &#x8BE6;&#x8FF0;</span>
+             Box2.setLength(<span class="hljs-number">12.0</span>);
+             Box2.setBreadth(<span class="hljs-number">13.0</span>);
+             Box2.setHeight(<span class="hljs-number">10.0</span>);
+
+             <span class="hljs-comment">// Box1 &#x7684;&#x4F53;&#x79EF;</span>
+             volume = Box1.getVolume();
+             Console.WriteLine(<span class="hljs-string">&quot;Box1 &#x7684;&#x4F53;&#x79EF;&#xFF1A; {0}&quot;</span>, volume);
+
+             <span class="hljs-comment">// Box2 &#x7684;&#x4F53;&#x79EF;</span>
+             volume = Box2.getVolume();
+             Console.WriteLine(<span class="hljs-string">&quot;Box2 &#x7684;&#x4F53;&#x79EF;&#xFF1A; {0}&quot;</span>, volume);
+
+             <span class="hljs-comment">// &#x628A;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x76F8;&#x52A0;</span>
+             Box3 = Box1 + Box2;
+
+             <span class="hljs-comment">// Box3 &#x7684;&#x4F53;&#x79EF;</span>
+             volume = Box3.getVolume();
+             Console.WriteLine(<span class="hljs-string">&quot;Box3 &#x7684;&#x4F53;&#x79EF;&#xFF1A; {0}&quot;</span>, volume);
+             Console.ReadKey();
+          }
+       }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    Box1 &#x7684;&#x4F53;&#x79EF;&#xFF1A; <span class="hljs-number">210</span>
+    Box2 &#x7684;&#x4F53;&#x79EF;&#xFF1A; <span class="hljs-number">1560</span>
+    Box3 &#x7684;&#x4F53;&#x79EF;&#xFF1A; <span class="hljs-number">5400</span>
+</code></pre>
+<p>&#x2003;</p>
+<h3 id="&#x4E8C;&#x3001;&#x53EF;&#x91CD;&#x8F7D;&#x548C;&#x4E0D;&#x53EF;&#x91CD;&#x8F7D;&#x8FD0;&#x7B97;&#x7B26;">&#x4E8C;&#x3001;&#x53EF;&#x91CD;&#x8F7D;&#x548C;&#x4E0D;&#x53EF;&#x91CD;&#x8F7D;&#x8FD0;&#x7B97;&#x7B26;</h3>
+<p>&#x4E0B;&#x8868;&#x63CF;&#x8FF0;&#x4E86; C# &#x4E2D;&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;&#x7684;&#x80FD;&#x529B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x8FD0;&#x7B97;&#x7B26;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">+, -, !, ~, ++, --</td>
+<td style="text-align:left">&#x8FD9;&#x4E9B;&#x4E00;&#x5143;&#x8FD0;&#x7B97;&#x7B26;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#xFF0C;&#x4E14;&#x53EF;&#x4EE5;&#x88AB;&#x91CD;&#x8F7D;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">+, -, *, /, %</td>
+<td style="text-align:left">&#x8FD9;&#x4E9B;&#x4E8C;&#x5143;&#x8FD0;&#x7B97;&#x7B26;&#x5E26;&#x6709;&#x4E24;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#xFF0C;&#x4E14;&#x53EF;&#x4EE5;&#x88AB;&#x91CD;&#x8F7D;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">==, !=, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></td>
+<td style="text-align:left">&#x8FD9;&#x4E9B;&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26;&#x53EF;&#x4EE5;&#x88AB;&#x91CD;&#x8F7D;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&amp;&amp;, \</td>
+<td style="text-align:left">\</td>
+<td></td>
+<td>&#x8FD9;&#x4E9B;&#x6761;&#x4EF6;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;&#x4E0D;&#x80FD;&#x88AB;&#x76F4;&#x63A5;&#x91CD;&#x8F7D;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">+=, -=, *=, /=, %=</td>
+<td style="text-align:left">&#x8FD9;&#x4E9B;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x4E0D;&#x80FD;&#x88AB;&#x91CD;&#x8F7D;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">=, ., ?:, -&gt;, new, is, sizeof, typeof</td>
+<td style="text-align:left">&#x8FD9;&#x4E9B;&#x8FD0;&#x7B97;&#x7B26;&#x4E0D;&#x80FD;&#x88AB;&#x91CD;&#x8F7D;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;</p>
+<h4 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h4>
+<p>&#x9488;&#x5BF9;&#x4E0A;&#x8FF0;&#x8BA8;&#x8BBA;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x6269;&#x5C55;&#x4E0A;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x91CD;&#x8F7D;&#x66F4;&#x591A;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">using</span> System;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">OperatorOvlApplication</span>
+    {
+        <span class="hljs-keyword">class</span> <span class="hljs-title">Box</span>
+        {
+           <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> length;      <span class="hljs-comment">// &#x957F;&#x5EA6;</span>
+           <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> breadth;     <span class="hljs-comment">// &#x5BBD;&#x5EA6;</span>
+           <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> height;      <span class="hljs-comment">// &#x9AD8;&#x5EA6;</span>
+
+           <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">getVolume</span>(<span class="hljs-params"></span>)
+           </span>{
+             <span class="hljs-keyword">return</span> length * breadth * height;
+           }
+          <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setLength</span>(<span class="hljs-params"> <span class="hljs-keyword">double</span> len </span>)
+          </span>{
+              length = len;
+          }
+
+          <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setBreadth</span>(<span class="hljs-params"> <span class="hljs-keyword">double</span> bre </span>)
+          </span>{
+              breadth = bre;
+          }
+
+          <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setHeight</span>(<span class="hljs-params"> <span class="hljs-keyword">double</span> hei </span>)
+          </span>{
+              height = hei;
+          }
+          <span class="hljs-comment">// &#x91CD;&#x8F7D; + &#x8FD0;&#x7B97;&#x7B26;&#x6765;&#x628A;&#x4E24;&#x4E2A; Box &#x5BF9;&#x8C61;&#x76F8;&#x52A0;</span>
+          <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Box <span class="hljs-keyword">operator</span>+ (Box b, Box c)
+          {
+              Box box = <span class="hljs-keyword">new</span> Box();
+              box.length = b.length + c.length;
+              box.breadth = b.breadth + c.breadth;
+              box.height = b.height + c.height;
+              <span class="hljs-keyword">return</span> box;
+          }
+
+          <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> == (Box lhs, Box rhs)
+          {
+              <span class="hljs-keyword">bool</span> status = <span class="hljs-keyword">false</span>;
+              <span class="hljs-keyword">if</span> (lhs.length == rhs.length &amp;&amp; lhs.height == rhs.height 
+                 &amp;&amp; lhs.breadth == rhs.breadth)
+              {
+                  status = <span class="hljs-keyword">true</span>;
+              }
+              <span class="hljs-keyword">return</span> status;
+          }
+          <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> !=(Box lhs, Box rhs)
+          {
+              <span class="hljs-keyword">bool</span> status = <span class="hljs-keyword">false</span>;
+              <span class="hljs-keyword">if</span> (lhs.length != rhs.length || lhs.height != rhs.height 
+                  || lhs.breadth != rhs.breadth)
+              {
+                  status = <span class="hljs-keyword">true</span>;
+              }
+              <span class="hljs-keyword">return</span> status;
+          }
+          <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt;(Box lhs, Box rhs)
+          {
+              <span class="hljs-keyword">bool</span> status = <span class="hljs-keyword">false</span>;
+              <span class="hljs-keyword">if</span> (lhs.length &lt; rhs.length &amp;&amp; lhs.height 
+                  &lt; rhs.height &amp;&amp; lhs.breadth &lt; rhs.breadth)
+              {
+                  status = <span class="hljs-keyword">true</span>;
+              }
+              <span class="hljs-keyword">return</span> status;
+          }
+
+          <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &gt;(Box lhs, Box rhs)
+          {
+              <span class="hljs-keyword">bool</span> status = <span class="hljs-keyword">false</span>;
+              <span class="hljs-keyword">if</span> (lhs.length &gt; rhs.length &amp;&amp; lhs.height 
+                  &gt; rhs.height &amp;&amp; lhs.breadth &gt; rhs.breadth)
+              {
+                  status = <span class="hljs-keyword">true</span>;
+              }
+              <span class="hljs-keyword">return</span> status;
+          }
+
+          <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt;=(Box lhs, Box rhs)
+          {
+              <span class="hljs-keyword">bool</span> status = <span class="hljs-keyword">false</span>;
+              <span class="hljs-keyword">if</span> (lhs.length &lt;= rhs.length &amp;&amp; lhs.height 
+                  &lt;= rhs.height &amp;&amp; lhs.breadth &lt;= rhs.breadth)
+              {
+                  status = <span class="hljs-keyword">true</span>;
+              }
+              <span class="hljs-keyword">return</span> status;
+          }
+
+          <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &gt;=(Box lhs, Box rhs)
+          {
+              <span class="hljs-keyword">bool</span> status = <span class="hljs-keyword">false</span>;
+              <span class="hljs-keyword">if</span> (lhs.length &gt;= rhs.length &amp;&amp; lhs.height 
+                 &gt;= rhs.height &amp;&amp; lhs.breadth &gt;= rhs.breadth)
+              {
+                  status = <span class="hljs-keyword">true</span>;
+              }
+              <span class="hljs-keyword">return</span> status;
+          }
+          <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">string</span> <span class="hljs-title">ToString</span>(<span class="hljs-params"></span>)
+          </span>{
+              <span class="hljs-keyword">return</span> String.Format(<span class="hljs-string">&quot;({0}, {1}, {2})&quot;</span>, length, breadth, height);
+          }
+
+       }
+
+       <span class="hljs-keyword">class</span> <span class="hljs-title">Tester</span>
+       {
+          <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+          </span>{
+            Box Box1 = <span class="hljs-keyword">new</span> Box();          <span class="hljs-comment">// &#x58F0;&#x660E; Box1&#xFF0C;&#x7C7B;&#x578B;&#x4E3A; Box</span>
+            Box Box2 = <span class="hljs-keyword">new</span> Box();          <span class="hljs-comment">// &#x58F0;&#x660E; Box2&#xFF0C;&#x7C7B;&#x578B;&#x4E3A; Box</span>
+            Box Box3 = <span class="hljs-keyword">new</span> Box();          <span class="hljs-comment">// &#x58F0;&#x660E; Box3&#xFF0C;&#x7C7B;&#x578B;&#x4E3A; Box</span>
+            Box Box4 = <span class="hljs-keyword">new</span> Box();
+            <span class="hljs-keyword">double</span> volume = <span class="hljs-number">0.0</span>;   <span class="hljs-comment">// &#x4F53;&#x79EF;</span>
+
+            <span class="hljs-comment">// Box1 &#x8BE6;&#x8FF0;</span>
+            Box1.setLength(<span class="hljs-number">6.0</span>);
+            Box1.setBreadth(<span class="hljs-number">7.0</span>);
+            Box1.setHeight(<span class="hljs-number">5.0</span>);
+
+            <span class="hljs-comment">// Box2 &#x8BE6;&#x8FF0;</span>
+            Box2.setLength(<span class="hljs-number">12.0</span>);
+            Box2.setBreadth(<span class="hljs-number">13.0</span>);
+            Box2.setHeight(<span class="hljs-number">10.0</span>);
+
+           <span class="hljs-comment">// &#x4F7F;&#x7528;&#x91CD;&#x8F7D;&#x7684; ToString() &#x663E;&#x793A;&#x4E24;&#x4E2A;&#x76D2;&#x5B50;</span>
+            Console.WriteLine(<span class="hljs-string">&quot;Box1&#xFF1A; {0}&quot;</span>, Box1.ToString());
+            Console.WriteLine(<span class="hljs-string">&quot;Box2&#xFF1A; {0}&quot;</span>, Box2.ToString());
+
+            <span class="hljs-comment">// Box1 &#x7684;&#x4F53;&#x79EF;</span>
+            volume = Box1.getVolume();
+            Console.WriteLine(<span class="hljs-string">&quot;Box1 &#x7684;&#x4F53;&#x79EF;&#xFF1A; {0}&quot;</span>, volume);
+
+            <span class="hljs-comment">// Box2 &#x7684;&#x4F53;&#x79EF;</span>
+            volume = Box2.getVolume();
+            Console.WriteLine(<span class="hljs-string">&quot;Box2 &#x7684;&#x4F53;&#x79EF;&#xFF1A; {0}&quot;</span>, volume);
+
+            <span class="hljs-comment">// &#x628A;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x76F8;&#x52A0;</span>
+            Box3 = Box1 + Box2;
+            Console.WriteLine(<span class="hljs-string">&quot;Box3&#xFF1A; {0}&quot;</span>, Box3.ToString());
+            <span class="hljs-comment">// Box3 &#x7684;&#x4F53;&#x79EF;</span>
+            volume = Box3.getVolume();
+            Console.WriteLine(<span class="hljs-string">&quot;Box3 &#x7684;&#x4F53;&#x79EF;&#xFF1A; {0}&quot;</span>, volume);
+
+            <span class="hljs-comment">//comparing the boxes</span>
+            <span class="hljs-keyword">if</span> (Box1 &gt; Box2)
+              Console.WriteLine(<span class="hljs-string">&quot;Box1 &#x5927;&#x4E8E; Box2&quot;</span>);
+            <span class="hljs-keyword">else</span>
+              Console.WriteLine(<span class="hljs-string">&quot;Box1 &#x4E0D;&#x5927;&#x4E8E; Box2&quot;</span>);
+            <span class="hljs-keyword">if</span> (Box1 &lt; Box2)
+              Console.WriteLine(<span class="hljs-string">&quot;Box1 &#x5C0F;&#x4E8E; Box2&quot;</span>);
+            <span class="hljs-keyword">else</span>
+              Console.WriteLine(<span class="hljs-string">&quot;Box1 &#x4E0D;&#x5C0F;&#x4E8E; Box2&quot;</span>);
+            <span class="hljs-keyword">if</span> (Box1 &gt;= Box2)
+              Console.WriteLine(<span class="hljs-string">&quot;Box1 &#x5927;&#x4E8E;&#x7B49;&#x4E8E; Box2&quot;</span>);
+            <span class="hljs-keyword">else</span>
+              Console.WriteLine(<span class="hljs-string">&quot;Box1 &#x4E0D;&#x5927;&#x4E8E;&#x7B49;&#x4E8E; Box2&quot;</span>);
+            <span class="hljs-keyword">if</span> (Box1 &lt;= Box2)
+              Console.WriteLine(<span class="hljs-string">&quot;Box1 &#x5C0F;&#x4E8E;&#x7B49;&#x4E8E; Box2&quot;</span>);
+            <span class="hljs-keyword">else</span>
+              Console.WriteLine(<span class="hljs-string">&quot;Box1 &#x4E0D;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E; Box2&quot;</span>);
+            <span class="hljs-keyword">if</span> (Box1 != Box2)
+              Console.WriteLine(<span class="hljs-string">&quot;Box1 &#x4E0D;&#x7B49;&#x4E8E; Box2&quot;</span>);
+            <span class="hljs-keyword">else</span>
+              Console.WriteLine(<span class="hljs-string">&quot;Box1 &#x7B49;&#x4E8E; Box2&quot;</span>);
+            Box4 = Box3;
+            <span class="hljs-keyword">if</span> (Box3 == Box4)
+              Console.WriteLine(<span class="hljs-string">&quot;Box3 &#x7B49;&#x4E8E; Box4&quot;</span>);
+            <span class="hljs-keyword">else</span>
+              Console.WriteLine(<span class="hljs-string">&quot;Box3 &#x4E0D;&#x7B49;&#x4E8E; Box4&quot;</span>);
+
+            Console.ReadKey();
+          }
+        }
+    }
+</code></pre>
+<p>&#x5F53;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E0B;&#x5217;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-csharp">    Box1&#xFF1A; (<span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">5</span>)
+    Box2&#xFF1A; (<span class="hljs-number">12</span>, <span class="hljs-number">13</span>, <span class="hljs-number">10</span>)
+    Box1 &#x7684;&#x4F53;&#x79EF;&#xFF1A; <span class="hljs-number">210</span>
+    Box2 &#x7684;&#x4F53;&#x79EF;&#xFF1A; <span class="hljs-number">1560</span>
+    Box3&#xFF1A; (<span class="hljs-number">18</span>, <span class="hljs-number">20</span>, <span class="hljs-number">15</span>)
+    Box3 &#x7684;&#x4F53;&#x79EF;&#xFF1A; <span class="hljs-number">5400</span>
+    Box1 &#x4E0D;&#x5927;&#x4E8E; Box2
+    Box1 &#x5C0F;&#x4E8E; Box2
+    Box1 &#x4E0D;&#x5927;&#x4E8E;&#x7B49;&#x4E8E; Box2
+    Box1 &#x5C0F;&#x4E8E;&#x7B49;&#x4E8E; Box2
+    Box1 &#x4E0D;&#x7B49;&#x4E8E; Box2
+    Box3 &#x7B49;&#x4E8E; Box4
+</code></pre>
+<p>&#x1F51A;</p>
+
                                 
                                 </section>
                             
@@ -709,7 +1057,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.18 C# 运算符重载","level":"1.2.18","depth":2,"next":{"title":"1.19 C# 接口","level":"1.2.19","depth":2,"path":"一、CSharp 基础教程/1_19 CSharp 接口.md","ref":"一、CSharp 基础教程/1_19 CSharp 接口.md","articles":[]},"previous":{"title":"1.17 C# 多态性","level":"1.2.17","depth":2,"path":"一、CSharp 基础教程/1_17 CSharp 多态性.md","ref":"一、CSharp 基础教程/1_17 CSharp 多态性.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_18 CSharp 运算符重载.md","mtime":"2017-11-04T16:56:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-04T16:59:38.916Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.18 C# 运算符重载","level":"1.2.18","depth":2,"next":{"title":"1.19 C# 接口","level":"1.2.19","depth":2,"path":"一、CSharp 基础教程/1_19 CSharp 接口.md","ref":"一、CSharp 基础教程/1_19 CSharp 接口.md","articles":[]},"previous":{"title":"1.17 C# 多态性","level":"1.2.17","depth":2,"path":"一、CSharp 基础教程/1_17 CSharp 多态性.md","ref":"一、CSharp 基础教程/1_17 CSharp 多态性.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"一、CSharp 基础教程/1_18 CSharp 运算符重载.md","mtime":"2017-11-05T11:15:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
