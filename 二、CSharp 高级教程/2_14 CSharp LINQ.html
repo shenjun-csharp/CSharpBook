@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="2_15 CSharp 协变与抗变.html" />
+    
     
     <link rel="prev" href="2_13 CSharp 多线程.html" />
     
@@ -627,6 +629,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.15" data-path="2_15 CSharp 协变与抗变.html">
+            
+                <a href="2_15 CSharp 协变与抗变.html">
+            
+                    
+                    2.15 C#4.0 协变与抗变
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -677,7 +692,517 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="linq">LINQ</h2>
+<pre><code class="lang-csharp">using System;
+using System.Collections.Generic;
+using System.Collections.Concurrent;
+using System.Linq;
+
+namespace LinqTest
+{
+
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+
+
+         /*
+          * where        &#x7B5B;&#x9009;&#x64CD;&#x4F5C;&#x7B26;&#x5B9A;&#x4E49;&#x4E86;&#x8FD4;&#x56DE;&#x5143;&#x7D20;&#x7684;&#x6761;&#x4EF6;
+          * 
+          * Select       &#x6295;&#x5C04;&#x64CD;&#x4F5C;&#x7B26;&#x7528;&#x4E8E;&#x628A;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x65B0;&#x5BF9;&#x8C61;&#x3002;
+          * 
+          * OrderBy      &#x6392;&#x5E8F;&#x64CD;&#x4F5C;&#x7B26;&#x8FD4;&#x56DE;&#x7684;&#x5143;&#x7D20;&#x7684;&#x987A;&#x5E8F;
+          * ThenBy
+          * OerderByDescending
+          * ThenByDescending
+          * Reverse
+          * 
+          * Join         &#x8FDE;&#x63A5;&#x64CD;&#x4F5C;&#x7B26;&#x7528;&#x4E8E;&#x5408;&#x5E76;&#x4E0D;&#x76F4;&#x63A5;&#x76F8;&#x5173;&#x7684;&#x96C6;&#x5408;&#x3002;
+          * GroupJoin
+          * 
+          * GroupBy      &#x7EC4;&#x5408;&#x64CD;&#x4F5C;&#x7B26;&#x628A;&#x6570;&#x7EC4;&#x653E;&#x5728;&#x7EC4;&#x4E2D;&#x3002;
+          * ToLookup
+          * 
+          * Any          &#x5982;&#x679C;&#x5143;&#x7D20;&#x5E8F;&#x5217;&#x6EE1;&#x8DB3;&#x6307;&#x5B9A;&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x9650;&#x5B9A;&#x7B26;&#x64CD;&#x4F5C;&#x5C31;&#x8FD4;&#x56DE;&#x5E03;&#x5C14;&#x503C;
+          * All
+          * Contains     &#x68C0;&#x67E5;&#x67D0;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x5426;&#x5728;&#x96C6;&#x5408;&#x4E2D;
+          * 
+          * Take         &#x5206;&#x533A;&#x64CD;&#x4F5C;&#x7B26;&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#x3002;&#x6307;&#x5B9A;&#x8981;&#x4ECE;&#x96C6;&#x5408;&#x4E2D;&#x63D0;&#x53D6;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;
+          * Skip         &#x8DF3;&#x8FC7;&#x6307;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;
+          * TakeWhile
+          * SkipWhile
+          * 
+          * Distinct     Set&#x64CD;&#x4F5C;&#x7B26;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x3002;&#x4ECE;&#x96C6;&#x5408;&#x4E2D;&#x5220;&#x9664;&#x91CD;&#x590D;&#x7684;&#x5143;&#x7D20;&#x3002;
+          * Union        &#x9700;&#x8981;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#xFF0C;&#x8FD4;&#x56DE;&#x51FA;&#x73B0;&#x5728;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x552F;&#x4E00;&#x5143;&#x7D20;&#x3002;
+          * Intersect    &#x9700;&#x8981;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#xFF0C;&#x8FD4;&#x56DE;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#x90FD;&#x6709;&#x7684;&#x5143;&#x7D20;&#x3002;
+          * Except       &#x9700;&#x8981;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#xFF0C;&#x8FD4;&#x56DE;&#x53EA;&#x51FA;&#x73B0;&#x5728;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x3002;
+          * Zip          &#x9700;&#x8981;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#xFF0C;&#x628A;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#x5408;&#x5E76;&#x4E3A;&#x4E00;&#x4E2A;
+          * 
+          * First        &#x8FD9;&#x4E9B;&#x5143;&#x7D20;&#x64CD;&#x4F5C;&#x7B26;&#x4EC5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x5143;&#x7D20;&#x3002;
+          * FirstOrDefault   &#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x5143;&#x7D20;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;&#x9ED8;&#x8BA4;&#x503C;&#x3002;
+          * Last
+          * LastOrDefault
+          * ElementAt    &#x6307;&#x5B9A;&#x4E86;&#x8981;&#x8FD4;&#x56DE;&#x7684;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;
+          * ElementAtOrDefault
+          * Single       &#x53EA;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x5143;&#x7D20;&#x3002;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#x90FD;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#xFF0C;&#x5C31;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x3002;
+          * SingleOrDefault
+          * 
+          * Count        &#x805A;&#x5408;&#x64CD;&#x4F5C;&#x7B26;&#x8BA1;&#x7B97;&#x96C6;&#x5408;&#x7684;&#x4E00;&#x4E2A;&#x503C;&#x3002;&#x5229;&#x7528;&#x8FD9;&#x4E9B;&#x805A;&#x5408;&#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x503C;&#x7684;&#x603B;&#x548C;&#x3001;&#x6240;&#x6709;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;
+          * Sum          &#x603B;&#x548C;
+          * Min          &#x503C;&#x6700;&#x5C0F;&#x7684;&#x5143;&#x7D20;
+          * Max          &#x503C;&#x6700;&#x5927;&#x7684;&#x5143;&#x7D20;
+          * Average      &#x5E73;&#x5747;&#x503C;
+          * Aggregate    &#x805A;&#x5408;     &#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x4E00;&#x4E2A;lambda&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x8BE5;&#x8868;&#x8FBE;&#x5F0F;&#x5BF9;&#x6709;&#x6240;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x805A;&#x5408;
+          * 
+          * ToArray      &#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x7EC4;
+          * AsEnumerable &#x8F6C;&#x6362;&#x4E3A;IEnumerable
+          * ToList       &#x8F6C;&#x6362;&#x4E3A;IList
+          * ToDictionary &#x8F6C;&#x6362;&#x4E3A;IDictionary
+          * Cast&lt;TResult&gt;
+          * 
+          * Empty        &#x8FD9;&#x4E9B;&#x751F;&#x6210;&#x64CD;&#x4F5C;&#x7B26;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x96C6;&#x5408;&#x3002;&#x4F7F;&#x7528;Empty&#x65F6;&#x96C6;&#x5408;&#x662F;&#x7A7A;&#x7684;
+          * Range        &#x8FD4;&#x56DE;&#x4E00;&#x7CFB;&#x5217;&#x6570;&#x5B57;
+          * Repeat       &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x59CB;&#x7EC8;&#x91CD;&#x590D;&#x4E00;&#x4E2A;&#x503C;&#x7684;&#x96C6;&#x5408;&#xFF1B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x8BE5;&#x8FED;&#x4EE3;&#x5668;&#x628A;&#x540C;&#x4E00;&#x4E2A;&#x503C;&#x91CD;&#x590D;&#x7279;&#x5B9A;&#x7684;&#x6B21;&#x6570;&#x3002;
+          * 
+          */
+
+
+
+
+
+            // 1. &#x67E5;&#x8BE2;&#x51FA; Unity1609 &#x7684;&#x6240;&#x6709;&#x51A0;&#x519B; &#x5E76;&#x6309;&#x7167;&#x603B;&#x5206;&#x6392;&#x5E8F;
+
+            /*
+             * &#x67E5;&#x8BE2;&#x8868;&#x8FBE;&#x5F0F;&#x5FC5;&#x987B;&#x4EE5; from &#x5B50;&#x53E5;&#x5F00;&#x5934;&#xFF0C;&#x4EE5; select &#x6216; group &#x5B50;&#x53E5;&#x7ED3;&#x675F;&#x3002;
+             * &#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x5B50;&#x53E5;&#x4E4B;&#x95F4;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; where&#x3001;oderby&#x3001;join&#x3001;let &#x548C;&#x5176;&#x4ED6; from &#x5B50;&#x53E5;&#x3002;
+             */
+
+            var query = from n in Formula.GetChampions()
+                        where n.ClassesName == &quot;Unity1609&quot;
+                        orderby n.Sum descending
+                        select n;
+
+            // &#x4F7F;&#x7528;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;
+            var champions = new List&lt;Student&gt;(Formula.GetChampions());
+            IEnumerable&lt;Student&gt; result = champions.Where(o =&gt; o.ClassesName == &quot;Unity1609&quot;).
+            OrderByDescending(o =&gt; o.Sum).
+            Select(n =&gt; n);
+
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(&quot;{0:N}&quot;, item);
+            }
+
+
+
+
+            // 2. &#x7B5B;&#x9009; 
+            // &#x4F7F;&#x7528;where&#x5B50;&#x53E5;&#xFF0C;&#x53EF;&#x4EE5;&#x5408;&#x5E76;&#x591A;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x3002;
+
+
+            // 3. &#x7528;&#x7D22;&#x5F15;&#x7B5B;&#x9009; 
+            // &#x4E0D;&#x80FD;&#x4F7F;&#x7528;LINQ&#x67E5;&#x8BE2;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x662F;Where()&#x65B9;&#x6CD5;&#x7684;&#x91CD;&#x8F7D;&#x3002;&#x5728;Where()&#x65B9;&#x6CD5;&#x7684;&#x91CD;&#x8F7D;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x7B2C;2&#x4E2A;&#x53C2;&#x6570;-&#x7D22;&#x5F15;&#x3002;
+            // &#x7D22;&#x5F15;&#x662F;&#x7B5B;&#x9009;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6BCF;&#x4E2A;&#x7ED3;&#x679C;&#x7684;&#x8BA1;&#x6570;&#x5668;&#x3002;
+
+
+            // 4. &#x7C7B;&#x578B;&#x7B5B;&#x9009; 
+            // &#x4E3A;&#x4E86;&#x8FDB;&#x884C;&#x57FA;&#x4E8E;&#x7C7B;&#x578B;&#x7684;&#x7B5B;&#x9009;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;OfType&lt;&gt;()&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x3002;
+
+            object[] data1 = { &quot;one&quot;, 2, 3, &quot;four&quot; };
+            var query1 = data1.OfType&lt;string&gt;();    // &#x4ECE;&#x96C6;&#x5408;&#x4E2D;&#x4EC5;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;
+
+
+            // 5. &#x590D;&#x5408;&#x7684;from&#x5B50;&#x53E5;
+            // &#x5982;&#x679C;&#x9700;&#x8981;&#x6839;&#x636E;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x8FDB;&#x884C;&#x7B5B;&#x9009;&#xFF0C;&#x800C;&#x8BE5;&#x6210;&#x5458;&#x672C;&#x8EAB;&#x662F;&#x4E00;&#x4E2A;&#x7CFB;&#x5217;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x590D;&#x5408;&#x7684;from&#x5B50;&#x53E5;&#x3002;
+            // &#x67E5;&#x8BE2;&#x5143;&#x7D20;&#x662F;&#x96C6;&#x5408;&#x7684;&#x5143;&#x7D20;  &#x6269;&#x5C55;&#x65B9;&#x6CD5; SelectMany() &#x7528;&#x4E8E;&#x8FED;&#x4EE3;&#x5E8F;&#x5217;&#x7684;&#x5E8F;&#x5217;
+            //var query2 = from r in Formula.GetChampions()
+            //from c in r.Scores
+            //where c &gt; 90
+            //orderby r.Sum
+            //select r.Name + &quot; &quot; + r.Sum;
+
+            var query2 = Formula.GetChampions().
+            SelectMany(source =&gt; source.Scores, (source, collection) =&gt; new { Stu = source, Scores = collection }).
+            Where(newObj =&gt; newObj.Stu.Sum &gt; 90).
+            OrderBy(newObj =&gt; newObj.Stu.Sum).
+            Select(newObj =&gt; newObj.Stu.Name + &quot; &quot; + newObj.Stu.Sum);
+
+
+            // 6. &#x6392;&#x5E8F;
+            // &#x8981;&#x5BF9;&#x5E8F;&#x5217;&#x6392;&#x5E8F;&#xFF0C;&#x524D;&#x9762;&#x4F7F;&#x7528;&#x4E86;orderby&#x5B50;&#x53E5;&#x3002;
+
+
+            // 7. &#x5206;&#x7EC4; 
+            // &#x8981;&#x6839;&#x636E;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#x503C;&#x5BF9;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x5206;&#x7EC4;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;group&#x5B50;&#x53E5;&#x3002;
+
+
+            //var query3 = from n in Formula.GetChampions()
+            //group n by n.ClassesName into g
+            //orderby g.Count(), g.Key
+            //where g.Count() &gt;= 2
+            //select new
+            //{
+            //    ClassName = g.Key,
+            //    Count = g.Count()
+            //};
+
+            // GroupBy()  IGrouping  Key
+            var query3 = Formula.GetChampions().
+            GroupBy(n =&gt; n.ClassesName).
+            OrderByDescending(group =&gt; group.Count()).
+            ThenBy(group =&gt; group.Key).
+            Where(g =&gt; g.Count() &gt;= 2).
+            Select(g =&gt; new { ClassName = g.Key, Count = g.Count() });
+
+
+            // 8. &#x5BF9;&#x5D4C;&#x5957;&#x7684;&#x5BF9;&#x8C61;&#x5206;&#x7EC4;
+            // &#x5982;&#x679C;&#x5206;&#x7EC4;&#x7684;&#x5BF9;&#x8C61;&#x5E94;&#x5305;&#x542B;&#x5D4C;&#x5957;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x6539;&#x53D8;select&#x5B50;&#x53E5;&#x521B;&#x5EFA;&#x7684;&#x533F;&#x540D;&#x7C7B;&#x578B;
+            var query4 = from r in Formula.GetChampions()
+                         group r by r.ClassesName into g
+                         orderby g.Count() descending, g.Key
+                         where g.Count() &gt;= 2
+                         select new
+                         {
+                             ClassName = g.Key,
+                             Count = g.Count(),
+                             Scores = from r1 in g
+                                      orderby r1.Sum descending, r1.Name
+                                      select r1.Scores
+                         };
+
+            foreach (var item in query4)
+            {
+                Console.WriteLine(item.ClassName + &quot; &quot; + item.Count);
+            }
+
+
+            // 9. &#x5185;&#x8FDE;&#x63A5; 
+            // &#x4F7F;&#x7528;join&#x5B50;&#x53E5;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x7279;&#x5B9A;&#x7684;&#x6761;&#x4EF6;&#x5408;&#x5E76;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x6E90;
+            var query5 = from n in Formula.GetChampions()
+                         from score in n.Scores
+                         select new
+                         {
+                             Name = n.Name,
+                             Score = score,
+                             ClassName = n.ClassesName,
+                             Years = n.Years
+                         };
+            var query6 = from n in Formula.GetContructorChampions()
+                         from y in n.Years
+                         select new
+                         {
+                             ClassName = n.ClassesName,
+                             Year = y
+                         };
+            var query7 = (from n in query5
+                          join t in query6 on n.ClassName equals t.ClassName
+                          select new
+                          {
+                              n.ClassName,
+                              n.Name,
+                              n.Score,
+                              t.Year
+                          }).Take(10);
+
+            foreach (var item in query7)
+            {
+                Console.WriteLine(&quot;{0},{1},{2},{3}&quot;, item.ClassName, item.Name, item.Score, item.Year);
+            }
+
+
+            // 10. &#x5DE6;&#x5916;&#x8FDE;&#x63A5;  
+            // &#x8FD4;&#x56DE;&#x5DE6;&#x8FB9;&#x5E8F;&#x5217;&#x7684;&#x5168;&#x90E8;&#x5143;&#x7D20;&#xFF0C;&#x5373;&#x65F6;&#x5B83;&#x4EEC;&#x5728;&#x53F3;&#x8FB9;&#x7684;&#x5E8F;&#x5217;&#x4E2D;&#x6CA1;&#x6709;&#x5339;&#x914D;&#x7684;&#x5143;&#x7D20;
+            // &#x4F7F;&#x7528; join into&#x3001; DefaultIfEmpty &#x5B9A;&#x4E49; 
+            var query8 = from n in query5
+                         join t in query6 on n.ClassName equals t.ClassName into rt
+                         from q in rt.DefaultIfEmpty()
+                         orderby n.Score
+                         select new
+                         {
+                             Name = n.Name,
+                             ClassName = q == null ? &quot;NoClassName&quot; : n.ClassName,
+                             Score = n.Score,
+                             Year = q == null ? -1 : q.Year
+                         };
+
+            foreach (var item in query8)
+            {
+                Console.WriteLine($&quot;{item.Name},{item.ClassName},{item.Score},{item.Year}&quot;);
+            }
+
+
+            // 11. &#x7EC4;&#x8FDE;&#x63A5; 
+            // &#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#x4F7F;&#x7528;&#x4E86;&#x7EC4;&#x8FDE;&#x63A5;&#x548C;into&#x5B50;&#x53E5;&#x3002;&#x5B83;&#x6709;&#x4E00;&#x90E8;&#x5206;&#x8BED;&#x6CD5;&#x4E0E;&#x7EC4;&#x8FDE;&#x63A5;&#x76F8;&#x540C;&#x3002;&#x53EA;&#x4E0D;&#x8FC7;&#x7EC4;&#x8FDE;&#x63A5;&#x4E0D;&#x4F7F;&#x7528;DefaultIfEmpty&#x65B9;&#x6CD5;&#x3002;
+            // &#x4F7F;&#x7528;&#x7EC4;&#x8FDE;&#x63A5;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDE;&#x63A5;&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x5BF9;&#x4E8E;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x4E2D;&#x5B58;&#x5728;&#x5BF9;&#x5E94;&#x7684;&#x4E00;&#x4E2A;&#x9879;&#x5217;&#x8868;&#x3002;
+
+            var query9 = from r in query5
+                         from y in r.Years
+                         join r2 in query6 on
+                         new { ClassName = r.ClassName, Year = y }
+                         equals
+                         new { ClassName = r2.ClassName, Year = r2.Year }
+                         into g
+                         select new { ClassName = r.ClassName, Name = r.Name, Year = y, Score = r.Score };
+
+            foreach (var item in query9)
+            {
+                Console.WriteLine($&quot;{item.ClassName},{item.Name},{item.Score},{item.Year}&quot;);
+            }
+
+
+            // 12. &#x96C6;&#x5408;&#x64CD;&#x4F5C;
+            // &#x6269;&#x5C55;&#x65B9;&#x6CD5; Distinct()&#x3001;Union()&#x3001;Intersect()&#x548C;Except() &#x90FD;&#x662F;&#x96C6;&#x5408;&#x64CD;&#x4F5C;&#x3002;
+
+
+            // 13. &#x5408;&#x5E76;
+            // Zip()&#x65B9;&#x6CD5;&#x5141;&#x8BB8;&#x7528;&#x4E00;&#x4E2A;&#x8C13;&#x8BCD;&#x51FD;&#x6570;&#x628A;&#x4E24;&#x4E2A;&#x76F8;&#x5173;&#x7684;&#x5E8F;&#x5217;&#x5408;&#x5E76;&#x4E3A;&#x4E00;&#x4E2A;&#x3002;
+            var query10 = query5.Zip(query6, (first, second) =&gt; first.ClassName + &quot;,&quot; + first.Name + &quot;,&quot; + second.Year);
+
+
+            // 14. &#x5206;&#x533A;
+            // &#x6269;&#x5C55;&#x65B9;&#x6CD5; Take() &#x548C; Skip() &#x7B49;&#x7684;&#x5206;&#x533A;&#x64CD;&#x4F5C;&#x53EF;&#x7528;&#x4E8E;&#x5206;&#x9875;&#x3002;
+            // &#x4F7F;&#x7528; TakeWhile() &#x548C; SkipWhile() &#x6269;&#x5C55;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x8C13;&#x8BCD;&#xFF0C;&#x6839;&#x636E;&#x8C13;&#x8BCD;&#x7684;&#x7ED3;&#x679C;&#x63D0;&#x53D6;&#x6216;&#x8DF3;&#x8FC7;&#x67D0;&#x4E9B;&#x9879;&#x3002;
+
+
+            // 15. &#x805A;&#x5408;&#x64CD;&#x4F5C;&#x7B26;
+            // &#x805A;&#x5408;&#x64CD;&#x4F5C;&#x7B26;&#xFF08;&#x5982;Count()&#x3001;Sum()&#x3001;Min()&#x3001;Max()&#x3001;Average()&#x548C;Aggregate()&#xFF09;&#x4E0D;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#xFF0C;&#x800C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x503C;&#x3002;
+            var query11 = from r in Formula.GetChampions()
+                          let scoreCount = r.Scores.Count()        // let&#x5B50;&#x53E5;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;
+                          where scoreCount &gt;= 2
+                          orderby scoreCount descending
+                          select new
+                          {
+                              Name = r.Name,
+                              ClassName = r.ClassesName
+                          };
+
+
+            // 16. &#x8F6C;&#x6362;&#x64CD;&#x4F5C;&#x7B26;
+            // ToList()
+            // Lookup&lt;TKey, TElement&gt;   &#x4E00;&#x4E2A;&#x952E;&#x53EF;&#x4EE5;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;&#x503C;
+            var query12 = (from r in Formula.GetChampions()
+                           from s in r.Scores
+                           select new
+                           {
+                               ClassName = r.ClassesName,
+                               Name = r.Name,
+                               Score = s
+                           }).ToLookup(cr =&gt; cr.ClassName, cr =&gt; cr.Name);
+
+            foreach (var item in query12[&quot;Unity1605&quot;])
+            {
+                Console.WriteLine($&quot;{item}&quot;);
+            }
+
+            // &#x5982;&#x679C;&#x9700;&#x8981;&#x5728;&#x975E;&#x7C7B;&#x578B;&#x5316;&#x7684;&#x96C6;&#x5408;&#x4E0A;&#xFF08;&#x5982;ArrayList&#xFF09;&#x4F7F;&#x7528;LINQ&#x67E5;&#x8BE2;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Cast()&#x65B9;&#x6CD5;&#x3002;
+
+            var list = new System.Collections.ArrayList(Formula.GetChampions() as System.Collections.ICollection);
+            var query13 = from r in list.Cast&lt;Student&gt;()
+                          where r.ClassesName == &quot;Unity1605&quot;
+                          select r;
+            foreach (var item in query13)
+            {
+                Console.WriteLine($&quot;{item.ClassesName}, {item.Name}&quot;);
+            }
+
+
+            // 17. &#x751F;&#x6210;&#x64CD;&#x4F5C;&#x7B26;
+            // &#x751F;&#x6210;&#x64CD;&#x4F5C;&#x7B26;Range()&#x3001;Empty()&#x548C;Repeat()&#x4E0D;&#x662F;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x662F;&#x8FD4;&#x56DE;&#x5E8F;&#x5217;&#x7684;&#x6B63;&#x5E38;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x3002;
+            //var values = Enumerable.Range(1, 20);   // &#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F5C;&#x4E3A;&#x8D77;&#x59CB;&#x503C;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F5C;&#x4E3A;&#x8981;&#x586B;&#x5145;&#x7684;&#x9879;&#x6570;
+            //values = values.Select(n =&gt; n * 3);
+            //foreach (var item in values)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            // Range()&#x65B9;&#x6CD5;&#x4E0D;&#x8FD4;&#x56DE;&#x586B;&#x5145;&#x4E86;&#x6240;&#x5B9A;&#x4E49;&#x503C;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E0E;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#x4E00;&#x6837;&#xFF0C;&#x4E5F;&#x63A8;&#x8FDF;&#x6267;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;
+            // &#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;RangeEnumerator&#xFF0C;&#x5176;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x6761;yield return &#x8BED;&#x53E5;&#xFF0C;&#x6765;&#x9012;&#x589E;&#x503C;&#x3002;
+
+
+            // 18. &#x5E76;&#x884C;LINQ
+            // System.Linq&#x540D;&#x79F0;&#x7A7A;&#x95F4;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x7C7B;ParalleEnumerable&#x53EF;&#x4EE5;&#x5206;&#x89E3;&#x67E5;&#x8BE2;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F7F;&#x5176;&#x5206;&#x5E03;&#x5728;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E0A;&#x3002;
+
+            //var res = (from x in SampleData().AsParallel()
+            //where Math.Log(x) &lt; 4
+            //select x).Average();
+
+            var res = SampleData().AsParallel().Where(x =&gt; Math.Log(x) &lt; 4).Select(x =&gt; x).Average();
+            Console.WriteLine(res);
+
+            // 19. &#x5206;&#x533A;&#x5668; 
+            // AsParalle() &#x65B9;&#x6CD5;&#x4E0D;&#x4EC5;&#x6269;&#x5C55;&#x4E86;IEnuerable&lt;T&gt; &#x63A5;&#x53E3;&#xFF0C;&#x8FD8;&#x6269;&#x5C55;&#x4E86; Partitioner &#x7C7B;&#x3002;&#x901A;&#x8FC7;&#x5B83;&#xFF0C;&#x53EF;&#x4EE5;&#x5F71;&#x54CD;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x5206;&#x533A;&#x3002;
+            // Partitioner &#x7C7B;&#x7528; System.Collection.ConCurrent &#x540D;&#x79F0;&#x7A7A;&#x95F4;&#x5B9A;&#x4E49;&#xFF0C;&#x5E76;&#x4E14;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x53D8;&#x4F53;&#x3002;
+            // Create() &#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x5B9E;&#x73B0;&#x4E86; IList&lt;T&gt; &#x7C7B;&#x7684;&#x6570;&#x7EC4;&#x6216;&#x5BF9;&#x8C61;&#x3002;
+
+            var data = SampleData();
+            var res1 = (from x in Partitioner.Create(data).AsParallel()
+                        where Math.Log(x) &lt; 4
+                        select x).Average();
+            Console.WriteLine(res1);
+
+            // &#x4E5F;&#x53EF;&#x4EE5;&#x8C03;&#x7528; WithExecutionMode() &#x548C; WithDegreeOfParallelism() &#x65B9;&#x6CD5;&#xFF0C;&#x6765;&#x5F71;&#x54CD;&#x5E76;&#x884C;&#x673A;&#x5236;&#x3002;
+
+            // 20. &#x53D6;&#x6D88;
+            // .NET &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x6807;&#x51C6;&#x65B9;&#x5F0F;&#xFF0C;&#x6765;&#x53D6;&#x6D88;&#x957F;&#x65F6;&#x95F4;&#x8FD0;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD9;&#x4E5F;&#x9002;&#x7528;&#x4E8E;&#x5E76;&#x884C;LINQ
+            // &#x8981;&#x53D6;&#x6D88;&#x957F;&#x65F6;&#x95F4;&#x8FD0;&#x884C;&#x7684;&#x67E5;&#x8BE2;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED9;&#x67E5;&#x8BE2;&#x6DFB;&#x52A0;WithCancellation()&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4F20;&#x9012;&#x4E00;&#x4E2A;CancellationToken&#x4EE4;&#x724C;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x3002;
+            // CancellationToken&#x4EE4;&#x724C;&#x4ECE;CancellationTokenSource&#x7C7B;&#x4E2D;&#x521B;&#x5EFA;&#x3002;
+            // &#x8BE5;&#x67E5;&#x8BE2;&#x5728;&#x5355;&#x72EC;&#x7684;&#x7EBF;&#x7A0B;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x5728;&#x8BE5;&#x7EBF;&#x7A0B;&#x4E2D;&#xFF0C;&#x6355;&#x83B7;&#x4E00;&#x4E2A;OperationCanceledException&#x7C7B;&#x578B;&#x7684;&#x5F02;&#x5E38;&#x3002;
+            // &#x5982;&#x679C;&#x53D6;&#x6D88;&#x4E86;&#x67E5;&#x8BE2;&#xFF0C;&#x5C31;&#x89E6;&#x53D1;&#x8FD9;&#x4E2A;&#x5F02;&#x5E38;&#x3002;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#xFF0C;&#x8C03;&#x7528;CancellationTokenSource&#x7C7B;&#x7684;Cancel()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x53D6;&#x6D88;&#x4EFB;&#x52A1;&#x3002;
+
+
+            // 21. &#x8868;&#x8FBE;&#x5F0F;&#x6811; Expression&lt;T&gt;
+        }
+
+
+        static IEnumerable&lt;int&gt; SampleData()
+        {
+            const int arraySize = 100000000;
+            var r = new Random();
+            return Enumerable.Range(0, arraySize).Select(x =&gt; r.Next(140)).ToList();
+        }
+    }
+
+
+
+
+    #region &#x6269;&#x5C55;&#x65B9;&#x6CD5;
+    /*
+     * &#x6269;&#x5C55;&#x65B9;&#x6CD5; &#xFF1A; &#x5B9A;&#x4E49;&#x4E3A;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x5176;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5B9A;&#x4E49;&#x4E86;&#x5B83;&#x6269;&#x5C55;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x5728;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7C7B;&#x4E2D;&#x58F0;&#x660E;&#x3002;
+     *           &#x4E3A;&#x4E86;&#x533A;&#x5206;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x548C;&#x4E00;&#x822C;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x8FD8;&#x9700;&#x8981;&#x5BF9;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F7F;&#x7528; this &#x5173;&#x952E;&#x5B57;&#x3002;
+     * 
+     *           &#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;&#x5B83;&#x6269;&#x5C55;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;&#x3002;&#x8C03;&#x7528;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x53EA;&#x662F;&#x8C03;&#x7528;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x79CD;&#x65B0;&#x8BED;&#x6CD5;&#x3002;
+     *           string s = &quot;hello&quot;;
+     *           s.Foo();
+     *           StringExtension.Foo(s);
+     */
+
+    public static class StringExtension
+    {
+        public static void Foo(this string s)
+        {
+            Console.WriteLine(&quot;Foo invoked for {0}&quot;, s);
+        }
+    }
+    #endregion
+
+    // 2016~2018&#x5E74;&#x95F4;&#xFF0C;&#x6240;&#x6709;&#x83B7;&#x5F97;&#x7B2C;&#x4E00;&#x540D;&#x7684;&#x540D;&#x5355;
+    static class Formula
+    {
+        public static List&lt;Student&gt; nameList;
+
+        public static IList&lt;Student&gt; GetChampions()
+        {
+            if (nameList == null)
+            {
+                nameList = new List&lt;Student&gt;()
+                {
+                    new Student(&quot;&#x5F20;&#x4E09;&quot;, 18, &quot;Unity1605&quot;, new int[]{99, 98}, new int[]{2016}),
+                    new Student(&quot;&#x674E;&#x56DB;&quot;, 20, &quot;Unity1605&quot;, new int[]{98, 97}, new int[]{2016}),
+                    new Student(&quot;&#x674E;&#x56DB;&quot;, 20, &quot;Unity1607&quot;, new int[]{98, 97}, new int[]{2016}),
+                    new Student(&quot;&#x5218;&#x4E94;&quot;, 21, &quot;Unity1609&quot;, new int[]{98, 96}, new int[]{2016}),
+                    new Student(&quot;&#x738B;&#x4E8C;&quot;, 21, &quot;Unity1609&quot;, new int[]{99, 96}, new int[]{2016}),
+                    new Student(&quot;&#x738B;&#x516D;&quot;, 22, &quot;Unity1609&quot;, new int[]{94, 95}, new int[]{2017}),
+                    new Student(&quot;&#x8D75;&#x516D;&quot;, 23, &quot;Unity1701&quot;, new int[]{96, 96}, new int[]{2017}),
+                    new Student(&quot;&#x7530;&#x4E03;&quot;, 23, &quot;Unity1711&quot;, new int[]{95, 97}, new int[]{2017}),
+                    new Student(&quot;&#x5B59;&#x4E8C;&quot;, 22, &quot;Unity1711&quot;, new int[]{94, 98}, new int[]{2018}),
+                    new Student(&quot;&#x738B;&#x516B;&quot;, 21, &quot;Unity1801&quot;, new int[]{99, 99}, new int[]{2018}),
+                    new Student(&quot;&#x738B;&#x516B;&quot;, 21, &quot;Unity1805&quot;, new int[]{99, 99}, new int[]{2018}),
+                };
+            }
+            return nameList;
+        }
+
+        private static List&lt;ClassesChampion&gt; teams;
+        public static IList&lt;ClassesChampion&gt; GetContructorChampions()
+        {
+            if (teams == null)
+            {
+                teams = new List&lt;ClassesChampion&gt;()
+                {
+                    new ClassesChampion(&quot;Unity1605&quot;, 2016),
+                    new ClassesChampion(&quot;Unity1607&quot;, 2016),
+                    new ClassesChampion(&quot;Unity1609&quot;, 2016, 2017),
+                    new ClassesChampion(&quot;Unity1701&quot;, 2017),
+                    new ClassesChampion(&quot;Unity1711&quot;, 2017, 2018),
+                    new ClassesChampion(&quot;Unity1801&quot;, 2018),
+                    new ClassesChampion(&quot;Unity1803&quot;, 2019)
+                };
+            }
+            return teams;
+        }
+    }
+
+    // &#x6392;&#x884C;&#x699C; &#x83B7;&#x5F97;&#x7B2C;&#x4E00;&#x540D;&#x5B66;&#x5458;&#x7684;&#x73ED;&#x7EA7;&#x540D;&#x5B57;&#x548C;&#x5E74;&#x4EFD;
+    class ClassesChampion
+    {
+        public ClassesChampion(string name, params int[] years)
+        {
+            this.ClassesName = name;
+            this.Years = new List&lt;int&gt;(years);
+        }
+
+        public string ClassesName { get; private set; }
+        public IEnumerable&lt;int&gt; Years { get; private set; }
+    }
+
+
+    class Student : IComparable&lt;Student&gt;, IFormattable
+    {
+        public string Name { get; private set; }
+        public string ClassesName { get; private set; }
+        public int Age { get; set; }
+        public int Sum { get; private set; }
+
+        public IEnumerable&lt;int&gt; Scores { get; private set; }
+        public IEnumerable&lt;int&gt; Years { get; private set; }        // &#x83B7;&#x5F97;&#x7B2C;&#x4E00;&#x540D;&#x7684;&#x5E74;&#x4EFD;
+
+        public Student(string name, int age, string classesName) : this(name, age, classesName, null, null) { }
+
+        public Student(string name, int age, string classesName, IEnumerable&lt;int&gt; scores, IEnumerable&lt;int&gt; years)
+        {
+            this.Name = name;
+            this.ClassesName = classesName;
+            this.Age = age;
+            this.Scores = new List&lt;int&gt;(scores);
+            this.Years = new List&lt;int&gt;(years);
+
+            foreach (var item in Scores)
+            {
+                Sum += item;
+            }
+        }
+
+        public override string ToString()
+        {
+            return string.Format(&quot;[Student: Name={0}, Age={1}]&quot;, Name, Age);
+        }
+
+        public string ToString(string format)
+        {
+            return ToString(format, null);
+        }
+
+        public string ToString(string format, IFormatProvider formatProvider)
+        {
+            switch (format)
+            {
+                case &quot;N&quot;:
+                    return this.Name;
+                default:
+                    return ToString();
+            }
+        }
+
+        public int CompareTo(Student other)
+        {
+            if (other == null) return 1;
+            return this.Sum - other.Sum;
+        }
+    }
+}
+</code></pre>
+
                                 
                                 </section>
                             
@@ -704,10 +1229,14 @@
 
             
                 
-                <a href="2_13 CSharp 多线程.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.13 C# 多线程">
+                <a href="2_13 CSharp 多线程.html" class="navigation navigation-prev " aria-label="Previous page: 2.13 C# 多线程">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="2_15 CSharp 协变与抗变.html" class="navigation navigation-next " aria-label="Next page: 2.15 C#4.0 协变与抗变">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -716,7 +1245,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.14 C# LINQ","level":"1.3.14","depth":2,"previous":{"title":"2.13 C# 多线程","level":"1.3.13","depth":2,"path":"二、CSharp 高级教程/2_13 CSharp 多线程.md","ref":"二、CSharp 高级教程/2_13 CSharp 多线程.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_14 CSharp LINQ.md","mtime":"2017-11-04T17:11:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-05T14:41:33.945Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.14 C# LINQ","level":"1.3.14","depth":2,"next":{"title":"2.15 C#4.0 协变与抗变","level":"1.3.15","depth":2,"path":"二、CSharp 高级教程/2_15 CSharp 协变与抗变.md","ref":"二、CSharp 高级教程/2_15 CSharp 协变与抗变.md","articles":[]},"previous":{"title":"2.13 C# 多线程","level":"1.3.13","depth":2,"path":"二、CSharp 高级教程/2_13 CSharp 多线程.md","ref":"二、CSharp 高级教程/2_13 CSharp 多线程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"二、CSharp 高级教程/2_14 CSharp LINQ.md","mtime":"2017-11-26T11:57:56.925Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-26T12:21:34.497Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
